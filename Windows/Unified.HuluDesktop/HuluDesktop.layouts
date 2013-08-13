@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down">
+  <grid>
+    <row>
+      <label />
+      <button icon="up" onTap="up" color="green" />
+      <label />
+    </row>
+    <row>
+      <button icon="left" onTap="left" color="green" />
+      <button icon="select" onTap="select" color="green" />
+      <button icon="right" onTap="right" color="green" />
+    </row>
+    <row>
+      <label />
+      <button icon="down" onTap="down" color="green" />
+      <label />
+    </row>
+    <row>
+      <label />
+      <button icon="back" onTap="back" color="green" />
+      <label />
+    </row>
+  </grid>
+</layout>

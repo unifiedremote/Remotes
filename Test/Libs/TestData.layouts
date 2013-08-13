@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row weight="wrap">
+		<label id="info" text="" />
+	</row>
+	<row>
+		<grid scroll="vertical">
+			<row>
+				<button text="tojson" ontap="tojson" />
+				<button text="tojson_bad" ontap="tojson_bad" />
+			</row>
+			<row>
+				<button text="fromjson" ontap="fromjson" />
+				<button text="fromjson_bad" ontap="fromjson_bad" />
+			</row>
+			<row>
+				<button text="test" ontap="test" />
+			</row>
+		</grid>
+	</row>
+</layout>

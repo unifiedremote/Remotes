@@ -1,0 +1,33 @@
+
+-- Metadata
+meta.id = "Test.EmptyFunctions"
+meta.name = "Test Empty Functions"
+meta.author = "Test"
+
+events.create = function ()
+
+end
+
+events.focus = function ()
+
+end
+
+events.blur = function ()
+
+end
+
+events.destroy = function ()
+
+end
+
+events.preaction = function (name, extras)
+
+end
+
+events.action = function (name, extras)
+
+end
+
+events.postaction = function (name, extras)
+
+end

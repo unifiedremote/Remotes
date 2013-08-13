@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label id="info" />
+	</row>
+	<row>
+		<button text="exists" ontap="exists" />
+		<button text="exists_bad" ontap="exists_bad" />
+	</row>
+	<row>
+		<button text="copy" ontap="copy" />
+		<button text="copydir" ontap="copydir" />
+	</row>
+	<row>
+		<button text="move" ontap="move" />
+		<button text="movedir" ontap="movedir" />
+	</row>
+	<row>
+		<button text="rename" ontap="rename" />
+		<button text="renamedir" ontap="renamedir" />
+	</row>
+	<row>
+		<button text="delete" ontap="delete" />
+		<button text="deletedir" ontap="deletedir" />
+		<button text="deleterec" ontap="deleterec" />
+	</row>
+	<row>
+		<button text="write" ontap="write" />
+		<button text="read" ontap="read" />
+	</row>
+	<row>
+		<button text="path" ontap="path" />
+		<button text="expand" ontap="expand" />
+	</row>
+	<row>
+		<button text="createdir" ontap="createdir" />
+		<button text="createdirs" ontap="createdirs" />
+	</row>
+	<row>
+		<button text="createfile" ontap="createfile" />
+	</row>
+</layout>

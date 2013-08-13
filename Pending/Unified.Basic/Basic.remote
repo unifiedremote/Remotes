@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.Basic"
+meta.name = "Basic"
+meta.author = "Unified Intents"
+meta.description = "Basic."
+
+--@help Focus Basic application
+actions.switch = function()
+	
+end
+
+--@help Launch Basic application
+actions.launch = function()
+	
+end

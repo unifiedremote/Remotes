@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.Multitouch"
+meta.name = "Multitouch"
+meta.author = "Unified Intents"
+meta.description = "Multitouch Remote."
+
+--@help Focus Multitouch application
+actions.switch = function()
+	
+end
+
+--@help Launch Multitouch application
+actions.launch = function()
+	
+end

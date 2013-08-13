@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label text="" id="info" />
+	</row>
+	<row>
+		<button text="timeout" ontap="timeout" />
+	</row>
+	<row>
+		<button text="start 1" ontap="start1" />
+		<button text="start 2" ontap="start2" />
+		<button text="start 3" ontap="start3" />
+	</row>
+	<row>
+		<button text="stop 1" ontap="stop1" />
+		<button text="stop 2" ontap="stop2" />
+		<button text="stop 3" ontap="stop3" />
+	</row>
+	<row>
+		<button text="run" ontap="run" />
+	</row>
+</layout>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="previous" onVolumeDown="next">
+  <grid>
+    <row weight="wrap">
+      <button text="Go To" onTap="prompt_goto" />
+    </row>
+    <row weight="wrap">
+      <button text="Start" onTap="show_start" />
+      <button text="End" onTap="show_end" />
+      <button text="Black" onTap="black" />
+      <button text="White" onTap="white" />
+    </row>
+    <row>
+      <button icon="left" onTap="previous" />
+      <button icon="right" onTap="next" />
+    </row>
+  </grid>
+</layout>

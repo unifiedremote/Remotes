@@ -1,0 +1,5 @@
+
+-- Metadata
+meta.id = "Test.Control.Scroll"
+meta.name = "Test Control Scroll"
+meta.author = "Test"

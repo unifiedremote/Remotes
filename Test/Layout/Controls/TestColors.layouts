@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<button text="null" />
+	</row>
+	<row>
+		<button text="red" color="red" />
+		<button text="purple" color="purple" />
+	</row>
+	<row>
+		<button text="blue" color="blue" />
+		<button text="pink" color="pink" />
+	</row>
+	<row>
+		<button text="green" color="green" />
+		<button text="yellow" color="yellow" />
+	</row>
+	<row>
+		<button text="soft" color="soft" />
+		<button text="hard" color="hard" />
+	</row>
+	<row>
+		<button text="orange" color="orange" />
+	</row>
+</layout>

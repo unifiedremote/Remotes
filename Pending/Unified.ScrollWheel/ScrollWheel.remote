@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.ScollWheel"
+meta.name = "Scroll Wheel"
+meta.author = "Unified Intents"
+meta.description = "Scroll Wheel Remote."
+
+--@help Focus Scroll Wheel application
+actions.switch = function()
+	
+end
+
+--@help Launch Scroll Wheel application
+actions.launch = function()
+	
+end

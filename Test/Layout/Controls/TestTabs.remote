@@ -1,0 +1,13 @@
+
+-- Metadata
+meta.id = "Test.Control.Tabs"
+meta.name = "Test Control Tabs"
+meta.author = "Test"
+
+events.action = function (name, extras)
+	print("action: " .. name);
+end
+
+actions.change = function (index)
+	print("action: change: " .. index);
+end

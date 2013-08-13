@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label id="info" />
+	</row>
+	<row>
+		<button text="google" ontap="google" />
+	</row>
+	<row>
+		<button text="http" ontap="http" />
+	</row>
+	<row>
+		<button text="https" ontap="https" />
+	</row>
+	<row>
+		<button text="twice" ontap="twice" />
+	</row>
+	<row>
+		<button text="image" ontap="image" />
+	</row>
+	<row>
+		<image image="http://nuclearpixel.com/content/icons/2010-02-09_stellar_icons_from_space_from_2005/earth_128.png" />
+		<image image="C:\test.png" />
+		<image id="file" />
+		<image id="binary" />
+	</row>
+</layout>

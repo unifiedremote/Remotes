@@ -1,0 +1,13 @@
+
+-- Metadata
+meta.id = "Test.Dynamic"
+meta.name = "Test Dyanmic"
+meta.author = "Test"
+
+events.focus = function ()
+	libs.server.update("button", "text", libs.server.get("text"));
+end
+
+actions.test = function ()
+	
+end

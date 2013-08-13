@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.MPCHC"
+meta.name = "MPCHC"
+meta.author = "Unified Intents"
+meta.description = "MPCHC Remote."
+
+--@help Focus MPCHC application
+actions.switch = function()
+	
+end
+
+--@help Launch MPCHC application
+actions.launch = function()
+	
+end

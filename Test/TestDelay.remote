@@ -1,0 +1,10 @@
+
+-- Metadata
+meta.id = "Test.Delay"
+meta.name = "Test Delay"
+meta.author = "Test"
+
+-- Actions
+actions.sleep = function ()
+	libs.task.sleep(1000);
+end

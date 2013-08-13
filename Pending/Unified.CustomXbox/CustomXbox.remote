@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.CustomXbox"
+meta.name = "Custom Xbox"
+meta.author = "Unified Intents"
+meta.description = "Custom Xbox Remote."
+
+--@help Focus Custom Xbox application
+actions.switch = function()
+	
+end
+
+--@help Launch Custom Xbox application
+actions.launch = function()
+	
+end

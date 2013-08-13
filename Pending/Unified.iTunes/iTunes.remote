@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.iTunes"
+meta.name = "iTunes"
+meta.author = "Unified Intents"
+meta.description = "iTunes Remote."
+
+--@help Focus iTunes application
+actions.switch = function()
+	
+end
+
+--@help Launch iTunes application
+actions.launch = function()
+	
+end

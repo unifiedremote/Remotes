@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label text="left" textalign="left" />
+		<label text="center" textalign="center" />
+		<label text="right" textalign="right" />
+	</row>
+	<row>
+		<label text="" />
+		<label text="hello world!" />
+	</row>
+	<row>
+		<label text="down" ondown="down" />
+		<label text="up" onup="up" />
+		<label text="tap" ontap="tap" />
+		<label text="hold" onhold="hold" />
+		<label text="double" ondoubletap="double" />
+	</row>
+</layout>

@@ -1,0 +1,9 @@
+
+-- Metadata
+meta.id = "Test.Control.Label"
+meta.name = "Test Control Label"
+meta.author = "Test"
+
+events.action = function (name, extras)
+	print("action: " .. name);
+end

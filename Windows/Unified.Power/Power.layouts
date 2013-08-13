@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+    <row>
+      <button text="Restart" onTap="restart" color="red" />
+      <button text="Shutdown" onTap="shutdown" color="red" />
+    </row>
+    <row>
+      <button text="Log Off" onTap="logoff" />
+      <button text="Lock" onTap="lock" />
+    </row>
+    <row>
+      <button text="Sleep" onTap="sleep" />
+      <button text="Wake On Lan" onTap="@wol" />
+    </row>
+    <row>
+      <button text="Hibernate" onTap="hibernate" />
+      <button text="Abort" onTap="abort" />
+    </row>
+  </grid>
+</layout>

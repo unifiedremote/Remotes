@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.TellstickLive"
+meta.name = "Tellstick Live"
+meta.author = "Unified Intents"
+meta.description = "Tellstick Live Remote."
+
+--@help Focus Tellstick Live application
+actions.switch = function()
+	
+end
+
+--@help Launch Tellstick Live application
+actions.launch = function()
+	
+end

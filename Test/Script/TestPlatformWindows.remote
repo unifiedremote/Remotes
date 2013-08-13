@@ -1,0 +1,6 @@
+
+-- Metadata
+meta.id = "Test.PlatformWindows"
+meta.name = "Test Platform Windows"
+meta.author = "Test"
+meta.platform = "Windows"

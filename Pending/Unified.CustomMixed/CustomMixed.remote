@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.CustomMixed"
+meta.name = "Custom Mixed"
+meta.author = "Unified Intents"
+meta.description = "Custom Mixed Remote."
+
+--@help Focus Custom Mixed Remote application
+actions.switch = function()
+	
+end
+
+--@help Launch Custom Mixed Remote application
+actions.launch = function()
+	
+end

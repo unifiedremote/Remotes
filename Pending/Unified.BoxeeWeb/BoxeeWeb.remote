@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.BoxeeWeb"
+meta.name = "Boxee Web"
+meta.author = "Unified Intents"
+meta.description = "Boxee Web Remote."
+
+--@help Focus Boxee Web application
+actions.switch = function()
+	
+end
+
+--@help Launch Boxee Web application
+actions.launch = function()
+	
+end

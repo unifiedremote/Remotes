@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout scroll="vertical">
+		<row>
+			<label text="BUTTON"/>
+		</row>
+		<row>
+			<button id="buttontheme" text="theme custom"  light="normal:blue;focus:green;color:red" dark="normal:blue;focus:green;color:red"/>
+			<button id="buttonthemecolor" text="theme color" lightcolor="blue" darkcolor="blue"/>
+			<button id="buttoncolor" text="color" color="green"/>
+		</row>
+		<row>
+			<button text="blue" onTap="buttonColorBlue"/>
+			<button text="green" onTap="buttonColorGreen"/>
+		</row>
+		<row>
+			<button text="light theme blue" onTap="buttonLightThemeColorBlue"/>
+			<button text="light theme green" onTap="buttonLightThemeColorGreen"/>
+			<button text="dark theme blue" onTap="buttonDarkThemeColorBlue"/>
+			<button text="dark theme green" onTap="buttonDarkThemeColorGreen"/>
+		</row>
+		<row>
+			<button text="light normal blue" onTap="buttonLightNormalBlue"/>
+			<button text="light normal green" onTap="buttonLightNormalGreen"/>
+			<button text="dark focus blue" onTap="buttonDarkFocusBlue"/>
+			<button text="dark focus green" onTap="buttonDarkFocusGreen"/>
+			<button text="light color blue" onTap="buttonLightColorBlue"/>
+			<button text="light color green" onTap="buttonLightColorGreen"/>
+		</row>
+		<row>
+			<label text="LABEL"/>
+		</row>
+		<row>
+			<label id="labeltheme" text="theme custom"  light="normal:blue;color:green" dark="normal:blue;color:green"/>
+			<label id="labelthemecolor" text="theme color" lightcolor="blue" darkcolor="blue"/>
+			<label id="labelcolor" text="color" color="green"/>
+		</row>
+		<row>
+			<button text="blue" onTap="labelColorBlue"/>
+			<button text="green" onTap="labelColorGreen"/>
+		</row>
+		<row>
+			<button text="light theme blue" onTap="labelLightThemeColorBlue"/>
+			<button text="light theme green" onTap="labelLightThemeColorGreen"/>
+			<button text="dark theme blue" onTap="labelDarkThemeColorBlue"/>
+			<button text="dark theme green" onTap="labelDarkThemeColorGreen"/>
+		</row>
+		<row>
+			<button text="light normal blue" onTap="labelLightNormalBlue"/>
+			<button text="light normal green" onTap="labelLightNormalGreen"/>
+			<button text="dark normal blue" onTap="labelDarkNormalBlue"/>
+			<button text="dark normal green" onTap="labelDarkNormalGreen"/>
+			<button text="light color blue" onTap="labelLightColorBlue"/>
+			<button text="light color green" onTap="labelLightColorGreen"/>
+		</row>
+		<row>
+			<label text="GRID"/>
+		</row>
+		<row>
+			<grid id="gridcolor">
+				<toggle text="no theme"/>
+				<toggle text="set theme" light="normal:yellow;focus:orange;color:red;active:purple" dark="normal:yellow;focus:orange;color:red;active:purple"/>
+			</grid>
+		</row>
+		<row>
+			<grid id="gridthemecolor">
+				<toggle text="no theme"/>
+				<toggle text="set theme" light="normal:yellow;focus:orange;color:red;active:purple" dark="normal:yellow;focus:orange;color:red;active:purple"/>
+			</grid>
+		</row>
+		<row>
+			<grid id="gridtheme">
+				<toggle text="no theme"/>
+				<toggle text="set theme" light="normal:yellow;focus:orange;color:red;active:purple" dark="normal:yellow;focus:orange;color:red;active:purple"/>
+			</grid>
+
+		</row>
+		<row>
+			<button text="blue" onTap="gridColorBlue"/>
+			<button text="green" onTap="gridColorGreen"/>
+		</row>
+		<row>
+			<button text="light theme blue" onTap="gridLightThemeColorBlue"/>
+			<button text="light theme green" onTap="gridLightThemeColorGreen"/>
+			<button text="dark theme blue" onTap="gridDarkThemeColorBlue"/>
+			<button text="dark theme green" onTap="gridDarkThemeColorGreen"/>
+		</row>
+		<row>
+			<button text="light normal blue" onTap="gridLightNormalBlue"/>
+			<button text="light normal green" onTap="gridLightNormalGreen"/>
+			<button text="light color blue" onTap="gridLightColorBlue"/>
+			<button text="light color green" onTap="gridLightColorGreen"/>
+			<button text="light color blue" onTap="gridLightActiveBlue"/>
+			<button text="light color green" onTap="gridLightActiveGreen"/>
+			<button text="light normal blue" onTap="gridLightFocusBlue"/>
+			<button text="light normal green" onTap="gridLightFocusGreen"/>
+
+
+			<button text="dark normal blue" onTap="gridDarkNormalBlue"/>
+			<button text="dark normal green" onTap="gridDarkNormalGreen"/>
+			<button text="dark color blue" onTap="gridDarkColorBlue"/>
+			<button text="dark color green" onTap="gridDarkColorGreen"/>
+			<button text="dark color blue" onTap="gridDarkActiveBlue"/>
+			<button text="dark color green" onTap="gridDarkActiveGreen"/>
+			<button text="dark normal blue" onTap="gridDarkFocusBlue"/>
+			<button text="dark normal green" onTap="gridDarkFocusGreen"/>
+		</row>
+</layout>

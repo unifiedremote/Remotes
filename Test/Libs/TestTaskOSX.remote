@@ -1,0 +1,11 @@
+
+-- Metadata
+meta.id = "Test.TaskOSX"
+meta.name = "Test Task OSX Library"
+meta.author = "Test"
+
+local task = libs.task;
+
+actions.start = function ()
+	task.open("/Applications/Spotify.app");
+end

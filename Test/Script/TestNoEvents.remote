@@ -1,0 +1,9 @@
+
+-- Metadata
+meta.id = "Test.NoEvents"
+meta.name = "Test No Events"
+meta.author = "Test"
+
+actions.defined = function ()
+	print ("  defined!");
+end

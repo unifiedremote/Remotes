@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<image image="test.png" />
+	</row>
+	<row weight="wrap">
+		<label text="down" />
+		<label text="up" />
+		<label text="tap" />
+		<label text="hold" />
+		<label text="double" />
+	</row>
+	<row>
+		<image image="test.png" ondown="down" />
+		<image image="test.png" onup="up" />
+		<image image="test.png" ontap="tap" />
+		<image image="test.png" onhold="hold" />
+		<image image="test.png" ondoubletap="double" />
+	</row>
+</layout>

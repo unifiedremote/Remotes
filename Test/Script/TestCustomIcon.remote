@@ -1,0 +1,6 @@
+
+-- Metadata
+meta.id = "Test.CustomIcon"
+meta.name = "Test Custom Icon"
+meta.author = "Test"
+meta.icon = "TestIcon.png"

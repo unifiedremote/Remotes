@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row weight="wrap">
+		<label id="info" text="" />
+	</row>
+	<row>
+		<grid scroll="vertical">
+			<row>
+				<button text="raw" ontap="raw" />
+			</row>
+			<row>
+				<button text="startswith" ontap="startswith" />
+				<button text="startswith_bad" ontap="startswith_bad" />
+			</row>
+			<row>
+				<button text="endswith" ontap="endswith" />
+				<button text="endswith_bad" ontap="endswith_bad" />
+			</row>
+			<row>
+				<button text="iequals" ontap="iequals" />
+				<button text="iequals_bad" ontap="iequals_bad" />
+			</row>
+			<row>
+				<button text="equals" ontap="equals" />
+				<button text="equals_bad" ontap="equals_bad" />
+			</row>
+			<row>
+				<button text="sub 2" ontap="sub2" />
+				<button text="sub 3" ontap="sub3" />
+			</row>
+			<row>
+				<button text="sub bad start" ontap="sub_bad_start" />
+				<button text="sub bad len" ontap="sub_bad_len" />
+				<button text="sub bad" ontap="sub_bad" />
+			</row>
+			<row>
+				<button text="char" ontap="char" />
+				<button text="char_bad" ontap="char_bad" />
+			</row>
+			<row>
+				<button text="len" ontap="len" />
+			</row>
+			<row>
+				<button text="byte2char1" ontap="byte2char1" />
+				<button text="byte2char2" ontap="byte2char2" />
+				<button text="byte2char3" ontap="byte2char3" />
+			</row>
+			<row>
+				<button text="char2byte" ontap="char2byte" />
+			</row>
+			<row>
+				<button text="indexof" ontap="indexof" />
+			</row>
+			<row>
+				<button text="lastindexof" ontap="lastindexof" />
+			</row>
+			<row>
+				<button text="replace" ontap="replace" />
+			</row>
+			<row>
+				<button text="contains" ontap="contains" />
+				<button text="contains_bad" ontap="contains_bad" />
+			</row>
+			<row>
+				<button text="trim" ontap="trim" />
+			</row>
+			<row>
+				<button text="tolower" ontap="tolower" />
+				<button text="toupper" ontap="toupper" />
+			</row>
+			<row>
+				<button text="split1" ontap="split1" />
+				<button text="split2" ontap="split2" />
+			</row>
+			<row>
+				<button text="join1" ontap="join1" />
+				<button text="join2" ontap="join2" />
+			</row>
+		</grid>
+	</row>
+</layout>

@@ -1,0 +1,16 @@
+
+-- Metadata
+meta.id = "Unified.CustomRun"
+meta.name = "Custom Run"
+meta.author = "Unified Intents"
+meta.description = "Custom Run Remote."
+
+--@help Focus Custom Run application
+actions.switch = function()
+	
+end
+
+--@help Launch Custom Run application
+actions.launch = function()
+	
+end

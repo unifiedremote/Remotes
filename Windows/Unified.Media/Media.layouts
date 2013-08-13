@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="volume up" onVolumeDown="volume down">
+  <grid>
+    <row>
+      <button icon="vdown" onTap="volume_down" />
+      <button icon="vmute" onTap="volume_mute" />
+      <button icon="vup" onTap="volume_up" />
+    </row>
+    <row>
+      <grid>
+        <row>
+          <button icon="previous" onTap="previous" />
+          <button icon="next" onTap="next" />
+        </row>
+      </grid>
+    </row>
+    <row>
+      <grid>
+        <row>
+          <button icon="stop" onTap="stop" />
+          <button icon="playpause" onTap="play_pause" />
+        </row>
+      </grid>
+    </row>
+  </grid>
+</layout>

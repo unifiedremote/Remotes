@@ -1,0 +1,11 @@
+
+-- Metadata
+meta.id = "Test.TaskLinux"
+meta.name = "Test Task Linux Library"
+meta.author = "Test"
+
+local task = libs.task;
+
+actions.start = function ()
+	task.start("firefox");
+end

@@ -1,0 +1,6 @@
+
+-- Metadata
+meta.id = "Test.Missing"
+meta.name = "Test Missing Layout"
+meta.author = "Test"
+meta.layout = "TestMissingLayout.layouts"

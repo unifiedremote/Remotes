@@ -1,0 +1,9 @@
+
+-- Metadata
+meta.id = "Test"
+meta.name = "Test"
+meta.author = "Test"
+
+actions.test = function ()
+	print("aaa");
+end
