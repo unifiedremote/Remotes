@@ -23,4 +23,8 @@
 		<button text="size_dir" ontap="size_dir" />
 		<button text="size_bad" ontap="size_bad" />
 	</row>
+	<row>
+		<button text="created" ontap="created" />
+		<button text="modified" ontap="modified" />
+	</row>
 </layout>

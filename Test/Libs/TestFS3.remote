@@ -75,3 +75,15 @@ actions.size_bad = function ()
 	local r = fs.size("C:\\asdfasdfasdfasdf");
 	update(r);
 end
+
+------------------------------------------------------------------
+
+actions.created = function ()
+	local r = fs.created("C:\\windows\\notepad.exe");
+	update(r);
+end
+
+actions.modified = function ()
+	local r = fs.modified("C:\\windows\\notepad.exe");
+	update(r);
+end
