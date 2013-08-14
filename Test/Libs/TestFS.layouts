@@ -18,9 +18,8 @@
 	</row>
 	<row>
 		<button text="dirs" ontap="dirs" />
-	</row>
-	<row>
 		<button text="list" ontap="list" />
+		<button text="roots" ontap="roots" />
 	</row>
 	<row>
 		<button text="parent" ontap="parent" />

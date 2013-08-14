@@ -48,6 +48,10 @@ actions.list = function ()
 	update( libs.fs.list("C:\\") );
 end
 
+actions.roots = function ()
+	update( libs.fs.roots() );
+end
+
 actions.parent = function ()
 	update({ 
 		libs.fs.parent("C:\\Windows\\notepad.exe"),

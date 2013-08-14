@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label id="info" />
+	</row>
+	<row>
+		<button text="isfile" ontap="isfile" />
+		<button text="isfile_no" ontap="isfile_no" />
+		<button text="isfile_bad" ontap="isfile_bad" />
+	</row>
+	<row>
+		<button text="isdir" ontap="isdir" />
+		<button text="isdir_no" ontap="isdir_no" />
+		<button text="isdir_bad" ontap="isdir_bad" />
+	</row>
+	<row>
+		<button text="ishidden" ontap="ishidden" />
+		<button text="ishidden_no" ontap="ishidden_no" />
+		<button text="ishidden_bad" ontap="ishidden_bad" />
+	</row>
+	<row>
+		<button text="size_file" ontap="size_file" />
+		<button text="size_dir" ontap="size_dir" />
+		<button text="size_bad" ontap="size_bad" />
+	</row>
+</layout>
