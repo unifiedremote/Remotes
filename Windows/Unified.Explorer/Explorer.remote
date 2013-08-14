@@ -1,0 +1,132 @@
+-- Metadata
+meta.id = "Unified.Explorer"
+meta.name = "Explorer"
+meta.author = "Unified Intents"
+meta.description = "File manager."
+
+local fs = libs.fs;
+local server = libs.server;
+local task = libs.task;
+local fileevents = {{type="item", text = "Details", id="d"}, {type="item",text="move", id="m"}};
+
+local selectedItem;
+local moveItem;
+local path;
+local items = {};
+local stack = {};
+events.focus = function()
+	path = "";
+	table.insert(stack, path);
+	updateWithPath();
+end
+
+function updateWithPath( )
+	if path == "" then
+		local root = fs.roots();
+		for t = 1, #root do
+			local child = {};
+			child.type = "item";
+			child.icon = "folder";
+			child.text = root[t];
+			child.fullpath = root[t];
+			child.isdir = true;
+			table.insert(items, child);
+		end
+	else
+		local dirs = fs.dirs(path);
+		local files = fs.files(path);
+		items = {};
+		for t = 1, #dirs do
+			local child = {};
+			child.type = "item";
+			child.icon = "folder";
+			child.text = fs.fullname(dirs[t]);
+			child.fullpath = dirs[t];
+			child.isdir = true;
+			table.insert(items, child);
+		end
+		for t = 1, #files do
+			local child = {};
+			child.type = "item";
+			child.icon = "file";
+			child.text = fs.fullname(files[t]);
+			print(files[t]);
+			child.fullpath = files[t];
+			child.isdir = false;
+			table.insert(items, child);
+		end
+	end
+	server.update({ id = "lst", children = items});
+end
+
+actions.onItem = function ( index )
+	index = index + 1;
+	if items[index].isdir then
+		table.insert(stack, path);
+		path = items[index].fullpath;
+		updateWithPath();
+	else
+		task.open(items[index].fullpath);
+	end
+end
+
+actions.onHolditem = function ( index )
+	selectedItem = itms[index+1];
+	server.update({id = "fileevent", type="dialog", onTap="event", children = fileevents});
+end
+
+actions.event = function ( index )
+	index = index +1;
+	local s = fileevents[index];
+	if s.id == "d" then
+		server.update({id="details", type="dialog", text="hello", children={{type="button", text="OK", Sign=1}}});
+	elseif s.id == "m" then
+		server.update({id="move", type="dialog", text="Navigate to folder and long press on folder name and select paste.", children={{type="button", text="OK", Sign=1}}});
+		table.insert(fileevents, {type="item",text="Paste", id="p"});
+		moveItem = selectedItem;
+	elseif s.id == "p" then
+		if fs.isdir(selectedItem) then
+			fs.move(moveItem, selectedItem .. )
+		end
+	elseif s.id == "del" then
+
+	end
+
+end
+
+actions.back = function (  )
+	if #stack > 1 then
+		path = table.remove(stack);
+		print(path);
+		updateWithPath();
+	end
+end
+
+actions.up = function (  )
+	table.insert(stack, path);
+	path = fs.parent(stack[#stack]);
+	updateWithPath();
+end
+
+actions.home = function ( )
+	table.insert(stack, path);
+	path = "";
+	updateWithPath();
+end
+
+actions.refresh = function (  )
+	updateWithPath();
+end
+
+actions.goto =function (  )
+	server.update({id = "go", type="input", onTap="gotopath", text="Goto"});
+end
+
+actions.gotopath = function ( string )
+	if fs.isfile(string) then
+		task.open(string);
+	else
+		path = string;
+		updateWithPath();
+	end
+end
