@@ -23,12 +23,15 @@ local path;
 local items = {};
 local stack = {};
 local isMovingOrCopying = false;
+--@help when remote have focus initialze.
 events.focus = function()
+	stack = {};
 	path = "";
 	table.insert(stack, path);
 	updateWithPath();
 end
 
+--@help update file list with new entries. 
 function updateWithPath( )
 	items = {};
 	if path == "" then
@@ -70,6 +73,7 @@ function updateWithPath( )
 	server.update({ id = "lst", children = items});
 end
 
+--@help item tap logic
 actions.onItem = function ( index )
 	index = index + 1;
 	if items[index].isdir then
@@ -81,11 +85,13 @@ actions.onItem = function ( index )
 	end
 end
 
+--@help item hold logic
 actions.onHolditem = function ( index )
 	selectedItem = items[index+1];
 	server.update({id = "fileevent", type="dialog", onTap="event", children = fileevents});
 end
 
+--@help handel file event. 
 actions.event = function ( index )
 	index = index +1;
 	local s = fileevents[index];
@@ -152,11 +158,13 @@ actions.event = function ( index )
 
 end
 
+--@help delete the previously selected item
 actions.deleteItem = function (  )
 	fs.delete(selectedItem.fullpath, true);
 	updateWithPath();
 end
 
+--@help pop the stack and move back
 actions.back = function (  )
 		path = table.remove(stack);
 	    print(path);
@@ -166,31 +174,43 @@ actions.back = function (  )
 		end
 end
 
+--@help move upp in file hierarchy 
 actions.up = function (  )
 	table.insert(stack, path);
 	path = fs.parent(stack[#stack]);
 	updateWithPath();
 end
 
+--@help go to root view
 actions.home = function ( )
 	table.insert(stack, path);
 	path = "";
 	updateWithPath();
 end
 
+--@help update current view
 actions.refresh = function (  )
 	updateWithPath();
 end
 
+--@help open goto path dialog
 actions.goto =function (  )
 	server.update({id = "go", type="input", onTap="gotopath", text="Goto"});
 end
 
-actions.gotopath = function ( string )
-	if fs.isfile(string) then
-		task.open(string);
+--@help goto path. 
+--@param path
+actions.gotopath = function ( path )
+	if fs.isfile(path) then
+		task.open(path);
 	else
-		path = string;
+		path = path;
 		updateWithPath();
 	end
+end
+
+--@help open path on computer 
+--@param path
+actions.open = function( path )
+	task.open(path);
 end
