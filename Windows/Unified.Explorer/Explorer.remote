@@ -7,13 +7,22 @@ meta.description = "File manager."
 local fs = libs.fs;
 local server = libs.server;
 local task = libs.task;
-local fileevents = {{type="item", text = "Details", id="d"}, {type="item",text="move", id="m"}};
+local l = libs.log;
+local fileevents = 
+				{
+					{type="item", text = "Details", id="d"}, 
+					{type="item",text="Open", id="o"},
+					{type="item",text="Copy", id="c"}, 
+					{type="item",text="Cut", id="m"}, 
+					{type="item",text="Delete", id="del"}
+				};
 
 local selectedItem;
 local moveItem;
 local path;
 local items = {};
 local stack = {};
+local isMovingOrCopying = false;
 events.focus = function()
 	path = "";
 	table.insert(stack, path);
@@ -21,8 +30,10 @@ events.focus = function()
 end
 
 function updateWithPath( )
+	items = {};
 	if path == "" then
 		local root = fs.roots();
+		l.trace("root");
 		for t = 1, #root do
 			local child = {};
 			child.type = "item";
@@ -33,9 +44,9 @@ function updateWithPath( )
 			table.insert(items, child);
 		end
 	else
+		l.trace(path);
 		local dirs = fs.dirs(path);
-		local files = fs.files(path);
-		items = {};
+		local files = fs.files(path);	
 		for t = 1, #dirs do
 			local child = {};
 			child.type = "item";
@@ -71,7 +82,7 @@ actions.onItem = function ( index )
 end
 
 actions.onHolditem = function ( index )
-	selectedItem = itms[index+1];
+	selectedItem = items[index+1];
 	server.update({id = "fileevent", type="dialog", onTap="event", children = fileevents});
 end
 
@@ -79,27 +90,80 @@ actions.event = function ( index )
 	index = index +1;
 	local s = fileevents[index];
 	if s.id == "d" then
-		server.update({id="details", type="dialog", text="hello", children={{type="button", text="OK", Sign=1}}});
-	elseif s.id == "m" then
-		server.update({id="move", type="dialog", text="Navigate to folder and long press on folder name and select paste.", children={{type="button", text="OK", Sign=1}}});
-		table.insert(fileevents, {type="item",text="Paste", id="p"});
-		moveItem = selectedItem;
-	elseif s.id == "p" then
-		if fs.isdir(selectedItem) then
-			fs.move(moveItem, selectedItem .. )
+		local details = "";
+		if fs.isdir(selectedItem.fullpath) then
+			details = " Name: " .. fs.fullname(selectedItem.fullpath) .. 
+			"\n Location: " .. fs.parent(selectedItem.fullpath) ..
+			"\n Files: " .. #fs.files(selectedItem.fullpath) ..
+			"\n Folders: " .. #fs.dirs(selectedItem.fullpath) ..
+			"\n Created: " .. os.date("%c", fs.created(selectedItem.fullpath));
+		else
+			details = " Name: " .. fs.fullname(selectedItem.fullpath) .. 
+			"\n Location: " .. fs.parent(selectedItem.fullpath) ..
+			"\n Size: " .. fs.size(selectedItem.fullpath) ..
+			"\n Created: " .. os.date("%c", s.created(selectedItem.fullpath)) ..
+			"\n Modified: " .. os.date("%c", fs.modified(selectedItem.fullpath));
 		end
-	elseif s.id == "del" then
+		server.update({id="details", type="dialog", text=details, children={{type="button", text="OK", Sign=1}}});
+	elseif s.id == "m" then
+		server.update({id="Move", type="dialog", text="Navigate to folder and long press on folder name and select paste.", children={{type="button", text="OK", Sign=1}}});
 
+		if isMovingOrCopying then
+			table.remove(fileevents);
+		end		
+		table.insert(fileevents, {type="item",text="Paste", id="pmove"});
+		isMovingOrCopying = true;
+		moveItem = selectedItem;
+	elseif s.id == "pmove" then
+		if fs.isdir(selectedItem.fullpath) then
+			l.trace(moveItem.fullpath);
+			l.trace(fs.combine(selectedItem.fullpath, fs.fullname(moveItem.fullpath)));
+			fs.move(moveItem.fullpath, fs.combine(selectedItem.fullpath ,fs.fullname(moveItem.fullpath)));
+		else
+			fs.move(moveItem.fullpath, fs.parent(selectedItem.fullpath) .. fs.fullname(moveItem.fullpath));
+		end
+		table.remove(fileevents);
+		updateWithPath();
+		isMovingOrCopying = false;
+	elseif s.id == "pcopy" then
+		if fs.isdir(selectedItem.fullpath) then
+			l.trace(moveItem.fullpath);
+			l.trace(fs.combine(selectedItem.fullpath, fs.fullname(moveItem.fullpath)));
+			fs.copy(moveItem.fullpath, fs.combine(selectedItem.fullpath ,fs.fullname(moveItem.fullpath)));
+		else
+			fs.copy(moveItem.fullpath, fs.parent(selectedItem.fullpath) .. fs.fullname(moveItem.fullpath));
+		end
+		table.remove(fileevents);
+		isMovingOrCopying = false;
+		updateWithPath();
+	elseif s.id == "del" then
+		server.update({id="dele", type="dialog", text="Do you realy like to delete " .. selectedItem.fullpath .. "?", children={{type="button", text="YES", onTap="deleteItem"}, {type="button", text="NO"}}});	
+	elseif s.id == "c" then
+		server.update({id="Copy", type="dialog", text="Navigate to folder and long press on folder name and select paste.", children={{type="button", text="OK", Sign=1}}});
+		if isMovingOrCopying then
+			table.remove(fileevents);
+		end
+		table.insert(fileevents, {type="item",text="Paste", id="pcopy"});
+		moveItem = selectedItem;
+		isMovingOrCopying = true;
+	elseif s.id == "o" then
+		task.open(selectedItem.fullpath);
 	end
 
 end
 
+actions.deleteItem = function (  )
+	fs.delete(selectedItem.fullpath, true);
+	updateWithPath();
+end
+
 actions.back = function (  )
-	if #stack > 1 then
 		path = table.remove(stack);
-		print(path);
+	    print(path);
 		updateWithPath();
-	end
+		if #stack == 0 then
+			table.insert(stack, "");
+		end
 end
 
 actions.up = function (  )
