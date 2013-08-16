@@ -11,7 +11,12 @@ local s = "å1ä2ö3";
 
 actions.raw = function ()
 	local r = utf8.new("hello world åäö"):raw();
-	server.update({id = "info", text = r });
+	server.update({ id = "info", text = r });
+end
+
+actions.newlen = function ()
+	local r = utf8.new("hello world åäö", 5):raw();
+	server.update({ id = "info", text = r });
 end
 
 ------------------------------------------------------------
@@ -215,5 +220,17 @@ end
 
 actions.join2 = function ()
 
+end
+
+------------------
+
+actions.empty = function ()
+	local r = utf8.empty("");
+	server.update({id = "info", text = r });
+end
+
+actions.empty_no = function ()
+	local r = utf8.empty("asdf");
+	server.update({id = "info", text = r });
 end
 

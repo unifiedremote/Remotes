@@ -7,6 +7,7 @@
 		<grid scroll="vertical">
 			<row>
 				<button text="raw" ontap="raw" />
+				<button text="newlen" ontap="newlen" />
 			</row>
 			<row>
 				<button text="startswith" ontap="startswith" />
@@ -75,6 +76,10 @@
 			<row>
 				<button text="join1" ontap="join1" />
 				<button text="join2" ontap="join2" />
+			</row>
+			<row>
+				<button text="empty" ontap="empty" />
+				<button text="empty_no" ontap="empty_no" />
 			</row>
 		</grid>
 	</row>

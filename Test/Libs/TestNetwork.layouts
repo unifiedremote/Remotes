@@ -7,13 +7,12 @@
 		<button text="google" ontap="google" />
 	</row>
 	<row>
+		<button text="request" ontap="request" />
+		<button text="post" ontap="post" />
+	</row>
+	<row>
 		<button text="http" ontap="http" />
-	</row>
-	<row>
 		<button text="https" ontap="https" />
-	</row>
-	<row>
-		<button text="twice" ontap="twice" />
 	</row>
 	<row>
 		<button text="image" ontap="image" />

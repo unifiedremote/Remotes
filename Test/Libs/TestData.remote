@@ -69,12 +69,12 @@ actions.test = function ()
                     }
                     ]]
 					
-	json = [[
-                    {
-                       
-                    }
-                    ]]
-					
 	local lua = data.fromjson(json);
 	server.update("info", "text", lua);
+end
+
+actions.indent = function ()
+	libs.log.trace(data.tojsonpretty(
+		{ foo = "bar", hello = "world" }
+	));
 end
