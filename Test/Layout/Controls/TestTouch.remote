@@ -17,3 +17,7 @@ actions.change = function (checked)
 	end
 	print("action: change: " .. b);
 end
+
+actions.abs = function (id, x, y)
+	print("x: " .. x .. " y: " .. y);
+end
