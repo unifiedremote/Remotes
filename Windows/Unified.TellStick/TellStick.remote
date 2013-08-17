@@ -241,16 +241,20 @@ events.preload = function()
 	
 	local devices = actions.devices();
 	for index,device in ipairs(devices) do
-		local row = { type = "row", weight = "wrap",
-			{ type = "button", text = device.name, weight = 3 },
-			{ type = "button", text = "On", onTap = "turn_on," .. device.id, color = "green" },
-			{ type = "button", text = "Off", onTap = "turn_off," .. device.id, color = "red" },
-		};
-		table.insert(rows, row);
-		
-		-- Generate actions for devices :-)
-		actions["turn_on_" .. device.name] = function() actions.turn_on(device.id); end;
-		actions["turn_off_" .. device.name] = function() actions.turn_off(device.id); end;
+		if device.canDim then
+			local row = { type = "row", weight = "wrap",
+				{ type = "button", text = device.name, weight = 3 },
+				{ type = "slider", text = "Dim", onDone = "dim," .. device.id, color = "green", progressMax = "100" },
+			};
+			table.insert(rows, row);
+		else
+			local row = { type = "row", weight = "wrap",
+				{ type = "button", text = device.name, weight = 3 },
+				{ type = "button", text = "On", onTap = "turn_on," .. device.id, color = "green" },
+				{ type = "button", text = "Off", onTap = "turn_off," .. device.id, color = "red" },
+			};
+			table.insert(rows, row);
+		end
 	end
 	
 	local layout = {};
