@@ -144,6 +144,8 @@ end
 --@help Turn on by ID
 --@param id:number
 actions.turn_on = function(id)
+	print("Tellstick turn_on");
+	print(id);
 	actions.toggle(id, true);
 end
 
@@ -247,6 +249,9 @@ events.preload = function()
 				{ type = "slider", text = "Dim", onDone = "dim," .. device.id, color = "green", progressMax = "100" },
 			};
 			table.insert(rows, row);
+			
+			-- Generate actions for devices :-)
+			actions["dim_" .. device.name] = function(dimValue) actions.dim(device.id, dimValue); end;
 		else
 			local row = { type = "row", weight = "wrap",
 				{ type = "button", text = device.name, weight = 3 },
@@ -254,6 +259,10 @@ events.preload = function()
 				{ type = "button", text = "Off", onTap = "turn_off," .. device.id, color = "red" },
 			};
 			table.insert(rows, row);
+		
+		-- Generate actions for devices :-)
+		actions["turn_on_" .. device.name] = function() actions.turn_on(device.id); end;
+		actions["turn_off_" .. device.name] = function() actions.turn_off(device.id); end;
 		end
 	end
 	
