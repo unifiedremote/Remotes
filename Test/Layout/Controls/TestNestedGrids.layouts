@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<button text="g1->r1->b1" />
+		<button text="g1->r1->b1" />
+	</row>
+	<row>
+		<grid>
+			<button text="g1->r2->g2->r1->b1" />
+			<button text="g1->r2->g2->r1->b2" />
+		</grid>
+	</row>
+</layout>
