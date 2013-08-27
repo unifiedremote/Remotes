@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label id="info" text="" />
+	</row>
+	<row>
+		<button text="epoch" ontap="epoch" />
+	</row>
+	<row>
+		<button text="short" ontap="short" />
+	</row>
+	<row>
+		<button text="long" ontap="long" />
+	</row>
+	<row>
+		<button text="table" ontap="table" />
+	</row>
+</layout>
