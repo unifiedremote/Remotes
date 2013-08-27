@@ -4,6 +4,7 @@ meta.id = "Unified.Pixel"
 meta.name = "Pixel Color"
 meta.author = "Unified Intents"
 meta.description = "Inspect mouse pixel color."
+meta.platform = "windows"
 
 local mouse = libs.mouse;
 local server = libs.server;

@@ -4,6 +4,7 @@ meta.id = "Unified.WindowsPhotoViewer"
 meta.name = "Windows Photo Viewer"
 meta.author = "Unified Intents"
 meta.description = "Windows Photo Viewer remote."
+meta.platform = "windows"
 
 local keyboard = libs.keyboard;
 

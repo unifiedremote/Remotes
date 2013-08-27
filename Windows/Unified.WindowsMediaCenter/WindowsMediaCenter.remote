@@ -4,6 +4,7 @@ meta.id = "Unified.WindowsMediaCenter"
 meta.name = "Windows Media Center"
 meta.author = "Unified Intents"
 meta.description = "Windows Media Center remote control."
+meta.platform = "windows"
 
 local task = libs.task;
 local keyboard = libs.keyboard;

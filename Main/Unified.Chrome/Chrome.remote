@@ -10,11 +10,13 @@ local keyboard = libs.keyboard;
 
 --@help Focus Chrome application
 actions.switch = function()
-	local hwnd = task.window("chrome.exe");
-	if (hwnd == 0) then
-		actions.launch();
-	end
-	task.switchtowait(hwnd);
+	--if (OS_WINDOWS) then
+		local hwnd = task.window("chrome.exe");
+		if (hwnd == 0) then
+			actions.launch();
+		end
+		task.switchtowait(hwnd);
+	--end
 end
 
 --@help Launch Chrome application

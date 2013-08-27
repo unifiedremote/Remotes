@@ -1,22 +1,28 @@
 
 -- Metadata
-meta.id = "Unified.Firefox"
-meta.name = "Firefox"
+meta.id = "Unified.Opera"
+meta.name = "Opera"
 meta.author = "Unified Intents"
-meta.description = "Mozilla Firefox browser remote."
+meta.description = "Opera browser remote."
 
---@help Focus Firefox application
+local task = libs.task;
+local keyboard = libs.keyboard;
+local device = libs.device;
+
+--@help Focus Opera application
 actions.switch = function()
-	local hwnd = task.window("firefox.exe");
-	if (hwnd == 0) then
-		actions.launch();
-	end
-	task.switchtowait(hwnd);
+	--if (OS_WINDOWS) then
+		local hwnd = task.window("opera.exe");
+		if (hwnd == 0) then
+			actions.launch();
+		end
+		task.switchtowait(hwnd);
+	--end
 end
 
---@help Launch Firefox application
+--@help Launch Opera application
 actions.launch = function()
-	task.start("firefox.exe");
+	task.start("%programfiles(x86)%/Opera/opera.exe");
 end
 
 --@help Naviagte back
@@ -40,13 +46,13 @@ end
 --@help Go to next tab
 actions.next_tab = function()
 	actions.switch();
-	keyboard.stroke("contol", "shift", "tab");
+	keyboard.stroke("control", "shift", "F6");
 end
 
 --@help Go to previous tab
 actions.previous_tab = function()
 	actions.switch();
-	keyboard.stroke("control", "tab");
+	keyboard.stroke("control", "F6");
 end
 
 --@help Open new tab
@@ -58,7 +64,7 @@ end
 --@help Type address
 actions.address = function()
 	actions.switch();
-	keyboard.stroke("control", "L");
+	keyboard.stroke("menu", "D");
 	device.keyboard();
 end
 
@@ -108,5 +114,6 @@ end
 --@help Refresh current page
 actions.refresh = function()
 	actions.switch();
-	keyboard.stroke("f5");
+	keyboard.stroke("F5");
 end
+

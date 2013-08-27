@@ -4,6 +4,7 @@ meta.id = "Unified.Monitor"
 meta.name = "Monitor"
 meta.author = "Unified Intents"
 meta.description = "Control your monitor power."
+meta.platform = "windows"
 
 local task = libs.task;
 

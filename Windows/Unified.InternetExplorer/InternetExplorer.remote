@@ -4,6 +4,7 @@ meta.id = "Unified.InternetExplorer"
 meta.name = "Internet Explorer"
 meta.author = "Unified Intents"
 meta.description = "Internet Explorer browser remote."
+meta.platform = "windows"
 
 local task = libs.task;
 local keyboard = libs.keyboard;

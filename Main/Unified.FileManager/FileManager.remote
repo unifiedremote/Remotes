@@ -1,21 +1,26 @@
 -- Metadata
-meta.id = "Unified.Explorer"
-meta.name = "Explorer"
+meta.id = "Unified.FileManager"
+meta.name = "File Manager"
 meta.author = "Unified Intents"
-meta.description = "File manager."
+meta.description = "File Manager Remote."
+
+-------------------------------------------------------------------
 
 local fs = libs.fs;
 local server = libs.server;
 local task = libs.task;
 local l = libs.log;
+
+-------------------------------------------------------------------
+
 local fileevents = 
-				{
-					{type="item", text = "Details", id="d"}, 
-					{type="item",text="Open", id="o"},
-					{type="item",text="Copy", id="c"}, 
-					{type="item",text="Cut", id="m"}, 
-					{type="item",text="Delete", id="del"}
-				};
+{
+	{type="item", text = "Details", id="d"}, 
+	{type="item",text="Open", id="o"},
+	{type="item",text="Copy", id="c"}, 
+	{type="item",text="Cut", id="m"}, 
+	{type="item",text="Delete", id="del"}
+};
 
 local selectedItem;
 local moveItem;
@@ -23,7 +28,9 @@ local path;
 local items = {};
 local stack = {};
 local isMovingOrCopying = false;
---@help when remote have focus initialze.
+
+-------------------------------------------------------------------
+
 events.focus = function()
 	stack = {};
 	path = "";
@@ -31,8 +38,9 @@ events.focus = function()
 	updateWithPath();
 end
 
---@help update file list with new entries. 
-function updateWithPath( )
+-------------------------------------------------------------------
+
+function updateWithPath ()
 	items = {};
 	if path == "" then
 		local root = fs.roots();
@@ -73,7 +81,8 @@ function updateWithPath( )
 	server.update({ id = "lst", children = items});
 end
 
---@help item tap logic
+-------------------------------------------------------------------
+
 actions.onItem = function ( index )
 	index = index + 1;
 	if items[index].isdir then
@@ -85,13 +94,11 @@ actions.onItem = function ( index )
 	end
 end
 
---@help item hold logic
 actions.onHolditem = function ( index )
 	selectedItem = items[index+1];
 	server.update({id = "fileevent", type="dialog", onTap="event", children = fileevents});
 end
 
---@help handel file event. 
 actions.event = function ( index )
 	index = index +1;
 	local s = fileevents[index];
@@ -107,7 +114,7 @@ actions.event = function ( index )
 			details = " Name: " .. fs.fullname(selectedItem.fullpath) .. 
 			"\n Location: " .. fs.parent(selectedItem.fullpath) ..
 			"\n Size: " .. fs.size(selectedItem.fullpath) ..
-			"\n Created: " .. os.date("%c", s.created(selectedItem.fullpath)) ..
+			"\n Created: " .. os.date("%c", fs.created(selectedItem.fullpath)) ..
 			"\n Modified: " .. os.date("%c", fs.modified(selectedItem.fullpath));
 		end
 		server.update({id="details", type="dialog", text=details, children={{type="button", text="OK", Sign=1}}});
@@ -158,14 +165,12 @@ actions.event = function ( index )
 
 end
 
---@help delete the previously selected item
-actions.deleteItem = function (  )
+actions.deleteItem = function ()
 	fs.delete(selectedItem.fullpath, true);
 	updateWithPath();
 end
 
---@help pop the stack and move back
-actions.back = function (  )
+actions.back = function ()
 		path = table.remove(stack);
 	    print(path);
 		updateWithPath();
@@ -174,33 +179,27 @@ actions.back = function (  )
 		end
 end
 
---@help move upp in file hierarchy 
-actions.up = function (  )
+actions.up = function ()
 	table.insert(stack, path);
 	path = fs.parent(stack[#stack]);
 	updateWithPath();
 end
 
---@help go to root view
-actions.home = function ( )
+actions.home = function ()
 	table.insert(stack, path);
 	path = "";
 	updateWithPath();
 end
 
---@help update current view
-actions.refresh = function (  )
+actions.refresh = function ()
 	updateWithPath();
 end
 
---@help open goto path dialog
-actions.goto =function (  )
+actions.goto = function ()
 	server.update({id = "go", type="input", onTap="gotopath", text="Goto"});
 end
 
---@help goto path. 
---@param path
-actions.gotopath = function ( path )
+actions.gotopath = function (path)
 	if fs.isfile(path) then
 		task.open(path);
 	else
@@ -209,7 +208,7 @@ actions.gotopath = function ( path )
 	end
 end
 
---@help open path on computer 
+--@help Open file or folder on computer
 --@param path
 actions.open = function( path )
 	task.open(path);

@@ -4,6 +4,7 @@ meta.id = "Unified.Windows8"
 meta.name = "Windows 8"
 meta.author = "Unified Intents"
 meta.description = "Windows 8 navigation."
+meta.platform = "windows"
 
 local keyboard = libs.keyboard;
 

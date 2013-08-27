@@ -4,6 +4,7 @@ meta.id = "Unified.WindowsMediaPlayer"
 meta.name = "Windows Media Player"
 meta.author = "Unified Intents"
 meta.description = "Windows Media Player remote control."
+meta.platform = "windows"
 
 local task = libs.task;
 

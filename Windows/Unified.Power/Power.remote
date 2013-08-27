@@ -4,6 +4,7 @@ meta.id = "Unified.Power"
 meta.name = "Power"
 meta.author = "Unified Intents"
 meta.description = "Remote system power control."
+meta.platform = "windows"
 
 -- Native Windows Stuff
 local ffi = require("ffi");
