@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label text="" id="info" />
+	</row>
+	<row>
+		<button text="start" ontap="start" />
+		<button text="stop" ontap="stop" />
+	</row>
+	<row>
+		<button text="run" ontap="run" />
+	</row>
+</layout>
