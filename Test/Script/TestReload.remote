@@ -1,0 +1,17 @@
+
+-- Metadata
+meta.id = "Test.Reload"
+meta.name = "Test Reload"
+meta.author = "Test"
+
+events.create = function ()
+	libs.log.trace("create XYZ");
+end
+
+events.focus = function ()
+	libs.log.trace("focus XYZ");
+end
+
+actions.foo = function ()
+	libs.log.trace("foo X");
+end

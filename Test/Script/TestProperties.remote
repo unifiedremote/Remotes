@@ -1,0 +1,12 @@
+
+-- Metadata
+meta.id = "Test.Properties"
+meta.name = "Test Properties"
+meta.author = "Test"
+
+--Test for overriding default properties filename...
+--meta.properties = "Foob´Bar.properties"
+
+actions.test = function ()
+	libs.server.set("test", os.date());
+end
