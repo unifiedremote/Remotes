@@ -247,6 +247,7 @@ events.preload = function()
 				{ type = "slider", text = "Dim", onDone = "dim," .. device.id, color = "green", progressMax = "100" },
 			};
 			table.insert(rows, row);
+			actions["dim_" .. device.name] = function(dim) actions.dim(device.id, dim); end;
 		else
 			local row = { type = "row", weight = "wrap",
 				{ type = "button", text = device.name, weight = 3 },
@@ -255,6 +256,8 @@ events.preload = function()
 			};
 			table.insert(rows, row);
 		end
+		actions["turn_on_" .. device.name] = function() actions.turn_on(device.id); end;
+		actions["turn_off_" .. device.name] = function() actions.turn_off(device.id); end;
 	end
 	
 	local layout = {};
