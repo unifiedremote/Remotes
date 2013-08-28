@@ -1,3 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch">
+<layout>
+	<tabs onchange="update">
+		<tab text="Tasks">
+			<list id="ts" ontap="tap" onhold="hold">
+				<item>Loading...</item>
+			</list>
+		</tab>
+		<tab text="Processes">
+			<list id="ps" ontap="tap" onhold="hold">
+				<item>Loading...</item>
+			</list>
+		</tab>
+	</tabs>
 </layout>
