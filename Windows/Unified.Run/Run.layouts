@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<button text="Calculator" ontap="calculator" />
+	</row>
+	<row>
+		<button text="Notepad" ontap="notepad" />
+	</row>
+	<row>
+		<button text="VLC" ontap="vlc" />
+	</row>
+	<row>
+		<button text="Paint" ontap="paint" />
+	</row>
+	<row>
+		<button text="Internet Explorer" ontap="ie" />
+	</row>
+	<row>
+		<button text="Remote Desktop" ontap="rdp" />
+	</row>
+	<row>
+		<button text="Windows Media Player" ontap="wmp" />
+	</row>
+</layout>

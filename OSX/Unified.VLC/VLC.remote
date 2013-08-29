@@ -4,6 +4,7 @@ meta.id = "Unified.VLC"
 meta.name = "VLC OSX"
 meta.author = "Unified Intents"
 meta.description = "VLC remote using AppleScript."
+meta.platform = "osx"
 
 local task = libs.task;
 
