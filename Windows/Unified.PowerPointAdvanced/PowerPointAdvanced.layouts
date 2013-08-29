@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch">
+	<row>
+		<tabs>
+			<tab text="Show">
+				<row weight="wrap">
+					<label id="title" text="Loading..." />
+				</row>
+				<row>
+					<label id="time" />
+				</row>
+				<row>
+					<button text="Show Black Screen" ontap="black" />
+				</row>
+				<row>
+					<button text="Show White Screen" ontap="white" />
+				</row>
+			</tab>
+			<tab text="Preview">
+				<row weight="wrap">
+					<label id="title" text="Loading..." />
+				</row>
+				<row>
+					<image id="preview_curr" />
+				</row>
+				<row>
+					<image id="preview_prev" />
+					<image id="preview_next" />
+				</row>
+			</tab>
+			<tab text="Comments">
+				<row weight="wrap">
+					<label id="title" text="Loading..." />
+				</row>
+				<row>
+					<text id="comments" multiline="true" text="Loading..." />
+				</row>
+			</tab>
+			<tab text="Slides">
+				<row weight="wrap">
+					<label id="title" text="Loading..." />
+				</row>
+				<list id="slides" ontap="slides_tap">
+					<item>Loading...</item>
+				</list>
+			</tab>
+		</tabs>
+	</row>
+	<row weight="wrap">
+		<button icon="previous" ontap="first" />
+		<button icon="left" ontap="previous" />
+		<button icon="right" ontap="next" />
+		<button icon="next" ontap="last" />
+	</row>
+</layout>

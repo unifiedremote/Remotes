@@ -1,0 +1,140 @@
+
+-- Metadata
+meta.id = "Unified.PowerPointAdvanced"
+meta.name = "Power Point Advanced"
+meta.author = "Unified Intents"
+meta.description = "Power Point Advanced Remote."
+meta.platform = "windows"
+
+local obj = nil;
+local tid = -1;
+local timer = libs.timer;
+local server = libs.server;
+local utf8 = libs.utf8;
+local fs = libs.fs;
+
+events.focus = function ()
+	obj = luacom.CreateObject("PowerPoint.Application");
+	update();
+	tid = timer.interval(update, 1000);
+end
+
+events.blur = function ()
+	timer.cancel(tid);
+	obj = nil;
+	collectgarbage();
+end
+
+function getTitle(slide)
+	local title = "";
+	title = title .. slide.SlideNumber .. ". ";
+	if (slide.Shapes.HasTitle == -1 and slide.Shapes.Title.HasTextFrame == -1) then
+		title = title .. slide.Shapes.Title.TextFrame.TextRange.Text;
+	end
+	return title;
+end
+
+function getNotes(slide)
+	local notes = "";
+	local count = slide.NotesPage.Shapes.Count;
+	for i = 1, count do
+		local shape = slide.NotesPage.Shapes(i);
+		if (shape.HasTextFrame == -1) then
+			if (shape.TextFrame.HasText == -1) then
+				if (utf8.contains(shape.Name, "Notes Placeholder")) then
+					notes = notes .. utf8.replace(shape.TextFrame.TextRange.Text, "\r", "\n");
+				end
+			end
+		end
+	end
+	return notes;
+end
+
+function update ()
+	if (obj == nil  or obj.Presentations.Count == 0 or obj.SlideShowWindows.Count == 0) then
+		server.update(
+			{ id = "title", text = "[No Presentation]" },
+			{ id = "comments", text = "" },
+			{ id = "slides", children = {} },
+			{ id = "time", text = "" }
+		);
+		return;
+	end
+
+	local index = obj.ActivePresentation.SlideShowWindow.View.CurrentShowPosition;
+	local slide = obj.ActivePresentation.Slides(index);
+	
+	-- Get comments
+	local notes = getNotes(slide);
+	
+	-- Get title
+	local title = getTitle(slide);
+	
+	-- Get slides list
+	local items = {};
+	local count = obj.ActivePresentation.Slides.Count;
+	for i = 1, count do
+		local slide = obj.ActivePresentation.Slides(i);
+		table.insert(items, { type = "item", text = getTitle(slide) });
+	end
+	
+	-- Get time
+	local elapsed = "Elapsed Time: " .. obj.ActivePresentation.SlideShowWindow.View.PresentationElapsedTime;
+	
+	-- Get preview
+	local file_curr = fs.absolute("current.jpg");
+	local file_prev = fs.absolute("previous.jpg");
+	local file_next = fs.absolute("next.jpg");
+	
+	slide:Export(file_curr, "jpg", 320, 240);
+	
+	slide = obj.ActivePresentation.Slides(math.max(1, index - 1));
+	slide:Export(file_prev, "jpg", 320, 240);
+	
+	slide = obj.ActivePresentation.Slides(math.min(count, index + 1));
+	slide:Export(file_next, "jpg", 320, 240);
+	
+	server.update(
+		{ id = "title", text = title },
+		{ id = "comments", text = notes },
+		{ id = "slides", children = items },
+		{ id = "time", text = elapsed },
+		{ id = "preview_curr", image = file_curr },
+		{ id = "preview_prev", image = file_prev },
+		{ id = "preview_next", image = file_next }
+	);
+end
+
+--@help Launch Power Point Advanced application
+actions.launch = function()
+	
+end
+
+actions.next = function ()
+	obj.ActivePresentation.SlideShowWindow.View:Next();
+	update();
+end
+
+actions.previous = function ()
+	obj.ActivePresentation.SlideShowWindow.View:Previous();
+	update();
+end
+
+actions.first = function ()
+	obj.ActivePresentation.SlideShowWindow.View:First();
+	update();
+end
+
+actions.last = function ()
+	obj.ActivePresentation.SlideShowWindow.View:Last();
+	update();
+end
+
+actions.goto = function (n)
+	obj.ActivePresentation.SlideShowWindow.View:GotoSlide(n, 0);
+	update();
+end
+
+actions.slides_tap = function (n)
+	actions.goto(n + 1);
+end
