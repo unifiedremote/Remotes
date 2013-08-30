@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch">
+<layout onLaunch="launch" onVolumeDown="next" onVolumeUp="previous">
 	<row>
 		<tabs>
 			<tab text="Show">
@@ -7,25 +7,38 @@
 					<label id="title" text="Loading..." />
 				</row>
 				<row>
-					<label id="time" />
+					<button icon="previous" ontap="first" />
+					<button icon="left" ontap="previous" />
+					<button icon="right" ontap="next" />
+					<button icon="next" ontap="last" />
+				</row>
+				<row weight="wrap">
+					<label text="Screen" />
 				</row>
 				<row>
-					<button text="Show Black Screen" ontap="black" />
+					<button text="Black" ontap="black" />
+					<button text="White" ontap="white" />
+				</row>
+				<row weight="wrap">
+					<label text="Timer" />
 				</row>
 				<row>
-					<button text="Show White Screen" ontap="white" />
+					<label id="time_total" text="Total: 00:00" />
+					<label id="time_slide" text="Slide: 00:00" />
+				</row>
+				<row>
+					<button text="Start" ontap="timer_start" />
+					<button text="Stop" ontap="timer_stop" />
+					<button text="Reset" ontap="timer_reset" />
 				</row>
 			</tab>
 			<tab text="Preview">
-				<row weight="wrap">
-					<label id="title" text="Loading..." />
+				<row weight="2">
+					<image id="preview_curr" color="hard" ontap="next" />
 				</row>
-				<row>
-					<image id="preview_curr" />
-				</row>
-				<row>
-					<image id="preview_prev" />
-					<image id="preview_next" />
+				<row weight="1">
+					<image id="preview_prev" color="hard" ontap="previous" />
+					<image id="preview_next" color="hard" ontap="next" />
 				</row>
 			</tab>
 			<tab text="Comments">
@@ -35,6 +48,12 @@
 				<row>
 					<text id="comments" multiline="true" text="Loading..." />
 				</row>
+				<row weight="wrap">
+					<button icon="previous" ontap="first" />
+					<button icon="left" ontap="previous" />
+					<button icon="right" ontap="next" />
+					<button icon="next" ontap="last" />
+				</row>
 			</tab>
 			<tab text="Slides">
 				<row weight="wrap">
@@ -43,13 +62,13 @@
 				<list id="slides" ontap="slides_tap">
 					<item>Loading...</item>
 				</list>
+				<row weight="wrap">
+					<button icon="previous" ontap="first" />
+					<button icon="left" ontap="previous" />
+					<button icon="right" ontap="next" />
+					<button icon="next" ontap="last" />
+				</row>
 			</tab>
 		</tabs>
-	</row>
-	<row weight="wrap">
-		<button icon="previous" ontap="first" />
-		<button icon="left" ontap="previous" />
-		<button icon="right" ontap="next" />
-		<button icon="next" ontap="last" />
 	</row>
 </layout>
