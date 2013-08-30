@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch">
+	<touch id="touch" image = "circle.png" ontouchend="done" ontouchabs="abs" ontouchsize="size" />
+</layout>
