@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+    <row>
+      <text id="status" multiline="true" textAlign="center" />
+    </row>
+    <row weight="wrap">
+      <button text="Learn" onTap="learn" />
+	  <button text="Transmit" onTap="transmit" />
+    </row>
+  </grid>
+</layout>
