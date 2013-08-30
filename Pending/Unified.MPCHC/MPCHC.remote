@@ -1,9 +1,9 @@
 
 -- Metadata
 meta.id = "Unified.MPCHC"
-meta.name = "MPCHC"
+meta.name = "MPC HC"
 meta.author = "Unified Intents"
-meta.description = "MPCHC Remote."
+meta.description = "Media Player Classic Home Cinema Remote."
 
 --@help Focus MPCHC application
 actions.switch = function()
