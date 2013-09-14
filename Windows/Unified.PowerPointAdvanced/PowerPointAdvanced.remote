@@ -1,7 +1,7 @@
 
 -- Metadata
 meta.id = "Unified.PowerPointAdvanced"
-meta.name = "Power Point Advanced"
+meta.name = "PowerPoint Advanced"
 meta.author = "Unified Intents"
 meta.description = "Power Point Advanced Remote."
 meta.platform = "windows"
