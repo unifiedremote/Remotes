@@ -45,32 +45,18 @@ actions.fromjson_bad = function ()
 end
 
 actions.test = function ()
-	local json = [[
-                    {
-                       "response":{
-                          "status":{
-                             "version":"4.2",
-                             "code":0,
-                             "message":"Success"
-                          },
-                          "start":0,
-                          "total":20,
-                          "images":[
-                             {
-                                "url":"http://userserve-ak.last.fm/serve/_/67419844/ZEDD.png",
-                                "license":{
-                                   "type":"unknown",
-                                   "attribution":"n/a",
-                                   "url":"http://www.last.fm/music/ZEDD/+images"
-                                }
-                             }
-                          ]
-                       }
-                    }
-                    ]]
-					
+	local str = "";
+	for i=1,4112 do
+		str = str .. "a";
+	end
+	
+	print(#str);
+
+	local json = "[\"" .. str .. "\"]";
+	libs.fs.write("C:/4111.json", json);
 	local lua = data.fromjson(json);
-	server.update("info", "text", lua);
+	print(lua);
+	--server.update("info", "text", lua);
 end
 
 actions.indent = function ()
