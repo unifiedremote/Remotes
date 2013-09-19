@@ -97,3 +97,10 @@ actions.combine = function ()
 		libs.fs.combine("C:\\", "Windows", "test.txt")
 	});
 end
+
+actions.make_path = function ()
+	print(libs.fs.path("%windir%/notepad.exe"));
+	update({
+		libs.fs.path("%windir%/notepad.exe")
+	});
+end

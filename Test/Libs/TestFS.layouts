@@ -36,4 +36,7 @@
 	<row>
 		<button text="combine" ontap="combine" />
 	</row>
+	<row>
+		<button text="make_path" ontap="make_path" />
+	</row>
 </layout>
