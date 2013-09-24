@@ -243,8 +243,9 @@ events.preload = function()
 	for index,device in ipairs(devices) do
 		if device.canDim then
 			local row = { type = "row", weight = "wrap",
-				{ type = "button", text = device.name, weight = 3 },
-				{ type = "slider", text = "Dim", onDone = "dim," .. device.id, color = "green", progressMax = "100" },
+				{ type = "slider", text = device.name, onDone = "dim," .. device.id, color = "grey", progressMax = "100", weight = 3 },
+				{ type = "button", text = "On", onTap = "turn_on," .. device.id, color = "green" },
+				{ type = "button", text = "Off", onTap = "turn_off," .. device.id, color = "red" },
 			};
 			table.insert(rows, row);
 			actions["dim_" .. device.name] = function(dim) actions.dim(device.id, dim); end;
