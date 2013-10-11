@@ -29,7 +29,7 @@ HWND GetDesktopWindow();
 local tid = -1;
 
 events.focus = function ()
-	tid1 = timer.interval(function ()
+	tid = timer.interval(function ()
 		x1,y1 = mouse.position();
 		local dc = ffi.C.GetDC(nil);
 		local rgb = ffi.C.GetPixel(dc, x1, y1);
