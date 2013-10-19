@@ -61,7 +61,11 @@ end
 --@help Open new tab
 actions.new_tab = function()
 	actions.switch();
-	keyboard.stroke("control", "T");
+	if (OS_WINDOWS or OS_LINUX) then
+		keyboard.stroke("control", "T");
+	elseif (OS_OSX) then
+		keyboard.stroke("cmd", "T")
+	end
 end
 
 --@help Type address
