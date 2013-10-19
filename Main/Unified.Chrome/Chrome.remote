@@ -10,13 +10,13 @@ local keyboard = libs.keyboard;
 
 --@help Focus Chrome application
 actions.switch = function()
-	--if (OS_WINDOWS) then
+	if (OS_WINDOWS) then
 		local hwnd = task.window("chrome.exe");
 		if (hwnd == 0) then
 			actions.launch();
 		end
 		task.switchtowait(hwnd);
-	--end
+	end
 end
 
 --@help Launch Chrome application
@@ -33,7 +33,11 @@ end
 --@help Close current tab
 actions.close_tab = function()
 	actions.switch();
-	keyboard.stroke("control", "W");
+	if (OS_WINDOWS or OS_LINUX) then
+		keyboard.stroke("control", "W");
+	elseif (OS_OSX) then
+		keyboard.stroke("cmd", "W")
+	end
 end
 
 --@help Navigate forward
@@ -57,7 +61,11 @@ end
 --@help Open new tab
 actions.new_tab = function()
 	actions.switch();
-	keyboard.stroke("control", "T");
+	if (OS_WINDOWS or OS_LINUX) then
+		keyboard.stroke("control", "T");
+	elseif (OS_OSX) then
+		keyboard.stroke("cmd", "T")
+	end
 end
 
 --@help Type address
