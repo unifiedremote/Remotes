@@ -4,6 +4,7 @@ meta.id = "Unified.Opera"
 meta.name = "Opera"
 meta.author = "Unified Intents"
 meta.description = "Opera browser remote."
+meta.platform = "windows linux"
 
 local task = libs.task;
 local keyboard = libs.keyboard;
@@ -11,13 +12,11 @@ local device = libs.device;
 
 --@help Focus Opera application
 actions.switch = function()
-	--if (OS_WINDOWS) then
-		local hwnd = task.window("opera.exe");
-		if (hwnd == 0) then
-			actions.launch();
-		end
-		task.switchtowait(hwnd);
-	--end
+	local hwnd = task.window("opera.exe");
+	if (hwnd == 0) then
+		actions.launch();
+	end
+	task.switchtowait(hwnd);
 end
 
 --@help Launch Opera application

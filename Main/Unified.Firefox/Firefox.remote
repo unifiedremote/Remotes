@@ -4,16 +4,15 @@ meta.id = "Unified.Firefox"
 meta.name = "Firefox"
 meta.author = "Unified Intents"
 meta.description = "Mozilla Firefox browser remote."
+meta.platform = "windows linux"
 
 --@help Focus Firefox application
 actions.switch = function()
-	--if (OS_WINDOWS) then
-		local hwnd = task.window("firefox.exe");
-		if (hwnd == 0) then
-			actions.launch();
-		end
-		task.switchtowait(hwnd);
-	--end
+	local hwnd = task.window("firefox.exe");
+	if (hwnd == 0) then
+		actions.launch();
+	end
+	task.switchtowait(hwnd);
 end
 
 --@help Launch Firefox application
@@ -98,13 +97,13 @@ end
 --@help Scroll page down
 actions.scroll_down = function()
 	actions.switch();
-	keyboard.stroke("down");
+	keyboard.stroke("space");
 end
 
 --@help Scroll page up
 actions.scroll_up = function()
 	actions.switch();
-	keyboard.stroke("up");
+	keyboard.stroke("shift", "space");
 end
 
 --@help Refresh current page
