@@ -5,6 +5,7 @@ meta.name = "Spotify"
 meta.author = "Unified Intents"
 meta.description = "Spotify basic media remote control."
 meta.platform = "linux"
+meta.layout = "Spotify.layouts"
 
 local task = libs.task;
 local keyboard = libs.keyboard;
