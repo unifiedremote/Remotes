@@ -69,17 +69,17 @@ end
 
 --@help Lower volume
 actions.volume_down = function()
-    os.execute("xdotool key XF86AudioLowerVolume");
+	keyboard.press("volumedown");
 end
 
 --@help Raise volume
 actions.volume_up = function()
-    os.execute("xdotool key XF86AudioRaiseVolume");
+    keyboard.press("volumeup");
 end
 
 --@help Mute volume
 actions.volume_mute = function()
-    os.execute("xdotool key XF86AudioMute");
+    keyboard.press("volumemute");
 end
 
 --@help Next track
