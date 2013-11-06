@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label id="info" />
+	</row>
+	<row>
+		<button text="sleep" ontap="sleep" />
+	</row>
+</layout>

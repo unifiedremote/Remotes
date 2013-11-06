@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label id="info" />
+	</row>
+	<row>
+		<button text="pread" ontap="pread" />
+	</row>
+	<row>
+		<button text="plines" ontap="plines" />
+	</row>
+</layout>

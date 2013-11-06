@@ -1,0 +1,11 @@
+
+-- Metadata
+meta.id = "Test.OS"
+meta.name = "Test OS Library Extensions"
+meta.author = "Test"
+
+actions.sleep = function ()
+	print("sleeping...");
+	os.sleep(3000);
+	print("slept!");
+end
