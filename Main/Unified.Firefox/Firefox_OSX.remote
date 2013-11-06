@@ -5,6 +5,7 @@ meta.name = "Firefox"
 meta.author = "Unified Intents"
 meta.description = "Mozilla Firefox browser remote."
 meta.platform = "osx"
+meta.layout = "Firefox.layouts"
 
 --@help Focus Firefox application
 actions.switch = function()

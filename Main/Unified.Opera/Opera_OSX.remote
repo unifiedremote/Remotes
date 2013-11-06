@@ -5,6 +5,7 @@ meta.name = "Opera"
 meta.author = "Unified Intents"
 meta.description = "Opera browser remote."
 meta.platform = "osx"
+meta.layout = "Opera.layouts"
 
 local task = libs.task;
 local keyboard = libs.keyboard;
