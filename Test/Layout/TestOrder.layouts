@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout>
-	<tabs onchange="tabs">
-		<tab text="test">
-			<toggle text="toggle" checked="true" onchange="toggle" />
-		</tab>
-	</tabs>
-</layout>

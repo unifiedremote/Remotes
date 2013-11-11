@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout>
-	<row>
-		<button text="valid (word)" ontap="valid_word" />
-		<button text="invalid" ontap="invalid" />
-	</row>
-</layout>
