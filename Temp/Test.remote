@@ -1,9 +1,8 @@
-
 -- Metadata
-meta.id = "Test"
-meta.name = "Test"
+meta.id = "Test2"
+meta.name = "Test2"
 meta.author = "Test"
 
 actions.test = function ()
-	print("aaa");
+	print("baasdasdfsdfasdfr");
 end

@@ -5,6 +5,9 @@ meta.name = "Keyboard"
 meta.author = "Unified Intents"
 meta.description = "English Keyboard"
 
+local server = libs.server;
+local keyboard = libs.keyboard;
+
 -- Layout
 keys = {
 	{ "ESCAPE", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" },
@@ -81,7 +84,7 @@ actions.toggle = function (key)
 	end
 end
 
-remote.preload = function ()
+events.preload = function ()
 	local rows = {};
 	for r,rt in ipairs(keys) do
 		local row = { type = "row" };
