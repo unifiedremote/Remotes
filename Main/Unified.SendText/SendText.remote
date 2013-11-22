@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.SendText"
 meta.name = "Send Text"
 meta.author = "Unified Intents"

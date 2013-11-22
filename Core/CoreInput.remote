@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Core.Input"
 meta.name = "Core.Input (Legacy)"
 meta.author = "Unified Intents"

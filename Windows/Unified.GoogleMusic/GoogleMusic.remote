@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.GoogleMusic"
 meta.name = "Google Music"
 meta.author = "Unified Intents"

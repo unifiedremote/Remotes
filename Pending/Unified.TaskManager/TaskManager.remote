@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.TaskManager"
 meta.name = "Task Manager"
 meta.author = "Unified Intents"

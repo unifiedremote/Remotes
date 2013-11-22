@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.VLCWeb"
 meta.name = "VLC Web"
 meta.author = "Unified Intents"

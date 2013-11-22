@@ -1,9 +1,9 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.iTunes"
 meta.name = "iTunes (Keyboard)"
 meta.author = "Unified Intents"
 meta.description = "iTunes Keyboard Remote"
+meta.platform = "osx"
 
 local keyboard = libs.keyboard;
 

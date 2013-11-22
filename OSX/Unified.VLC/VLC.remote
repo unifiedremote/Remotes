@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.VLC"
 meta.name = "VLC OSX"
 meta.author = "Unified Intents"

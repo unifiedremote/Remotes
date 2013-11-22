@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.Chrome"
 meta.name = "Chrome"
 meta.author = "Unified Intents"

@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Core.HTTP"
 meta.name = "Core.HTTP"
 meta.author = "Unified Intents"

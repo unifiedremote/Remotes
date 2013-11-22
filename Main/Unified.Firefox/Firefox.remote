@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.Firefox"
 meta.name = "Firefox"
 meta.author = "Unified Intents"

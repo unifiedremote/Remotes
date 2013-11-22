@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.WindowsMediaPlayer"
 meta.name = "Windows Media Player"
 meta.author = "Unified Intents"

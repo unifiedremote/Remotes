@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Core.Keyboard"
 meta.name = "Core.Keyboard"
 meta.author = "Unified Intents"

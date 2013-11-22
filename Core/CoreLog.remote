@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Core.Log"
 meta.name = "Core.Log"
 meta.author = "Unified Intents"

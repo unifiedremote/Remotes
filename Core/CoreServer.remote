@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Core.Server"
 meta.name = "Core.Server"
 meta.author = "Unified Intents"

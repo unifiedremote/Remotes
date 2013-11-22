@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.WindowsMediaCenter"
 meta.name = "Windows Media Center"
 meta.author = "Unified Intents"

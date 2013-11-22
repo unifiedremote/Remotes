@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.Spotify"
 meta.name = "Spotify"
 meta.author = "Unified Intents"

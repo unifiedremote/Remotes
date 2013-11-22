@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Core.FS"
 meta.name = "Core.FS"
 meta.author = "Unified Intents"

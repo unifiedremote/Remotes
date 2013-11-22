@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Core.Task"
 meta.name = "Core.Task"
 meta.author = "Unified Intents"

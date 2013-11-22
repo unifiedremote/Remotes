@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Core.Mouse"
 meta.name = "Core.Mouse"
 meta.author = "Unified Intents"

@@ -1,5 +1,4 @@
-
--- Metadata
+-- metadata
 meta.id = "Unified.Monitor"
 meta.name = "Monitor"
 meta.author = "Unified Intents"
