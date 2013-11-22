@@ -1,20 +1,20 @@
 -- metadata
-meta.id = "Unified.Chrome"
-meta.name = "Chrome"
+meta.id = "Unified.Safari"
+meta.name = "Safari"
 meta.author = "Unified Intents"
-meta.description = "Google Chrome browser remote."
+meta.description = "Safari browser remote."
 meta.platform = "osx"
 
 local keyboard = libs.keyboard;
 
 --@help Focus Chrome application
 actions.switch = function()
-	os.script("tell application \"Google Chrome\" to reopen activate");
+	os.script("tell application \"Safari\" to reopen activate");
 end
 
 --@help Launch Chrome application
 actions.launch = function()
-	os.start("chrome");
+	os.start(“safari”);
 end
 
 --@help Naviagte back
@@ -38,13 +38,13 @@ end
 --@help Go to next tab
 actions.next_tab = function()
 	actions.switch();
-	keyboard.stroke("cmd", "option", "right");
+	keyboard.stroke("ctrl", "tab");
 end
 
 --@help Go to previous tab
 actions.previous_tab = function()
 	actions.switch();
-	keyboard.stroke("cmd", "option", "left");
+	keyboard.stroke("shift", "ctrl", "tab");
 end
 
 --@help Open new tab

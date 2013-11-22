@@ -5,14 +5,16 @@ meta.author = "Unified Intents"
 meta.description = "Mozilla Firefox browser remote."
 meta.platform = "osx"
 
+local keyboard = libs.keyboard;
+
 --@help Focus Firefox application
 actions.switch = function()
-
+	os.script("tell application \"Firefox\" to reopen activate");
 end
 
 --@help Launch Firefox application
 actions.launch = function()
-	task.start("firefox");
+	os.start("firefox");
 end
 
 --@help Naviagte back

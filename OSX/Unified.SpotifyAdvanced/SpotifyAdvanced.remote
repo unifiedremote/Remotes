@@ -2,7 +2,7 @@
 meta.id = "Unified.SpotifyAdvanced"
 meta.name = "Spotify Advanced"
 meta.author = "Unified Intents"
-meta.platform = "OSX"
+meta.platform = "osx"
 
 
 

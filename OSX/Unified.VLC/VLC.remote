@@ -73,15 +73,15 @@ end
 
 --@help Next playlist item
 actions.next = function()
-task.script("tell application \"VLC\" to next");
+	task.script("tell application \"VLC\" to next");
 end
 
 --@help Previous playlist item
 actions.previous = function()
-task.script("tell application \"VLC\" to previous");
+	task.script("tell application \"VLC\" to previous");
 end
 
 --@help Stop playback
 actions.stop = function()
-task.script("tell application \"VLC\" to stop");
+	task.script("tell application \"VLC\" to stop");
 end

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="previous" onVolumeDown="next">
+  <grid>
+    <row>
+      <button icon="previous" onTap="previous" />
+      <button icon="next" onTap="next" />
+    </row>
+    <row>
+      <button icon="stop" onTap="stop" />
+      <button icon="vmute" ontap="volume_mute" />
+    </row>
+    <row>
+      <button icon="pause" ontap="pause" />
+      <button icon="play" onTap="start" />
+    </row>
+  </grid>
+</layout>

@@ -7,9 +7,9 @@
       <button icon="right" onTap="forward" />
     </row>
     <row>
-      <button icon="docleft" onTap="next_tab" />
+      <button icon="docleft" onTap="previous_tab" />
       <button icon="docnew" onTap="new_tab" />
-      <button icon="docright" onTap="previous_tab" />
+      <button icon="docright" onTap="next_tab" />
     </row>
     <row>
       <button icon="web" onTap="address" />

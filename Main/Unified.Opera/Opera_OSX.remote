@@ -11,12 +11,12 @@ local device = libs.device;
 
 --@help Focus Opera application
 actions.switch = function()
-
+	os.script("tell application \"Opera\" to reopen activate");
 end
 
 --@help Launch Opera application
 actions.launch = function()
-	task.start("opera");
+	os.start("opera");
 end
 
 --@help Naviagte back

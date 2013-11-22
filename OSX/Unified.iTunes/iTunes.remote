@@ -5,36 +5,38 @@ meta.author = "Unified Intents"
 meta.description = "iTunes Keyboard Remote"
 meta.platform = "osx"
 
-local keyboard = libs.keyboard;
-
 actions.previous = function ()
-	keyboard.stroke("cmd","right");
+	os.script("tell application \"iTunes\" to previous track");
 end
 
 actions.next = function ()
-	keyboard.stroke("cmd","left");
+	os.script("tell application \"iTunes\" to next track");
 end
 
 actions.rewind = function ()
-	keyboard.stroke("alt","cmd","left");
+	os.script("tell application \"iTunes\" to rewind");
 end
 
-actions.fastforward = function ()
-	keyboard.stroke("alt", "cmd", "right");
+actions.forward = function ()
+	os.script("tell application \"iTunes\" to fast forward");
 end
 
 actions.volume_up = function ()
-	keyboard.stroke("cmd","up");
+	os.script("tell application \"iTunes\" to set sound volume to (sound volume + 10)");
 end
 
 actions.volume_down = function ()
-	keyboard.stroke("cmd","down");
+	os.script("tell application \"iTunes\" to set sound volume to (sound volume - 10)");
 end
 
 actions.fullscreen = function ()
-	keyboard.stroke("ctrl","cmd", "f");
+	os.script("tell application \iTunes\" to set full screen to (not full screen)");
 end
 
-actions.playpause = function ()
-	keyboard.press("space");
+actions.play = function ()
+	os.script("tell application \"iTunes\" to play");
+end
+
+actions.play_pause = function ()
+	os.script("tell application \"iTunes\" to playpause");
 end
