@@ -73,16 +73,14 @@ end
 
 --@help Lower volume
 actions.volume_down = function()
-	local curr = task.script("tell application \"Spotify\" to set out to sound volume");
-	curr = curr - 10;
-	task.script("tell application \"Spotify\" to set sound volume to " .. curr);
+	task.script("tell application \"Spotify\" to set sound volume to (sound volume - 10)");
 end
 
 --@help Raise volume
 actions.volume_up = function()
 	local curr = task.script("tell application \"Spotify\" to set out to sound volume");
 	curr = curr + 10;
-	task.script("tell application \"Spotify\" to set sound volume to " .. curr);
+	task.script("tell application \"Spotify\" to set sound volume to (sound volume - 10)");
 end
 
 --@help Mute volume
