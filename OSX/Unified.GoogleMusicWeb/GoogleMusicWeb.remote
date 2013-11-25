@@ -5,7 +5,17 @@ meta.author = "Unified Intents"
 meta.description = "Google Music (Web) remote."
 
 function js (s)
-	os.script("tell application id \"com.google.chrome\" to (execute javascript \"" .. s .. "\") in active tab of window 1");
+	print(s);
+	out,err = os.script("tell application id \"com.google.chrome\" to (execute javascript \"" .. s .. "\") in active tab of window 1");
+	print(out);
+	print(err);
+end
+
+function esc (s)
+	temp = s;
+	temp = libs.utf8.replace(temp, "\"", "\\\"");
+	print(temp);
+	return temp;
 end
 
 --@help Launch Google Music site
@@ -20,17 +30,17 @@ end
 
 --@help Toggle playback state
 actions.play_pause = function()
-	js("document.evaluate('button[@data-id=\\'play-pause\\']', document, null, 9, null).singleNodeValue.click()");
+	js(esc("document.evaluate(\"//button[@data-id='play-pause']\", document, null, 9, null).singleNodeValue.click()"));
 end
 
 --@help Previous track
 actions.previous = function()
-	
+	js(esc("document.evaluate(\"//button[@data-id='rewind']\", document, null, 9, null).singleNodeValue.click()"));
 end
 
 --@help Next track
 actions.next = function()
-	
+	js(esc("document.evaluate(\"//button[@data-id='forward']\", document, null, 9, null).singleNodeValue.click()"));
 end
 
 --@help Seek forward
@@ -65,12 +75,12 @@ end
 
 --@help Toggle shuffle
 actions.play_shuffle = function()
-	
+	js(esc("document.evaluate(\"//button[@data-id='shuffle']\", document, null, 9, null).singleNodeValue.click()"));
 end
 
 --@help Toggle repeat
 actions.play_repeat = function()
-	
+	js(esc("document.evaluate(\"//button[@data-id='repeat']\", document, null, 9, null).singleNodeValue.click()"));
 end
 
 --@help Select current item
@@ -95,11 +105,11 @@ end
 
 --@help Increase rating
 actions.thumbs_up = function ()
-	
+	js(esc("document.evaluate(\"//li[@title='Thumbs up']\", document, null, 9, null).singleNodeValue.click()"));
 end
 
 --@help Decrease rating
 actions.thumbs_down = function ()
-	
+	js(esc("document.evaluate(\"//li[@title='Thumbs down']\", document, null, 9, null).singleNodeValue.click()"));
 end
 
