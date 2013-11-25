@@ -1,0 +1,105 @@
+-- metadata
+meta.id = "Unified.GoogleMusicWeb"
+meta.name = "Google Music (Web)"
+meta.author = "Unified Intents"
+meta.description = "Google Music (Web) remote."
+
+function js (s)
+	os.script("tell application \"Google Chrome\" to (execute javascript \"" .. s .. "\") in active tab of window 1");
+end
+
+--@help Launch Google Music site
+actions.launch = function()
+	task.open("http://play.google.com/music/");
+end
+
+--@help Close
+actions.close = function()
+	
+end
+
+--@help Toggle playback state
+actions.play_pause = function()
+	js("document.evaluate(\\\"//button[@data-id='play-pause']\\\", document, null, 9, null).singleNodeValue.click()");
+end
+
+--@help Previous track
+actions.previous = function()
+	
+end
+
+--@help Next track
+actions.next = function()
+	
+end
+
+--@help Seek forward
+actions.seek_forward = function()
+	
+end
+
+--@help Seek backward
+actions.seek_backward = function()
+	
+end
+
+--@help Search
+actions.search = function()
+	
+end
+
+--@help Navigate up
+actions.up = function()
+	
+end
+
+--@help Navigate down
+actions.down = function()
+	
+end
+
+--@help Instant
+actions.instant = function()
+	
+end
+
+--@help Toggle shuffle
+actions.play_shuffle = function()
+	
+end
+
+--@help Toggle repeat
+actions.play_repeat = function()
+	
+end
+
+--@help Select current item
+actions.select = function()
+	
+end
+
+--@help Navigate home
+actions.home = function()
+	
+end
+
+--@help Lower volume
+actions.volume_down = function()
+	
+end
+
+--@help Raise volume
+actions.volume_up = function()
+	
+end
+
+--@help Increase rating
+actions.thumbs_up = function ()
+	
+end
+
+--@help Decrease rating
+actions.thumbs_down = function ()
+	
+end
+
