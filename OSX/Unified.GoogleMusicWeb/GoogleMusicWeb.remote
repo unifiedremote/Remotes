@@ -5,7 +5,7 @@ meta.author = "Unified Intents"
 meta.description = "Google Music (Web) remote."
 
 function js (s)
-	os.script("tell application \"Google Chrome\" to (execute javascript \"" .. s .. "\") in active tab of window 1");
+	os.script("tell application id \"com.google.chrome\" to (execute javascript \"" .. s .. "\") in active tab of window 1");
 end
 
 --@help Launch Google Music site
@@ -20,7 +20,7 @@ end
 
 --@help Toggle playback state
 actions.play_pause = function()
-	js("document.evaluate(\\\"//button[@data-id='play-pause']\\\", document, null, 9, null).singleNodeValue.click()");
+	js("document.evaluate('button[@data-id=\'play-pause\']', document, null, 9, null).singleNodeValue.click()");
 end
 
 --@help Previous track
