@@ -1,4 +1,5 @@
-meta.name: Core.Input (Legacy)
-meta.author: Unified
+meta.id: Core.Input
+meta.name: Input (Legacy)
+meta.author: Core
 meta.description: Core.Input
 meta.hidden: true
