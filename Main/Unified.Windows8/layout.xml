@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+    <row>
+      <button icon="zoomin" onTap="zoom_in" />
+      <button icon="up" onTap="up" />
+      <button icon="zoomout" onTap="zoom_out" />
+    </row>
+    <row>
+      <button icon="left" onTap="left" />
+      <button icon="select" onTap="select" />
+      <button icon="right" onTap="right" />
+    </row>
+    <row>
+      <button text="Apps" onTap="apps" />
+      <button icon="down" onTap="down" />
+      <button text="Charms" onTap="charms" />
+    </row>
+    <row>
+      <button text="Snap Left" onTap="snap_left" />
+      <button icon="windows" onTap="windows" />
+      <button text="Snap Right" onTap="snap_right" />
+    </row>
+    <row>
+      <button text="Explorer" onTap="explorer" />
+      <button icon="back" onTap="back" />
+      <button text="Run" onTap="run" />
+    </row>
+  </grid>
+</layout>

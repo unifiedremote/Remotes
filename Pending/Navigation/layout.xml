@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+	<row>
+      <button text="Esc" ontap="nav_escape" />
+	  <button icon="up" ontap="nav_up" />
+	  <button icon="backspace" ontap="nav_back" />
+    </row>
+	<row>
+      <button icon="left" ontap="nav_left" />
+	  <button icon="select" ontap="nav_enter" />
+	  <button icon="right" ontap="nav_right" />
+    </row>
+	<row>
+      <button text="Tab" ontap="nav_tab" />
+	  <button icon="down" ontap="nav_down" />
+	  <button text="Menu" ontap="nav_menu" />
+    </row>
+  </grid>
+</layout>

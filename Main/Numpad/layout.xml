@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+	<row>
+      <button text="+" onTap="num_add" />
+	  <button text="-" onTap="num_subtract" />
+	  <button text="*" onTap="num_multiply" />
+	  <button text="/" onTap="num_divide" />
+    </row>
+    <row>
+      <button text="7" onTap="num_7" />
+	  <button text="8" onTap="num_8" />
+	  <button text="9" onTap="num_9" />
+	  <button text="Sep" onTap="num_sep" />
+    </row>
+    <row>
+      <button text="4" onTap="num_4" />
+	  <button text="5" onTap="num_5" />
+	  <button text="6" onTap="num_6" />
+	  <button text="Dec" onTap="num_dec" />
+    </row>
+    <row>
+      <button text="1" onTap="num_1" />
+	  <button text="2" onTap="num_2" />
+	  <button text="3" onTap="num_3" />
+	  <button icon="backspace" onTap="num_back" />
+    </row>
+	<row>
+      <button text="0" weight="3" onTap="num_0" />
+	  <button text="Enter" onTap="num_enter" />
+    </row>
+  </grid>
+</layout>

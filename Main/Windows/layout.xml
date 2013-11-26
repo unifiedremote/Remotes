@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<layout>
+	<row>
+		<button ontap="explorer" text="Open Explorer"/>
+	</row>
+	<row>
+		<button ontap="run" text="Run"/>
+	</row>
+	<row>
+		<button ontap="minimize_all" text="Minimize All"/>
+	</row>
+	<row>
+		<button ontap="maximize" text="Maximize"/>
+	</row>
+	<row>
+		<button ontap="minimize" text="Minimize"/>
+	</row>
+	<row>
+		<button ontap="maximize_left" text="Max Left"/>
+	</row>
+	<row>
+		<button ontap="maximize_right" text="Max Right"/>
+	</row>
+</layout>

@@ -1,0 +1,5 @@
+meta.name: USB-UIRT
+meta.friendly: USB UIRT
+meta.author: Unified
+meta.description: Helper remote for USB-UIRT.
+meta.platform: windows

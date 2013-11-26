@@ -1,1 +1,0 @@
-Place remotes for OSX ONLY here

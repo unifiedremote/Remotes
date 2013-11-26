@@ -1,0 +1,5 @@
+# Hostname where Boxee is running (default localhost)
+host: localhost
+
+# Port number used by Boxee (default 8800)
+port: 8800
