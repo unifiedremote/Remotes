@@ -1,5 +1,26 @@
+local timer = libs.timer
+local tid = -1;
+local title = "";
 
-local task = libs.task;
+events.focus = function ()
+	tid = timer.interval(actions.update, 500);
+end
+
+events.blur = function ()
+	timer.cancel(tid);
+end
+
+--@help Update status information
+actions.update = function ()
+	local temp = os.script("tell application \"VLC\" to set out to name of current item");
+	if (temp == "") then
+		temp = "[Not Playing]";
+	end
+	if (temp ~= title) then
+		title = temp;
+		layout.info.text = title;
+	end
+end
 
 --@help Launch VLC application
 actions.launch = function()

@@ -1,10 +1,8 @@
-
 local task = libs.task;
 local keyboard = libs.keyboard;
 local timer = libs.timer
 local utf8 = libs.utf8
 local server = libs.server;
-
 local tid = -1;
 local title = "";
 
@@ -28,18 +26,16 @@ end
 --@help Update status information
 actions.update = function ()
 	local hwnd = task.window("vlc.exe");
-	local _title = task.title(hwnd);
-	
-	if (_title == "") then
-		_title = "[Not Playing]";
+	local temp = task.title(hwnd);
+	if (temp == "") then
+		temp = "[Not Playing]";
 	else
-		local pos = utf8.lastindexof(_title, " - ");
-		_title = utf8.sub(_title, 0, pos);
+		local pos = utf8.lastindexof(temp, " - ");
+		temp = utf8.sub(temp, 0, pos);
 	end
-	
-	if (_title ~= title) then
-		title = _title;
-		server.update({ id = "info", text = title });
+	if (temp ~= title) then
+		title = temp;
+		layout.info.text = title;
 	end
 end
 

@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play/pause" onPause="play/pause" color="orange">
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play_pause" onPause="play_pause" color="orange">
   <grid>
+    <row weight="wrap">
+      <label id="info" text="[Not Playing]" textAlign="center" />
+    </row>
     <row>
       <button icon="vdown" onTap="volume_down" />
       <button icon="vmute" onTap="volume_mute" />
@@ -17,7 +20,7 @@
     </row>
     <row>
       <button icon="stop" onTap="stop" />
-      <button icon="play_pause" onTap="play_pause" />
+      <button icon="playpause" onTap="play_pause" />
     </row>
   </grid>
 </layout>
