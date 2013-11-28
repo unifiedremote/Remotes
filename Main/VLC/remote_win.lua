@@ -7,6 +7,7 @@ local tid = -1;
 local title = "";
 
 events.focus = function ()
+	title = "";
 	tid = timer.interval(actions.update, 500);
 end
 
