@@ -51,6 +51,16 @@ actions.play_pause = function()
 	keyboard.stroke("space");
 end
 
+--@help Resume playback
+actions.resume = function ()
+	actions.play_pause();
+end
+
+--@help Pause playback
+actions.pause = function ()
+	actions.play_pause();
+end
+
 --@help Raise volume
 actions.volume_up = function()
 	actions.switch();

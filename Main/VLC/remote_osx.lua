@@ -33,6 +33,26 @@ actions.play_pause = function()
 	os.script("tell application \"VLC\" to play");
 end
 
+--@help Resume playback
+actions.resume = function ()
+	os.script(
+		"tell application \"VLC\"",
+			"if (not playing) then",
+				"play",
+			"end if",
+		"end tell");
+end
+
+--@help Pause playback
+actions.pause = function ()
+	os.script(
+		"tell application \"VLC\"",
+			"if (playing) then",
+				"play",
+			"end if",
+		"end tell");
+end
+
 --@help Raise volume
 actions.volume_up = function()
 	os.script("tell application \"VLC\" to volumeUp");
