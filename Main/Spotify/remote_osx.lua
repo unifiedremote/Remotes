@@ -25,13 +25,13 @@ end
 
 --@help Update status information
 actions.update = function ()
-	local state = task.script("tell application \"Spotify\" to set out to player state");
+	local state = os.script("tell application \"Spotify\" to set out to player state");
 	local _title = "[Not Playing]";
 	local _playing = false;
 	
 	if (state == "playing") then
-		local name = task.script("tell application \"Spotify\" to set out to name of current track");
-		local artist = task.script("tell application \"Spotify\" to set out to artist of current track");
+		local name = os.script("tell application \"Spotify\" to set out to name of current track");
+		local artist = os.script("tell application \"Spotify\" to set out to artist of current track");
 		_title = artist .. " - " .. name;
 		_playing = true;
 	end
@@ -58,36 +58,36 @@ end
 
 --@help Start playback
 actions.play = function()
-	task.script("tell application \"Spotify\" to play");
+	os.script("tell application \"Spotify\" to play");
 end
 
 --@help Pause playback
 actions.pause = function()
-	task.script("tell application \"Spotify\" to pause");
+	os.script("tell application \"Spotify\" to pause");
 end
 
 --@help Toggle playback state
 actions.play_pause = function()
-	task.script("tell application \"Spotify\" to playpause");
+	os.script("tell application \"Spotify\" to playpause");
 end
 
 --@help Lower volume
 actions.volume_down = function()
-	task.script("tell application \"Spotify\" to set sound volume to (sound volume - 10)");
+	os.script("tell application \"Spotify\" to set sound volume to (sound volume - 10)");
 end
 
 --@help Raise volume
 actions.volume_up = function()
-	local curr = task.script("tell application \"Spotify\" to set out to sound volume");
+	local curr = os.script("tell application \"Spotify\" to set out to sound volume");
 	curr = curr + 10;
-	task.script("tell application \"Spotify\" to set sound volume to (sound volume - 10)");
+	os.script("tell application \"Spotify\" to set sound volume to (sound volume - 10)");
 end
 
 --@help Mute volume
 actions.volume_mute = function()
-	local curr = task.script("tell application \"Spotify\" to set out to sound volume");
+	local curr = os.script("tell application \"Spotify\" to set out to sound volume");
 	if (curr == 0) then
-		task.script("tell application \"Spotify\" to set sound volume to " .. volume);
+		os.script("tell application \"Spotify\" to set sound volume to " .. volume);
 	else
 		volume = curr;
 	end
@@ -95,16 +95,16 @@ end
 
 --@help Next track
 actions.next = function()
-	task.script("tell application \"Spotify\" to next track");
+	os.script("tell application \"Spotify\" to next track");
 end
 
 --@help Previous track
 actions.previous = function()
-	task.script("tell application \"Spotify\" to previous track");
+	os.script("tell application \"Spotify\" to previous track");
 end
 
 --@help Stop playback
 actions.stop = function()
-	task.script("tell application \"Spotify\" to pause");
+	os.script("tell application \"Spotify\" to pause");
 end
 

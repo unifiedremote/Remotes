@@ -28,16 +28,16 @@ end
 
 function update()
 		print("update");
-		local id = task.script("tell application \"Spotify\"", "set a to get id in current track", "end tell");
+		local id = os.script("tell application \"Spotify\"", "set a to get id in current track", "end tell");
 		if id ~= playingid then 
 			playingid = id;
-	 		local name = task.script("tell application \"Spotify\"", "set a to get name in current track", "end tell");
+	 		local name = os.script("tell application \"Spotify\"", "set a to get name in current track", "end tell");
 			server.update({ id = "currtitle", text = utf8.replace(name, "\n", "")});
-	 		local duration = task.script("tell application \"Spotify\"", "set a to get duration in current track", "end tell");
+	 		local duration = os.script("tell application \"Spotify\"", "set a to get duration in current track", "end tell");
 
 	 		server.update({ id = "currpos", progressMax= duration });
 
-			local imagepath = task.script("tell application \"Spotify\"", 
+			local imagepath = os.script("tell application \"Spotify\"", 
 												"set a to artwork in current track",
 											"end tell",
 											"tell current application",
@@ -53,25 +53,25 @@ function update()
 											"end tell");
 			server.update({id = "currimg", image = utf8.replace(imagepath, "\n", "") });
 		end
-		local volume = task.script("tell application \"Spotify\"",
+		local volume = os.script("tell application \"Spotify\"",
 										"set out to sound volume",
 									"end tell");
 		server.update({id = "currvol", progress = volume });
-		local pos = task.script("tell application \"Spotify\"",
+		local pos = os.script("tell application \"Spotify\"",
 								"set t to player position",
 								"set out to round(t)",
 							"end tell");
 		server.update({id = "currpos", progress = pos });
-		local repeating = task.script("tell application \"Spotify\"",
+		local repeating = os.script("tell application \"Spotify\"",
 								"set out to repeating",
 							"end tell");
 		server.update({id = "repeat", checked = utf8.replace(repeating, "\n", "") });
-		local shuffling = task.script("tell application \"Spotify\"",
+		local shuffling = os.script("tell application \"Spotify\"",
 								"set out to shuffling",
 							"end tell");
 		server.update({id = "suffle", checked = utf8.replace(shuffling, "\n", "") });
 
-		local playing = task.script("tell application \"Spotify\"",
+		local playing = os.script("tell application \"Spotify\"",
 						"set out to player state",
 					"end tell");
 		if utf8.equals(utf8.replace(playing, "\n", "") , "playing") then
@@ -82,51 +82,51 @@ function update()
 end
 
 actions.poschange = function ( pos )
-	task.script("tell application \"Spotify\"",
+	os.script("tell application \"Spotify\"",
 					"set player position to " .. pos,
 				"end tell")
 end
 
 actions.volchange = function ( vol )
-	task.script("tell application \"Spotify\"",
+	os.script("tell application \"Spotify\"",
 					"set sound volume to " .. vol,
 				"end tell")
 end
 
 actions.next = function ()
-			 task.script("tell application \"Spotify\"",
+			 os.script("tell application \"Spotify\"",
 						"next track",
 					"end tell");
 end
 actions.previous = function ()
-			 task.script("tell application \"Spotify\"",
+			 os.script("tell application \"Spotify\"",
 						"previous track",
 					"end tell");
 end
 
 actions.repeating = function ( checked )
 	if checked then 
-		 task.script("tell application \"Spotify\"",
+		 os.script("tell application \"Spotify\"",
 						"set repeating to true",
 					"end tell");
 	else
-		 task.script("tell application \"Spotify\"",
+		 os.script("tell application \"Spotify\"",
 				"set repeating to false",
 			"end tell");
 	end
 end
 actions.play = function ()
-		 task.script("tell application \"Spotify\"",
+		 os.script("tell application \"Spotify\"",
 						"playpause",
 					"end tell");
 end
 actions.suffle = function ( checked )
 	if checked then 
-		 task.script("tell application \"Spotify\"",
+		 os.script("tell application \"Spotify\"",
 						"set shuffling to true",
 					"end tell");
 	else
-		 task.script("tell application \"Spotify\"",
+		 os.script("tell application \"Spotify\"",
 				"set shuffling to false",
 			"end tell");
 	end
@@ -170,7 +170,7 @@ actions.listHandler = function( index )
 		print(playlist);
 		local a = "play track \"" .. globtracks[index].LongURI .. "\" in context \"" .. playlist .. "\"";
 		print(a);
-		task.script("tell application \"Spotify\"",
+		os.script("tell application \"Spotify\"",
 		a,
 		"end tell");
 	end 
