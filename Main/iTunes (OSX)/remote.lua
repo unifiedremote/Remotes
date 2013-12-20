@@ -24,7 +24,7 @@ actions.volume_down = function ()
 end
 
 actions.fullscreen = function ()
-	os.script("tell application \iTunes\" to set full screen to (not full screen)");
+	os.script("tell application \"iTunes\" to set full screen to (not full screen)");
 end
 
 actions.play = function ()
