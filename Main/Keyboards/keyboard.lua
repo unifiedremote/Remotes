@@ -1,36 +1,13 @@
+print("foo");
 
 local server = libs.server;
 local keyboard = libs.keyboard;
 
--- Layout
-keys = {
-	{ "ESCAPE", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" },
-	{ "TAB", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P" }, 
-	{ "CAPITAL", "A", "S", "D", "F", "G", "H", "J", "K", "L" },
-	{ "SHIFT", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "-","BACK" },
-	{ "FN", "CONTROL", "LWIN", "MENU", "SPACE", "RMENU", "RETURN" } 
-};
-icons = {
-	BACK = "backspace",
-	UP = "up",
-	LEFT = "left",
-	RIGHT = "right",
-};
-texts = {
-	AT = "@",
-	SPACE = " ",
-	CAPITAL = "Caps",
-	CONTROL = "Ctrl",
-	SHIFT = "Shift",
-	LWIN = "Win",
-	MENU = "Alt",
-	RMENU = "AltGr",
-	RETURN = "Enter",
-	DELETE = "Del",
-	ESCAPE = "Esc",
-	TAB = "Tab",
-	FN = "Fn"
-};
+keys = {};
+weights = {};
+texts = {};
+icons = {};
+
 history = {};
 modifiers = {};
 modifying = false;
@@ -100,6 +77,11 @@ events.preload = function ()
 				btn.text = texts[value];
 			else
 				btn.text = value;
+			end
+			if (weights[value] ~= nil) then
+				btn.weight = weights[value];
+			else
+				btn.weight = 1;
 			end
 			
 			table.insert(row, btn);	
