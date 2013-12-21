@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play_pause" onPause="play_pause" color="green">
+  <grid>
+    <row>
+      <button icon="stop" onTap="stop" />
+      <button icon="up" onTap="up" />
+      <button icon="playpause" onTap="play_pause" />
+    </row>
+    <row>
+      <button icon="left" onTap="left" />
+      <button icon="select" onTap="select" />
+      <button icon="right" onTap="right" />
+    </row>
+    <row>
+      <button icon="back" onTap="back" />
+      <button icon="down" onTap="down" />
+      <button icon="home" onTap="home" />
+    </row>
+    <row>
+      <button icon="rwd" onTap="rewind" />
+      <button icon="fullscreen" onTap="fullscreen" />
+      <button icon="ff" onTap="forward" />
+    </row>
+    <row>
+      <button icon="vup" onTap="volume_up" />
+      <button icon="vmute" onTap="volume_mute" />
+      <button icon="vdown" onTap="volume_down" />
+    </row>
+  </grid>
+</layout>

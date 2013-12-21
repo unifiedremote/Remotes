@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause">
+  <grid>
+    <row>
+      <button icon="previous" onTap="previous" />
+      <button icon="next" onTap="next" />
+    </row>
+    <row>
+      <button icon="rwd" onTap="rewind" />
+      <button icon="ff" onTap="forward" />
+    </row>
+    <row>
+      <button icon="home" onTap="home" />
+      <button icon="fullscreen" onTap="fullscreen" />
+    </row>
+    <row>
+      <button icon="stop" onTap="stop" />
+      <button icon="playpause" onTap="play_pause" />
+    </row>
+  </grid>
+</layout>

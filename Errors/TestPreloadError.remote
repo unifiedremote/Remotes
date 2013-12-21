@@ -1,7 +1,0 @@
-
--- Metadata
-meta.id = "Test.PreloadError"
-
-events.preload = function ()
-	local s = nil + nil;
-end

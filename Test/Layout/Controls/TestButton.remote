@@ -1,9 +1,0 @@
-
--- Metadata
-meta.id = "Test.Control.Button"
-meta.name = "Test Control Button"
-meta.author = "Test"
-
-events.action = function (name, extras)
-	print("action: " .. name);
-end

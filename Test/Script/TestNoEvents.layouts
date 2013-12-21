@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout>
-	<row>
-		<button text="action is defined" ontap="defined" />
-	</row>
-	<row>
-		<button text="action not defined" ontap="undefined" />
-	</row>
-</layout>

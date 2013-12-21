@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="scroll_up" onVolumeDown="scroll_down" color="red">
+  <grid>
+    <row>
+      <button icon="left" onTap="back" />
+      <button icon="docclose" onTap="close_tab" />
+      <button icon="right" onTap="forward" />
+    </row>
+    <row>
+      <button icon="docleft" onTap="previous_tab" />
+      <button icon="docnew" onTap="new_tab" />
+      <button icon="docright" onTap="next_tab" />
+    </row>
+    <row>
+      <button icon="web" onTap="address" />
+      <button icon="home" onTap="home" />
+      <button icon="search" onTap="find" />
+    </row>
+    <row>
+      <button icon="zoomout" onTap="zoom_out" />
+      <button icon="zoomnormal" onTap="zoom_normal" />
+      <button icon="zoomin" onTap="zoom_in" />
+    </row>
+    <row>
+      <button icon="down" onTap="scroll_down" />
+      <button icon="refresh" onTap="refresh" />
+      <button icon="up" onTap="scroll_up" />
+    </row>
+  </grid>
+</layout>

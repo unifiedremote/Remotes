@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout color="green" onVolumeUp="volume_up" onVolumeDown="volume_down">
+	<row weight="wrap">
+		<label id="title" text="Connecting..." />
+	</row>
+	<row weight="wrap">
+		<slider id="vol" text="Volume" progressmax="100" progress="0" onchange="volume" />
+	</row>
+	<row weight="wrap">
+		<slider id="pos" text="Position" progressmax="100" progress="0" onchange="position" />
+	</row>
+	<row>
+		<button icon="stop" ontap="stop" />
+		<button icon="up" ontap="up" />
+		<button id="play" icon="playpause" ontap="play_pause" />
+	</row>
+	<row>
+		<button icon="left" ontap="left" />
+		<button icon="select" ontap="select" />
+		<button icon="right" ontap="right" />
+	</row>
+	<row>
+		<button icon="previous" ontap="previous" />
+		<button icon="down" ontap="down" />
+		<button icon="next" ontap="next" />
+	</row>
+	<row>
+		<button icon="rwd" ontap="rewind" />
+		<button icon="back" ontap="back" />
+		<button icon="ff" ontap="forward" />
+	</row>
+</layout>
