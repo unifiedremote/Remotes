@@ -1,5 +1,3 @@
-print("foo");
-
 local server = libs.server;
 local keyboard = libs.keyboard;
 
