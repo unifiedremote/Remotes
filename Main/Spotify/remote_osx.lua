@@ -16,6 +16,8 @@ local title = "";
 local volume = 0;
 
 events.focus = function ()
+	playing = false;
+	title = "";
 	tid = timer.interval(actions.update, 500);
 end
 
@@ -28,7 +30,7 @@ actions.update = function ()
 	local state = os.script("tell application \"Spotify\" to set out to player state");
 	local _title = "[Not Playing]";
 	local _playing = false;
-	
+
 	if (state == "playing") then
 		local name = os.script("tell application \"Spotify\" to set out to name of current track");
 		local artist = os.script("tell application \"Spotify\" to set out to artist of current track");
@@ -59,16 +61,19 @@ end
 --@help Start playback
 actions.play = function()
 	os.script("tell application \"Spotify\" to play");
+	update();
 end
 
 --@help Pause playback
 actions.pause = function()
 	os.script("tell application \"Spotify\" to pause");
+	update();
 end
 
 --@help Toggle playback state
 actions.play_pause = function()
 	os.script("tell application \"Spotify\" to playpause");
+	update();
 end
 
 --@help Lower volume
@@ -96,15 +101,18 @@ end
 --@help Next track
 actions.next = function()
 	os.script("tell application \"Spotify\" to next track");
+	update();
 end
 
 --@help Previous track
 actions.previous = function()
 	os.script("tell application \"Spotify\" to previous track");
+	update();
 end
 
 --@help Stop playback
 actions.stop = function()
 	os.script("tell application \"Spotify\" to pause");
+	update();
 end
 
