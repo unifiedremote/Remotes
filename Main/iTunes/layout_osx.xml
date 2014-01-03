@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout scroll="none">
 	<row>
-		<button icon=“previous” ontap="previous"/>
+		<button icon="previous" ontap="previous"/>
 		<button icon="next" ontap="next"/>		
 	</row>
 	<row>
 		<button icon="rwd" ontap="rewind"/>
-		<button icon="ff" ontap=“forward”/>
+		<button icon="ff" ontap="forward"/>
 	</row>
 	<row>
 		<button icon="vdown" ontap="volume_down"/>

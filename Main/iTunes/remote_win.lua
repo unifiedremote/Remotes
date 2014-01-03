@@ -63,8 +63,11 @@ function update ()
 		local count = obj.LibrarySource.Playlists.Count;
 		for i = 1, count do
 			local playlist = obj.LibrarySource.Playlists(i);
-			local curr = playlist.playlistID == obj.CurrentPlaylist.playlistID;
-			table.insert(playlists, { type = "item", text = playlist.Name .. "\nTracks: " .. playlist.Tracks.Count });
+			local curr = false;
+			if (obj.CurrentPlaylist ~= nil) then
+				curr = playlist.playlistID == obj.CurrentPlaylist.playlistID;
+			end
+			table.insert(playlists, { type = "item", checked = curr, text = playlist.Name .. "\nTracks: " .. playlist.Tracks.Count });
 		end
 		
 		-- Get tracks

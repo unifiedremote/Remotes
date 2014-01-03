@@ -1,4 +1,4 @@
 meta.name: iTunes
 meta.author: Unified
 meta.description: iTunes Remote.
-meta.platform: windows
+meta.platform: windows osx
