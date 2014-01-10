@@ -1,3 +1,11 @@
+-- TODO:
+-- * Add support for send text
+-- * Add support for library browsing (http://.../library)
+-- * Add support for auto server finding (waiting for server function)
+
+-- REFERENCE:
+-- * I couldn't find any official documentation...
+-- * https://forums.plex.tv/index.php/topic/15850-plex-9-remote-api/
 
 events.create = function ()
 	
