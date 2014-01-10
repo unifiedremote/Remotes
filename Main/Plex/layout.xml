@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout color="yellow">
+	<tabs>
+		<tab text="Main">
+			<!-- The API call does not seem to work... -->
+			<!--
+			<row weight="wrap">
+				<text hint="Send text to Plex..." onchange="text_changed" />
+				<button weight="wrap" text=">" ontap="send_text" />
+			</row>
+			-->
+			<row>
+				<button text="PgUp" ontap="page_up" />
+				<button color="grey" icon="up" ontap="up" />
+				<button text="PgDown" ontap="page_down" />
+			</row>
+			<row>
+				<button color="grey" icon="left" ontap="left" />
+				<button color="grey" icon="select" ontap="select" />
+				<button color="grey" icon="right" ontap="right" />
+			</row>
+			<row>
+				<button icon="previous" ontap="previous" />
+				<button color="grey" icon="down" ontap="down" />
+				<button icon="next" ontap="next" />
+			</row>
+			<row>
+				<button text="Menu" ontap="menu" />
+				<button icon="back" ontap="back" />
+				<button text="OSD" ontap="osd" />
+			</row>
+		</tab>
+		<tab text="Play">
+			<row>
+				<button icon="rwd" ontap="rewind" />
+				<button icon="ff" ontap="forward" />
+			</row>
+			<row>
+				<button icon="previous" ontap="skip_prev" />
+				<button icon="next" ontap="skip_next" />
+			</row>
+			<row>
+				<button icon="stop" ontap="stop" />
+				<button icon="playpause" ontap="play_pause" />
+			</row>
+		</tab>
+		<tab text="Players">
+			<list id="players" ontap="select_player">
+				<item>Loading...</item>
+			</list>
+		</tab>
+	</tabs>
+</layout>
