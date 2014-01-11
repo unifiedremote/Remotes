@@ -17,9 +17,7 @@ end
 
 local server = "";
 local player = "";
-local playersNames = {};
-local playersHosts = {};
-local playersList = {};
+local players = {};
 
 function update_server()
 	server = properties.server;
@@ -49,27 +47,25 @@ function update_players()
 	
 	player = "localhost";
 	players = {};
-	playersList = {};
 	
+	local playersList = {};
 	local savedPlayer = properties.player;
-	local i = 1;
+	local i = 0;
+	
 	for k,v in pairs(MediaContainer.children) do
 		if (v.name == "Server") then
-			local playerName = v.attributes.name;
-			local playerHost = v.attributes.host;
-			if (savedPlayer == "" and i == 1) then
-				player = playerHost;
+			local name = v.attributes.name;
+			local host = v.attributes.host;
+			if (savedPlayer == "" and i == 0) then
+				player = host;
+			elseif (savedPlayer == host) then
+				player = host;
 			end
-			if (playerHost == savedPlayer) then
-				player = savedPlayer;
-			end
-			i = i + 1;
-			
-			table.insert(playersNames, playerName);
-			table.insert(playersHosts, playerHost);
-			local checked = (playerHost == player);
-			local text = playerName .. "\n" .. playerHost;
+			players[i] = { name = name, host = host };
+			local checked = (host == player);
+			local text = name .. "\n" .. host;
 			table.insert(playersList, { type = "item", checked = checked, text = text });
+			i = i + 1;
 		end
 	end
 	
@@ -110,8 +106,8 @@ actions.send_text = function ()
 end
 
 actions.select_player = function (i)
-	local newPlayer = playersHosts[i + 1];
-	properties.player = newPlayer;
+	print("Selected Player: " .. players[i].host);
+	properties.player = players[i].host;
 	update_players();
 end
 
