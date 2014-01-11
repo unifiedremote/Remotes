@@ -17,12 +17,12 @@ end
 
 local server = "";
 local player = "";
-local players = {};
+local playersNames = {};
+local playersHosts = {};
 local playersList = {};
 
 function update_server()
 	server = properties.server;
-	print(server);
 	if (server == "") then
 		-- Try to find a server...
 		libs.device.toast("Looking for Plex servers...");
@@ -40,6 +40,7 @@ function update_server()
 	else
 		libs.device.toast("Saved server: " .. server);
 	end
+	print("Plex Server: " .. server);
 end
 
 function update_players()
@@ -51,26 +52,29 @@ function update_players()
 	playersList = {};
 	
 	local savedPlayer = properties.player;
-	for i,v in ipairs(MediaContainer.children) do
+	print(#MediaContainer.children);
+	for k,v in pairs(MediaContainer.children) do
 		if (v.name == "Server") then
 			local playerName = v.attributes.name;
 			local playerHost = v.attributes.host;
 			
-			if (i == 1) then
-				player = playerName;
+			if (k == 1) then
+				player = playerHost;
 			end
-			if (playerName == savedPlayer) then
+			if (playerHost == savedPlayer) then
 				player = savedPlayer;
 			end
 			
-			table.insert(players, playerName);
-			local checked = (playerName == player);
+			table.insert(playersNames, playerName);
+			table.insert(playersHosts, playerHost);
+			local checked = (playerHost == player);
 			local text = playerName .. "\n" .. playerHost;
 			table.insert(playersList, { type = "item", checked = checked, text = text });
 		end
 	end
 	
 	libs.server.update({ id = "players", children = playersList });
+	print("Plex Player: " .. player);
 end
 
 function url(controller, action)
@@ -83,6 +87,7 @@ end
 
 function send(controller, action)
 	local _url = url(controller, action);
+	print(_url);
 	libs.http.get(_url);
 end
 
@@ -105,7 +110,7 @@ actions.send_text = function ()
 end
 
 actions.select_player = function (i)
-	properties.player = players[i + 1];
+	properties.player = playersHosts[i + 1];
 	update_players();
 end
 
