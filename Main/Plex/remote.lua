@@ -20,7 +20,7 @@ local player = "";
 local players = {};
 
 function update_server()
-	server = properties.server;
+	server = settings.server;
 	if (server == "") then
 		-- Try to find a server...
 		libs.device.toast("Looking for Plex servers...");
@@ -32,7 +32,7 @@ function update_server()
 			libs.device.toast("Using localhost for now...");
 		else
 			server = res[1];
-			properties.server = server;
+			settings.server = server;
 			libs.device.toast("Found server: " .. server);
 		end
 	else
@@ -49,7 +49,7 @@ function update_players()
 	players = {};
 	
 	local playersList = {};
-	local savedPlayer = properties.player;
+	local savedPlayer = settings.player;
 	local i = 0;
 	
 	for k,v in pairs(MediaContainer.children) do
@@ -107,7 +107,7 @@ end
 
 actions.select_player = function (i)
 	print("Selected Player: " .. players[i].host);
-	properties.player = players[i].host;
+	settings.player = players[i].host;
 	update_players();
 end
 
