@@ -1,7 +1,6 @@
 -- TODO:
 -- * Add support for send text
 -- * Add support for library browsing (http://.../library)
--- * Add support for auto server finding (waiting for server function)
 
 -- REFERENCE:
 -- * I couldn't find any official documentation...
@@ -25,9 +24,21 @@ function update_server()
 	server = properties.server;
 	print(server);
 	if (server == "") then
-		libs.device.toast("You should specify a server IP/hostname in the settings file.");
-		libs.device.toast("Using localhost for now...");
-		server = "localhost";
+		-- Try to find a server...
+		libs.device.toast("Looking for Plex servers...");
+		
+		local res = libs.http.discover({ port = 32400 });
+		if (#res == 0) then
+			server = "localhost";
+			libs.device.toast("No servers find...");
+			libs.device.toast("Using localhost for now...");
+		else
+			server = res[1];
+			properties.server = server;
+			libs.device.toast("Found server: " .. server);
+		end
+	else
+		libs.device.toast("Saved server: " .. server);
 	end
 end
 
