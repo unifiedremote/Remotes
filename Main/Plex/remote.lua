@@ -52,18 +52,18 @@ function update_players()
 	playersList = {};
 	
 	local savedPlayer = properties.player;
-	print(#MediaContainer.children);
+	local i = 1;
 	for k,v in pairs(MediaContainer.children) do
 		if (v.name == "Server") then
 			local playerName = v.attributes.name;
 			local playerHost = v.attributes.host;
-			
-			if (k == 1) then
+			if (savedPlayer == "" and i == 1) then
 				player = playerHost;
 			end
 			if (playerHost == savedPlayer) then
 				player = savedPlayer;
 			end
+			i = i + 1;
 			
 			table.insert(playersNames, playerName);
 			table.insert(playersHosts, playerHost);
@@ -110,7 +110,8 @@ actions.send_text = function ()
 end
 
 actions.select_player = function (i)
-	properties.player = playersHosts[i + 1];
+	local newPlayer = playersHosts[i + 1];
+	properties.player = newPlayer;
 	update_players();
 end
 
