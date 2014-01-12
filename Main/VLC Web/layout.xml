@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onlaunch="launch" color="orange">
+	<tabs>
+		<tab text="Playing">
+			<row weight="wrap">
+				<label id="title" text="Connecting..." />
+			</row>
+			<row>
+				<label id="info" text="" />
+			</row>
+			<row weight="wrap">
+				<slider id="pos" text="Position" onchange="position_change" onup="position_stop" />
+			</row>
+		</tab>
+		<tab text="Playback">
+			<row>
+				<button icon="vdown" ontap="volume_down" />
+				<button icon="vmute" ontap="volume_mute" />
+				<button icon="vup" ontap="volume_up" />
+			</row>
+			<row>
+				<button icon="rwd" ontap="jump_back" />
+				<button icon="repeat" ontap="loop_repeat" />
+				<button icon="ff" ontap="jump_forward" />
+			</row>
+			<row>
+				<button icon="previous" ontap="previous" />
+				<button icon="shuffle" ontap="shuffle" />
+				<button icon="next" ontap="next" />
+			</row>
+			<row>
+				<button icon="stop" ontap="stop" />
+				<button icon="fullscreen" ontap="fullscreen" />
+				<button icon="playpause" ontap="play_pause" />
+			</row>
+		</tab>
+		<tab text="Library">
+			<row>
+				<list id="list" ontap="library_select">
+					<item text="Loading..." />
+				</list>
+			</row>
+			<row weight="wrap">
+				<button icon="back" ontap="library_back" />
+				<button icon="refresh" ontap="library_refresh" />
+			</row>
+		</tab>
+	</tabs>
+</layout>
