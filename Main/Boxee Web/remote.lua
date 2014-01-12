@@ -84,7 +84,7 @@ end
 function info ()
 	server.update({
 		id = "title",
-		text = "[Boxee not running]"
+		text = "[Not Connected]"
 	},{
 		type = "dialog",
 		title = "Boxee Connection",
