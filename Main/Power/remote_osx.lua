@@ -1,12 +1,6 @@
--- metadata
-meta.id = "Unified.Power"
-meta.name = "Power"
-meta.author = "Unified Intents"
-meta.description = "Remote system power control."
-meta.platform = "osx"
 
 --@help Force system restart
-actions.restart = function (sec)
+actions.restart = function ()
 	os.script("tell application \"System Events\" to restart");
 end
 
