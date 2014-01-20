@@ -55,3 +55,13 @@ end
 actions.hscroll = function (amount)
 	mouse.hscroll(amount);
 end
+
+--@help Perform zoom in
+actions.zoom_in = function ()
+	mouse.zoomin();
+end
+
+--@help Perform zoom out
+actions.zoom_out = function ()
+	mouse.zoomout();
+end

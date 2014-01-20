@@ -1,4 +1,3 @@
-
 local keyboard = libs.keyboard;
 local mouse = libs.mouse;
 
@@ -70,4 +69,14 @@ end
 --@help Perform horizontal mouse scroll
 actions.Horz = function(amount)
 	mouse.hscroll(amount);
+end
+
+--@help Perform zoom in
+actions.ZoomIn = function ()
+	mouse.zoomin();
+end
+
+--@help Perform zoom out
+actions.ZoomOut = function ()
+	mouse.zoomout();
 end
