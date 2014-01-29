@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label id="position" text="" />
+	</row>
+	<row>
+		<label id="window" text="" />
+	</row>
+	<row>
+		<label id="class" text="" />
+	</row>
+	<row>
+		<label id="text" text="" />
+	</row>
+</layout>
