@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <row>
+		<button icon="zoomout" ontap="zoom_out" />
+		<button icon="up" ontap="pan_up" />
+		<button icon="zoomin" ontap="zoom_in" />
+    </row>
+	<row>
+		<button icon="left" ontap="pan_left" />
+		<button icon="windows" ontap="windows" />
+		<button icon="right" ontap="pan_right" />
+	</row>
+	<row>
+		<button text="Invert" ontap="invert" />
+		<button icon="down" ontap="pan_down" />
+		<button text="Exit" ontap="exit" />
+	</row>
+	<row>
+		<button text="Full" ontap="full_mode" />
+		<button text="Docked" ontap="docked_mode" />
+		<button text="Lens" ontap="lens_mode" />
+	</row>
+</layout>
