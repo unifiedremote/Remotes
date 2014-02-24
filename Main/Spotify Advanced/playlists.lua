@@ -51,17 +51,18 @@ end
 function set_state (i)
 	local username = settings.username;
 	local playlist = settings.playlist;
-	local track = settings.track;
-	
+	local track = "";
+
 	if (username == "") then
 		username = Items[i+1].username;
 		print("current user set to: " .. username);
 	elseif (playlist == "") then
-		print(Items[i+1].playlist.URI);
 		playlist = Items[i+1].playlist.URI;
 		print("current playlist set to: " .. playlist);
 	else
+		track = Items[i+1].track.Name;
 		print("current track set to: " .. track);
+		play(Items[i+1].track.LongURI, playlist);
 	end
 	
 	settings.username = username;

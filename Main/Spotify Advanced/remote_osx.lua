@@ -1,4 +1,5 @@
 local server = libs.server;
+local utf8 = libs.utf8;
 
 include("common.lua")
 include("playlists.lua")
@@ -8,15 +9,20 @@ PlayingID = "";
 function update()
 	local volume = os.script("tell application \"Spotify\" to set out to sound volume") + 0;
 	local pos = os.script("tell application \"Spotify\" to set out to player position") + 0;
+	pos = math.ceil(pos);
+
 	local repeating = os.script("tell application \"Spotify\" to set out to repeating");
 	local shuffling = os.script("tell application \"Spotify\" to set out to shuffling");
 	local playing = os.script("tell application \"Spotify\" to set out to player state");
 	local id = os.script("tell application \"Spotify\" to set out to id of current track");
-	
-	if id ~= playingid then
-		playingid = id;
-		local name = os.script("tell application \"Spotify\"", "set out to name of current track");
-		local duration = os.script("tell application \"Spotify\"", "set out to duration of current track");
+
+	local duration = os.script("tell application \"Spotify\" to set out to duration of current track") + 0;
+	duration = math.ceil(duration);
+
+	local name = os.script("tell application \"Spotify\" to set out to name of current track");
+
+	if id ~= PlayingID then
+		PlayingID = id;
 		local imagepath = os.script(
 			"tell application \"Spotify\"", 
 				"set a to artwork in current track",
@@ -33,21 +39,29 @@ function update()
 				"set out to POSIX path of temp",
 			"end tell");
 			
-		server.update({ id = "currtitle", text = name });
-		server.update({ id = "currpos", progressMax = duration });
 		server.update({id = "currimg", image = imagepath });
 	end
 	
 	local icon = "play";
-	if utf8.iequals(playing, "playing") then
+	if (playing == "playing") then
 		icon = "pause";
 	end
 	
-	server.update({id = "currvol", progress = volume });
-	server.update({id = "currpos", progress = pos });
-	server.update({id = "repeat", checked = repeating });
-	server.update({id = "suffle", checked = repeating });
-	server.update({id = "play", icon = "pause"});
+	server.update(
+		{ id = "currtitle", text = name },
+		{ id = "currvol", progress = volume },
+		{ id = "currpos", progress = pos, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(duration) },
+		{ id = "currpos", progressMax = duration },
+		{ id = "repeat", checked = repeating },
+		{ id = "suffle", checked = shuffling },
+		{ id = "play", icon = icon }
+	);
+end
+
+function play(track, context)
+	print("play " .. track .. " " .. context);
+	out,err = os.script("tell application \"Spotify\" to play track \"" .. track .. "\" in context \"" .. context .. "\"");
+	print(out .. " " .. err);
 end
 
 actions.poschange = function (pos)
@@ -60,10 +74,12 @@ end
 
 actions.next = function ()
 	os.script("tell application \"Spotify\" to next track");
+	actions.update();
 end
 
 actions.previous = function ()
 	os.script("tell application \"Spotify\" to previous track");
+	actions.update();
 end
 
 actions.repeating = function (checked)
@@ -76,6 +92,7 @@ end
 
 actions.play = function ()
 	os.script("tell application \"Spotify\" to playpause");
+	actions.update();
 end
 
 actions.suffle = function (checked)
