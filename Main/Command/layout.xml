@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="scroll_up" onVolumeDown="scroll_down">
+  <grid>
+    <row>
+		<text id="output" multiline="true" />
+    </row>
+    <row weight="wrap">
+		<text id="command" onchange="update" />
+		<button weight="wrap" text="&gt;" ontap="execute" />
+    </row>
+  </grid>
+</layout>
