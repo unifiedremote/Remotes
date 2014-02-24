@@ -3,6 +3,7 @@ local timer = libs.timer;
 local tid = -1;
 
 events.focus = function ()
+	focus();
 	tid = timer.interval(actions.update, 1000);
 	update_playlists();
 end

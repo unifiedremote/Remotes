@@ -3,7 +3,7 @@
 	<tabs>
 		<tab text="Player"> 
 			<row weight="wrap">
-				<label id="currtitle" text="[No Title]" />
+				<label id="currtitle" text="[Not Playing]" />
 			</row>
 			<row>
 				<image id="currimg" />
