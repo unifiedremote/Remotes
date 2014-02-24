@@ -9,6 +9,7 @@ events.blur = function ()
 end
 
 actions.update = function ()
+	update();
 	local items = get_state();
 	server.update({ id = "playlists", children = items });
 end
