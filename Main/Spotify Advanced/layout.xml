@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<tabs>
+		<tab text="Player"> 
+			<row weight="wrap">
+				<label id="currtitle" text="[No Title]" />
+			</row>
+			<row>
+				<image id="currimg" />
+			</row>
+			<row weight="wrap">
+				<slider id="currvol" text="Volume" progressmax="100" onchange="volchange" />
+			</row>
+			<row weight="wrap">
+				<slider id="currpos" text="Position" onchange="poschange" />
+			</row>
+			<row weight="wrap">
+				<toggle id="suffle" icon="shuffle" onchange="suffle" />
+				<button id="play" icon="play" ontap="play" />
+				<toggle id="repeat" icon="repeat" onchange="repeating" />
+			</row>
+		</tab>
+		<tab text="Playlists">
+			<row>
+				<list id="playlists" ontap="playlists" />
+			</row>
+			<row weight="wrap">
+				<button icon="previous" ontap="previous" />
+				<button icon="back" ontap="back" />
+				<button icon="next" ontap="next" />
+			</row>
+		</tab>
+	</tabs>	
+</layout>
