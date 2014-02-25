@@ -1,5 +1,8 @@
 local server = libs.server;
 local timer = libs.timer;
+local http = libs.http;
+local data = libs.data;
+
 local tid = -1;
 
 playing = false;
@@ -63,3 +66,20 @@ function update_status (str)
 	table.insert(items, { type = "item", text = str });
 	server.update({ id = "playlists", children = items });
 end
+
+-------------------------------------------------------------------------------------------
+-- Spotify Cover Art Grabber
+-------------------------------------------------------------------------------------------
+function get_cover_art_url (uri)
+	local url = "https://embed.spotify.com/oembed/?url=" .. uri;
+	local raw = http.get(url);
+	local json = data.fromjson(raw);
+	return json.thumbnail_url;
+end
+
+function get_cover_art (uri)
+	local url = get_cover_art_url(uri);
+	local raw = http.get(url);
+	return raw;
+end
+

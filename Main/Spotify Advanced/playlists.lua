@@ -81,7 +81,7 @@ end
 -- Go back to the previous "state".
 -------------------------------------------------------------------------------------------
 playlists.back = function ()
-	status("Loading...");
+	update_status("Loading...");
 	
 	local username = settings.username;
 	local playlist = settings.playlist;
@@ -169,7 +169,7 @@ playlists.get_playlists = function (user)
 			local short = split[#split];
 			local name = settings["playlists.names." .. short];
 			if (name == "") then
-				status("Syncing " .. k .. " of " .. count .. "...");
+				update_status("Syncing " .. k .. " of " .. count .. "...");
 				name = playlists.get_playlist_name(uri_user, short);
 			end
 			if (name ~= nil) then

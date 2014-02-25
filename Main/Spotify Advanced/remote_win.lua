@@ -208,23 +208,6 @@ function get_oauth_key ()
 	return nil;
 end
 
--------------------------------------------------------------------------------------------
--- Spotify Cover Art Grabber
--------------------------------------------------------------------------------------------
-function get_cover_art_url (uri)
-	local url = "https://embed.spotify.com/oembed/?url=" .. uri;
-	local raw = http.get(url);
-	local json = data.fromjson(raw);
-	return json.thumbnail_url;
-end
-
-function get_cover_art (uri)
-	local url = get_cover_art_url(uri);
-	local raw = http.get(url);
-	return raw;
-end
-
-
 
 
 

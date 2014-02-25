@@ -15,7 +15,7 @@ function update()
 
 	local repeating = os.script("tell application \"Spotify\" to set out to repeating");
 	local shuffling = os.script("tell application \"Spotify\" to set out to shuffling");
-	playing = os.script("tell application \"Spotify\" to set out to player state") == "true";
+	playing = os.script("tell application \"Spotify\" to set out to player state") == "playing";
 	local id = os.script("tell application \"Spotify\" to set out to id of current track");
 
 	local duration = os.script("tell application \"Spotify\" to set out to duration of current track") + 0;
@@ -25,27 +25,28 @@ function update()
 
 	if id ~= playing_uri then
 		playing_uri = id;
-		local imagepath = os.script(
-			"tell application \"Spotify\"", 
-				"set a to artwork in current track",
-			"end tell",
-			"tell current application",
-				"set temp to (path to temporary items from user domain as text) & \"img.png\"",
-				"set fileRef to (open for access temp with write permission)",
-					"write a to fileRef",
-				"close access fileRef",
-				"tell application \"Image Events\"",
-					"set theImage to open temp",
-					"save theImage as PNG with replacing",
-				"end tell",
-				"set out to POSIX path of temp",
-			"end tell");
+		-- local imagepath = os.script(
+		-- 	"tell application \"Spotify\"", 
+		-- 		"set a to artwork in current track",
+		-- 	"end tell",
+		-- 	"tell current application",
+		-- 		"set temp to (path to temporary items from user domain as text) & \"img.png\"",
+		-- 		"set fileRef to (open for access temp with write permission)",
+		-- 			"write a to fileRef",
+		-- 		"close access fileRef",
+		-- 		"tell application \"Image Events\"",
+		-- 			"set theImage to open temp",
+		-- 			"save theImage as PNG with replacing",
+		-- 		"end tell",
+		-- 		"set out to POSIX path of temp",
+		-- 	"end tell");
 			
-		server.update({id = "currimg", image = imagepath });
+		server.update({id = "currimg", image = get_cover_art(id) });
+		update_playlists();
 	end
 	
 	local icon = "play";
-	if (playing == "playing") then
+	if (playing) then
 		icon = "pause";
 	end
 	
@@ -61,9 +62,7 @@ function update()
 end
 
 function play(track, context)
-	print("play " .. track .. " " .. context);
-	out,err = os.script("tell application \"Spotify\" to play track \"" .. track .. "\" in context \"" .. context .. "\"");
-	print(out .. " " .. err);
+	os.script("tell application \"Spotify\" to play track \"" .. track .. "\" in context \"" .. context .. "\"");
 end
 
 actions.poschange = function (pos)
@@ -93,6 +92,14 @@ actions.repeating = function (checked)
 end
 
 actions.play = function ()
+
+end
+
+actions.pause = function ()
+
+end
+
+actions.play_pause = function ()
 	os.script("tell application \"Spotify\" to playpause");
 	actions.update();
 end
