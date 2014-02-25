@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout color="green">
 	<tabs>
 		<tab text="Player"> 
 			<row weight="wrap">
@@ -16,13 +16,15 @@
 			</row>
 			<row weight="wrap">
 				<toggle id="suffle" icon="shuffle" onchange="suffle" />
-				<button id="play" icon="play" ontap="play" />
+				<button id="play" icon="play" ontap="play_pause" />
 				<toggle id="repeat" icon="repeat" onchange="repeating" />
 			</row>
 		</tab>
 		<tab text="Playlists">
 			<row>
-				<list id="playlists" ontap="playlists" />
+				<list id="playlists" ontap="playlists">
+					<item>Loading...</item>
+				</list>
 			</row>
 			<row weight="wrap">
 				<button icon="previous" ontap="previous" />

@@ -4,7 +4,9 @@ local utf8 = libs.utf8;
 include("common.lua")
 include("playlists.lua")
 
-PlayingID = "";
+function focus()
+	
+end
 
 function update()
 	local volume = os.script("tell application \"Spotify\" to set out to sound volume") + 0;
@@ -13,7 +15,7 @@ function update()
 
 	local repeating = os.script("tell application \"Spotify\" to set out to repeating");
 	local shuffling = os.script("tell application \"Spotify\" to set out to shuffling");
-	local playing = os.script("tell application \"Spotify\" to set out to player state");
+	playing = os.script("tell application \"Spotify\" to set out to player state") == "true";
 	local id = os.script("tell application \"Spotify\" to set out to id of current track");
 
 	local duration = os.script("tell application \"Spotify\" to set out to duration of current track") + 0;
@@ -21,8 +23,8 @@ function update()
 
 	local name = os.script("tell application \"Spotify\" to set out to name of current track");
 
-	if id ~= PlayingID then
-		PlayingID = id;
+	if id ~= playing_uri then
+		playing_uri = id;
 		local imagepath = os.script(
 			"tell application \"Spotify\"", 
 				"set a to artwork in current track",

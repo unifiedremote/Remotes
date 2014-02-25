@@ -3,73 +3,84 @@ local http = libs.http;
 local data = libs.data;
 local fs = libs.fs;
 
-Playlists = nil;
-Items = {};
+playlists = {};
+playlists.list = nil;
+playlists.state = {};
 
 -------------------------------------------------------------------------------------------
--- Returns the current playlists state
+-- Returns the current playlists state.
 -------------------------------------------------------------------------------------------
-function get_state ()
-	status("Loading...");
+playlists.get_state = function ()
+	update_status("Loading...");
 	
 	local username = settings.username;
 	local playlist = settings.playlist;
 	
-	Items = {};
+	playlists.state = {};
 	if (username == "") then
-		local usernames = get_usernames();
-		if (#usernames == 0) then
-			table.insert(Items, { type = "item", text = "No usernames found" });
+		local items = playlists.get_usernames();
+		if (#items == 0) then
+			table.insert(playlists.state, { type = "item", text = "No usernames found" });
 		else
-			for k,v in pairs(usernames) do
-				table.insert(Items, { type = "item", text = v, username = v });
+			for k,v in pairs(items) do
+				table.insert(playlists.state, { type = "item", text = v, username = v });
 			end
 		end
 	elseif (playlist == "") then
-		local playlists = get_playlists(username);
-		if (#playlists == 0) then
-			table.insert(Items, { type = "item", text = "No playlists found" });
+		local items = playlists.get_playlists(username);
+		if (#items == 0) then
+			table.insert(playlists.state, { type = "item", text = "No playlists found" });
 		else
-			for k,v in pairs(playlists) do
-				table.insert(Items, { type = "item", text = v.Name, playlist = v });
+			for k,v in pairs(items) do
+				table.insert(playlists.state, { type = "item", text = v.Name, playlist = v });
 			end
 		end
 	else
-		local tracks = get_tracks(playlist);
-		if (#tracks == 0) then
-			table.insert(Items, { type = "item", text = "No tracks found" });
+		local items = playlists.get_tracks(playlist);
+		if (#items == 0) then
+			table.insert(playlists.state, { type = "item", text = "No tracks found" });
 		else
-			for k,v in pairs(tracks) do
-				table.insert(Items, { type = "item", text = v.Name .. "\n" .. v.Artist, track = v });
+			for k,v in pairs(items) do
+				table.insert(playlists.state, { type = "item", checked = checked, text = v.Name .. "\n" .. v.Artist, track = v });
 			end
 		end
 	end
 	
-	return Items;
+	return playlists.state;
 end
 
-function set_state (i)
+-------------------------------------------------------------------------------------------
+-- Go the next state for the specified item index.
+-------------------------------------------------------------------------------------------
+playlists.set_state = function (i)
 	local username = settings.username;
 	local playlist = settings.playlist;
 	local track = "";
-
+	local uri = "";
+	local update = false;
+	
 	if (username == "") then
-		username = Items[i+1].username;
-		print("current user set to: " .. username);
+		username = playlists.state[i+1].username;
+		update = true;
 	elseif (playlist == "") then
-		playlist = Items[i+1].playlist.URI;
-		print("current playlist set to: " .. playlist);
+		playlist = playlists.state[i+1].playlist.URI;
+		update = true;
 	else
-		track = Items[i+1].track.Name;
-		print("current track set to: " .. track);
-		play(Items[i+1].track.LongURI, playlist);
+		track = playlists.state[i+1].track.Name;
+		uri = playlists.state[i+1].track.LongURI;
+		play(uri, playlist);
 	end
 	
 	settings.username = username;
 	settings.playlist = playlist;
+	
+	return update;
 end
 
-function back_state ()
+-------------------------------------------------------------------------------------------
+-- Go back to the previous "state".
+-------------------------------------------------------------------------------------------
+playlists.back = function ()
 	status("Loading...");
 	
 	local username = settings.username;
@@ -89,7 +100,7 @@ end
 -- Build the path to the Spotify data directory.
 --    Returns the correct path for different OS.
 -------------------------------------------------------------------------------------------
-function get_spotify_dir ()
+playlists.get_spotify_dir = function ()
 	if (OS_WINDOWS) then
 		return "%appdata%/Spotify/Users/";
 	elseif (OS_OSX) then
@@ -105,8 +116,8 @@ end
 -- Get a list of all available Spotify usernames.
 --    Check for stored usernames in the data directory.
 -------------------------------------------------------------------------------------------
-function get_usernames ()
-	local dir = get_spotify_dir();
+playlists.get_usernames = function ()
+	local dir = playlists.get_spotify_dir();
 	local arr = {};
 	local dirs = fs.dirs(dir);
 	for k,v in pairs(dirs) do
@@ -121,8 +132,8 @@ end
 -- Build the filename of the playlists file for the specified user.
 --    Uses the current logged in OSX username.
 -------------------------------------------------------------------------------------------
-function get_playlists_file (user)
-	local dir = get_spotify_dir();
+playlists.get_playlists_file = function (user)
+	local dir = playlists.get_spotify_dir();
 	return dir .. user .. "-user/guistate";
 end
 
@@ -132,9 +143,9 @@ end
 --    Uses the cached playlist name if available.
 --    Otherwise fetches the name from the web API.
 -------------------------------------------------------------------------------------------
-function get_playlists (user)
-	if (Playlists ~= nil) then
-		return Playlists;
+playlists.get_playlists = function (user)
+	if (playlists.list ~= nil) then
+		return playlists.list;
 	end
 	
 	local arr = {};
@@ -145,7 +156,7 @@ function get_playlists (user)
 		ShortURI = ""
 	});
 	
-	local file = get_playlists_file(user);
+	local file = playlists.get_playlists_file(user);
 	local raw = io.fread(file);
 	local json = data.fromjson(raw);
 	local views = json.views;
@@ -159,7 +170,7 @@ function get_playlists (user)
 			local name = settings["playlists.names." .. short];
 			if (name == "") then
 				status("Syncing " .. k .. " of " .. count .. "...");
-				name = get_playlist_name(uri_user, short);
+				name = playlists.get_playlist_name(uri_user, short);
 			end
 			if (name ~= nil) then
 				local item = {}
@@ -171,7 +182,7 @@ function get_playlists (user)
 		end
 	end
 	
-	Playlists = arr;
+	playlists.list = arr;
 	return arr;
 end
 
@@ -182,7 +193,7 @@ end
 --    Caches the name to the settings file.
 -- Returns the name or nil if not available.
 -------------------------------------------------------------------------------------------
-function get_playlist_name(user, uri)
+playlists.get_playlist_name = function (user, uri)
 	local url = "https://open.spotify.com/user/" .. user .. "/playlist/" .. uri;
 	local raw = http.get(url);
 	local str = utf8.new(raw);
@@ -200,8 +211,10 @@ function get_playlist_name(user, uri)
 	return nil;
 end
 
-	
-function get_tracks (uri)
+-------------------------------------------------------------------------------------------
+-- Get all the tracks for the given playlist URI
+-------------------------------------------------------------------------------------------
+playlists.get_tracks = function (uri)
 	-- Note: Must pass "real" headers, otherwise the request wont return any data...
 	local headers = {};
 	headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
@@ -213,24 +226,15 @@ function get_tracks (uri)
 	req.url = "https://embed.spotify.com/?uri=" .. uri;
 	req.headers = headers;
 	
-	local t1 = libs.timer.time();
 	local resp = http.request(req);
-	local t2 = libs.timer.time();
-	print("request took: " .. t2 - t1 .. " ms");
-	
 	local raw = resp.content;
-	
-	t1 = libs.timer.time();
 	local str = utf8.new(raw);
-	t2 = libs.timer.time();
-	print("load took: " .. t2 - t1 .. " ms");
 	
 	local starttok = "<div id=\"mainContainer\" class=\"main-container\">";
 	local endtok = "</div><div id=\"engageView\"";
 	
 	local arr = {};
 	
-	t1 = libs.timer.time();
 	local pos = str:indexof(starttok);
 	if (pos ~= -1) then
 		pos = pos + utf8.len(starttok);
@@ -295,9 +299,6 @@ function get_tracks (uri)
 			pos = str:indexof("<li class=\"track-", pos);
 		end
 	end
-
-	t2 = libs.timer.time();
-	print("parse took: " .. t2 - t1 .. " ms");
 	
 	return arr;
 end

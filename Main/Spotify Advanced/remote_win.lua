@@ -3,13 +3,22 @@ local http = libs.http;
 local utf8 = libs.utf8;
 local timer = libs.timer;
 local data = libs.data;
+local task = libs.task;
 
 include("common.lua")
 include("playlists.lua")
 
-OAuthKey = nil;
-CFID = nil;
-Playing = false;
+local OAuthKey = nil;
+local CFID = nil;
+
+local WM_APPCOMMAND = 0x0319;
+local CMD_PLAY_PAUSE = 917504;
+local CMD_VOLUME_DOWN = 589824;
+local CMD_VOLUME_UP = 655360;
+local CMD_STOP = 851968;
+local CMD_PREVIOUS = 786432;
+local CMD_NEXT = 720896;
+local CMD_MUTE = 524288;
 
 function focus()
 	OAuthKey = get_oauth_key();
@@ -17,8 +26,8 @@ function focus()
 end
 
 function update()
-	local status = api_status();
-	local playing = status.playing ~= 0;
+	local status = status();
+	playing = status.playing ~= 0;
 	local volume = math.ceil(status.volume * 100);
 	
 	local track = "";
@@ -26,8 +35,10 @@ function update()
 	local album = "";
 	local pos = 0;
 	local duration = 0;
+	local uri = "";
 	
 	if (status.track ~= nil) then
+		uri = status.track.track_resource.uri;
 		pos = math.ceil(status.playing_position);
 		duration = math.ceil(status.track.length);
 	
@@ -46,6 +57,12 @@ function update()
 		else
 			album = "";
 		end
+	end
+	
+	if (uri ~= playing_uri) then
+		playing_uri = uri;
+		server.update({ id = "currimg", image = get_cover_art(uri) });
+		update_playlists();
 	end
 	
 	local repeating = status["repeat"] ~= 0;
@@ -70,33 +87,65 @@ function update()
 	);
 end
 
-actions.play = function ()
-	if (Playing) then
-		api_pause();
-	else
-		api_resume();
+--@help Send raw command to Spotify
+--@param cmd:number
+actions.command = function (cmd)
+	local hwnd = task.find("SpotifyMainWindow", nil);
+	task.send(hwnd, WM_APPCOMMAND, 0, cmd);
+	actions.update();
+end
+
+--@help Start playback
+actions.play = function()
+	if (not Playing) then
+		actions.play_pause();
 	end
 end
 
+--@help Pause playback
+actions.pause = function()
+	if (Playing) then
+		actions.play_pause();
+	end
+end
+
+--@help Toggle playback state
+actions.play_pause = function()
+	actions.command(CMD_PLAY_PAUSE);
+end
+
+--@help Next track
+actions.next = function ()
+	actions.command(CMD_NEXT);
+end
+
+--@help Previous track
+actions.previous = function ()
+	actions.command(CMD_PREVIOUS);
+end
+
+-------------------------------------------------------------------------------------------
+-- Spotify Local API
+-------------------------------------------------------------------------------------------
 function get_cfid ()
 	local resp = recv("simplecsrf/token.json?", nil, nil);
 	local json = data.fromjson(resp);
 	return json.token;
 end
 
-function api_play (uri, context)
-	local resp = recv("remote/play.json?uri=" .. uri .. "&context=" + context, OAuthKey, CFID);
+function play (uri, context)
+	local resp = recv("remote/play.json?uri=" .. uri .. "&context=" .. context, OAuthKey, CFID);
 end
 
-function api_resume ()
+function resume ()
 	local resp = recv("remote/pause.json?pause=false", OAuthKey, CFID);
 end
 
-function api_pause ()
+function pause ()
 	local resp = recv("remote/pause.json?pause=true", OAuthKey, CFID);
 end
 
-function api_status ()
+function status ()
 	local resp = recv("remote/status.json?", OAuthKey, CFID);
 	local json = data.fromjson(resp);
 	return json;
@@ -152,10 +201,32 @@ function get_oauth_key ()
 			pos = pos + 1;
 			local pos2 = str:indexof("'", pos);
 			local key = str:sub(pos, pos2 - pos);
-			print(key);
 			return key;
 		end
 	end
 	
 	return nil;
 end
+
+-------------------------------------------------------------------------------------------
+-- Spotify Cover Art Grabber
+-------------------------------------------------------------------------------------------
+function get_cover_art_url (uri)
+	local url = "https://embed.spotify.com/oembed/?url=" .. uri;
+	local raw = http.get(url);
+	local json = data.fromjson(raw);
+	return json.thumbnail_url;
+end
+
+function get_cover_art (uri)
+	local url = get_cover_art_url(uri);
+	local raw = http.get(url);
+	return raw;
+end
+
+
+
+
+
+
+
