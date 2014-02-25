@@ -33,6 +33,8 @@ local playing = false;
 local title = "";
 
 events.focus = function ()
+	playing = false;
+	title = "";
 	tid = timer.interval(actions.update, 500);
 end
 
