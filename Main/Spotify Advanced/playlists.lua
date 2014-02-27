@@ -117,8 +117,13 @@ end
 --    Check for stored usernames in the data directory.
 -------------------------------------------------------------------------------------------
 playlists.get_usernames = function ()
-	local dir = playlists.get_spotify_dir();
 	local arr = {};
+	
+	local dir = playlists.get_spotify_dir();
+	if (not fs.exists(dir)) then
+		return arr;
+	end
+	
 	local dirs = fs.dirs(dir);
 	for k,v in pairs(dirs) do
 		local name = fs.name(v);
@@ -196,6 +201,9 @@ end
 playlists.get_playlist_name = function (user, uri)
 	local url = "https://open.spotify.com/user/" .. user .. "/playlist/" .. uri;
 	local raw = http.get(url);
+	if (raw == nil) then
+		return "Playlist";
+	end
 	local str = utf8.new(raw);
 	local token = "<meta property=\"og:title\" content=\"";
 	local start = str:indexof(token);
@@ -221,6 +229,8 @@ playlists.get_tracks = function (uri)
 	headers["Accept-Language"] = "en-US,en;q=0.8,sv;q=0.6";
 	headers["UserAgent"] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Safari/537.36";
 	
+	local arr = {};
+	
 	local req = {};
 	req.method = "GET";
 	req.url = "https://embed.spotify.com/?uri=" .. uri;
@@ -228,13 +238,14 @@ playlists.get_tracks = function (uri)
 	
 	local resp = http.request(req);
 	local raw = resp.content;
-	local str = utf8.new(raw);
 	
+	if (raw == nil) then
+		return arr;
+	end
+	
+	local str = utf8.new(raw);
 	local starttok = "<div id=\"mainContainer\" class=\"main-container\">";
 	local endtok = "</div><div id=\"engageView\"";
-	
-	local arr = {};
-	
 	local pos = str:indexof(starttok);
 	if (pos ~= -1) then
 		pos = pos + utf8.len(starttok);
