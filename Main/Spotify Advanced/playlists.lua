@@ -104,7 +104,7 @@ playlists.get_spotify_dir = function ()
 	if (OS_WINDOWS) then
 		return "%appdata%/Spotify/Users/";
 	elseif (OS_OSX) then
-		return "/Users/".. os.getenv("USER") .. "/Library/Application Support/Spotify/Users/";
+		return "~/Library/Application Support/Spotify/Users/";
 	elseif (OS_LINUX) then
 		return "";
 	else
