@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down">
+<layout onLaunch="launch">
   <grid>
     <row weight="wrap">
       <button icon="back" onTap="back" />
@@ -9,7 +9,7 @@
       <button icon="refresh" onTap="refresh" />
     </row>
     <row>
-      <list id="lst" onTap="onItem" onHold="onHolditem" />
+      <list id="list" onTap="item" onHold="hold" />
     </row>
   </grid>
 </layout>
