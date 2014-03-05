@@ -14,7 +14,7 @@ end
 
 --@help Launch Opera application
 actions.launch = function()
-	task.start("%programfiles(x86)%/Opera/opera.exe");
+	os.start("%programfiles(x86)%/Opera/opera.exe");
 end
 
 --@help Naviagte back

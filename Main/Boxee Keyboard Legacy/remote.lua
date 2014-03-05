@@ -13,7 +13,7 @@ end
 
 --@help Launch Boxee application
 actions.launch = function()
-	task.start("%programfiles(x86)%/Boxee/BOXEE.exe");
+	os.start("%programfiles(x86)%/Boxee/BOXEE.exe");
 end
 
 --@help Lower volume

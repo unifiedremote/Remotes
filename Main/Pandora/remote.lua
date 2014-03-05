@@ -4,7 +4,7 @@ local keyboard = libs.keyboard;
 
 --@help Launch Pandora site
 actions.launch = function ()
-	task.open("http://www.pandora.com");
+	os.open("http://www.pandora.com");
 end
 
 --@help Lower volume

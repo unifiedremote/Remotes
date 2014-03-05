@@ -35,7 +35,7 @@ end
 
 --@help Launch program
 actions.launch = function()
-	task.start("foobar2000.exe");
+	os.start("foobar2000.exe");
 end
 
 --@help Lower volume

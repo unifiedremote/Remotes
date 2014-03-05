@@ -40,7 +40,7 @@ end
 
 --@help Launch Browser application
 actions.launch = function()
-	task.open("http://www.facebook.com/");
+	os.open("http://www.facebook.com/");
 end
 
 --@help Next post

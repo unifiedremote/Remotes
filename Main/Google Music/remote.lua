@@ -36,7 +36,7 @@ end
 
 --@help Launch Google Music site
 actions.launch = function()
-	task.open("http://play.google.com/music/");
+	os.open("http://play.google.com/music/");
 end
 
 --@help Close

@@ -14,7 +14,7 @@ local CMD_PREVIOUS = 0x0000497A;
 
 --@help Launch Windows Media Player
 actions.launch = function()
-	task.start("wmplayer.exe");
+	os.start("wmplayer.exe");
 end
 
 --@help Send command to program

@@ -10,7 +10,7 @@ end
 
 --@help Launch Firefox application
 actions.launch = function()
-	task.start("firefox.exe");
+	os.start("firefox.exe");
 end
 
 --@help Naviagte back

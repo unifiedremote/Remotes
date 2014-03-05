@@ -23,7 +23,7 @@ function KeyHelper(vk, param)
 	keyboard.down("control");
 	local hwnd = task.find("SpotifyMainWindow", nil);
 	task.post(hwnd, WM_KEYDOWN, vk, param);
-	task.sleep(100);
+	os.sleep(100);
 	task.post(hwnd, WM_KEYUP, vk, param);
 	keyboard.up("control");
 end
@@ -78,7 +78,7 @@ end
 
 --@help Launch Spotify application
 actions.launch = function()
-	task.start("%appdata%\\Spotify\\spotify.exe");
+	os.start("%appdata%\\Spotify\\spotify.exe");
 end
 
 --@help Start playback

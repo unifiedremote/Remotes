@@ -12,7 +12,7 @@ end
 
 --@help Launch Chrome application
 actions.launch = function()
-	task.start("chrome.exe");
+	os.start("chrome.exe");
 end
 
 --@help Naviagte back

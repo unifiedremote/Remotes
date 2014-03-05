@@ -4,7 +4,7 @@ local keyboard = libs.keyboard;
 
 --@help Launch YouTube
 actions.launch = function()
-	task.open("http://www.youtube.com");
+	os.open("http://www.youtube.com");
 end
 
 --@help Lower volume

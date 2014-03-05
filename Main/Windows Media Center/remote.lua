@@ -4,7 +4,7 @@ local keyboard = libs.keyboard;
 
 --@help Launch WMC application
 actions.launch = function()
-	task.start("%windir%\\ehome\\ehshell.exe");
+	os.start("%windir%\\ehome\\ehshell.exe");
 end
 
 --@help Lower volume

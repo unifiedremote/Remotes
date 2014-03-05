@@ -13,7 +13,7 @@ end
 
 --@help Launch Internet Explorer application
 actions.launch = function()
-	task.open("iexplore");
+	os.open("iexplore");
 end
 
 --@help Naviagte back

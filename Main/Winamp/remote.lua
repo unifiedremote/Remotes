@@ -96,7 +96,7 @@ end
 
 --@help Launcher Winamp application
 actions.launch = function()
-	task.start("winamp.exe");
+	os.start("winamp.exe");
 end
 
 --@help Lower volume

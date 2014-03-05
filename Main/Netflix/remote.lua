@@ -4,7 +4,7 @@ local keyboard = libs.keyboard;
 
 --@help Launch Netflix site
 actions.launch = function ()
-	task.open("http://www.netflix.com/");
+	os.open("http://www.netflix.com/");
 end
 
 --@help Lower volume

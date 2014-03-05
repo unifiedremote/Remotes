@@ -55,7 +55,7 @@ end
 
 --@help Launch Spotify application
 actions.launch = function()
-	task.start("spotify");
+	os.start("spotify");
 end
 
 --@help Start playback

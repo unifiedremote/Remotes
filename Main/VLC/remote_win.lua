@@ -42,7 +42,7 @@ end
 
 --@help Launch VLC application
 actions.launch = function()
-	task.start("%programfiles(x86)%\\VideoLAN\\VLC\\vlc.exe");
+	os.start("%programfiles(x86)%\\VideoLAN\\VLC\\vlc.exe");
 end
 
 --@help Toggle playback state

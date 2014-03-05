@@ -4,7 +4,7 @@ local keyboard = libs.keyboard;
 
 --@help Launch XBMC application
 actions.launch = function()
-	task.start("%programfiles(x86)%\\XBMC\\XBMC.exe");
+	os.start("%programfiles(x86)%\\XBMC\\XBMC.exe");
 end
 
 --@help Start playback

@@ -8,7 +8,7 @@ local obj = nil;
 
 --@help Launch iTunes application
 actions.launch = function()
-	task.start("itunes");
+	os.start("itunes");
 end
 
 events.focus = function ()

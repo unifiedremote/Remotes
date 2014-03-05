@@ -4,7 +4,7 @@ local keyboard = libs.keyboard;
 
 --@help Launch Hulu site
 actions.launch = function()
-	task.open("http://www.hulu.com/");
+	os.open("http://www.hulu.com/");
 end
 
 --@help Raise volume

@@ -132,7 +132,7 @@ local BSP_Res9 = 122;
 
 --@help Launch BSPlayer application
 actions.launch = function()
-	task.start("%programfiles(x86)%/Webteh/BSPlayer/bsplayer.exe");
+	os.start("%programfiles(x86)%/Webteh/BSPlayer/bsplayer.exe");
 end
 
 --@help Send raw command to BSPlayer

@@ -4,7 +4,7 @@ local keyboard = libs.keyboard;
 
 --@help Launch MediaPortal application
 actions.launch = function()
-	task.start("%programfiles(x86)%\\Team MediaPortal\\MediaPortal\\MediaPortal.exe");
+	os.start("%programfiles(x86)%\\Team MediaPortal\\MediaPortal\\MediaPortal.exe");
 end
 
 --@help Stop playback

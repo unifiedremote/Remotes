@@ -148,7 +148,7 @@ end
 
 --@help Launch Power Point Advanced application
 actions.launch = function ()
-	task.start("powerpnt");
+	os.start("powerpnt");
 end
 
 actions.next = function ()

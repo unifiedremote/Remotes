@@ -13,7 +13,7 @@ end
 
 --@help Launch Hulu application
 actions.launch = function()
-	task.start("%LOCALAPPDATA%/HuluDesktop/HuluDesktop.exe")
+	os.start("%LOCALAPPDATA%/HuluDesktop/HuluDesktop.exe")
 end
 
 --@help Navigate up

@@ -22,21 +22,21 @@ end
 
 --@help Duplicate desktop on multiple displays
 actions.clone = function()
-	task.start("%windir%/system32/DisplaySwitch.exe", "/clone");
+	os.start("%windir%/system32/DisplaySwitch.exe", "/clone");
 end
 
 --@help Extend desktop on multiple displays
 actions.extend = function()
-	task.start("%windir%/system32/DisplaySwitch.exe", "/extend");
+	os.start("%windir%/system32/DisplaySwitch.exe", "/extend");
 end
 
 --@help Display projector only
 actions.external = function()
-	task.start("%windir%/system32/DisplaySwitch.exe", "/external");
+	os.start("%windir%/system32/DisplaySwitch.exe", "/external");
 end
 
 --@help Display computer only
 actions.internal = function()
-	task.start("%windir%/system32/DisplaySwitch.exe", "/internal");
+	os.start("%windir%/system32/DisplaySwitch.exe", "/internal");
 end
 

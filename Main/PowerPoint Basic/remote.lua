@@ -5,7 +5,7 @@ local server = libs.server;
 
 --@help Launch PowerPoint application
 actions.launch = function()
-	task.open("powerpnt");
+	os.open("powerpnt");
 end
 
 --@help Navigate to slide
