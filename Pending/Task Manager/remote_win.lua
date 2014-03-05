@@ -1,5 +1,4 @@
-
-local task = libs.task;
+local win = libs.win;
 local server = libs.server;
 local list;
 local items;
@@ -7,7 +6,7 @@ local items;
 actions.update = function (index)
 	if (index == 0) then
 		-- Tasks
-		list = task.list(false);
+		list = win.list(false);
 		items = {};
 		for i,task in ipairs(list) do
 			table.insert(items, { type = "item", text = task.title });
@@ -15,7 +14,7 @@ actions.update = function (index)
 		server.update({ id = "ts", children = items });
 	else
 		-- Processes
-		list = task.list(true);
+		list = win.list(true);
 		items = {};
 		for i,task in ipairs(list) do
 			table.insert(items, { type = "item", text = task.name .. "\n" .. task.title });
@@ -26,7 +25,7 @@ end
 
 actions.tap = function (index)
 	local item = list[index+1];
-	task.switchto(item.handle);
+	win.switchto(item.handle);
 end
 
 actions.hold = function (index)
