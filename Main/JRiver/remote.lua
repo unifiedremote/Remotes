@@ -1,5 +1,5 @@
 
-local task = libs.task;
+local win = libs.win;
 
 -- Commands
 local WM_COMMAND = 33768;
@@ -21,8 +21,8 @@ local MCC_SET_PAUSE = 10022;
 --@param cmd:number
 --@param param:number
 actions.command = function (cmd, param)
-	local hwnd = task.find("MJFrame", nil);
-	task.send(hwnd, WM_COMMAND, cmd, param);
+	local hwnd = win.find("MJFrame", nil);
+	win.send(hwnd, WM_COMMAND, cmd, param);
 end
 
 --@help Start playback

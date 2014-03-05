@@ -1,5 +1,5 @@
 
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 local timer = libs.timer;
 local server = libs.server;
@@ -21,10 +21,10 @@ local CMD_MUTE = 524288;
 -- Key Simulation Helper
 function KeyHelper(vk, param)
 	keyboard.down("control");
-	local hwnd = task.find("SpotifyMainWindow", nil);
-	task.post(hwnd, WM_KEYDOWN, vk, param);
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	win.post(hwnd, WM_KEYDOWN, vk, param);
 	os.sleep(100);
-	task.post(hwnd, WM_KEYUP, vk, param);
+	win.post(hwnd, WM_KEYUP, vk, param);
 	keyboard.up("control");
 end
 
@@ -44,8 +44,8 @@ end
 
 --@help Update status information
 actions.update = function ()
-	local hwnd = task.find("SpotifyMainWindow", nil);
-	local _title = task.title(hwnd):sub(10);
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	local _title = win.title(hwnd):sub(10);
 	local _playing = true;
 	
 	if (_title == "") then
@@ -71,8 +71,8 @@ end
 --@help Send raw command to Spotify
 --@param cmd:number
 actions.command = function (cmd)
-	local hwnd = task.find("SpotifyMainWindow", nil);
-	task.send(hwnd, WM_APPCOMMAND, 0, cmd);
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	win.send(hwnd, WM_APPCOMMAND, 0, cmd);
 	actions.update();
 end
 

@@ -1,4 +1,4 @@
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 local timer = libs.timer
 local utf8 = libs.utf8
@@ -17,17 +17,17 @@ end
 
 --@help Focus VLC application
 actions.switch = function ()
-	local hwnd = task.window("vlc.exe");
-	if (hwnd == 0) then
-		actions.launch();
+	if OS_WINDOWS then
+		local hwnd = win.window("vlc.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait(hwnd);
 	end
-	task.switchtowait(hwnd);
 end
 
 --@help Update status information
 actions.update = function ()
-	local hwnd = task.window("vlc.exe");
-	local temp = task.title(hwnd);
+	local hwnd = win.window("vlc.exe");
+	local temp = win.title(hwnd);
 	if (temp == "") then
 		temp = "[Not Playing]";
 	else

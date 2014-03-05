@@ -1,5 +1,3 @@
-
-local task = libs.task;
 local timer = libs.timer;
 local server = libs.server;
 

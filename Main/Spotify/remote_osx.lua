@@ -1,11 +1,3 @@
--- metadata
-meta.id = "Unified.Spotify"
-meta.name = "Spotify"
-meta.author = "Unified Intents"
-meta.description = "Spotify basic media remote control."
-meta.platform = "osx"
-
-local task = libs.task;
 local keyboard = libs.keyboard;
 local timer = libs.timer;
 local server = libs.server;

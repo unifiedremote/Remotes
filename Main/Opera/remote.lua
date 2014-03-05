@@ -1,20 +1,21 @@
-
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 local device = libs.device;
 
 --@help Focus Opera application
 actions.switch = function()
-	local hwnd = task.window("opera.exe");
-	if (hwnd == 0) then
-		actions.launch();
+	if OS_WINDOWS then
+		local hwnd = win.window("opera.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait(hwnd);
 	end
-	task.switchtowait(hwnd);
 end
 
 --@help Launch Opera application
 actions.launch = function()
-	os.start("%programfiles(x86)%/Opera/opera.exe");
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%/Opera/opera.exe");
+	end
 end
 
 --@help Naviagte back

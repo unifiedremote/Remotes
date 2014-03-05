@@ -1,5 +1,4 @@
-
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 local timer = libs.timer;
 local server = libs.server;
@@ -16,8 +15,8 @@ end
 
 --@help Update state
 actions.update = function()
-	local hwnd = task.window("foobar2000.exe");
-	local title = task.title(hwnd);
+	local hwnd = win.window("foobar2000.exe");
+	local title = win.title(hwnd);
 	if (title == "") then
 		title = "[Not Playing]";
 	end
@@ -26,16 +25,18 @@ end
 
 --@help Focus foobar2000 application
 actions.switch = function()
-	local hwnd = task.window("foobar2000.exe");
-	if (hwnd == 0) then
-		actions.launch();
+	if OS_WINDOWS then
+		local hwnd = win.window("foobar2000.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait(hwnd);
 	end
-	task.switchtowait(hwnd);
 end
 
 --@help Launch program
 actions.launch = function()
-	os.start("foobar2000.exe");
+	if OS_WINDOWS then
+		os.start("foobar2000.exe");
+	end
 end
 
 --@help Lower volume

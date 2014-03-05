@@ -3,7 +3,7 @@ local http = libs.http;
 local utf8 = libs.utf8;
 local timer = libs.timer;
 local data = libs.data;
-local task = libs.task;
+local win = libs.win;
 
 include("common.lua")
 include("playlists.lua")
@@ -90,8 +90,8 @@ end
 --@help Send raw command to Spotify
 --@param cmd:number
 actions.command = function (cmd)
-	local hwnd = task.find("SpotifyMainWindow", nil);
-	task.send(hwnd, WM_APPCOMMAND, 0, cmd);
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	win.send(hwnd, WM_APPCOMMAND, 0, cmd);
 	actions.update();
 end
 

@@ -8,7 +8,7 @@ end
 
 --@help Launch Chrome application
 actions.launch = function()
-	os.start(“safari”);
+	os.start("safari");
 end
 
 --@help Naviagte back

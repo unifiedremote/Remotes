@@ -1,19 +1,20 @@
-
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 
 --@help Focus Hulu application
 actions.switch = function()
-	local hwnd = task.window("HuluDesktop.exe");
-	if (hwnd == 0) then
-		actions.launch();
+	if OS_WINDOWS then
+		local hwnd = win.window("HuluDesktop.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait(hwnd);
 	end
-	task.switchtowait(hwnd);
 end
 
 --@help Launch Hulu application
 actions.launch = function()
-	os.start("%LOCALAPPDATA%/HuluDesktop/HuluDesktop.exe")
+	if OS_WINDOWS then
+		os.start("%LOCALAPPDATA%/HuluDesktop/HuluDesktop.exe")
+	end
 end
 
 --@help Navigate up

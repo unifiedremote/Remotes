@@ -1,5 +1,5 @@
 
-local task = libs.task;
+local win = libs.win;
 
 local WM_SYSCOMMAND = 0x0112;
 local SC_MONITORPOWER = 0xF170;
@@ -7,17 +7,17 @@ local HWND_BROADCAST = 0xffff;
 
 --@help Turn monitor on
 actions.turn_on = function()
-	task.post(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, -1);
+	win.post(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, -1);
 end
 
 --@help Turn monitor off
 actions.turn_off = function()
-	task.post(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, 2);
+	win.post(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, 2);
 end
 
 --@help Put monitor in standby
 actions.standby = function()
-	task.post(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, 1);
+	win.post(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, 1);
 end
 
 --@help Duplicate desktop on multiple displays

@@ -1,10 +1,10 @@
-
-local task = libs.task;
 local keyboard = libs.keyboard;
 
 --@help Launch XBMC application
 actions.launch = function()
-	os.start("%programfiles(x86)%\\XBMC\\XBMC.exe");
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%\\XBMC\\XBMC.exe");
+	end
 end
 
 --@help Start playback

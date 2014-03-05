@@ -1,5 +1,5 @@
 
-local task = libs.task;
+local win = libs.win;
 
 -- Commands
 local WM_USER = 0x0400;
@@ -132,14 +132,16 @@ local BSP_Res9 = 122;
 
 --@help Launch BSPlayer application
 actions.launch = function()
-	os.start("%programfiles(x86)%/Webteh/BSPlayer/bsplayer.exe");
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%/Webteh/BSPlayer/bsplayer.exe");
+	end
 end
 
 --@help Send raw command to BSPlayer
 --@param cmd:number
 actions.command = function(cmd)
-	local hwnd = task.find("BSPlayer", "BSPlayer");
-	task.send(hwnd, WM_BSP_CMD, cmd, 0);
+	local hwnd = win.find("BSPlayer", "BSPlayer");
+	win.send(hwnd, WM_BSP_CMD, cmd, 0);
 end
 
 --@help Zoom in

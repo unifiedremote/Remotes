@@ -1,5 +1,5 @@
 
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 local tab_index = 0;
 
@@ -7,29 +7,29 @@ local tab_index = 0;
 actions.switch = function()
 	--if (OS_WINDOWS) then
 		if (tab_index == 0) then
-			local hwnd = task.window("firefox.exe");
+			local hwnd = win.window("firefox.exe");
 			if (hwnd == 0) then
 				actions.launch();
 			end
-			task.switchtowait(hwnd);
+			win.switchtowait(hwnd);
 		elseif (tab_index == 1) then
-			local hwnd = task.window("chrome.exe");
+			local hwnd = win.window("chrome.exe");
 			if (hwnd == 0) then
 				actions.launch();				
 			end
-			task.switchtowait(hwnd);
+			win.switchtowait(hwnd);
 		elseif (tab_index == 2) then
-			local hwnd = task.window("opera.exe");
+			local hwnd = win.window("opera.exe");
 			if (hwnd == 0) then
 				actions.launch();
 			end
-			task.switchtowait(hwnd);
+			win.switchtowait(hwnd);
 		elseif (tab_index == 3) then
-			local hwnd = task.window("safari.exe");
+			local hwnd = win.window("safari.exe");
 			if (hwnd == 0) then
 				actions.launch();
 			end
-			task.switchtowait(hwnd);
+			win.switchtowait(hwnd);
 		end		
 	--end
 end

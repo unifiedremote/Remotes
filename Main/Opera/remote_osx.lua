@@ -1,11 +1,3 @@
--- metadata
-meta.id = "Unified.Opera"
-meta.name = "Opera"
-meta.author = "Unified Intents"
-meta.description = "Opera browser remote."
-meta.platform = "osx"
-
-local task = libs.task;
 local keyboard = libs.keyboard;
 local device = libs.device;
 

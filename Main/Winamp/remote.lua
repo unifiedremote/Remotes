@@ -1,5 +1,5 @@
 
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 local timer = libs.timer
 local utf8 = libs.utf8;
@@ -53,8 +53,8 @@ end
 
 --@help Update status information
 actions.update = function ()
-	local hwnd = task.find("Winamp v1.x", nil);
-	local _title = task.title(hwnd);
+	local hwnd = win.find("Winamp v1.x", nil);
+	local _title = win.title(hwnd);
 	local _playing = true;
 	
 	if (utf8.endswith(_title, " - Winamp [Paused]")) then
@@ -89,8 +89,8 @@ end
 --@help Send raw command to Winamp
 --@param cmd:number
 actions.command = function(cmd)
-	local hwnd = task.find("Winamp v1.x", nil);
-	task.send(hwnd, WM_COMMAND, cmd, 0);
+	local hwnd = win.find("Winamp v1.x", nil);
+	win.send(hwnd, WM_COMMAND, cmd, 0);
 	actions.update();
 end
 

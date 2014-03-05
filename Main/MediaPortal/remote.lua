@@ -1,10 +1,10 @@
-
-local task = libs.task;
 local keyboard = libs.keyboard;
 
 --@help Launch MediaPortal application
 actions.launch = function()
-	os.start("%programfiles(x86)%\\Team MediaPortal\\MediaPortal\\MediaPortal.exe");
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%\\Team MediaPortal\\MediaPortal\\MediaPortal.exe");
+	end
 end
 
 --@help Stop playback

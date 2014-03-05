@@ -1,11 +1,9 @@
-
 local obj = nil;
 local tid_update = -1;
 local tid_timer = -1;
 local timer = libs.timer;
 local server = libs.server;
 local utf8 = libs.utf8;
-local task = libs.task;
 local fs = libs.fs;
 local timer_total = 0;
 local timer_slide = 0;

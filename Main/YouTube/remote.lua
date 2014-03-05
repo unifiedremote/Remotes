@@ -1,5 +1,3 @@
-
-local task = libs.task;
 local keyboard = libs.keyboard;
 
 --@help Launch YouTube

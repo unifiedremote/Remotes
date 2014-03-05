@@ -1,5 +1,5 @@
 
-local task = libs.task;
+local win = libs.win;
 
 -- Commands
 local WM_COMMAND = 0x111;
@@ -20,8 +20,8 @@ end
 --@help Send command to program
 --@param cmd:number
 actions.command = function(cmd)
-	local hwnd = task.find("WMPlayerApp", "Windows Media Player");
-	task.send(hwnd, WM_COMMAND, cmd, 0);
+	local hwnd = win.find("WMPlayerApp", "Windows Media Player");
+	win.send(hwnd, WM_COMMAND, cmd, 0);
 end
 
 --@help Toggle fullscreen

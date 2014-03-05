@@ -1,14 +1,13 @@
-
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 
 --@help Focus Internet Explorer application
 actions.switch = function()
-	local hwnd = task.window("iexplore.exe");
-	if (hwnd == 0) then
-		actions.launch();
+	if OS_WINDOWS then
+		local hwnd = win.window("iexplore.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait(hwnd);
 	end
-	task.switchtowait(hwnd);
 end
 
 --@help Launch Internet Explorer application

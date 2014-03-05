@@ -1,6 +1,6 @@
 
 local timer = libs.timer;
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 local utf8 = libs.utf8;
 local server = libs.server;
@@ -18,13 +18,13 @@ end
 
 --@help Update status information
 actions.update = function ()
-	local tasks = task.list();
+	local tasks = win.list();
 	local _title = "[Not Playing]";
 	
-	for i,task in ipairs(tasks) do
-		local pos = utf8.lastindexof(task.title, " - Google Play");
+	for i,win in ipairs(tasks) do
+		local pos = utf8.lastindexof(win.title, " - Google Play");
 		if (pos ~= nil) then
-			_title = utf8.sub(task.title, 0, pos);
+			_title = utf8.sub(win.title, 0, pos);
 		end
 	end
 	

@@ -1,16 +1,20 @@
+local keyboard = libs.keyboard;
+local win = libs.win;
 
 --@help Focus Firefox application
 actions.switch = function()
-	local hwnd = task.window("firefox.exe");
-	if (hwnd == 0) then
-		actions.launch();
+	if OS_WINDOWS then
+		local hwnd = win.window("firefox.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait(hwnd);
 	end
-	task.switchtowait(hwnd);
 end
 
 --@help Launch Firefox application
 actions.launch = function()
-	os.start("firefox.exe");
+	if OS_WINDOWS then
+		os.start("firefox.exe");
+	end
 end
 
 --@help Naviagte back

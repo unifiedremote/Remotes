@@ -1,19 +1,20 @@
-
-local task = libs.task;
+local win = libs.win;
 local keyboard = libs.keyboard;
 
 --@help Focus Boxee application
 actions.switch = function()
-	local hwnd = task.window("BOXEE.exe");
-	if (hwnd == 0) then
-		actions.launch();
+	if OS_WINDOWS then
+		local hwnd = win.window("BOXEE.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait(hwnd);
 	end
-	task.switchtowait(hwnd);
 end
 
 --@help Launch Boxee application
 actions.launch = function()
-	os.start("%programfiles(x86)%/Boxee/BOXEE.exe");
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%/Boxee/BOXEE.exe");
+	end
 end
 
 --@help Lower volume
