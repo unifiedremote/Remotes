@@ -17,10 +17,7 @@ local dialog_items =
 
 local paste_item = nil;
 local paste_mode = nil;
-
-local selected_item;
-local path;
-
+local selected;
 local items = {};
 local stack = {};
 
@@ -28,14 +25,15 @@ local stack = {};
 
 events.focus = function()
 	stack = {};
-	path = "";
-	table.insert(stack, path);
+	table.insert(stack, settings.path);
 	update();
 end
 
 -------------------------------------------------------------------
 
 function update ()
+	local path = settings.path;
+	print(path);
 	items = {};
 	if path == "" then
 		local root = fs.roots();
@@ -79,8 +77,8 @@ end
 actions.item = function (i)
 	i = i + 1;
 	if items[i].isdir then
-		table.insert(stack, path);
-		path = items[i].path;
+		table.insert(stack, settings.path);
+		settings.path = items[i].path;
 		update();
 	else
 		actions.open(items[i].path);
@@ -91,7 +89,7 @@ end
 -- Invoked when an item in the list is long-pressed.
 -------------------------------------------------------------------
 actions.hold = function (i)
-	selected_item = items[i+1];
+	selected = items[i+1];
 	server.update({ type="dialog", ontap="dialog", children = dialog_items });
 end
 
@@ -122,7 +120,7 @@ end
 actions.dialog = function (i)
 	i = i + 1;
 	local action = dialog_items[i].id;
-	local path = selected_item.path;
+	local path = selected.path;
 	
 	if action == "details" then
 		
@@ -143,7 +141,7 @@ actions.dialog = function (i)
 		if (paste_mode == nil) then
 			table.insert(dialog_items, { type="item", text="Paste", id="paste"});
 		end
-		paste_item = selected_item
+		paste_item = selected;
 		paste_mode = "move";
 		update();
 	
@@ -157,7 +155,7 @@ actions.dialog = function (i)
 		if (paste_mode == nil) then
 			table.insert(dialog_items, { type="item", text="Paste", id="paste"});
 		end
-		paste_item = selected_item
+		paste_item = selected;
 		paste_mode = "copy";
 		update();
 	
@@ -215,13 +213,13 @@ actions.dialog = function (i)
 end
 
 actions.delete = function ()
-	local path = selected_item.path;
+	local path = selected.path;
 	fs.delete(path, true);
 	update();
 end
 
 actions.back = function ()
-	path = table.remove(stack);
+	settings.path = table.remove(stack);
 	update();
 	if #stack == 0 then
 		table.insert(stack, "");
@@ -229,14 +227,14 @@ actions.back = function ()
 end
 
 actions.up = function ()
-	table.insert(stack, path);
-	path = fs.parent(stack[#stack]);
+	table.insert(stack, settings.path);
+	settings.path = fs.parent(stack[#stack]);
 	update();
 end
 
 actions.home = function ()
-	table.insert(stack, path);
-	path = "";
+	table.insert(stack, settings.path);
+	settings.path = "";
 	update();
 end
 
@@ -249,10 +247,10 @@ actions.goto = function ()
 end
 
 actions.gotopath = function (p)
-	if fs.isfile(path) then
-		actions.open(path);
+	if fs.isfile(p) then
+		actions.open(p);
 	else
-		path = p;
+		settings.path = p;
 		update();
 	end
 end
