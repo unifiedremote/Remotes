@@ -205,12 +205,9 @@ actions.dialog = function (i)
 	
 		-- Open all the files inside a folder
 		if (fs.isdir(path)) then
-			local cmd = "";
-			local files = fs.files(path);
-			for t = 1, #files do
-				cmd = cmd .. "\"" .. files[t] .. "\"; ";
-			end
-			actions.open(cmd);
+			actions.open_all(path);
+		else
+			actions.open_all(fs.parent(path));
 		end
 	
 	end
@@ -264,4 +261,10 @@ end
 --@param path
 actions.open = function (path)
 	os.open(path);
+end
+
+--@help Open all files in specified path.
+--@param path
+actions.open_all = function (path)
+	os.openall(path);
 end
