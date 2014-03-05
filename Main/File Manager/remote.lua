@@ -1,7 +1,5 @@
 local fs = libs.fs;
 local server = libs.server;
-local task = libs.task;
-local l = libs.log;
 
 -------------------------------------------------------------------
 
@@ -33,7 +31,6 @@ end
 
 function update ()
 	local path = settings.path;
-	print(path);
 	items = {};
 	if path == "" then
 		local root = fs.roots();
