@@ -237,8 +237,11 @@ playlists.get_tracks = function (uri)
 	req.headers = headers;
 	
 	local resp = http.request(req);
-	local raw = resp.content;
+	if (resp == nil) then
+		return arr;
+	end
 	
+	local raw = resp.content;
 	if (raw == nil) then
 		return arr;
 	end
