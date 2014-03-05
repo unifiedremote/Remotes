@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layout>
 	<tabs onchange="update">
-		<tab text="Tasks">
+		<tab text="Main">
 			<list id="ts" ontap="tap" onhold="hold">
 				<item>Loading...</item>
 			</list>
 		</tab>
-		<tab text="Processes">
+		<tab text="All">
 			<list id="ps" ontap="tap" onhold="hold">
 				<item>Loading...</item>
 			</list>

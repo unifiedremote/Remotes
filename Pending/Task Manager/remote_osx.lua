@@ -1,5 +1,4 @@
 
-local task = libs.task;
 local server = libs.server;
 local utf8 = libs.utf8;
 local list;
@@ -10,12 +9,15 @@ function tab2list(str)
 	local list = {};
 	local lines = utf8.split(str, "\n");
 	for i,v in ipairs(lines) do
+		if (not utf8.empty(v)) then
 		local parts = utf8.split(v, "\t");
 		local id = parts[1];
 		local name = parts[2];
 		local title = parts[3];
+		if (title == "missing value") then title = name; end
 		local active = parts[4] ~= "false";
 		table.insert(list, { id = id, name = name, title = title, active = active });
+		end
 	end
 	return list;
 end
@@ -56,7 +58,7 @@ actions.update = function (index)
 		table.insert(items, { 
 			type = "item", 
 			checked = v.active, 
-			text = v.title .. "\n" .. v.name .. " (" .. v.id .. ")" 
+			text = v.title .. "\n" .. v.name
 		});
 	end
 	server.update({ id = id, children = items });
@@ -69,6 +71,7 @@ actions.tap = function (index)
 			"repeat with p in every process whose id is " .. item.id,
 				"set frontmost of p to true",
 				"set visible of p to true",
+				"set miniaturized o"
 			"end repeat",
 		"end tell");
 	actions.update(tab);
