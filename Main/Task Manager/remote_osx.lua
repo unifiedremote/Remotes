@@ -71,7 +71,6 @@ actions.tap = function (index)
 			"repeat with p in every process whose id is " .. item.id,
 				"set frontmost of p to true",
 				"set visible of p to true",
-				"set miniaturized o"
 			"end repeat",
 		"end tell");
 	actions.update(tab);
