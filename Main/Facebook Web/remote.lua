@@ -11,13 +11,13 @@ actions.switch = function()
 			if (hwnd == 0) then
 				actions.launch();
 			end
-			win.switchtowait(hwnd);
+			win.switchtowait("firefox.exe");
 		elseif (tab_index == 1) then
 			local hwnd = win.window("chrome.exe");
 			if (hwnd == 0) then
 				actions.launch();				
 			end
-			win.switchtowait(hwnd);
+			win.switchtowait("chrome.exe");
 		elseif (tab_index == 2) then
 			local hwnd = win.window("opera.exe");
 			if (hwnd == 0) then
@@ -29,7 +29,7 @@ actions.switch = function()
 			if (hwnd == 0) then
 				actions.launch();
 			end
-			win.switchtowait(hwnd);
+			win.switchtowait("safari.exe");
 		end		
 	--end
 end

@@ -20,7 +20,7 @@ actions.switch = function ()
 	if OS_WINDOWS then
 		local hwnd = win.window("vlc.exe");
 		if (hwnd == 0) then actions.launch(); end
-		win.switchtowait(hwnd);
+		win.switchtowait("vlc.exe");
 	end
 end
 

@@ -6,7 +6,7 @@ actions.switch = function()
 	if OS_WINDOWS then
 		local hwnd = win.window("chrome.exe");
 		if (hwnd == 0) then actions.launch(); end
-		win.switchtowait(hwnd);
+		win.switchtowait("chrome.exe");
 	end
 end
 

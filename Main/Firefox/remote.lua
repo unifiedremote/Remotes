@@ -6,7 +6,7 @@ actions.switch = function()
 	if OS_WINDOWS then
 		local hwnd = win.window("firefox.exe");
 		if (hwnd == 0) then actions.launch(); end
-		win.switchtowait(hwnd);
+		win.switchtowait("firefox.exe");
 	end
 end
 

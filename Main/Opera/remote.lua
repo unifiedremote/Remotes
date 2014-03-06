@@ -7,7 +7,7 @@ actions.switch = function()
 	if OS_WINDOWS then
 		local hwnd = win.window("opera.exe");
 		if (hwnd == 0) then actions.launch(); end
-		win.switchtowait(hwnd);
+		win.switchtowait("opera.exe");
 	end
 end
 
