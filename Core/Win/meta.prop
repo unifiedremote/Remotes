@@ -1,0 +1,5 @@
+meta.name: Win
+meta.author: Core
+meta.description: Core.Win
+meta.hidden: true
+meta.platform: windows
