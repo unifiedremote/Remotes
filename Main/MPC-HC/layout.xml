@@ -3,7 +3,7 @@
 	<tabs>
 		<tab text="Player">
 			<row weight="wrap">
-				<label id="info" />
+				<label id="info" text="[Not Playing]" />
 			</row>
 			<row>
 				<button icon="vdown" ontap="volume_down" />

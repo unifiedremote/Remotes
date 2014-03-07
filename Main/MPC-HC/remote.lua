@@ -1,4 +1,24 @@
 local win = libs.win;
+local tid = -1;
+
+events.focus = function ()
+	tid = libs.timer.interval(update, 1000);
+end
+
+events.blur = function ()
+	libs.timer.cancel(tid);
+end
+
+function update ()
+	local hwnd = win.find("MediaPlayerClassicW", nil);
+	local title = win.title(hwnd);
+	if title == "" then
+		title = "[Not Running]";
+	elseif title == "Media Player Classic Home Cinema" then
+		title = "[Not Playing]";
+	end
+	layout.info.text = title;
+end
 
 --@help Launch MPCHC application
 actions.launch = function()
