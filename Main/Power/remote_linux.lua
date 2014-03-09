@@ -1,12 +1,40 @@
+local de = "";
 
+events.create = function ()
+	-- Try to determine the current DE
+	local desktop = os.getenv("XDG_CURRENT_DESKTOP");
+	local session = os.getenv("GDMSESSION");
+	if (desktop == "Unity") then
+		de = "Unity";
+	elseif (desktop == "KDE" or utf8.contains(session, "kde")) then
+		de = "KDE";
+	elseif (desktop == "GNOME") then
+		de = "GNOME";
+	elseif (desktop == "LXDE") then
+		de = "LXDE";
+	else
+		de = "";
+	end
+end
+	
 --@help Force system restart
 actions.restart = function ()
-	os.execute("reboot");
+	-- Alternatives for other DEs should be added here...
+	if (de == "KDE") then
+		os.execute("qdbus org.kde.ksmserver /KSMServer logout 0 1 2");
+	else
+		os.execute("reboot");
+	end
 end
 
 --@help Force system shutdown
 actions.shutdown = function ()
-	os.execute("shutdown");
+	-- Alternatives for other DEs should be added here...
+	if (de == "KDE") then
+		os.execute("qdbus org.kde.ksmserver /KSMServer logout 0 2 2");
+	else
+		os.execute("shutdown");
+	end
 end
 
 --@help Logoff current user
