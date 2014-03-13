@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+    <row>
+      <button text="Turn On" onTap="turn_on" color="green" />
+    </row>
+    <row>
+      <button text="Turn Off" onTap="turn_off" color="red" />
+    </row>
+    <row>
+      <button text="Brightness Up" onTap="brightness_up" />
+    </row>
+	<row>
+      <button text="Brightness Down" onTap="brightness_down" />
+    </row>
+  </grid>
+</layout>
