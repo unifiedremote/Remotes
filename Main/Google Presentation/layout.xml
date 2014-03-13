@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="previous" onVolumeDown="next">
+	<grid>
+		<row>
+			<button icon="stop" ontap="end_show" />
+			<button icon="play" ontap="start_show" />
+		</row>
+		<row weight="2">
+			<button icon="left" ontap="previous" />
+			<button icon="right" ontap="next" />
+		</row>
+	</grid>
+</layout>
