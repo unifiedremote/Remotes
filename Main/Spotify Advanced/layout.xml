@@ -9,10 +9,10 @@
 				<image id="currimg" />
 			</row>
 			<row weight="wrap">
-				<slider id="currvol" text="Volume" progressmax="100" onchange="volchange" />
+				<slider id="currvol" text="Volume" progressmax="100" onup="volchange" />
 			</row>
 			<row weight="wrap">
-				<slider id="currpos" text="Position" onchange="poschange" />
+				<slider id="currpos" text="Position" onup="poschange" />
 			</row>
 			<row weight="wrap">
 				<toggle id="suffle" icon="shuffle" onchange="suffle" />

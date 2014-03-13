@@ -67,10 +67,12 @@ end
 
 actions.poschange = function (pos)
 	os.script("tell application \"Spotify\" to set player position to " .. pos);
+	actions.update();
 end
 
 actions.volchange = function (vol)
 	os.script("tell application \"Spotify\" to set sound volume to " .. vol);
+	actions.update();
 end
 
 actions.next = function ()
