@@ -34,6 +34,26 @@ function update ()
 	items = {};
 	if path == "" then
 		local root = fs.roots();
+		local homePath = "~/";
+		if OS_WINDOWS then 
+			homePath = "%HOMEPATH%"
+		end
+		local desktopPath = "~/Desktop";
+		if OS_WINDOWS then 
+			homePath = "%HOMEPATH%/Desktop"
+		end
+		table.insert(items, {
+			type = "item",
+			icon = "folder",
+			text = "Home",
+			path = homePath,
+			isdir = true});
+		table.insert(items, {
+			type = "item",
+			icon = "folder",
+			text = "Desktop",
+			path = desktopPath,
+			isdir = true});
 		for t = 1, #root do
 			table.insert(items, {
 				type = "item",
