@@ -15,9 +15,9 @@
 				<slider id="currpos" text="Position" onup="poschange" />
 			</row>
 			<row weight="wrap">
-				<toggle id="suffle" icon="shuffle" onchange="suffle" />
+				<button id="suffle" icon="shuffle" ontap="shuffle" />
 				<button id="play" icon="play" ontap="play_pause" />
-				<toggle id="repeat" icon="repeat" onchange="repeating" />
+				<button id="repeat" icon="repeat" ontap="repeating" />
 			</row>
 		</tab>
 		<tab text="Playlists">
