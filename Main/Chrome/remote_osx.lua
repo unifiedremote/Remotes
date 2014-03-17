@@ -58,7 +58,8 @@ end
 actions.address = function()
 	actions.switch();
 	keyboard.stroke("cmd", "L");
-	device.keyboard();
+	--Removed until keyboard work in app
+	--device.keyboard();
 end
 
 --@help Go to home page
@@ -71,7 +72,8 @@ end
 actions.find = function()
 	actions.switch();
 	keyboard.stroke("cmd", "F");
-	device.keyboard();
+	--Removed until keyboard work in app
+	--device.keyboard();
 end
 
 --@help Zoom page in

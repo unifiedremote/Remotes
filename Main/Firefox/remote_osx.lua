@@ -6,7 +6,7 @@ meta.description = "Mozilla Firefox browser remote."
 meta.platform = "osx"
 
 local keyboard = libs.keyboard;
-
+local device = libs.device;
 --@help Focus Firefox application
 actions.switch = function()
 	os.script("tell application \"Firefox\" to reopen activate");
@@ -14,7 +14,7 @@ end
 
 --@help Launch Firefox application
 actions.launch = function()
-	os.start("firefox");
+	os.open("/Applications/Firefox.app");
 end
 
 --@help Naviagte back
@@ -57,7 +57,8 @@ end
 actions.address = function()
 	actions.switch();
 	keyboard.stroke("cmd", "L");
-	device.keyboard();
+	--Removed until keyboard work in app
+	--device.keyboard();
 end
 
 --@help Go to home page
@@ -70,7 +71,8 @@ end
 actions.find = function()
 	actions.switch();
 	keyboard.stroke("cmd", "F");
-	device.keyboard();
+	--Removed until keyboard work in app
+	--device.keyboard();
 end
 
 --@help Zoom page in
