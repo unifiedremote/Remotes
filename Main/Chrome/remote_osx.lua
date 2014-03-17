@@ -6,6 +6,7 @@ meta.description = "Google Chrome browser remote."
 meta.platform = "osx"
 
 local keyboard = libs.keyboard;
+local device = libs.device;
 
 --@help Focus Chrome application
 actions.switch = function()
@@ -14,7 +15,7 @@ end
 
 --@help Launch Chrome application
 actions.launch = function()
-	os.start("chrome");
+	os.open("/Applications/Google Chrome.app");
 end
 
 --@help Naviagte back

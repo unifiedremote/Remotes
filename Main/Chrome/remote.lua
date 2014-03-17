@@ -1,5 +1,6 @@
 local keyboard = libs.keyboard;
 local win = libs.win;
+local device = libs.device;
 
 --@help Focus Chrome application
 actions.switch = function()
@@ -12,6 +13,7 @@ end
 
 --@help Launch Chrome application
 actions.launch = function()
+
 	if OS_WINDOWS then
 		os.start("chrome");
 	end
