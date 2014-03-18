@@ -9,7 +9,7 @@
 				<slider id="vol" text="Volume" progress="0" progressmax="100" onchange="volume" />
 			</row>
 			<row weight="wrap">
-				<slider id="pos" text="Position" progress="0" progressmax="0" onchange="position" />
+				<slider id="pos" text="Position" progress="0" progressmax="0" onup="position" />
 			</row>
 			<row>
 				<button icon="previous" ontap="previous" />

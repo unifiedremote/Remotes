@@ -1,19 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout scroll="none">
-	<row>
-		<button icon="previous" ontap="previous"/>
-		<button icon="next" ontap="next"/>		
-	</row>
-	<row>
-		<button icon="rwd" ontap="rewind"/>
-		<button icon="ff" ontap="forward"/>
-	</row>
-	<row>
-		<button icon="vdown" ontap="volume_down"/>
-		<button icon="vup" ontap="volume_up"/>
-	</row>
-	<row>
-		<button icon="fullscreen" ontap="fullscreen"/>
-		<button icon="play_pause" ontap="play_pause"/>
-	</row>
+<layout onLaunch="launch" onVolumeDown="volume_down" onVolumeUp="volume_up" onPause="pause" onResume="play" color="blue">
+	<tabs>
+		<tab text="Player">
+			<row weight="wrap">
+				<label id="title" text="Loading..." />
+			</row>
+			<row weight="4">
+				<image id="cover"/>
+			</row>
+			<row weight="wrap">
+				<slider id="vol" text="Volume" progress="0" progressmax="100" onchange="volume" />
+			</row>
+			<row weight="wrap">
+				<slider id="pos" text="Position" progress="0" progressmax="0" onchange="position" />
+			</row>
+			<row>
+				<button icon="previous" ontap="previous" />
+				<button id="play" icon="play" ontap="play_pause" />
+				<button icon="next" ontap="next" />
+			</row>
+		</tab>
+		<tab text="Playback">
+			<row>
+				<button icon="previous" ontap="previous" />
+				<button id="play" icon="play" ontap="play_pause" />
+				<button icon="next" ontap="next" />
+			</row>
+			<row>
+				<button icon="rwd" ontap="rewind" />
+				<button icon="stop" ontap="stop" />
+				<button icon="ff" ontap="forward" />
+			</row>
+			<row>
+				<button icon="vdown" ontap="volume_down" />
+				<button icon="vmute" ontap="volume_mute" />
+				<button icon="vup" ontap="volume_up" />
+			</row>
+			<row>
+				<button icon="shuffle" ontap="shuffle" />
+				<button icon="fullscreen" ontap="fullscreen"/>
+				<button icon="repeat" ontap="rep" />
+			</row>
+		</tab>
+		<tab text="Playlists">
+			<row>
+				<list id="playlists" ontap="playlist">
+					<item>Loading...</item>
+				</list>
+			</row>
+			<row weight="wrap">
+				<button icon="previous" ontap="previous" />
+				<button id="back" icon="back" ontap="back" />
+				<button icon="next" ontap="next" />
+			</row>
+		</tab>
+	</tabs>
 </layout>
