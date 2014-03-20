@@ -29,9 +29,8 @@ function test()
 			text = "A connection to XBMC could not be established." ..
 				"We recommend using the latest version of XBMC.\n\n" ..
 				"1. Make sure XBMC is running on your computer.\n\n" ..
-				"2. Enable the Webserver in System > Services > Webserver.\n\n" ..
-				"3. Allow remote control in System > Remote control.\n\n" ..
-				"4. Unified Remote is pre-configured to use port 80 and no password.\n\n" ..
+				"2. Enable the Webserver in System > Settings > Services > Allow control of XBMC via HTTP\n\n" ..
+				"3. Unified Remote is pre-configured to use port 8080 and no password.\n\n" ..
 				"You may have to restart XBMC after enabling the web interface for the changes to take effect.",
 			children = {{ type = "button", text = "OK" }}
 		});
@@ -53,18 +52,18 @@ function send(method, params)
 	local host = settings.host;
 	local port = settings.port;
 	local url = "http://" .. host .. ":" .. port .. "/jsonrpc";
-	
+	-- local ok = true;
 	local json = libs.data.tojson(req);
-	local resp = libs.http.request({
+	
+	local ok, resp = pcall(libs.http.request,{
 		method = "post",
 		url = url,
 		mime = "application/json",
 		content = json
 	});
-	if (resp ~= nil and resp.status == 200) then
+	if (ok and resp ~= nil and resp.status == 200) then
 		return libs.data.fromjson(resp.content);
 	else
-		print("error: " .. resp.content);
 		libs.server.update({ id = "title", text = "[Not Connected]" });
 		return nil;
 	end
@@ -75,8 +74,13 @@ end
 ------------------------------------------------------------------------
 
 function update_status()
-	local resp = send("Player.GetItem", { playerid = player() });
-	layout.title.text = resp.result.item.label;
+	local pid = player();
+	if(pid == nil) then
+		layout.title.text = "[Not Playing]";
+	else
+		local resp = send("Player.GetItem", { playerid = pid });
+		layout.title.text = resp.result.item.label;
+	end
 end
 
 local stack = {};
@@ -271,7 +275,13 @@ end
 
 function player ()
 	local resp = send("Player.GetActivePlayers");
-	return resp.result[1].playerid;
+	print(libs.data.tojsonpretty(resp));
+	if(resp.result[1] == nil)
+		then
+		return nil;
+	else
+		return resp.result[1].playerid;
+	end
 end
 
 function volume ()

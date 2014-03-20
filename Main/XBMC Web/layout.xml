@@ -34,12 +34,12 @@
 			</row>
 			<row>
 				<button icon="rwd" ontap="rewind" />
-				<button icon="" ontap="asfd" />
+				<button text="Info" ontap="info" />
 				<button icon="ff" ontap="forward" />
 			</row>
 			<row>
 				<button icon="previous" ontap="previous" />
-				<button icon="" ontap="asdf" />
+				<button text="Home" ontap="home" />
 				<button icon="next" ontap="next" />
 			</row>
 			<row>

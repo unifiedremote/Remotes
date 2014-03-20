@@ -24,12 +24,22 @@ end
 
 --@help Raise volume
 actions.volume_up = function()
-	keyboard.stroke("oem_plus");
+	if(OS_WINDOWS)
+		then
+		keyboard.stroke("oem_plus");
+	else
+		keyboard.stroke("plus");
+	end
 end
 
 --@help Lower volume
 actions.volume_down = function()
-	keyboard.stroke("oem_minus");
+	if(OS_WINDOWS)
+	then
+		keyboard.stroke("oem_minus");
+	else
+		keyboard.stroke("minus");
+	end
 end
 
 --@help Mute volume
