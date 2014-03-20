@@ -51,8 +51,8 @@ function request(url)
 		url = url,
 		headers = { Authorization = "Basic " .. auth }
 	}
-	local resp = libs.http.request(req);
-	if (resp ~= nil and resp.status == 200) then
+	local ok, resp = pcall(libs.http.request,req);
+	if (ok and resp.status == 200) then
 		return resp;
 	else
 		libs.server.update({ id = "title", text = "[Not Connected]" });
@@ -317,11 +317,11 @@ actions.loop_repeat = function ()
 	send("pl_repeat");
 end
 
-actions.volume_down = function ()
+actions.volume_up = function ()
 	send("volume", "%2B20");
 end
 
-actions.volume_up = function ()
+actions.volume_down = function ()
 	send("volume", "-20");
 end
 
