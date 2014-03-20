@@ -87,7 +87,7 @@ actions.tab_changed = function(index)
 		os.script("tell application \"Keynote\"",
 		"tell document 1",
 		"hide slide switcher",
-		"end tell",
+		"end tell", 
 		"end tell");
 	end
 end
