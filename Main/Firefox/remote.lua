@@ -1,5 +1,6 @@
 local keyboard = libs.keyboard;
 local win = libs.win;
+local device = libs.device;
 
 --@help Focus Firefox application
 actions.switch = function()
@@ -57,7 +58,8 @@ end
 actions.address = function()
 	actions.switch();
 	keyboard.stroke("control", "L");
-	device.keyboard();
+	--Removed until keyboard work in app
+	--device.keyboard();
 end
 
 --@help Go to home page
@@ -70,7 +72,8 @@ end
 actions.find = function()
 	actions.switch();
 	keyboard.stroke("control", "F");
-	device.keyboard();
+	--Removed until keyboard work in app
+	--device.keyboard();
 end
 
 --@help Zoom page in

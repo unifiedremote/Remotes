@@ -8,6 +8,7 @@ local fs = libs.fs;
 local timer_total = 0;
 local timer_slide = 0;
 local timer_state = 0;
+local ready = false;
 
 events.create = function ()
 	file_curr = fs.temp();
@@ -25,6 +26,7 @@ events.focus = function ()
 	obj = luacom.CreateObject("PowerPoint.Application");
 	update();
 	tid_update = timer.interval(update, 1000);
+	ready = false;
 end
 
 events.blur = function ()
@@ -88,21 +90,25 @@ end
 function update ()
 	local title = "";
 	local notes = "";
-	local items = {};
 	local preview_curr = "";
 	local preview_prev = "";
 	local preview_next = "";
 	local time_total = "";
 	local time_slide = "";
-	
+	local items = {};
+			
 	time_total = getTime("Total", timer_total);
 	time_slide = getTime("Slide", timer_slide);
 	
 	if (obj == nil) then
 		title = "[No Application]";
+		ready = false;
 	elseif (obj.Presentations.Count == 0 or obj.SlideShowWindows.Count == 0) then
 		title = "[No Presentation]";
+		ready = false;
 	else
+		ready = true;
+		
 		local index = obj.ActivePresentation.SlideShowWindow.View.CurrentShowPosition;
 		local slide = obj.ActivePresentation.Slides(index);
 		
@@ -113,13 +119,12 @@ function update ()
 		notes = getNotes(slide);
 		
 		-- Get slides list
-		local items = {};
 		local count = obj.ActivePresentation.Slides.Count;
 		for i = 1, count do
 			local slide = obj.ActivePresentation.Slides(i);
 			table.insert(items, { type = "item", text = getTitle(slide) });
 		end
-
+		
 		-- Get previews
 		slide:Export(file_curr, "jpg", 320, 240);
 		slide = obj.ActivePresentation.Slides(math.max(1, index - 1));
@@ -131,7 +136,7 @@ function update ()
 		preview_prev = file_prev;
 		preview_next = file_next;
 	end
-	
+
 	server.update(
 		{ id = "title", text = title },
 		{ id = "comments", text = notes },

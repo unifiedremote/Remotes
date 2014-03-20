@@ -1,11 +1,12 @@
 keyboard = libs.keyboard;
+osx = libs.osx;
 
 actions.turn_on = function ()
-	keyboard.press("brightnessup");
+	osx.displayon();
 end
 
 actions.turn_off = function ()
-	keyboard.stroke("ctrl", "shift", "eject");
+	osx.displayoff();
 end
 
 actions.brightness_up = function ()

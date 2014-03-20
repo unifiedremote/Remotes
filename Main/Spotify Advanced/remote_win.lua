@@ -20,6 +20,31 @@ local CMD_PREVIOUS = 786432;
 local CMD_NEXT = 720896;
 local CMD_MUTE = 524288;
 
+-- Native Windows Stuff
+local bit = require("bit");
+local ffi = require("ffi");
+ffi.cdef[[
+typedef void* HWND;
+typedef long LONG;
+typedef struct {
+  LONG left;
+  LONG top;
+  LONG right;
+  LONG bottom;
+} RECT;
+bool GetWindowRect(LONG hwnd, RECT* rect);
+]]
+
+local WM_LBUTTONDOWN = 0x0201;
+local WM_LBUTTONUP = 0x0202;
+
+function click(hwnd, x, y)
+	local pos = bit.lshift(y, 16) + x;
+	win.post(hwnd, WM_LBUTTONDOWN, 0x01, pos);
+	os.sleep(100);
+	win.post(hwnd, WM_LBUTTONUP, 0x00, pos);
+end
+
 function focus()
 	OAuthKey = get_oauth_key();
 	CFID = get_cfid();
@@ -65,8 +90,8 @@ function update()
 		update_playlists();
 	end
 	
-	local repeating = status["repeat"] ~= 0;
-	local shuffling = status["shuffle"] ~= 0;
+	--local repeating = status["repeat"] ~= 0;
+	--local shuffling = status["shuffle"] ~= 0;
 	
 	local name = track .. " - " .. artist;
 	local icon = "play";
@@ -79,10 +104,7 @@ function update()
 	server.update(
 		{ id = "currtitle", text = name },
 		{ id = "currvol", progress = volume },
-		{ id = "currpos", progress = pos, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(duration) },
-		{ id = "currpos", progressMax = duration },
-		{ id = "repeat", checked = repeating },
-		{ id = "suffle", checked = shuffling },
+		{ id = "currpos", progress = math.floor(pos / duration * 100), progressMax = 100, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(duration) },
 		{ id = "play", icon = icon }
 	);
 end
@@ -122,6 +144,43 @@ end
 --@help Previous track
 actions.previous = function ()
 	actions.command(CMD_PREVIOUS);
+end
+
+actions.shuffle = function ()
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	local rect = ffi.new("RECT", 0, 0, 0, 0);
+	ffi.C.GetWindowRect(hwnd, rect);
+	click(hwnd, rect.right - rect.left - 59, rect.bottom - rect.top - 21);
+end
+
+actions.repeating = function ()
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	local rect = ffi.new("RECT", 0, 0, 0, 0);
+	ffi.C.GetWindowRect(hwnd, rect);
+	click(hwnd, rect.right - rect.left - 24, rect.bottom - rect.top - 21);
+end
+
+actions.volchange = function (vol)
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	local rect = ffi.new("RECT", 0, 0, 0, 0);
+	ffi.C.GetWindowRect(hwnd, rect);
+	
+	local y = rect.bottom - rect.top - 21;
+	local x = 126 + math.floor(vol / 100 * 76);
+	click(hwnd, x, y);
+end
+
+actions.poschange = function (pos)
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	local rect = ffi.new("RECT", 0, 0, 0, 0);
+	ffi.C.GetWindowRect(hwnd, rect);
+	
+	local y = rect.bottom - rect.top - 21;
+	local x1 = 285;
+	local x2 = rect.right - rect.left - 145;
+	local w = x2 - x1;
+	local x = x1 + 6 + math.floor(pos / 100 * w);
+	click(hwnd, x, y);
 end
 
 -------------------------------------------------------------------------------------------

@@ -47,12 +47,20 @@ end
 
 --@help Seek forward
 actions.forward = function()
-	keyboard.stroke("control", "right");
+	if (OS_OSX) then
+		keyboard.stroke("cmd", "right");
+	else
+		keyboard.stroke("control", "right");
+	end
 end
 
 --@help Seek backward
 actions.rewind = function()
-	keyboard.stroke("control", "left");
+	if (OS_OSX) then
+		keyboard.stroke("cmd", "left");
+	else
+		keyboard.stroke("control", "left");
+	end
 end
 
 --@help Fullscreen view

@@ -9,7 +9,7 @@
     <row>
       <button icon="rwd" onTap="rewind" />
       <button icon="playpause" onTap="play_pause" />
-      <button icon="ff" onTap="foward" />
+      <button icon="ff" onTap="forward" />
     </row>
     <row>
       <button icon="left" onTap="left" />
@@ -17,8 +17,8 @@
       <button icon="right" onTap="right" />
     </row>
     <row>
-      <button icon="fullscreen" onTap="window" />
-      <button icon="window" onTap="fullscreen" />
+      <button icon="fullscreen" onTap="fullscreen" />
+      <button text="Esc" onTap="window" />
     </row>
   </grid>
 </layout>

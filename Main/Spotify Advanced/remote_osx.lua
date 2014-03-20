@@ -13,8 +13,9 @@ function update()
 	local pos = os.script("tell application \"Spotify\" to set out to player position") + 0;
 	pos = math.ceil(pos);
 
-	local repeating = os.script("tell application \"Spotify\" to set out to repeating");
-	local shuffling = os.script("tell application \"Spotify\" to set out to shuffling");
+	--local repeating = os.script("tell application \"Spotify\" to set out to repeating");
+	--local shuffling = os.script("tell application \"Spotify\" to set out to shuffling");
+	
 	playing = os.script("tell application \"Spotify\" to set out to player state") == "playing";
 	local id = os.script("tell application \"Spotify\" to set out to id of current track");
 
@@ -55,8 +56,6 @@ function update()
 		{ id = "currvol", progress = volume },
 		{ id = "currpos", progress = pos, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(duration) },
 		{ id = "currpos", progressMax = duration },
-		{ id = "repeat", checked = repeating },
-		{ id = "suffle", checked = shuffling },
 		{ id = "play", icon = icon }
 	);
 end
@@ -67,10 +66,12 @@ end
 
 actions.poschange = function (pos)
 	os.script("tell application \"Spotify\" to set player position to " .. pos);
+	actions.update();
 end
 
 actions.volchange = function (vol)
 	os.script("tell application \"Spotify\" to set sound volume to " .. vol);
+	actions.update();
 end
 
 actions.next = function ()

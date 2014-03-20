@@ -1,5 +1,6 @@
 local keyboard = libs.keyboard;
 local win = libs.win;
+local device = libs.device;
 
 --@help Focus Chrome application
 actions.switch = function()
@@ -12,6 +13,7 @@ end
 
 --@help Launch Chrome application
 actions.launch = function()
+
 	if OS_WINDOWS then
 		os.start("chrome");
 	end
@@ -57,7 +59,8 @@ end
 actions.address = function()
 	actions.switch();
 	keyboard.stroke("control", "L");
-	device.keyboard();
+	--Removed until keyboard work in app
+	--device.keyboard();
 end
 
 --@help Go to home page
@@ -70,7 +73,8 @@ end
 actions.find = function()
 	actions.switch();
 	keyboard.stroke("control", "F");
-	device.keyboard();
+	--Removed until keyboard work in app
+	--device.keyboard();
 end
 
 --@help Zoom page in
