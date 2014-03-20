@@ -275,7 +275,6 @@ end
 
 function player ()
 	local resp = send("Player.GetActivePlayers");
-	print(libs.data.tojsonpretty(resp));
 	if(resp.result[1] == nil)
 		then
 		return nil;
