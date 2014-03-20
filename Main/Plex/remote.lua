@@ -68,7 +68,7 @@ function update_players()
 			i = i + 1;
 		end
 	end
-	
+	send("navigation", "test");
 	libs.server.update({ id = "players", children = playersList });
 	print("Plex Player: " .. player);
 end
@@ -83,8 +83,21 @@ end
 
 function send(controller, action)
 	local _url = url(controller, action);
+	print("test");
 	print(_url);
-	libs.http.get(_url);
+	local resp = libs.http.get(_url);
+	if(libs.utf8.contains(resp, "Errno 10061")) then
+		libs.server.update({
+			type = "dialog",
+			title = "Plex Connection",
+			text = "A connection to Plex could not be established." ..
+				"We recommend using the latest version of Plex.\n\n" ..
+				"1. Make sure Plex is running on your computer.\n\n" ..
+				"2. Enable remote controlling in Preferences > System > Services > Allow control of Plex/HT via HTTP.\n\n" ..
+				"You may have to restart Plex after enabling the remote controlling for the changes to take effect.",
+			children = {{ type = "button", text = "OK" }}
+		});
+	end
 end
 
 -------------------------------------------

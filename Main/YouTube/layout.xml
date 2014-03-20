@@ -16,6 +16,7 @@
     <row>
       <button icon="fullscreen" onTap="fullscreen" />
       <button icon="playpause" onTap="play_pause" />
+      <button text="Esc" onTap="exit_fullscreen" />
     </row>
   </grid>
 </layout>

@@ -42,11 +42,11 @@ actions.num_9 = function ()
 end
 
 actions.num_add = function ()
-	keyboard.press("add");
+	keyboard.press("plus");
 end
 
 actions.num_subtract = function ()
-	keyboard.press("subtract");
+	keyboard.press("minus");
 end
 
 actions.num_multiply = function ()

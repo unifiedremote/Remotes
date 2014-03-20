@@ -16,7 +16,7 @@ end
 
 --@help Lock current session
 actions.lock = function ()
-	
+	os.execute("/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend");
 end
 
 --@help Put system in sleep state

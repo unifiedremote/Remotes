@@ -22,7 +22,7 @@ icons = {
 
 -- Key Texts
 texts = {
-	SPACE = " ",
+	SPACE = "Space",
 	CONTROL = "Ctrl",
 	SHIFT = "Shift",
 	LWIN = "Win",

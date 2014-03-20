@@ -40,6 +40,11 @@ actions.fullscreen = function()
 	keyboard.stroke("F");
 end
 
+--@help Toggle fullscreen
+actions.exit_fullscreen = function()
+	keyboard.stroke("esc");
+end
+
 --@help Toggle playback state
 actions.play_pause = function()
 	keyboard.stroke("space");
