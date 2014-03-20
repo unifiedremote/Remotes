@@ -1,7 +1,7 @@
 keyboard = libs.keyboard;
 
 actions.turn_on = function ()
-
+	keyboard.press("brightnessup");
 end
 
 actions.turn_off = function ()

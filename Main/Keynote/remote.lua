@@ -91,3 +91,9 @@ actions.tab_changed = function(index)
 		"end tell");
 	end
 end
+
+actions.launch = function()
+os.script("tell application \"Keynote\"",
+	"activate",
+	"end tell");
+end
