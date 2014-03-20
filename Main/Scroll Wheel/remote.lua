@@ -24,9 +24,9 @@ actions.abs = function (id, x, y)
 		dist = dist + delta;
 		if (math.abs(dist) > 10) then
 			if (dist < 0) then
-				mouse.vscroll(-100);
+				mouse.vscroll(-5);
 			else
-				mouse.vscroll(100);
+				mouse.vscroll(5);
 			end
 			dist = 0;
 		end
