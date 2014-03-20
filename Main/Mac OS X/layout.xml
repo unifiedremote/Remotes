@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<layout>
+	<row>
+		<button ontap="explorer" text="Open Finder"/>
+	</row>
+	<row>
+		<button ontap="run" text="Spotlight"/>
+	</row>
+	<row>
+		<button ontap="close" text="Close Window"/>
+	</row>
+	<row>
+		<button ontap="maximize" text="Full screen / Exit full screen"/>
+	</row>
+	<row>
+		<button ontap="minimize" text="Minimize"/>
+	</row>
+	<row>
+		<button ontap="minimize_all" text="Minimize All"/>
+	</row>
+</layout>

@@ -1,5 +1,6 @@
 
 local keyboard = libs.keyboard;
+local device = libs.device;
 
 --@help Focus Chrome application
 actions.switch = function()
