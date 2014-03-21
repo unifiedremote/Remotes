@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeDown="volume_down" onVolumeUp="volume_up" >
+	<tabs color="black">
+		<tab text="Player" color="orange">
+			<row weight="wrap">
+				<label id="title" text="Loading..." />
+			</row>
+			<row weight="wrap">
+				<slider id="vol" text="Volume" progress="0" progressmax="100" onchange="volume"/>
+			</row>
+			<row weight="wrap">
+				<slider id="pos" text="Position" progress="0" progressmax="0" onup="position" />
+			</row>
+			<row>
+				<button icon="previous" ontap="previous" />
+				<button id="play" icon="play" ontap="play_pause"/>
+				<button icon="next" ontap="next" />
+			</row>
+			<row>
+				<button icon="thumbsup" ontap="rate_up" />
+				<button icon="stop" ontap="stop" />
+				<button icon="thumbsdown" ontap="rate_down"/>
+			</row>
+			<row>
+				<button icon="vdown" ontap="volume_down" />
+				<button icon="vmute" ontap="volume_mute" />
+				<button icon="vup" ontap="volume_up" />
+			</row>
+		</tab>
+		<tab text="Tracks" color="orange">
+			<list id="tracks" ontap="track">
+				<item>Loading...</item>
+			</list>
+		</tab>
+	</tabs>
+</layout>
