@@ -96,8 +96,8 @@ int tdSensorValue(const char *protocol, const char *model, int id, int dataType,
 local lib = ffi.load("TelldusCore");
 
 --@help Toggle deivce by ID
---@param id:number
---@param state:boolean
+--@param id:number ID of device to toggle
+--@param state:boolean Toggle on (true) or off (false)
 actions.toggle = function (id, state)
 	if state then
 		lib.tdTurnOn(id);
@@ -107,15 +107,15 @@ actions.toggle = function (id, state)
 end
 
 --@help Toggle device by name
---@param name
---@param state:boolean
+--@param name Name of device to toggle
+--@param state:boolean Toggle on (true) or off (false)
 actions.toggle_name = function (name, state)
 	local id = actions.find(name);
 	if (id ~= nil) then actions.toggle(id, state); end
 end
 
 --@help Toggle all devices
---@param state:boolean
+--@param state:boolean Toggle on (true) or off (false)
 actions.toggle_all = function(state)
 	local n = lib.tdGetNumberOfDevices();
 	for i=1,n do
@@ -135,34 +135,34 @@ actions.all_off = function()
 end
 
 --@help Turn on by ID
---@param id:number
+--@param id:number ID of device to turn on
 actions.turn_on = function(id)
 	actions.toggle(id, true);
 end
 
 --@help Turn on by name
---@param name
+--@param name Name of device to turn on
 actions.turn_on_name = function(name)
 	local id = actions.find(name);
 	if (id ~= nil) then actions.turn_on(id); end
 end
 
 --@help Turn off device by ID
---@param id:number
+--@param id:number ID of device to turn off
 actions.turn_off = function(id)
 	actions.toggle(id, false);
 end
 
 --@help Turn off device by name
---@param name
+--@param name Name of device to turn off
 actions.turn_off_name = function(name)
 	local id = actions.find(name);
 	if (id ~= nil) then actions.turn_off(id); end
 end
 
 --@help Dim device by ID
---@param id:number
---@param dim:number
+--@param id:number ID of device to dim
+--@param dim:number Dim level (0-100)
 actions.dim = function (id, dim)
 	if (dim == 0) then
 		lib.tdTurnOff(id);
@@ -172,14 +172,15 @@ actions.dim = function (id, dim)
 end
 
 --@help Dim device by name
---@param name
---@param dim:number
+--@param name Name of device to dim
+--@param dim:number Dim level (0-100)
 actions.dim_name = function (name, dim)
 	local id = actions.find(name);
 	if (id ~= nil) then actions.dim(id, dim); end
 end
 
 --@help Dim all devices
+--@param dim:number Dim level (0-100)
 actions.dim_all = function(dim)
 	local n = lib.tdGetNumberOfDevices();
 	for i=1,n do
@@ -213,7 +214,7 @@ actions.devices = function()
 end
 
 --@help Find device ID by name
---@param name
+--@param name Name of the device to find
 actions.find = function(name)
 	local n = lib.tdGetNumberOfDevices();
 	for i=1,n do

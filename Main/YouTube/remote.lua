@@ -35,17 +35,17 @@ actions.next = function()
 	keyboard.stroke("media_next_track");
 end
 
---@help Toggle fullscreen
+--@help Enter fullscreen
 actions.fullscreen = function()
 	keyboard.stroke("F");
 end
 
---@help Toggle fullscreen
+--@help Exit fullscreen
 actions.exit_fullscreen = function()
 	keyboard.stroke("esc");
 end
 
---@help Toggle playback state
+--@help Toggle play/pause
 actions.play_pause = function()
 	keyboard.stroke("space");
 end

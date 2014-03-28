@@ -28,7 +28,7 @@ actions.launch = function()
 	os.script("tell application \"VLC\" to activate");
 end
 
---@help Toggle playback state
+--@help Toggle play/pause
 actions.play_pause = function()
 	os.script("tell application \"VLC\" to play");
 end

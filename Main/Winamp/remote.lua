@@ -1,4 +1,3 @@
-
 local win = libs.win;
 local keyboard = libs.keyboard;
 local timer = libs.timer
@@ -87,7 +86,7 @@ actions.update = function ()
 end
 
 --@help Send raw command to Winamp
---@param cmd:number
+--@param cmd:number Raw winamp command number
 actions.command = function(cmd)
 	local hwnd = win.find("Winamp v1.x", nil);
 	win.send(hwnd, WM_COMMAND, cmd, 0);
@@ -139,7 +138,7 @@ actions.pause = function()
 	actions.command(WA_PAUSE);
 end
 
---@help Toggle playback state
+--@help Toggle play/pause state
 actions.play_pause = function()
 	if (playing) then
 		actions.pause();

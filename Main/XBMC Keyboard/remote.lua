@@ -17,7 +17,7 @@ actions.pause = function()
 	keyboard.stroke("P");
 end
 
---@help Toggle playback state
+--@help Toggle play/pause
 actions.play_pause = function()
 	keyboard.stroke("P");
 end
@@ -42,7 +42,7 @@ actions.volume_down = function()
 	end
 end
 
---@help Mute volume
+--@help Toggle mute volume
 actions.volume_mute = function()
 	keyboard.stroke("volume_mute");
 end
@@ -67,7 +67,7 @@ actions.right = function()
 	keyboard.stroke("right");
 end
 
---@help Select current
+--@help Select current item
 actions.select = function()
 	keyboard.stroke("return");
 end
@@ -77,22 +77,22 @@ actions.stop = function()
 	keyboard.stroke("X");
 end
 
---@help Previous track
+--@help Play previous item
 actions.previous = function()
 	keyboard.stroke("oem_comma");
 end
 
---@help Next track
+--@help Play next item
 actions.next = function()
 	keyboard.stroke("oem_period");
 end
 
---@help Seek backward
+--@help Rewind
 actions.rewind = function()
 	keyboard.stroke("R");
 end
 
---@help Seek forward
+--@help Fast forward
 actions.fast_forward = function()
 	keyboard.stroke("F");
 end

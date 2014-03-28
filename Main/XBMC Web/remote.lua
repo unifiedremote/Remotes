@@ -292,88 +292,110 @@ function input(key)
 	send("Input." .. key);
 end
 
+--@help Toggle play/pause
 actions.play_pause = function ()
 	send("Player.PlayPause", { playerid = player() });
 end
 
+--@help Stop playback
 actions.stop = function ()
 	send("Player.Stop", { playerid = player() });
 end
 
+--@help Play next item
 actions.next = function ()
 	send("Player.GoNext", { playerid = player() });
 end
 
+--@help Play previous item
 actions.previous = function ()
 	send("Player.GoPrevious", { playerid = player() });
 end
 
+--@help Rewind
 actions.rewind = function ()
 	send("Player.SetSpeed", { playerid = player(), speed = "decrement" });
 end
 
+--@help Fast forward
 actions.forward = function ()
 	send("Player.SetSpeed", { playerid = player(), speed = "increment" });
 end
 
+--@help Set volume level
+--@param vol:number Volume level (0-100)
 actions.set_volume = function (vol)
 	if (vol > 100) then vol = 100; end
 	if (vol < 0) then vol = 0; end
 	send("Application.SetVolume", { volume = vol });
 end
 
+--@help Raise volume
 actions.volume_up = function ()
 	actions.set_volume(volume() + 10);
 end
 
+--@help Lower volume
 actions.volume_down = function ()
 	actions.set_volume(volume() - 10);
 end
 
+--@help Toggle mute volume
 actions.volume_mute = function ()
 	send("Application.SetMute", { mute = "toggle" });
 end
 
+--@help Navigate left
 actions.left = function ()
 	input("Left");
 end
 
+--@help Navigate right
 actions.right = function ()
 	input("Right");
 end
 
+--@help Navigate up
 actions.up = function ()
 	input("Up");
 end
 
+--@help Navigate down
 actions.down = function ()
 	input("Down");
 end
 
+--@help Select current item
 actions.select = function ()
 	input("Select");
 end
 
+--@help Navigate back
 actions.back = function ()
 	input("Back");
 end
 
+--@help Toggle context menu
 actions.menu = function ()
 	input("ContextMenu");
 end
 
+--@help Toggle OSD
 actions.osd = function ()
 	input("ShowOSD");
 end
 
+--@help Navigate home
 actions.home = function ()
 	input("Home");
 end
 
+--@help Toggle information
 actions.info = function ()
 	input("Info");
 end
 
+--@help Toggle fullscreen
 actions.fullscreen = function ()
 	send("GUI.SetFullscreen", { fullscreen = "toggle" });
 end

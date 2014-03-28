@@ -9,14 +9,14 @@ bool SetSuspendState(bool hibernate, bool forceCritical, bool disableWakeEvent);
 local PowrProf = ffi.load("PowrProf");
 
 --@help Force system restart
---@param sec Timeout in seconds (default 5)
+--@param sec:number Timeout in seconds (default 5)
 actions.restart = function (sec)
 	if not sec then sec = 5; end
 	os.execute("shutdown /r /f /t " .. sec);
 end
 
 --@help Force system shutdown
---@param sec Timeout in seconds (default 5)
+--@param sec:number Timeout in seconds (default 5)
 actions.shutdown = function (sec)
 	if not sec then sec = 5; end
 	os.execute("shutdown /s /f /t " .. sec);

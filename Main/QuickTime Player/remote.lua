@@ -56,11 +56,12 @@ function update ()
 	);
 end
 
---@help Launch Spotify application
+--@help Launch QuickTime application
 actions.launch = function()
 	os.open("/Application/QuickTimer Player.app");
 end
 
+--@help Toggle play/pause
 actions.play_pause = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -74,6 +75,7 @@ actions.play_pause = function ()
 	update();
 end
 
+--@help Start/resume playback
 actions.play = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -82,6 +84,7 @@ actions.play = function ()
 	"end tell");
 end
 
+--@help Pause playback
 actions.pause = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -90,6 +93,7 @@ actions.pause = function ()
 	"end tell");
 end
 
+--@help Stop playback
 actions.stop = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -98,6 +102,7 @@ actions.stop = function ()
 	"end tell");
 end
 
+--@help Seek backwards
 actions.rewind = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -106,6 +111,7 @@ actions.rewind = function ()
 	"end tell");
 end
 
+--@help Seek forwards
 actions.forward = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -114,6 +120,7 @@ actions.forward = function ()
 	"end tell");
 end
 
+--@help Raise volume
 actions.volume_up = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -122,6 +129,7 @@ actions.volume_up = function ()
 	"end tell");
 end
 
+--@help Lower volume
 actions.volume_down = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -130,6 +138,7 @@ actions.volume_down = function ()
 	"end tell");
 end
 
+--@help Toggle mute volume
 actions.volume_mute = function ()
 	os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
@@ -138,6 +147,8 @@ actions.volume_mute = function ()
 	"end tell")
 end
 
+--@help Seek to position
+--@param pos:number Position (seconds)
 actions.seek = function (pos)
 	local time = pos / 100 * duration;
 	os.script("tell application \"QuickTime Player\"",

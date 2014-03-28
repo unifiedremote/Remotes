@@ -243,6 +243,7 @@ actions.position_stop = function (pos)
 	seek(pos);
 end
 
+--@help Seek backwards
 actions.jump_back = function ()
 	-- Seeking precision is only 1% so:
 	-- If 1% is greater than 10 sec, then jump 1%
@@ -256,6 +257,7 @@ actions.jump_back = function ()
 	seek(seeking_pos);
 end
 
+--@help Seek forwards
 actions.jump_forward = function ()
 	-- Seeking precision is only 1% so:
 	-- If 1% is greater than 10 sec, then jump 1%
@@ -273,62 +275,72 @@ end
 -- General
 ------------------------------------------------------------------------
 
-actions.launch = function()
-	
-end
-
+--@help Toggle play/pause
 actions.play_pause = function ()
 	send("pl_pause");
 end
 
+--@help Start playback
 actions.play = function ()
 	send("pl_play");
 end
 
+--@help Resume playback
 actions.resume = function ()
 	send("pl_forceresume");
 end
 
+--@help Pause playback
 actions.pause = function ()
 	send("pl_pause");
 end
 
+--@help Stop playback
 actions.stop = function ()
 	send("pl_stop");
 end
 
+--@help Play next item
 actions.next = function ()
 	send("pl_next");
 end
 
+--@help Play previous item
 actions.previous = function ()
 	send("pl_previous");
 end
 
+--@help Toggle shuffle
 actions.shuffle = function ()
 	send("pl_random");
 end
 
+--@help Toggle loop
 actions.loop = function ()
 	send("pl_loop");
 end
 
+--@help Toggle repeat
 actions.loop_repeat = function ()
 	send("pl_repeat");
 end
 
+--@help Raise volume
 actions.volume_up = function ()
 	send("volume", "%2B20");
 end
 
+--@help Lower volume
 actions.volume_down = function ()
 	send("volume", "-20");
 end
 
+--@help Mute volume
 actions.volume_mute = function ()
 	send("volume", "-1000");
 end
 
+--@help Toggle fullscreen
 actions.fullscreen = function ()
 	send("fullscreen");
 end
