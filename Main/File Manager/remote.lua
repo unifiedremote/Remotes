@@ -273,13 +273,13 @@ actions.gotopath = function (p)
 end
 
 --@help Open file or folder on computer.
---@param path
+--@param string:path The path to the file
 actions.open = function (path)
 	os.open(path);
 end
 
 --@help Open all files in specified path.
---@param path
+--@param path The path to the files
 actions.open_all = function (path)
 	os.openall(path);
 end
