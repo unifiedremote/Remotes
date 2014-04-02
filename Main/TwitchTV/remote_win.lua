@@ -19,10 +19,8 @@ BOOL GetWindowRect(LONG hwnd, RECT* rect);
 local last_switch = 0;
 
 function FindPlayerWindow(browserClass)
-	-- This is a bit of a beast:
 	--   1. Find all windows for the specified browser window class (i.e. all tabs)
-	--   2. For each "tab" check if the title starts with "Netflix - " (i.e. a netflix tab)
-	--   3. For each child window in the tab, check if it is a silverlight plugin
+	--   2. For each "tab" check if the title contains "  Twitch" (i.e. a twitch tab)
 	local hwnds = win.findall(0, browserClass, nil, false);
 	for i,hwnd in ipairs(hwnds) do
 		local title = win.title(hwnd);
