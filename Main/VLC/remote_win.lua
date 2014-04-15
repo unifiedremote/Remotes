@@ -115,3 +115,14 @@ actions.stop = function()
 	keyboard.stroke("S");
 end
 
+--@help Jump back 10 seconds
+actions.jump_back = function ()
+	actions.switch();
+	keyboard.stroke("alt", "left");
+end
+
+--@help Jump forward 10 seconds
+actions.jump_forward = function ()
+	actions.switch();
+	keyboard.stroke("alt", "right");
+end

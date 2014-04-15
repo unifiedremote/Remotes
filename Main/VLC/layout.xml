@@ -18,6 +18,10 @@
       <button icon="previous" onTap="previous" />
       <button icon="next" onTap="next" />
     </row>
+	<row>
+	  <button text="-10s" ontap="jump_back" />
+	  <button text="+10s" ontap="jump_forward" />
+	</row>
     <row>
       <button icon="stop" onTap="stop" />
       <button icon="playpause" onTap="play_pause" />
