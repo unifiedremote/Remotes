@@ -33,6 +33,7 @@ end
 actions.play_pause = function()
 	if (tid_seek ~= -1) then
 		timer.cancel(tid_seek);
+		tid_seek = -1;
 	else
 		os.script("tell application \"VLC\" to play");
 	end
@@ -77,8 +78,9 @@ end
 actions.rewind = function()
 	if (tid_seek ~= -1) then
 		timer.cancel(tid_seek);
+		tid_seek = -1;
 	else
-		timer.interval(actions.jump_back, 1000);
+		tid_seek = timer.interval(actions.step_back, 100);
 	end
 end
 
@@ -91,8 +93,9 @@ end
 actions.fast_forward = function()
 	if (tid_seek ~= -1) then
 		timer.cancel(tid_seek);
+		tid_seek = -1;
 	else
-		timer.interval(actions.jump_forward, 1000);
+		tid_seek = timer.interval(actions.step_forward, 100);
 	end
 end
 
@@ -113,10 +116,22 @@ end
 
 --@help Jump back 10 seconds
 actions.jump_back = function ()
-	os.script("tell application \"VLC\" to step backward short");
+	os.script("tell application \"VLC\" to step backward");
 end
 
 --@help Jump forward 10 seconds
 actions.jump_forward = function ()
-	os.script("tell application \"VLC\" to step forward short");
+	os.script("tell application \"VLC\" to step forward");
+end
+
+--@help Step back 5 seconds
+actions.step_back = function ()
+	print("step back");
+	os.script("tell application \"VLC\" to step backward 1");
+end
+
+--@help Step forward 5 seconds
+actions.step_forward = function ()
+	print("step forward");
+	os.script("tell application \"VLC\" to step forward 1");
 end
