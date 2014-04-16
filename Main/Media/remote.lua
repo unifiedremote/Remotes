@@ -18,7 +18,7 @@ end
 
 --@help Previous track
 actions.previous = function()
-	keyboard.press("mediaprevious");
+	keyboard.press("mediaprevious"); 
 end
 
 --@help Next track

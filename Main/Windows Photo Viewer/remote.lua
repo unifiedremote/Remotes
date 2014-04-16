@@ -1,4 +1,3 @@
-
 local keyboard = libs.keyboard;
 
 --@help Start slide show

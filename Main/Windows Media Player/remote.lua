@@ -1,4 +1,3 @@
-
 local win = libs.win;
 
 -- Commands
@@ -59,7 +58,7 @@ actions.stop = function()
 	actions.command(CMD_STOP);
 end
 
---@help Toggle playback state
+--@help Toggle play/pause
 actions.play_pause = function()
 	actions.command(CMD_PLAY_PAUSE);
 end

@@ -1,5 +1,6 @@
 local timer = libs.timer
 local tid = -1;
+local tid_seek = -1;
 local title = "";
 
 events.focus = function ()
@@ -28,9 +29,13 @@ actions.launch = function()
 	os.script("tell application \"VLC\" to activate");
 end
 
---@help Toggle playback state
+--@help Toggle play/pause
 actions.play_pause = function()
-	os.script("tell application \"VLC\" to play");
+	if (tid_seek ~= -1) then
+		timer.cancel(tid_seek);
+	else
+		os.script("tell application \"VLC\" to play");
+	end
 end
 
 --@help Resume playback
@@ -70,19 +75,11 @@ end
 
 --@help Seek backward
 actions.rewind = function()
-	os.script(
-		"set jump to 5",
-		"tell application \"VLC\"",
-				"set now to current time",
-				"set tMax to duration of current item",
-				"set jumpTo to now - jump",
-				"if jumpTo > tMax",
-					"set jumpTo to tMax",
-				"else if jumpTo < 0",
-						"set jumpTo to 0",
-				"end if",
-				"set current time to jumpTo",
-		"end tell");
+	if (tid_seek ~= -1) then
+		timer.cancel(tid_seek);
+	else
+		timer.interval(actions.jump_back, 1000);
+	end
 end
 
 --@help Toggle fullscreen
@@ -92,19 +89,11 @@ end
 
 --@help Seek forward
 actions.fast_forward = function()
-	os.script(
-		"set jump to 5",
-		"tell application \"VLC\"",
-				"set now to current time",
-				"set tMax to duration of current item",
-				"set jumpTo to now + jump",
-				"if jumpTo > tMax",
-					"set jumpTo to tMax",
-				"else if jumpTo < 0",
-						"set jumpTo to 0",
-				"end if",
-				"set current time to jumpTo",
-		"end tell");
+	if (tid_seek ~= -1) then
+		timer.cancel(tid_seek);
+	else
+		timer.interval(actions.jump_forward, 1000);
+	end
 end
 
 --@help Next playlist item
@@ -120,4 +109,14 @@ end
 --@help Stop playback
 actions.stop = function()
 	os.script("tell application \"VLC\" to stop");
+end
+
+--@help Jump back 10 seconds
+actions.jump_back = function ()
+	os.script("tell application \"VLC\" to step backward short");
+end
+
+--@help Jump forward 10 seconds
+actions.jump_forward = function ()
+	os.script("tell application \"VLC\" to step forward short");
 end

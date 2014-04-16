@@ -79,6 +79,8 @@ function status(s)
 	server.update({ id = "status", text = s });
 end
 
+--@help Learn code
+--@param fmt:enum uuirt,pronto
 actions.learn = function (fmt)
 	status("Learning...");
 	
@@ -105,6 +107,9 @@ actions.learn = function (fmt)
 	end
 end
 
+--@help Transmit code
+--@param fmt:enum uuirt,pronto
+--@param code:string Text representation of IR code
 actions.transmit = function (fmt,code)
 	status("Transmitting...");
 	
@@ -133,18 +138,22 @@ actions.transmit = function (fmt,code)
 	end
 end
 
+--@help Learn code (Pronto format)
 actions.helper_learn_pronto = function ()
 	actions.learn("pronto");
 end
 
+--@help Learn code (UUIRT format)
 actions.helper_learn_uuirt = function ()
 	actions.learn("uuirt");
 end
 
+--@help Transmit saved code (Pronto format)
 actions.helper_transmit_pronto = function ()
 	actions.transmit("pronto");
 end
 
+--@help Transmit saved code (UUIRT format)
 actions.helper_transmit_uuirt = function ()
 	actions.transmit("uuirt");
 end

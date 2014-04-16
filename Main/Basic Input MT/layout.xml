@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+    <row>
+		<touch id="touch"
+			ondown="down"
+			onup="up"
+			onhold="hold"
+			ontap="tap" 
+			ondoubletap="double" 
+			ontouchdelta="delta"
+			text="Touch!" />
+	  </row>
+	  <row weight="wrap">
+		<button text="L" ontap="left" />
+		<button text="R" ontap="right" />
+	  </row>
+  </grid>
+</layout>

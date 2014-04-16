@@ -1,0 +1,7 @@
+# Required for legacy (V2) compatibility
+meta.id: Relmtech.Basic Input Multitouch
+meta.hidden: true
+
+meta.name: Basic Input
+meta.author: Unified
+meta.description: Basic Input
