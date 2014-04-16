@@ -96,6 +96,7 @@ function update_status()
 	for k,v in pairs(root.children) do
 		if (v.name == "time") then pos = tonumber(v.text); end
 		if (v.name == "length") then length = tonumber(v.text); end
+		if (v.name == "volume") then vol = tonumber(v.text); end
 		if (v.name == "information") then
 			for k2,v2 in pairs(v.children) do
 				if (v2.attributes.name == "meta") then
@@ -128,7 +129,8 @@ function update_status()
 	libs.server.update(
 		{ id = "title", text = title },
 		{ id = "info", text = info },
-		{ id = "pos", progress = pos, progressmax = length, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(length) }
+		{ id = "pos", progress = pos, progressmax = length, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(length) },
+		{ id = "vol", progress = vol, progressmax = 320}
 	);
 end
 
@@ -327,6 +329,10 @@ end
 
 actions.volume_mute = function ()
 	send("volume", "-1000");
+end
+
+actions.volume_change = function (pos)
+	send("volume", pos);
 end
 
 actions.fullscreen = function ()
