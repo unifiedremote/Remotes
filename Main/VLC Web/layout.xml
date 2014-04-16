@@ -11,6 +11,14 @@
 			<row weight="wrap">
 				<slider id="pos" text="Position" onchange="position_change" onup="position_stop" />
 			</row>
+			<row weight="wrap">
+				<slider id="vol" text="Volume" onchange="volume_change"/>
+			</row>
+			<row weight="wrap">
+				<button icon="previous" ontap="previous" />
+				<button icon="playpause" ontap="play_pause" />
+				<button icon="next" ontap="next" />
+			</row>
 		</tab>
 		<tab text="Playback">
 			<row>
