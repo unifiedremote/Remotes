@@ -1,4 +1,4 @@
-Remotes Sandbox
+Remotes
 ===============
 
 Feel free to create pull requests for:
