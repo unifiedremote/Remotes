@@ -73,6 +73,9 @@ events.preload = function ()
 				btn.icon = icons[value];
 			elseif (texts[value] ~= nil) then
 				btn.text = texts[value];
+				if (OS_OSX and btn.text == "Win") then
+					btn.text = "Cmd";
+				end
 			else
 				btn.text = value;
 			end
