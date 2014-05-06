@@ -20,7 +20,7 @@ actions.execute = function ()
 	local perr = "";
 	
 	local success, ex = pcall(function ()
-		pout,presult,perr = io.pread(cmd);
+		pout,perr,presult = os.script(cmd);
 	end);
 	
 	if (success) then

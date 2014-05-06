@@ -23,7 +23,7 @@ actions.restart = function ()
 	if (de == "KDE") then
 		os.execute("qdbus org.kde.ksmserver /KSMServer logout 0 1 2");
 	else
-		os.execute("reboot");
+		os.execute("shutdown -r now");
 	end
 end
 
@@ -33,7 +33,7 @@ actions.shutdown = function ()
 	if (de == "KDE") then
 		os.execute("qdbus org.kde.ksmserver /KSMServer logout 0 2 2");
 	else
-		os.execute("shutdown");
+		os.execute("shutdown -h now");
 	end
 end
 
