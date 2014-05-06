@@ -99,6 +99,6 @@ end
 
 --@help Navigate back
 actions.back = function()
-	keyboard.stroke("escape");
+	keyboard.stroke("back");
 end
 
