@@ -7,10 +7,10 @@
 -- * https://forums.plex.tv/index.php/topic/15850-plex-9-remote-api/
 
 events.create = function ()
-	
 end
 
 events.focus = function ()
+
 	update_server();
 	update_players();
 end
@@ -21,6 +21,7 @@ local players = {};
 
 function update_server()
 	server = settings.server;
+
 	if (server == "") then
 		-- Try to find a server...
 		libs.device.toast("Looking for Plex servers...");
@@ -28,7 +29,7 @@ function update_server()
 		local res = libs.http.discover({ port = 32400 });
 		if (#res == 0) then
 			server = "localhost";
-			libs.device.toast("No servers find...");
+			libs.device.toast("No servers found...");
 			libs.device.toast("Using localhost for now...");
 		else
 			server = res[1];
@@ -83,7 +84,6 @@ end
 
 function send(controller, action)
 	local _url = url(controller, action);
-	print("test");
 	print(_url);
 	local resp = libs.http.get(_url);
 	if(libs.utf8.contains(resp, "Errno 10061")) then
@@ -226,4 +226,8 @@ end
 
 actions.previous = function ()
 	send("playback", "skipPrevious");
+end
+
+actions.nav_play = function () 
+	libs.keyboard.press("space");
 end
