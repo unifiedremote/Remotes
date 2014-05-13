@@ -1,3 +1,6 @@
+# Required for legacy (V2) compatibility
+meta.id: Relmtech.Keyboard
+
 meta.name: Keyboard
 meta.author: Unified
 meta.description: English Keyboard
