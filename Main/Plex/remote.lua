@@ -10,7 +10,7 @@
 actions.launch = function()
 	if OS_WINDOWS then
 		os.start("%programfiles(x86)%\\Plex Home Theater\\Plex Home Theater.exe");
-		os.start("%programfiles(x86)%\\Plex\\Plex.exe"); 
+		os.start("%programfiles(x86)%\\Plex\\Plex Media Center\\Plex.exe"); 
 	elseif OS_OSX then
 		os.script("tell application \"Plex Home Theater\" to activate");
 		os.script("tell application \"Plex\" to activate");
