@@ -9,8 +9,12 @@
 --@help Launch XBMC application
 actions.launch = function()
 	if OS_WINDOWS then
+		pcall(function ()
 		os.start("%programfiles(x86)%\\Plex Home Theater\\Plex Home Theater.exe");
+		end);
+		pcall(function ()
 		os.start("%programfiles(x86)%\\Plex\\Plex Media Center\\Plex.exe"); 
+		end);
 	elseif OS_OSX then
 		os.script("tell application \"Plex Home Theater\" to activate");
 		os.script("tell application \"Plex\" to activate");
