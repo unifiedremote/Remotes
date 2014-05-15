@@ -6,6 +6,17 @@
 -- * I couldn't find any official documentation...
 -- * https://forums.plex.tv/index.php/topic/15850-plex-9-remote-api/
 
+--@help Launch XBMC application
+actions.launch = function()
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%\\Plex Home Theater\\Plex Home Theater.exe");
+		os.start("%programfiles(x86)%\\Plex\\Plex.exe"); 
+	elseif OS_OSX then
+		os.script("tell application \"Plex Home Theater\" to activate");
+		os.script("tell application \"Plex\" to activate");
+	end
+end
+
 events.create = function ()
 end
 

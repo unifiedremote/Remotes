@@ -3,7 +3,9 @@ local keyboard = libs.keyboard;
 --@help Launch XBMC application
 actions.launch = function()
 	if OS_WINDOWS then
-		os.start("%programfiles(x86)%\\XBMC\\XBMC.exe");
+		os.start("%programfiles(x86)%\\XBMC\\XBMC.exe"); 
+	elseif OS_OSX then
+		os.script("tell application \"XBMC\" to activate");
 	end
 end
 

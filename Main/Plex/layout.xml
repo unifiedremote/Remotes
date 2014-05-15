@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout color="orange">
+<layout onlaunch="launch" color="orange">
 	<tabs>
 		<tab text="Main">
 			<!-- The API call does not seem to work... -->
