@@ -262,7 +262,8 @@ actions.previous = function ()
 	send("playback", "skipPrevious");
 end
 
---@help Play pause using keyboard
+--@help Play pause from navigation
 actions.nav_play = function () 
-	libs.keyboard.press("space");
+	actions.select();
+	actions.select();
 end
