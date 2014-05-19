@@ -36,7 +36,7 @@ actions.select = function ()
 end
 
 actions.back = function ()
-	kb.press("escape");
+	kb.press("backspace");
 end
 
 actions.play_pause = function ()
