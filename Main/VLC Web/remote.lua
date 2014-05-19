@@ -240,7 +240,8 @@ actions.position_change = function (pos)
 	seeking = true;
 	seeking_pos = pos;
 end
-
+--@help Change position
+--@param pos:number Set Position
 actions.position_stop = function (pos)
 	seek(pos);
 end
@@ -342,9 +343,10 @@ actions.volume_mute = function ()
 	send("volume", "-1000");
 end
 
---@help Change volume from a slider
-actions.volume_change = function (pos)
-	send("volume", pos);
+--@help Change volume
+--@param vol:number Set Volume
+actions.volume_change = function (vol)
+	send("volume", vol);
 end
 
 --@help Toggle fullscreen

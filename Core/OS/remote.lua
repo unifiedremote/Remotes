@@ -24,6 +24,7 @@ actions.open_all = function (path)
 end
 
 --@help Execute script line(s)
+--@param string Script to execute
 actions.script = function (...)
 	os.script(unpack({...}));
 end

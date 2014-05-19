@@ -179,6 +179,7 @@ actions.dvd_leave = function ()
 end
 
 --@help Set volume
+--@param volume:number Set volume
 actions.volume = function (volume)
 	send("SetVolume(" .. volume .. ")");
 end
@@ -194,6 +195,7 @@ actions.volume_down = function ()
 end
 
 --@help Set position
+--@param position:number Set position
 actions.position = function (position)
 	send("SeekPercentage(" .. position .. ")");
 end

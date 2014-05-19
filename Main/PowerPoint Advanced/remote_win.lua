@@ -154,6 +154,7 @@ actions.launch = function ()
 	os.start("powerpnt");
 end
 
+--@help Go to next slide
 actions.next = function ()
 	if (valid()) then
 		obj.ActivePresentation.SlideShowWindow.View:Next();
@@ -161,6 +162,7 @@ actions.next = function ()
 	end
 end
 
+--@help Go to previous slide
 actions.previous = function ()
 	if (valid()) then
 		obj.ActivePresentation.SlideShowWindow.View:Previous();
@@ -168,6 +170,7 @@ actions.previous = function ()
 	end
 end
 
+--@help Go to first slide
 actions.first = function ()
 	if (valid()) then
 		obj.ActivePresentation.SlideShowWindow.View:First();
@@ -175,6 +178,7 @@ actions.first = function ()
 	end
 end
 
+--@help Go to last slide
 actions.last = function ()
 	if (valid()) then
 		obj.ActivePresentation.SlideShowWindow.View:Last();
@@ -182,6 +186,8 @@ actions.last = function ()
 	end
 end
 
+--@help Go to slide
+--@param n:number Slide to go to
 actions.goto = function (n)
 	if (valid()) then
 		obj.ActivePresentation.SlideShowWindow.View:GotoSlide(n, 0);
@@ -196,28 +202,33 @@ actions.slides_tap = function (n)
 	end
 end
 
+--@help Start timer
 actions.timer_start = function ()
 	tid_timer = timer.interval(update_timer, 1000);
 	update();
 end
 
+--@help Stop timer
 actions.timer_stop = function ()
 	timer.cancel(tid_timer);
 	update();
 end
 
+--@help Reset timer
 actions.timer_reset = function ()
 	timer_total = 0;
 	timer_slide = 0;
 	update();
 end
 
+--@help Set black screen
 actions.black = function ()
 	if (valid()) then
 		obj.ActivePresentation.SlideShowWindow.View.State = 3; -- 3=black
 	end
 end
 
+--@help Set white screen
 actions.white = function ()
 	if (valid()) then
 		obj.ActivePresentation.SlideShowWindow.View.State = 4; -- 4=white

@@ -154,7 +154,7 @@ actions.play_pause = function ()
 	os.script("tell application \"iTunes\" to playpause");
 end
 --@help Set Volume
---@param vol:number
+--@param vol:number set volume
 actions.volume = function (vol)
 	os.script("tell application \"iTunes\"",
 					"set sound volume to " .. vol , 
@@ -168,7 +168,7 @@ actions.back = function ( )
 		);
 end
 --@help Set Position
---@param pos:number
+--@param pos:number Set position
 actions.position = function (pos)
 	local lenght = os.script("tell application \"iTunes\"",
 								"set curr to current track",
