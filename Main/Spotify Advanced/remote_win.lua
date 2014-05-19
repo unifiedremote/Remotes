@@ -146,6 +146,7 @@ actions.previous = function ()
 	actions.command(CMD_PREVIOUS);
 end
 
+--@help Toggle Shuffle 
 actions.shuffle = function ()
 	local hwnd = win.find("SpotifyMainWindow", nil);
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
@@ -153,13 +154,15 @@ actions.shuffle = function ()
 	click(hwnd, rect.right - rect.left - 59, rect.bottom - rect.top - 21);
 end
 
+--@help Toggle Repeat 
 actions.repeating = function ()
 	local hwnd = win.find("SpotifyMainWindow", nil);
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
 	ffi.C.GetWindowRect(hwnd, rect);
 	click(hwnd, rect.right - rect.left - 24, rect.bottom - rect.top - 21);
 end
-
+--@help Change Volume
+--@param vol:number Set Volume
 actions.volchange = function (vol)
 	local hwnd = win.find("SpotifyMainWindow", nil);
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
@@ -169,7 +172,8 @@ actions.volchange = function (vol)
 	local x = 126 + math.floor(vol / 100 * 76);
 	click(hwnd, x, y);
 end
-
+--@help Change Position
+--@param pos:number Set Position
 actions.poschange = function (pos)
 	local hwnd = win.find("SpotifyMainWindow", nil);
 	local rect = ffi.new("RECT", 0, 0, 0, 0);

@@ -96,7 +96,7 @@ actions.track = function (i)
 		end
 	end
 end
-
+--@help Play Pause track
 actions.play_pause = function ()
 	if (valid()) then
 		if obj.Player.isPlaying then
@@ -106,42 +106,42 @@ actions.play_pause = function ()
 		end
 	end
 end
-
+--@help Play track
 actions.play = function ()
 	if (valid()) then
 		obj.Player:Play();
 		update();
 	end
 end
-
+--@help Pause track
 actions.pause = function ()
 	if (valid()) then
 		obj.Player:Pause();
 		update();
 	end
 end
-
+--@help Stop track
 actions.stop = function ()
 	if (valid()) then
 		obj.Player:Stop();
 		update();
 	end
 end
-
+--@help Next track
 actions.next = function ()
 	if (valid()) then
 		obj.Player:Next();
 		update();
 	end
 end
-
+--@help Previous Track
 actions.previous = function ()
 	if (valid()) then
 		obj.Player:Previous();
 		update();
 	end
 end
-
+--@help Mute Volume
 actions.volume_mute = function ()
 	if (valid()) then
 		if obj.Player.Volume == 0 then
@@ -153,44 +153,46 @@ actions.volume_mute = function ()
 		update();
 	end
 end
-
+--@help Set Volume
+--@param vol:number Set Volume
 actions.volume = function (vol)
 	if (valid()) then
 		obj.Player.Volume = vol/100;
 		update();
 	end
 end
-
+--@help Volume up
 actions.volume_up = function ()
 	if (valid()) then
 		obj.Player.Volume = obj.Player.Volume + 0.1;
 		update();
 	end
 end
-
+--@help Volume down
 actions.volume_down = function ()
 	if (valid()) then
 		obj.Player.Volume = obj.Player.Volume - 0.1;
 		update();
 	end
 end
-
+--@help Set Position
+--@param pos:number Set position
 actions.position = function (pos)
 	if (valid()) then
 		obj.Player.PlaybackTime = pos;
 		update();
 	end
 end
-
-actions.rate_up = function (pos)
+--@help Rate Up
+actions.rate_up = function ()
 	if (valid()) then
 		obj.Player.CurrentSong.Rating = math.min(100, obj.Player.CurrentSong.Rating + 20); 
 		obj.Player.CurrentSong.UpdateDB();
 		update();
 	end
 end
-
-actions.rate_down = function (pos)
+--@help Rate Down
+actions.rate_down = function ()
 	if (valid()) then
 		obj.Player.CurrentSong.Rating = math.min(100, obj.Player.CurrentSong.Rating - 20); 
 		obj.Player.CurrentSong.UpdateDB();

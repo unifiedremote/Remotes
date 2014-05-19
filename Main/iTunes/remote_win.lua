@@ -107,98 +107,100 @@ actions.track = function (i)
 		end
 	end
 end
-
+--@help Play Pause track
 actions.play_pause = function ()
 	if (valid()) then
 		obj:PlayPause();
 		update();
 	end
 end
-
+--@help Play track
 actions.play = function ()
 	if (valid()) then
 		obj:Play();
 		update();
 	end
 end
-
+--@help Pause track
 actions.pause = function ()
 	if (valid()) then
 		obj:Pause();
 		update();
 	end
 end
-
+--@help Resume track
 actions.resume = function ()
 	if (valid()) then
 		obj:Resume();
 		update();
 	end
 end
-
+--@help Stop track
 actions.stop = function ()
 	if (valid()) then
 		obj:Stop();
 		update();
 	end
 end
-
+--@help Next track
 actions.next = function ()
 	if (valid()) then
 		obj:Next();
 		update();
 	end
 end
-
+--@help Previous track
 actions.previous = function ()
 	if (valid()) then
 		obj:Previous();
 		update();
 	end
 end
-
+--@help Forward track
 actions.forward = function ()
 	if (valid()) then
 		obj:FastForward();
 		update();
 	end
 end
-
+--@help Rewind track
 actions.rewind = function ()
 	if (valid()) then
 		obj:Rewind();
 		update();
 	end
 end
-
+--@help Mute Volume
 actions.volume_mute = function ()
 	if (valid()) then
 		obj.Mute = true;
 		update();
 	end
 end
-
+--@help Set Volume
+--@param vol:number Set volume
 actions.volume = function (vol)
 	if (valid()) then
 		obj.SoundVolume = vol;
 		update();
 	end
 end
-
+--@help Volume up
 actions.volume_up = function ()
 	if (valid()) then
 		obj.SoundVolume = obj.SoundVolume + 10;
 		update();
 	end
 end
-
+--@help Volume Down
 actions.volume_down = function ()
 	if (valid()) then
 		obj.SoundVolume = obj.SoundVolume - 10;
 		update();
 	end
 end
-
+--@help Set Position
+--@param pos:number Set Position
 actions.position = function (pos)
 	if (valid()) then
 		obj.PlayerPosition = pos;

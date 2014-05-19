@@ -1,24 +1,24 @@
 local fs = libs.fs;
 
 --@help Copy file or folder
---@param a Path to source
---@param b Path to destination
-actions.copy = function (a,b)
-	fs.copy(a,b);
+--@param from Path to source
+--@param to Path to destination
+actions.copy = function (from,to)
+	fs.copy(from,to);
 end
 
 --@help Rename file or folder
---@param a Path to source
---@param b New name
-actions.rename = function (a,b)
-	fs.rename(a,b);
+--@param from Path to source
+--@param to New name
+actions.rename = function (from,to)
+	fs.rename(from,to);
 end
 
 --@help Move file or folder
---@param a Path to source
---@param b Path to destination
-actions.move = function (a,b)
-	fs.move(a,b);
+--@param from Path to source
+--@param to Path to destination
+actions.move = function (from,to)
+	fs.move(from,to);
 end
 
 --@help Delete file or folder

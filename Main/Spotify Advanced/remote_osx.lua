@@ -64,25 +64,36 @@ function play(track, context)
 	os.script("tell application \"Spotify\" to play track \"" .. track .. "\" in context \"" .. context .. "\"");
 end
 
+--@help Change position
+--@param pos:number Set position
 actions.poschange = function (pos)
 	os.script("tell application \"Spotify\" to set player position to " .. pos);
 	actions.update();
 end
-
+--@help Change volume
+--@param vol:number Set volume
 actions.volchange = function (vol)
 	os.script("tell application \"Spotify\" to set sound volume to " .. vol);
 	actions.update();
 end
-
+--@help Next track
 actions.next = function ()
 	os.script("tell application \"Spotify\" to next track");
 	actions.update();
 end
-
+--@help Previous track
 actions.previous = function ()
 	os.script("tell application \"Spotify\" to previous track");
 	actions.update();
 end
+--@help Set repeting
+actions.setrepeat = function(){
+	os.script("tell application \"Spotify\" to set repeating to true");
+}
+--@help Set not repeting
+actions.setnotrepeat = function(){
+	os.script("tell application \"Spotify\" to set repeating to false");
+}
 
 actions.repeating = function (checked)
 	if checked then 
@@ -92,18 +103,30 @@ actions.repeating = function (checked)
 	end
 end
 
+--@help Play track
 actions.play = function ()
 
 end
 
+--@help Pause track
 actions.pause = function ()
 
 end
 
+--@help Play Pause track
 actions.play_pause = function ()
 	os.script("tell application \"Spotify\" to playpause");
 	actions.update();
 end
+
+--@help Set Suffle
+actions.setshuffle = function(){
+	os.script("tell application \"Spotify\" to set shuffling to true");
+}
+--@help Set not Shuffle
+actions.setnotshuffle = function(){
+	os.script("tell application \"Spotify\" to set shuffling to false");
+}
 
 actions.suffle = function (checked)
 	if checked then 
