@@ -2,7 +2,7 @@ local server = libs.server;
 local timer = libs.timer;
 local http = libs.http;
 local data = libs.data;
-
+local st = libs.utf8;
 local tid = -1;
 
 playing = false;
@@ -71,10 +71,11 @@ end
 -- Spotify Cover Art Grabber
 -------------------------------------------------------------------------------------------
 function get_cover_art_url (uri)
+	print(uri);
 	local url = "https://embed.spotify.com/oembed/?url=" .. uri;
 	local raw = http.get(url);
 	local json = data.fromjson(raw);
-	return json.thumbnail_url;
+	return st.replace(json.thumbnail_url, "cover", "320");
 end
 
 function get_cover_art (uri)
