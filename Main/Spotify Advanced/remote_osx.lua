@@ -105,12 +105,14 @@ end
 
 --@help Play track
 actions.play = function ()
-
+	os.script("tell application \"Spotify\" to play");
+	actions.update();
 end
 
 --@help Pause track
 actions.pause = function ()
-
+	os.script("tell application \"Spotify\" to pause");
+	actions.update();
 end
 
 --@help Play Pause track
