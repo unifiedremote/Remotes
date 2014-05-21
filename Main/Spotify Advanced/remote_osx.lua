@@ -87,13 +87,13 @@ actions.previous = function ()
 	actions.update();
 end
 --@help Set repeting
-actions.setrepeat = function(){
+actions.setrepeat = function()
 	os.script("tell application \"Spotify\" to set repeating to true");
-}
+end
 --@help Set not repeting
-actions.setnotrepeat = function(){
+actions.setnotrepeat = function()
 	os.script("tell application \"Spotify\" to set repeating to false");
-}
+end
 
 actions.repeating = function (checked)
 	if checked then 
@@ -105,12 +105,14 @@ end
 
 --@help Play track
 actions.play = function ()
-
+	os.script("tell application \"Spotify\" to play");
+	actions.update();
 end
 
 --@help Pause track
 actions.pause = function ()
-
+	os.script("tell application \"Spotify\" to pause");
+	actions.update();
 end
 
 --@help Play Pause track
@@ -120,13 +122,13 @@ actions.play_pause = function ()
 end
 
 --@help Set Suffle
-actions.setshuffle = function(){
+actions.setshuffle = function()
 	os.script("tell application \"Spotify\" to set shuffling to true");
-}
+end
 --@help Set not Shuffle
-actions.setnotshuffle = function(){
+actions.setnotshuffle = function()
 	os.script("tell application \"Spotify\" to set shuffling to false");
-}
+end
 
 actions.suffle = function (checked)
 	if checked then 
