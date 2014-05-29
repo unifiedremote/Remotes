@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause">
+  <grid>
+    <row>
+		<label id="info" text="[Not Playing]" textAlign="center" />
+    </row>
+    <row>
+		<button icon="vdown" onTap="volume_down" />
+		<button icon="vmute" onTap="volume_mute" />
+		<button icon="vup" onTap="volume_up" />
+    </row>
+    <row>
+		<button icon="previous" onTap="previous" />
+		<button text="Open" ontap="toggle_playlist" />
+		<button icon="next" onTap="next" />
+    </row>
+    <row>
+		<button icon="stop" onTap="stop" />
+		<button icon="fullscreen" ontap="fullscreen" />
+		<button icon="playpause" onTap="play_pause" />
+    </row>
+	<row>
+		<button text="- 30s" ontap="big_back" />
+		<button text="- 5s" ontap="small_back" />
+		<button text="+ 5s" ontap="small_forward"/>
+		<button text="+ 30s" ontap="big_forward" />
+	</row>
+  </grid>
+</layout>
