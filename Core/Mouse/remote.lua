@@ -22,8 +22,8 @@ actions.moveto = function (x, y)
 	mouse.moveto(x, y);
 end
 
---@help Press mouse button(s)
---@param buttons:buttons Buttons to press
+--@help Hold down button(s)
+--@param buttons:buttons Buttons to hold down
 actions.down = function (...)
 	mouse.down(unpack({...}));
 end

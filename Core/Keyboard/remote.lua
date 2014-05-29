@@ -1,13 +1,13 @@
 
 local keyboard = libs.keyboard;
 
---@help Release key(s)
---@param keys:keys Keys to press down
+--@help Hold down key(s)
+--@param keys:keys Keys to hold down
 actions.down = function (...)
 	keyboard.down(unpack({...}));
 end
 
---@help Hold down key(s)
+--@help Release key(s)
 --@param keys:keys Keys to release
 actions.up = function (...)
 	keyboard.up(unpack({...}));
@@ -19,7 +19,7 @@ actions.press = function (...)
 	keyboard.press(unpack({...}));
 end
 
---@help Press keyboard stroke
+--@help Press key stroke
 --@param keys:keys Keys to press down and release at the same time
 actions.stroke = function (...)
 	keyboard.stroke(unpack({...}));
@@ -32,7 +32,7 @@ actions.character = function (chr)
 end
 
 --@help Send text
---@param test:string Text to write on screen
+--@param text:string Text to write on screen
 actions.text = function (text)
 	keyboard.text(text);
 end
