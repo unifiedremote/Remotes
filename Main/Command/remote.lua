@@ -5,9 +5,14 @@ actions.update = function (str)
 	cmd = str;
 end
 
-actions.execute = function ()
+--@help Execute a command
+--@param command The command to execute
+actions.execute = function (command)
 	if (cmd == "") then
 		cmd = last;
+	end
+	if (command ~= nil) then
+		cmd = command;
 	end
 	
 	last = cmd;
