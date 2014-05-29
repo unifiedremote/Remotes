@@ -29,8 +29,8 @@
 				<button icon="ff" ontap="forward" />
 			</row>
 			<row>
-				<button icon="previous" ontap="skip_prev" />
-				<button icon="next" ontap="skip_next" />
+				<button icon="previous" ontap="previous" />
+				<button icon="next" ontap="next" />
 			</row>
 			<row>
 				<button icon="stop" ontap="stop" />

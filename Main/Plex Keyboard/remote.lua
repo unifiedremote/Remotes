@@ -63,11 +63,11 @@ actions.menu = function ()
 	kb.press("m");
 end
 
-actions.skip_next = function ()
+actions.next = function ()
 	kb.press("right");
 end
 
-actions.skip_prev = function ()
+actions.previous = function ()
 	kb.press("left");
 end
 
