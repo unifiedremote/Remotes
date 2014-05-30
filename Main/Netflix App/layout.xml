@@ -2,7 +2,23 @@
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="resume" onPause="pause" color="red">
   <grid>
     <row>
-      <button icon="vdown" onTap="foo" />
+      <button icon="vdown" onTap="volume_down" />
+      <button icon="vmute" onTap="volume_mute" />
+      <button icon="vup" onTap="volume_up" />
+    </row>
+    <row>
+      <button icon="rwd" onTap="rewind" />
+      <button icon="playpause" onTap="play_pause" />
+      <button icon="ff" onTap="forward" />
+    </row>
+    <row>
+      <button icon="left" onTap="left" />
+      <button icon="select" onTap="select" />
+      <button icon="right" onTap="right" />
+    </row>
+    <row>
+      <button icon="fullscreen" onTap="fullscreen" />
+      <button text="Esc" onTap="window" />
     </row>
   </grid>
 </layout>
