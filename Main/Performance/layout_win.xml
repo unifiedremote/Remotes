@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+	<row weight="wrap">
+		<label color="red" text="--- Memory Usage ---" />
+	</row>
+	<row>
+		<grid>
+			<row>
+				<label id="mem_used" text="0 GB\nused" />
+			</row>
+			<row>
+				<label id="mem_total" text="0 GB\ntotal" />
+			</row>
+		</grid>
+		<label id="mem_load" text="0%\nload" />
+	</row>
+	<row weight="wrap">
+		<label color="red" text="--- CPU Usage ---" />
+	</row>
+	<row>
+		<grid>
+			<row>
+				<label id="cpu_avg" text="0 %\navg" />
+			</row>
+			<row>
+				<label id="cpu_max" text="0 %\nmax" />
+			</row>
+		</grid>
+		<label id="cpu_load" text="0%\nload" />
+	</row>
+  </grid>
+</layout>
