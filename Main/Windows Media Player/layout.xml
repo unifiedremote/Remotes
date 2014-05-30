@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play/pause" onPause="play/pause">
   <grid>
+	<row>
+	  <label id="info" value="[Not Playing]" />
+	</row>
     <row>
       <button icon="fullscreen" onTap="fullscreen" />
       <button icon="vmute" onTap="volume_mute" />

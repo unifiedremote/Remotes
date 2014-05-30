@@ -1,4 +1,8 @@
 local win = libs.win;
+local uia = libs.uia;
+local timer = libs.timer;
+local utf8 = libs.utf8;
+local data = libs.data;
 
 -- Commands
 local WM_COMMAND = 0x111;
@@ -10,6 +14,58 @@ local CMD_VOLUME_UP = 0x0000497F;
 local CMD_VOLUME_MUTE = 0x00004981;
 local CMD_NEXT = 0x0000497B;
 local CMD_PREVIOUS = 0x0000497A;
+
+local tid = -1;
+local title = "";
+
+function update ()
+	local desktop = uia.desktop();
+	local wmp = uia.find(desktop, "Now Playing", "children");
+	
+	local _title = "[Not Playing]";
+	
+	if (wmp ~= nil) then
+		local status = uia.find(wmp, "Status and Command Bar View", "children");
+		if (status ~= nil) then
+			local status_group = uia.child(status, 0);
+			if (status_group) then
+				local status_edit = uia.child(status_group, 1);
+				if (status_edit) then
+					_title = uia.property(status_edit, "name");
+					if (_title == "") then
+						_title = "[Not Playing]";
+					end
+				end
+			end
+		end
+	
+		local playback = uia.find(wmp, "Playback Controls View", "children");
+		if (playback ~= nil) then
+			local seeker = uia.find(playback, "Seek", "subtree");
+			if (seeker ~= nil) then
+				_pos = uia.property(seeker, "valuevalue");
+				_pos = utf8.replace(_pos, ",", ".");
+				_title = _title .. " - " .. libs.data.sec2span(math.abs(_pos));
+			end
+		end
+		
+		-- local volume = uia.find(playback, "Volume", "subtree");
+		-- local vol = uia.property(volume, "valuevalue");
+	end
+	
+	if (title ~= _title) then
+		title = _title;
+		layout.info.text = title;
+	end
+end
+
+events.focus = function ()
+	tid = timer.interval(update, 500);
+end
+
+events.blur = function ()
+	timer.cancel(tid);
+end
 
 --@help Launch Windows Media Player
 actions.launch = function()
