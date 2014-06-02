@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch">
+	<tabs>
+		<tab text="Player">
+			<row weight="wrap">
+				<label id="info" text="[Not Playing]" />
+			</row>
+			<row>
+				<button icon="vdown" ontap="volume_down" />
+				<button icon="vup" ontap="volume_up" />
+			</row>
+			<row>
+				<button icon="previous" ontap="previous" />
+				<button icon="next" ontap="next" />
+			</row>
+			<row>
+				<button icon="rwd" ontap="rewind" />
+				<button icon="ff" ontap="forward" />
+			</row>
+			<row>
+				<button icon="stop" ontap="stop" />
+				<button icon="playpause" ontap="play_pause" />
+			</row>
+			<row>
+				<button icon="fullscreen" ontap="fullscreen" />
+			</row>
+		</tab>
+		<tab text="DVD">
+			<row>
+				<button text="Title" ontap="title" />
+				<button icon="up" ontap="up" />
+				<button text="Chapters" ontap="chapters" />
+			</row>
+			<row>
+				<button icon="left" ontap="left" />
+				<button icon="select" ontap="select" />
+				<button icon="right" ontap="right" />
+			</row>
+			<row>
+				<button icon="home" ontap="home" />
+				<button icon="down" ontap="down" />
+				<button icon="back" ontap="back" />
+			</row>
+		</tab>
+	</tabs>
+</layout>
