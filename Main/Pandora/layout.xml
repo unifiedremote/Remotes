@@ -11,7 +11,7 @@
     </row>
     <row>
       <button icon="next" onTap="next" />
-      <button icon="playpause" onTap="play/pause" />
+      <button icon="playpause" onTap="play_pause" />
     </row>
   </grid>
 </layout>
