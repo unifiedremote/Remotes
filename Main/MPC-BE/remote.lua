@@ -25,6 +25,7 @@ actions.launch = function()
 	os.start("mpc-be.exe");
 	os.start("mpc-be64.exe");
 end
+
 --@help Run command
 --@param code:number MPCBE command to run
 actions.command = function (code)
