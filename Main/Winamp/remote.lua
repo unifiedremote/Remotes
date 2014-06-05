@@ -146,3 +146,13 @@ actions.play_pause = function()
 		actions.play();
 	end
 end
+
+--@help Jump back 5 seconds
+actions.small_back = function ()
+	actions.command(WINAMP_REW5S);
+end
+
+--@help Jump forward 5 seconds
+actions.small_forward = function ()
+	actions.command(WINAMP_FFWD5S);
+end

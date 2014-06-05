@@ -2,20 +2,24 @@
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause">
   <grid>
     <row>
-      <label id="info" text="[Not Playing]" textAlign="center" />
+		<label id="info" text="[Not Playing]" textAlign="center" />
     </row>
     <row>
-      <button icon="vdown" onTap="volume_down" />
-      <button icon="vmute" onTap="volume_mute" />
-      <button icon="vup" onTap="volume_up" />
+		<button icon="vdown" onTap="volume_down" />
+		<button icon="vmute" onTap="volume_mute" />
+		<button icon="vup" onTap="volume_up" />
     </row>
     <row>
-      <button icon="previous" onTap="previous" />
-      <button icon="next" onTap="next" />
+		<button icon="previous" onTap="previous" />
+		<button icon="next" onTap="next" />
     </row>
     <row>
-      <button icon="stop" onTap="stop" />
-      <button id="p" icon="playpause" onTap="play_pause" />
+		<button icon="stop" onTap="stop" />
+		<button id="p" icon="playpause" onTap="play_pause" />
     </row>
+	<row>
+		<button text="- 5s" ontap="small_back" />
+		<button text="+ 5s" ontap="small_forward"/>
+	</row>
   </grid>
 </layout>
