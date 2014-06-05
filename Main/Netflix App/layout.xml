@@ -16,9 +16,9 @@
       <button icon="ff" onTap="forward" />
     </row>
 	<row>
-		<button icon="vup" onTap="volumeup" />
-		<button icon="vmute" onTap="volumemute" />
 		<button icon="vdown" onTap="volumedown" />
+		<button icon="vmute" onTap="volumemute" />
+		<button icon="vup" onTap="volumeup" />
 	</row>
 	<row weight="wrap">
 		<slider id ="pos" progressmax ="100" onDone="posFinish" onDown="posStart"/>
