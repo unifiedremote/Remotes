@@ -10,6 +10,7 @@ local sne = nil;
 local et = nil;
 local movielength = -1;
 local currpos = -1;
+local onChangePos = false;
 events.focus = function()
 	title = nil;
 	sne = nil;
@@ -24,13 +25,13 @@ end
 function begin_popup()
 	local desktop = uia.desktop();
 	local root = uia.find(desktop, "Netflix", "children");
-	
-	popup = uia.find(root, "Popup", "children");
-	if (popup == nil) then
+	local appbar = uia.find(root, "TopAppBar", "subtree");
+	if(appbar == nil) then
 		player = uia.find(root, "Video player page", "children");
 		uia.dodefaultaction(player);
-		popup = uia.find(root, "Popup", "children");
+		appbar = uia.find(root, "TopAppBar", "subtree");
 	end
+	popup = uia.parent(appbar);
 end
 
 function end_popup()
@@ -81,16 +82,85 @@ actions.forward = function ()
 		uia.rangesetvalue(tp, curr + 60);
 	end_popup();
 end
+
+actions.volumeup = function()
+	begin_popup();
+		local appbar = uia.find(popup, "BottomAppBar", "children");
+		local v = uia.find(appbar, "Volume", "children");
+		local vb = uia.findby(v, "AutomationId","string", "ShowHide");
+		if(vb ~= nil) then
+			uia.toggle(vb);
+			local slider = uia.child(v, 1);
+			local value = uia.property(slider, "rangevaluevalue");
+			
+			if(value <= 95) then
+				uia.rangesetvalue(slider, value + 5);
+			else
+				uia.rangesetvalue(slider, 100);
+			end
+			uia.toggle(vb);
+		end
+	end_popup();
+end
+
+actions.volumedown = function()
+	begin_popup();
+		local appbar = uia.find(popup, "BottomAppBar", "children");
+		local v = uia.find(appbar, "Volume", "children");
+		local vb = uia.findby(v, "AutomationId","string", "ShowHide");
+		if(vb ~= nil) then
+			uia.toggle(vb);
+			local slider = uia.child(v, 1);
+			local value = uia.property(slider, "rangevaluevalue");
+			
+			if(value >= 5) then
+				uia.rangesetvalue(slider, value - 5);
+			else
+				uia.rangesetvalue(slider, 0);
+			end
+			uia.toggle(vb);
+		end
+	end_popup();
+end
+
+actions.volumemute = function()
+	begin_popup();
+		local appbar = uia.find(popup, "BottomAppBar", "children");
+		local v = uia.find(appbar, "Volume", "children");
+		local vb = uia.findby(v, "AutomationId","string", "ShowHide");
+		if(vb ~= nil) then
+			uia.toggle(vb);
+			local mute = uia.find(v, "Mute", "children");
+			uia.dodefaultaction(mute);
+			uia.toggle(vb);
+		end
+	end_popup();
+end
+
+actions.posFinish = function(pos)
+	local t = get_time();
+	local newtime = (pos/100) * t;
+	begin_popup();
+		local tp = uia.find(popup, "TrickPlay", "subtree");
+		local curr = uia.property(tp, "rangevaluevalue");
+		uia.rangesetvalue(tp, newtime);
+	end_popup();
+	onChangePos = false;
+end
+
+actions.posStart = function(pos)
+	onChangePos = true;
+end
+
 function update()
 	local t = get_time();
 	local cpos = get_pos();
 	
-	if(cpos ~= currpos)then
+	if(cpos ~= currpos and onChangePos ~= true)then
 		local proc = math.round(cpos/t * 100);
 		server.update(
 			{ id = "pos", progress = proc }
 		); 
-		print(proc);
 		currpos = cpos;
 	end
 	if (movielength ~= t) then

@@ -15,8 +15,13 @@
       <button icon="playpause" onTap="play_pause" />
       <button icon="ff" onTap="forward" />
     </row>
+	<row>
+		<button icon="vup" onTap="volumeup" />
+		<button icon="vmute" onTap="volumemute" />
+		<button icon="vdown" onTap="volumedown" />
+	</row>
 	<row weight="wrap">
-		<slider id ="pos" progressmax ="100"/>
+		<slider id ="pos" progressmax ="100" onDone="posFinish" onDown="posStart"/>
 	</row>
   </grid>
 </layout>
