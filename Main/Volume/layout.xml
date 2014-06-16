@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down">
+	<row>
+		<button text="100%" ontap="volume_100" />
+	</row>
+	<row>
+		<button text="70%" ontap="volume_70" />
+		<button text="80%" ontap="volume_80" />
+		<button text="90%" ontap="volume_90" />
+	</row>
+	<row>
+		<button text="40%" ontap="volume_40" />
+		<button text="50%" ontap="volume_50" />
+		<button text="60%" ontap="volume_60" />
+	</row>
+	<row>
+		<button text="10%" ontap="volume_10" />
+		<button text="20%" ontap="volume_20" />
+		<button text="30%" ontap="volume_30" />
+	</row>
+	<row>
+		<button text="0%" ontap="volume_0" />
+	</row>
+</layout>
