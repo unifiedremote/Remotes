@@ -25,7 +25,7 @@ function set(x)
 	if OS_WINDOWS then
 		up(math.floor(x / 2));
 	else
-		up(math.floor(x / 16));
+		up(math.floor(x / 6.25));
 	end
 end
 
