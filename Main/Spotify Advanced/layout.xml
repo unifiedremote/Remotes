@@ -32,5 +32,31 @@
 				<button icon="next" ontap="next" />
 			</row>
 		</tab>
+		<tab text="Search">
+			<row weight="wrap">
+				<text hint="Search..." onChange="changeq"/>
+				<button text="go" weight="wrap" onTap="go"/>
+			</row>
+			<row weight="wrap">
+				<tabs id="lists" onchange="changetab">
+					<tab text="Artist">
+						<list id="lart" ontap="artselect">
+							<item>Loading...</item>
+						</list>
+					</tab>
+					<tab text="Album">
+						<list id="lalb" ontap="albselect">
+							<item>Loading...</item>
+						</list>
+					</tab>
+					<tab text="Track">
+						<list id="ltrc" ontap="trcselect">
+							<item>Loading...</item>
+						</list>
+					</tab>
+				</tabs>
+
+			</row>
+		</tab>
 	</tabs>	
 </layout>

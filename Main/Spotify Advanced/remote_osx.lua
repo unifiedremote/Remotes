@@ -3,7 +3,7 @@ local utf8 = libs.utf8;
 
 include("common.lua")
 include("playlists.lua")
-
+include("search.lua")
 function focus()
 	
 end
@@ -136,4 +136,50 @@ actions.suffle = function (checked)
 	else
 		os.script("tell application \"Spotify\" to set shuffling to false");
 	end
+end
+local query = nil;
+local tabnumber = 0;
+local tracks = {};
+local albums = {};
+local artists = {};
+actions.changeq = function (text)
+   	query = text;
+end
+
+actions.go = function ( )
+	if(query ~= nil) then
+		if(tabnumber == 0) then
+			artists = search.search("artist", query);
+			server.update({ id = "lart", children = artists.items });
+		elseif(tabnumber == 1) then
+			albums = search.search("album", query);
+			server.update({ id = "lalb", children = albums.items });
+		elseif(tabnumber == 2) then
+			tracks = search.search("track", query);
+			server.update({ id = "ltrc", children = tracks.items });
+		end
+	end
+end
+
+actions.trcselect = function ( id )
+	id = id+1;
+	os.script("tell application \"Spotify\" to play track \"" .. tracks.links[id] .. "\"");
+end
+
+actions.artselect = function ( id )
+	server.update({id="lists", index = 1});
+	local res = search.lookup("album", artists.links[id+1]);
+	albums = res;
+	server.update({id = "lalb", children = res.items });
+end
+
+actions.albselect = function ( id )
+	server.update({id="lists", index = 2});
+	local res = search.lookup("track", albums.links[id+1]);
+	tracks = res;
+	server.update({id = "ltrc", children = res.items });
+end
+
+actions.changetab = function ( id )
+	tabnumber = id;
 end

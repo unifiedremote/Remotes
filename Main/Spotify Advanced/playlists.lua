@@ -162,7 +162,7 @@ playlists.get_playlists = function (user)
 	});
 	
 	local file = playlists.get_playlists_file(user);
-	local raw = io.fread(file);
+	local raw = fs.read(file);
 	local json = data.fromjson(raw);
 	local views = json.views;
 	local count = #views;
@@ -200,6 +200,7 @@ end
 -------------------------------------------------------------------------------------------
 playlists.get_playlist_name = function (user, uri)
 	local url = "https://open.spotify.com/user/" .. user .. "/playlist/" .. uri;
+	print(url);
 	local raw = http.get(url);
 	if (raw == nil) then
 		return "Playlist";
