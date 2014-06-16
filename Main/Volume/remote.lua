@@ -13,7 +13,7 @@ function up(i)
 end
 
 function zero()
-	if OS_WINDOWS
+	if OS_WINDOWS then
 		down(50);
 	else
 		down(16);
@@ -22,7 +22,7 @@ end
 
 function set(x)
 	zero();
-	if (OS_WINDOWS)
+	if OS_WINDOWS then
 		up(math.floor(x / 2));
 	else
 		up(math.floor(x / 16));
