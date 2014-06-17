@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+    <row>
+      <button text="Eject" ontap="eject" />
+    </row>
+    <row>
+      <button text="Close" ontap="close" />
+    </row>
+  </grid>
+</layout>
