@@ -23,7 +23,7 @@ actions.update = function ()
 	
 	for i,win in ipairs(tasks) do
 		local pos = utf8.lastindexof(win.title, " - Google Play");
-		if (pos ~= nil) then
+		if (pos ~= -1) then
 			_title = utf8.sub(win.title, 0, pos);
 		end
 	end
