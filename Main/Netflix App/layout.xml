@@ -21,7 +21,7 @@
 		<button icon="vup" onTap="volumeup" />
 	</row>
 	<row weight="wrap">
-		<slider id ="pos" progressmax ="100" onDone="posFinish" onDown="posStart"/>
+		<slider id="pos" text="Position" progressmax="100" onDone="posFinish" onDown="posStart"/>
 	</row>
   </grid>
 </layout>
