@@ -149,7 +149,17 @@ function update ()
 	);
 end
 
---@help Launch Power Point Advanced application
+--@help Start slide show presentation
+actions.show_start = function ()
+	keyboard.press("f5");
+end
+
+--@help End slide show presentation
+actions.show_end = function ()
+	keyboard.press("escape");
+end
+
+--@help Launch PowerPoint application
 actions.launch = function ()
 	os.start("powerpnt");
 end
