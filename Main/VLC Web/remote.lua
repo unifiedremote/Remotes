@@ -280,7 +280,9 @@ end
 
 --@help Launch VLC application
 actions.launch = function()
-	os.start("%programfiles(x86)%\\VideoLAN\\VLC\\vlc.exe");
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%\\VideoLAN\\VLC\\vlc.exe");
+	end
 end
 
 --@help Toggle play/pause

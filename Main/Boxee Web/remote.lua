@@ -109,6 +109,12 @@ events.blur = function ()
 	timer.cancel(tid);
 end
 
+actions.launch = function ()
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%/Boxee/BOXEE.exe");
+	end
+end
+
 --@help Toggle playback state
 actions.play_pause = function ()
 	send("Pause");
