@@ -278,6 +278,11 @@ end
 -- General
 ------------------------------------------------------------------------
 
+--@help Launch VLC application
+actions.launch = function()
+	os.start("%programfiles(x86)%\\VideoLAN\\VLC\\vlc.exe");
+end
+
 --@help Toggle play/pause
 actions.play_pause = function ()
 	send("pl_pause");
