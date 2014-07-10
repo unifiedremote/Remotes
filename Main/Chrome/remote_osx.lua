@@ -83,7 +83,7 @@ end
 --@help Zoom page out
 actions.zoom_out = function()
 	actions.switch();
-	keyboard.stroke("cmd", "minus");
+	keyboard.stroke("cmd", "kpminus");
 end
 
 --@help Use normal zoom

@@ -58,7 +58,7 @@ end
 
 --@help Press Subtract
 actions.num_subtract = function ()
-	keyboard.press("minus");
+	keyboard.press("kpminus");
 end
 
 --@help Press Multiply
