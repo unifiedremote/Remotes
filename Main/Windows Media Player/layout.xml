@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play/pause" onPause="play/pause">
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play_pause" onPause="play_pause">
   <grid>
 	<row>
 	  <label id="info" value="[Not Playing]" />
