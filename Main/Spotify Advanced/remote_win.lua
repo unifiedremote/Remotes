@@ -277,7 +277,10 @@ function get_oauth_key ()
 	return nil;
 end
 
-
+actions.trcselect = function ( id )
+	id = id+1;
+	play(tracks.links[id], nil);
+end
 
 
 

@@ -73,9 +73,10 @@ actions.go = function ( )
 	end
 end
 
+
 actions.trcselect = function ( id )
 	id = id+1;
-	os.script("tell application \"Spotify\" to play track \"" .. tracks.links[id] .. "\"");
+	play(tracks.links[id], "");
 end
 
 actions.artselect = function ( id )
