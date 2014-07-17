@@ -1,23 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause">
-  <grid>
-    <row>
-      <label id="info" text="[Not Playing]" textAlign="center" />
-    </row>
-    <row>
-      <button icon="vdown" onTap="volume_down" />
-      <button icon="vmute" onTap="volume_mute" />
-      <button icon="vup" onTap="volume_up" />
-    </row>
-    <row>
-      <button icon="stop" onTap="stop" />
-      <button icon="playpause" onTap="play_pause" />
-    </row>
-    <row>
-      <button icon="previous" onTap="previous" />
-      <button icon="rwd" onTap="backward" />
-      <button icon="ff" onTap="forward" />
-      <button icon="next" onTap="next" />
-    </row>
-  </grid>
+  <tabs color="blue">
+    <tab text="Playback">
+      <row color="hard">
+        <label color="hard" id="info" text="[Not Playing]" textAlign="center" />
+      </row>
+      <row>
+        <button text="Info" onTap="info" />
+        <button icon="fullscreen" onTap="fullscreen" />
+      </row>
+      <row>
+        <button icon="vdown" onTap="volume_down" />
+        <button icon="vmute" onTap="volume_mute" />
+        <button icon="vup" onTap="volume_up" />
+      </row>
+      <row>
+        <button icon="previous" onTap="previous" />
+        <button icon="stop" onTap="stop" />
+        <button icon="next" onTap="next" />
+      </row>
+      <row>
+        <button icon="rwd" onTap="backward" />
+        <button icon="playpause" onTap="play_pause" />
+        <button icon="ff" onTap="forward" />
+      </row>
+    </tab>
+    <tab text="Audio/Subtitles">
+      <row>
+        <button text="Switch subtitle" onTap="subtitle" />
+      </row>
+      <row weight="wrap">
+        <label color="hard" text="Subtitle delay" />
+      </row>
+      <row>
+        <button icon="down" onTap="subtitle_delay_down" />
+        <button icon="up" onTap="subtitle_delay_up" />
+      </row>
+      <row weight="wrap">
+        <label color="hard" text="Audio delay" />
+      </row>
+      <row >
+        <button icon="down" onTap="audio_delay_down" />
+        <button icon="up" onTap="audio_delay_up" />
+      </row>
+    </tab>
+  </tabs>
 </layout>

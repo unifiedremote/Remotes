@@ -43,10 +43,8 @@ end
 
 --@help Lower volume
 actions.volume_down = function()
-os.script("tell application \"MPlayerX\"",
-		"activate",
-	"end tell");
-os.script("tell application \"System Events\"",
+os.script("tell application \"MPlayerX\" to activate",
+	"tell application \"System Events\"",
 	"keystroke \"-\"",
 	"end tell");
 end
@@ -60,10 +58,8 @@ end
 
 --@help Raise volume
 actions.volume_up = function()
-os.script("tell application \"MPlayerX\"",
-		"activate",
-	"end tell");
-os.script("tell application \"System Events\"",
+os.script("tell application \"MPlayerX\" to activate",
+	"tell application \"System Events\"",
 	"keystroke \"=\"",
 	"end tell");
 
@@ -129,4 +125,50 @@ actions.play_pause = function()
 	os.script("tell application \"MPlayerX\"",
 		"playpause",
 	"end tell");
+end
+
+--@help Switch subtitle
+actions.subtitle = function()
+os.script("tell application \"MPlayerX\"",
+	"tell application \"System Events\" to keystroke \"s\"");
+end
+
+--@help Toggle fullscreen
+actions.fullscreen = function()
+os.script("tell application \"MPlayerX\" to activate", 
+	"tell application \"System Events\" to keystroke \"f\"");
+end
+
+--@help Increase subtitle delay
+actions.subtitle_delay_down = function()
+	--Cmd+Down
+os.script("tell application \"MPlayerX\" to activate",
+	"tell application \"System Events\" to key code 125 using command down");
+end
+
+--@help Decrease subtitle delay
+actions.subtitle_delay_up = function()
+	--Cmd+Up
+os.script("tell application \"MPlayerX\" to activate",
+	"tell application \"System Events\" to key code 126 using command down")
+end
+
+--@help Increase audio delay
+actions.audio_delay_down = function()
+	--Alt+Down
+os.script("tell application \"MPlayerX\" to activate",
+	"tell application \"System Events\" to key code 125 using option down");
+end
+
+--@help Decrease audio delay
+actions.audio_delay_up = function()
+	--Alt+Up
+os.script("tell application \"MPlayerX\" to activate",
+	"tell application \"System Events\" to key code 126 using option down")
+end
+
+--@help Show inspector
+actions.info = function()
+os.script("tell application \"MPlayerX\" to activate",
+	"tell application \"System Events\" to keystroke \"i\"")
 end
