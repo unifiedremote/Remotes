@@ -130,7 +130,7 @@ end
 
 --@help Switch subtitle
 actions.subtitle = function()
-os.script("tell application \"MPlayerX\"",
+os.script("tell application \"MPlayerX\" to activate",
 	"tell application \"System Events\" to keystroke \"s\"");
 end
 

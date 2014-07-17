@@ -6,13 +6,15 @@
         <button id="info" text="[Not Playing]" textAlign="center" onTap="info"/>
       </row>
       <row>
-        <button text="File manager" onTap="file_manager" />
-        <button icon="fullscreen" onTap="fullscreen" />
-      </row>
-      <row>
         <button icon="vdown" onTap="volume_down" />
         <button icon="vup" onTap="volume_up" />
         <button icon="vmute" onTap="volume_mute" />
+      </row>
+
+      <row>
+        <button icon="rwd" onTap="backward" />
+        <button icon="playpause" onTap="play_pause" />
+        <button icon="ff" onTap="forward" />
       </row>
       <row>
         <button icon="previous" onTap="previous" />
@@ -20,9 +22,8 @@
         <button icon="next" onTap="next" />
       </row>
       <row>
-        <button icon="rwd" onTap="backward" />
-        <button icon="playpause" onTap="play_pause" />
-        <button icon="ff" onTap="forward" />
+        <button text="File manager" onTap="file_manager" />
+        <button icon="fullscreen" onTap="fullscreen" />
       </row>
     </tab>
     <tab text="Audio/Subtitles">
