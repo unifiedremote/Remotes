@@ -7,6 +7,7 @@ local win = libs.win;
 
 include("common.lua")
 include("playlists.lua")
+include("search.lua")
 
 local OAuthKey = nil;
 local CFID = nil;
@@ -275,6 +276,7 @@ function get_oauth_key ()
 	
 	return nil;
 end
+
 
 
 

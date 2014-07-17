@@ -34,8 +34,8 @@
 		</tab>
 		<tab text="Search">
 			<row weight="wrap">
-				<text hint="Search..." onChange="changeq"/>
-				<button text="go" weight="wrap" onTap="go"/>
+				<text hint="Search..." onChange="changeq" weight="6"/>
+				<button text="Go" weight="1" onTap="go"/>
 			</row>
 			<row weight="wrap">
 				<tabs id="lists" onchange="changetab">
