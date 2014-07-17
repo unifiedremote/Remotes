@@ -109,6 +109,11 @@ function update()
 	);
 end
 
+--@help Launch Spotify application
+actions.launch = function()
+	os.start("%appdata%\\Spotify\\spotify.exe");
+end
+
 --@help Send raw command to Spotify
 --@param cmd:number
 actions.command = function (cmd)

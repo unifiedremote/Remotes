@@ -64,6 +64,11 @@ function play(track, context)
 	os.script("tell application \"Spotify\" to play track \"" .. track .. "\" in context \"" .. context .. "\"");
 end
 
+--@help Launch Spotify application
+actions.launch = function()
+	os.start("spotify");
+end
+
 --@help Change position
 --@param pos:number Set position
 actions.poschange = function (pos)
