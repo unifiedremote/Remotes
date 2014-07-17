@@ -2,6 +2,7 @@ local kb = libs.keyboard;
 local timer = libs.timer;
 local server = libs.server;
 local log = libs.log;
+local dev = libs.device;
 
 local tid = -1;
 local title = "";
@@ -171,4 +172,9 @@ end
 actions.info = function()
 os.script("tell application \"MPlayerX\" to activate",
 	"tell application \"System Events\" to keystroke \"i\"")
+end
+
+--@help Open file manager
+actions.file_manager = function()
+dev.switch("Unified.FileManager");
 end
