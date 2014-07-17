@@ -18,9 +18,10 @@
 				<button icon="next" ontap="next" />
 			</row>
 			<row>
-				<button text="" ontap="menu" />
+				<button text="Menu" ontap="menu" />
 				<button text="Home" ontap="home" />
-				<button text="" ontap="osd" />
+				<button text="OSD" ontap="osd" />
+				<button text="Info" ontap="info" />
 			</row>
 		</tab>
 		<tab text="Play">

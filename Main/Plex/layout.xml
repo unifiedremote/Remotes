@@ -21,13 +21,12 @@
 			</row>
 			<row>
 				<button icon="previous" ontap="previous" />
-
 				<button color="grey" icon="down" ontap="down" />
 				<button icon="next" ontap="next" />
 			</row>
 			<row>
 				<button text="Menu" ontap="menu" />
-				<label />
+				<label color="hard"/>
 				<button text="OSD" ontap="osd" />
 			</row>
 		</tab>

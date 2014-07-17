@@ -36,7 +36,7 @@ actions.select = function ()
 end
 
 actions.back = function ()
-	kb.press("backspace");
+	kb.press("esc");
 end
 
 actions.play_pause = function ()
@@ -52,7 +52,7 @@ actions.rewind = function ()
 end
 
 actions.home = function ()
-	kb.press("h");
+	kb.press("tab");
 end
 
 actions.stop = function ()
@@ -72,5 +72,13 @@ actions.previous = function ()
 end
 
 actions.play_current = function ()
-	kb.press("p");
+	kb.press("space");
+end
+
+actions.osd = function ()
+	kb.press("o");
+end
+
+actions.info = function ()
+	kb.press("i");
 end
