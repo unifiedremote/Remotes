@@ -12,7 +12,7 @@
 			<row>
 				<button icon="back" ontap="back" />
 				<button color="grey" icon="up" ontap="up" />
-				<button icon="playpause" ontap="nav_play" />
+				<button icon="play" ontap="nav_play" />
 			</row>
 			<row>
 				<button color="grey" icon="left" ontap="left" />
