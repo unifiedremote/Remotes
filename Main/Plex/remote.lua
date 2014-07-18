@@ -10,10 +10,10 @@
 actions.launch = function()
 	if OS_WINDOWS then
 		pcall(function ()
-		os.start("%programfiles(x86)%\\Plex Home Theater\\Plex Home Theater.exe");
+			os.start("%programfiles(x86)%\\Plex Home Theater\\Plex Home Theater.exe");
 		end);
 		pcall(function ()
-		os.start("%programfiles(x86)%\\Plex\\Plex Media Center\\Plex.exe"); 
+			os.start("%programfiles(x86)%\\Plex\\Plex Media Center\\Plex.exe"); 
 		end);
 	elseif OS_OSX then
 		os.script("tell application \"Plex Home Theater\" to activate");
@@ -22,10 +22,10 @@ actions.launch = function()
 end
 
 events.create = function ()
+	
 end
 
 events.focus = function ()
-
 	update_server();
 	update_players();
 end
