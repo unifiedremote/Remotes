@@ -27,8 +27,9 @@ end
 
 --@help Update status information
 actions.update = function ()
-	local hwnd = win.find("Winamp v1.x", nil);
+	local hwnd = win.find("GOMPlayer1.x", nil);
 	local _title = win.title(hwnd);
+	print(_title);
 
 	if (_title == "") then
 		_title = "[Not Playing]";
@@ -36,6 +37,7 @@ actions.update = function ()
 	
 	if (_title ~= title) then
 		title = _title;
+		title = utf8.replace(title, " - GOM Player", "");
 		server.update({ id = "info", text = title });
 	end
 end

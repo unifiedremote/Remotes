@@ -2,9 +2,6 @@
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play/pause" onPause="play/pause">
   <grid>
     <row>
-      <label id="info" textAlign="center" weight="wrap" />
-    </row>
-    <row>
       <button icon="vdown" onTap="volume_down" />
       <button icon="vmute" onTap="volume_mute" />
       <button icon="vup" onTap="volume_up" />
