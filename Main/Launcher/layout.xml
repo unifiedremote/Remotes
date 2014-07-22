@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<list id="list" ontap="tap">
+		<item>Loading...</item>
+	</list>
+</layout>
