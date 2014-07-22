@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layout onVolumeUp="previous" onVolumeDown="next" onLaunch="launch">
-  <grid>
-    <row>
-      <tabs id="tabs" onChange="tab_changed">
-        <tab text="Slideshow">
-          <row>
-            <button text="Slide switcher" onTap="go_to" />
-          </row>
-          <row>
-            <button icon="stop" onTap="show_end" />
-            <button icon="play" onTap="show_start" />
-          </row>
-        </tab>
-        <tab text="Slide switcher">
-          <row>
-            <button text="Cancel" onTap="switcher_cancel" />
-            <button text="Accept" onTap="switcher_accept" />
-          </row>
-          <row>
-            <button icon="up" onTap="switcher_backward" />
-            <button icon="down" onTap="switcher_forward" />
-          </row>
-        </tab>
-      </tabs>
-    </row>
-    <row weight="2">
-      <button icon="left" onTap="previous" />
-      <button icon="right" onTap="next" />
-    </row>
-  </grid>
+    <tabs id="tabs" onChange="tab_changed">
+      <tab text="Slideshow">
+        <row>
+          <button text="Slide switcher" onTap="go_to" />
+        </row>
+        <row>
+          <button icon="stop" onTap="show_end" />
+          <button icon="play" onTap="show_start" />
+        </row>
+        <row weight="5">
+          <button icon="left" onTap="previous" />
+          <button icon="right" onTap="next" />
+        </row>
+      </tab>
+      <tab text="Slide switcher">
+        <row>
+          <button text="Cancel" onTap="switcher_cancel" />
+          <button text="Accept" onTap="switcher_accept" />
+        </row>
+        <row>
+          <button icon="up" onTap="switcher_backward" />
+          <button icon="down" onTap="switcher_forward" />
+        </row>
+        <row weight="5">
+          <button icon="left" onTap="previous" />
+          <button icon="right" onTap="next" />
+        </row>
+      </tab>
+    </tabs>
 </layout>
