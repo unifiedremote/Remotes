@@ -129,7 +129,6 @@ actions.tap = function (i)
 		local item = items[i+1];
 		if item.isdir then
 			settings.path = settings.path .. "\\" .. item.text;
-			print(settings.path);
 			update();
 		else
 			actions.open(item.path);
