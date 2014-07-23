@@ -8,7 +8,11 @@ events.focus = function ()
 	items = {};
 	for i = 1, #list do
 		print(list[i]);
-		table.insert(items, { type = "item", text = fs.name(list[i]) });
+		table.insert(items, { 
+			type = "item", 
+			text = fs.name(list[i]) ,
+			icon = "folder"
+		});
 	end
 	server.update({ id = "list", children = items });
 end
