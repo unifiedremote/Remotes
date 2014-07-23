@@ -40,7 +40,7 @@ function update ()
 		end
 		local desktopPath = "~/Desktop";
 		if OS_WINDOWS then 
-			homePath = "%HOMEPATH%/Desktop"
+			desktopPath = "%HOMEPATH%/Desktop"
 		end
 		table.insert(items, {
 			type = "item",
@@ -260,7 +260,7 @@ actions.refresh = function ()
 end
 
 actions.goto = function ()
-	server.update({id = "go", type="input", ontap="gotopath", text="Goto"});
+	server.update({id = "go", type="input", ontap="gotopath", title="Goto"});
 end
 
 actions.gotopath = function (p)
