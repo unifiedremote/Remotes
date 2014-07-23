@@ -97,12 +97,12 @@ end
 
 --@help Next track
 actions.next = function ()
-	actions.command(919);
+	actions.command(921);
 end
 
 --@help Prevous track
 actions.previous = function ()
-	actions.command(918);
+	actions.command(920);
 end
 
 --@help Go to Home
