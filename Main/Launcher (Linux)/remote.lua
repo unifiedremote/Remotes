@@ -4,13 +4,12 @@ local list;
 local items;
 
 events.focus = function ()
-	list = fs.dirs("/Applications/");
+	list = fs.dirs("/usr/share/applications/");
 	items = {};
 	for i = 1, #list do
-		print(list[i]);
 		table.insert(items, { 
 			type = "item", 
-			text = fs.name(list[i]) ,
+			text = fs.name(list[i]),
 			icon = "folder"
 		});
 	end
