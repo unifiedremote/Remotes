@@ -1,3 +1,6 @@
+# Required for free version
+meta.id: Unified.Start
+
 meta.name: Launcher
 meta.author: Unified
 meta.description: Launch applications.
