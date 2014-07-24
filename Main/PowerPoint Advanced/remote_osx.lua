@@ -11,6 +11,11 @@ local timer_slide = 0;
 local timer_state = 0;
 local slidePaths = {};
 local noPresentation = true;
+
+events.detect = function ()
+	return libs.fs.exists("/Applications/Microsoft Office 2011/Microsoft PowerPoint.app") or libs.fs.exists("/Applications/Microsoft PowerPoint.app");
+end
+
 events.create = function ()
 end
 

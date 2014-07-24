@@ -8,12 +8,18 @@
 
 --@help Launch XBMC application
 actions.launch = function()
-	if OS_WINDOWS then
-		pcall(function ()
-			os.start("%programfiles(x86)%\\Plex Home Theater\\Plex Home Theater.exe");
+if OS_WINDOWS then
+	pcall(function ()
+		os.start("C:\\Program Files (x86)\\Plex Home Theater\\Plex Home Theater.exe");
 		end);
-		pcall(function ()
-			os.start("%programfiles(x86)%\\Plex\\Plex Media Center\\Plex.exe"); 
+	pcall(function ()
+		os.start("C:\\Program Files\\Plex Home Theater\\Plex Home Theater.exe");
+		end);
+	pcall(function ()
+		os.start("C:\\Program Files (x86)\\Plex\\Plex Media Center\\Plex.exe"); 
+		end);
+	pcall(function ()
+		os.start("C:\\Program Files\\Plex\\Plex Media Center\\Plex.exe"); 
 		end);
 	elseif OS_OSX then
 		os.script("tell application \"Plex Home Theater\" to activate");
@@ -22,12 +28,12 @@ actions.launch = function()
 end
 
 events.create = function ()
-	
+
 end
 
 events.focus = function ()
-	update_server();
-	update_players();
+update_server();
+update_players();
 end
 
 local server = "";
@@ -74,30 +80,30 @@ function update_players()
 			local host = v.attributes.host;
 			if (savedPlayer == "" and i == 0) then
 				player = host;
-			elseif (savedPlayer == host) then
-				player = host;
+				elseif (savedPlayer == host) then
+					player = host;
+				end
+				players[i] = { name = name, host = host };
+				local checked = (host == player);
+				local text = name .. "\n" .. host;
+				table.insert(playersList, { type = "item", checked = checked, text = text });
+				i = i + 1;
 			end
-			players[i] = { name = name, host = host };
-			local checked = (host == player);
-			local text = name .. "\n" .. host;
-			table.insert(playersList, { type = "item", checked = checked, text = text });
-			i = i + 1;
 		end
+		send("navigation", "test");
+		libs.server.update({ id = "players", children = playersList });
+		print("Plex Player: " .. player);
 	end
-	send("navigation", "test");
-	libs.server.update({ id = "players", children = playersList });
-	print("Plex Player: " .. player);
-end
 
-function url(controller, action)
-	local url = "http://" .. server .. ":32400";
-	url = url .. "/system/players/" .. player;
-	url = url .. "/" .. controller;
-	url = url .. "/" .. action;
-	return url;
-end
+	function url(controller, action)
+		local url = "http://" .. server .. ":32400";
+		url = url .. "/system/players/" .. player;
+		url = url .. "/" .. controller;
+		url = url .. "/" .. action;
+		return url;
+	end
 
-function send(controller, action)
+	function send(controller, action)
 	local _url = url(controller, action);
 	print(_url);
 	local resp = libs.http.get(_url);
@@ -106,12 +112,12 @@ function send(controller, action)
 			type = "dialog",
 			title = "Plex Connection",
 			text = "A connection to Plex could not be established." ..
-				"We recommend using the latest version of Plex.\n\n" ..
-				"1. Make sure Plex is running on your computer.\n\n" ..
-				"2. Enable remote controlling in Preferences > System > Services > Allow control of Plex/HT via HTTP.\n\n" ..
-				"You may have to restart Plex after enabling the remote controlling for the changes to take effect.",
+			"We recommend using the latest version of Plex.\n\n" ..
+			"1. Make sure Plex is running on your computer.\n\n" ..
+			"2. Enable remote controlling in Preferences > System > Services > Allow control of Plex/HT via HTTP.\n\n" ..
+			"You may have to restart Plex after enabling the remote controlling for the changes to take effect.",
 			children = {{ type = "button", text = "OK" }}
-		});
+			});
 	end
 end
 
@@ -122,8 +128,8 @@ end
 text = "";
 
 actions.text_changed = function (s)
-	text = s;
-	print(text);
+text = s;
+print(text);
 end
 
 actions.send_text = function ()
@@ -134,9 +140,9 @@ actions.send_text = function ()
 end
 
 actions.select_player = function (i)
-	print("Selected Player: " .. players[i].host);
-	settings.player = players[i].host;
-	update_players();
+print("Selected Player: " .. players[i].host);
+settings.player = players[i].host;
+update_players();
 end
 
 -------------------------------------------
@@ -144,58 +150,58 @@ end
 -------------------------------------------
 --@help Navigate up
 actions.up = function ()
-	send("navigation", "moveUp");
+send("navigation", "moveUp");
 end
 --@help Navigate down
 actions.down = function ()
-	send("navigation", "moveDown");
+send("navigation", "moveDown");
 end
 --@help Navigate left
 actions.left = function ()
-	send("navigation", "moveLeft");
+send("navigation", "moveLeft");
 end
 --@help Navigate right
 actions.right = function ()
-	send("navigation", "moveRight");
+send("navigation", "moveRight");
 end
 
 --@help Navigate page up
 actions.page_up = function ()
-	send("navigation", "pageUp");
+send("navigation", "pageUp");
 end
 
 --@help Navigate page down
 actions.page_down = function ()
-	send("navigation", "pageDown");
+send("navigation", "pageDown");
 end
 
 --@help Navigate 
 actions.next_letter = function ()
-	send("navigation", "nextLetter");
+send("navigation", "nextLetter");
 end
 
 actions.previous_letter = function ()
-	send("navigation", "previousLetter");
+send("navigation", "previousLetter");
 end
 
 --@help Select
 actions.select = function ()
-	send("navigation", "select");
+send("navigation", "select");
 end
 
 --@help Navigate back
 actions.back = function ()
-	send("navigation", "back");
+send("navigation", "back");
 end
 
 --@help Open menu
 actions.menu = function ()
-	send("navigation", "contextMenu");
+send("navigation", "contextMenu");
 end
 
 --@help Open On screen display
 actions.osd = function ()
-	send("navigation", "toggleOSD");
+send("navigation", "toggleOSD");
 end
 
 -------------------------------------------
@@ -204,66 +210,66 @@ end
 
 --@help Play track
 actions.play = function ()
-	send("playback", "play");
+send("playback", "play");
 end
 
 --@help Pause track
 actions.pause = function ()
-	send("playback", "pause");
+send("playback", "pause");
 end
 
 --@help Play Pause track
 actions.play_pause = function ()
-	send("playback", "play");
+send("playback", "play");
 end
 
 --@help Stop track
 actions.stop = function ()
-	send("playback", "stop");
+send("playback", "stop");
 end
 
 --@help Rewind track
 actions.rewind = function ()
-	send("playback", "rewind");
+send("playback", "rewind");
 end
 
 --@help Forwad track
 actions.forward = function ()
-	send("playback", "fastForward");
+send("playback", "fastForward");
 end
 
 --@help Step forward in track
 actions.step_forward = function ()
-	send("playback", "stepForward");
+send("playback", "stepForward");
 end
 
 --@help Big Step forward in track
 actions.big_step_forward = function ()
-	send("playback", "bigStepForward");
+send("playback", "bigStepForward");
 end
 
 --@help Step back in track
 actions.step_back = function ()
-	send("playback", "stepBack");
+send("playback", "stepBack");
 end
 
 --@help Big step back in track
 actions.bigStepBack = function ()
-	send("playback", "bigStepBack");
+send("playback", "bigStepBack");
 end
 
 --@help Next track
 actions.next = function ()
-	send("playback", "skipNext");
+send("playback", "skipNext");
 end
 
 --@help Previous track
 actions.previous = function ()
-	send("playback", "skipPrevious");
+send("playback", "skipPrevious");
 end
 
 --@help Play pause from navigation
 actions.nav_play = function () 
-	actions.select();
-	actions.select();
+actions.select();
+actions.select();
 end

@@ -1,6 +1,10 @@
 local keyboard = libs.keyboard;
 local device = libs.device;
 
+events.detect = function ()
+	return libs.fs.exists("/Applications/Google Chrome.app");
+end
+
 --@help Focus Chrome application
 actions.switch = function()
 	os.script("tell application \"Google Chrome\" to reopen activate");

@@ -1,12 +1,9 @@
--- metadata
-meta.id = "Unified.Firefox"
-meta.name = "Firefox"
-meta.author = "Unified Intents"
-meta.description = "Mozilla Firefox browser remote."
-meta.platform = "osx"
-
 local keyboard = libs.keyboard;
 local device = libs.device;
+events.detect = function ()
+	return libs.fs.exists("/Applications/Firefox.app");
+end
+
 --@help Focus Firefox application
 actions.switch = function()
 	os.script("tell application \"Firefox\" to reopen activate");

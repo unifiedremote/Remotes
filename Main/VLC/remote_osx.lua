@@ -3,6 +3,10 @@ local tid = -1;
 local tid_seek = -1;
 local title = "";
 
+events.detect = function ()
+	return libs.fs.exists("/Applications/VLC.app");
+end
+
 events.focus = function ()
 	title = "";
 	tid = timer.interval(actions.update, 500);
