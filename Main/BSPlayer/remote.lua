@@ -138,9 +138,7 @@ end
 
 --@help Launch BSPlayer application
 actions.launch = function()
-	if OS_WINDOWS then
-		os.start("%programfiles(x86)%/Webteh/BSPlayer/bsplayer.exe");
-	end
+	os.start("%programfiles(x86)%/Webteh/BSPlayer/bsplayer.exe");
 end
 
 --@help Send raw command to BSPlayer

@@ -1,5 +1,9 @@
 local keyboard = libs.keyboard;
 
+events.detect = function ()
+	return libs.fs.exists("C:\\Windows\\ehome");
+end
+
 --@help Launch WMC application
 actions.launch = function()
 	os.start("%windir%\\ehome\\ehshell.exe");

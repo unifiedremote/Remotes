@@ -1,6 +1,10 @@
 local win = libs.win;
 local keyboard = libs.keyboard;
 
+events.detect = function ()
+	return libs.fs.exists("%LOCALAPPDATA%\\HuluDesktop");
+end
+
 --@help Focus Hulu application
 actions.switch = function()
 	if OS_WINDOWS then
@@ -12,9 +16,7 @@ end
 
 --@help Launch Hulu application
 actions.launch = function()
-	if OS_WINDOWS then
-		os.start("%LOCALAPPDATA%/HuluDesktop/HuluDesktop.exe")
-	end
+	os.start("%LOCALAPPDATA%/HuluDesktop/HuluDesktop.exe")
 end
 
 --@help Navigate up

@@ -1,5 +1,10 @@
-
 local keyboard = libs.keyboard;
+
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\Google\\Picasa3") or
+		libs.fs.exists("C:\\Program Files\\Google\\Picasa3");
+end
 
 --@help End slide show
 actions.show_end = function()
