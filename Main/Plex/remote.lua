@@ -6,14 +6,6 @@
 -- * I couldn't find any official documentation...
 -- * https://forums.plex.tv/index.php/topic/15850-plex-9-remote-api/
 
-events.detect = function ()
-	if OS_WINDOWS then
-		return libs.fs.exists("C:\\Program Files (x86)\\Plex Home Theater") or libs.fs.exists("C:\\Program Files (x86)\\Plex\\Plex Media Center")  or libs.fs.exists("C:\\Program Files\\Plex\\Plex Media Center") or libs.fs.exists("C:\\Program Files\\Plex Home Theater");
-	elseif OS_OSX then
-		return libs.fs.exists("/Applications/Plex Home Theater.app") or libs.fs.exists("/Applications/Plex.app");
-	end
-end
-
 --@help Launch XBMC application
 actions.launch = function()
 if OS_WINDOWS then

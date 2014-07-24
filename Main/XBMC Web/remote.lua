@@ -4,14 +4,6 @@ local tid = -1;
 -- Events
 ------------------------------------------------------------------------
 
-events.detect = function ()
-	if OS_WINDOWS then
-		return libs.fs.exists("C:\\Program Files (x86)\\XBMC\\XBMC.exe") or libs.fs.exists("C:\\Program Files\\XBMC\\XBMC.exe");
-	elseif OS_OSX then
-		return libs.fs.exists("/Applications/Spotify.app");
-	end
-end
-
 events.focus = function ()
 	host = settings.host;
 	port = settings.port;
