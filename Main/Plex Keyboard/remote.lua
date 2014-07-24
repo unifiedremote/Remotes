@@ -1,6 +1,14 @@
 local kb = libs.keyboard;
 
---@help Launch XBMC application
+events.detect = function ()
+	if OS_WINDOWS then
+		libs.fs.exists("%programfiles(x86)%\\Plex Home Theater\\Plex Home Theater.exe") or libs.fs.exists("%programfiles(x86)%\\Plex\\Plex Media Center\\Plex.exe");
+	elseif
+		return libs.fs.exists("/Applications/Plex Home Theater.app") or libs.fs.exists("/Applications/Plex.app");
+	end
+end
+
+--@help Launch Plex application
 actions.launch = function()
 	if OS_WINDOWS then
 		pcall(function ()

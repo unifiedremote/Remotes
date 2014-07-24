@@ -1,12 +1,9 @@
--- metadata
-meta.id = "Unified.Chrome"
-meta.name = "Chrome"
-meta.author = "Unified Intents"
-meta.description = "Google Chrome browser remote."
-meta.platform = "osx"
-
 local keyboard = libs.keyboard;
 local device = libs.device;
+
+events.detect = function ()
+	return libs.fs.exists("/Applications/Google Chrome.app");
+end
 
 --@help Focus Chrome application
 actions.switch = function()

@@ -1,3 +1,6 @@
+events.detect = function ()
+	return libs.fs.exists("/Applications/Keynote.app");
+end
 
 --@help Start slide show
 actions.show_start = function()

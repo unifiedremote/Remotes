@@ -7,6 +7,10 @@ local playing = false;
 local title = "";
 local volume = 0;
 
+events.detect = function ()
+	return libs.fs.exists("/Applications/Spotify.app");
+end
+
 events.focus = function ()
 	playing = false;
 	title = "";

@@ -4,6 +4,12 @@ local utf8 = libs.utf8;
 include("common.lua")
 include("playlists.lua")
 include("search.lua")
+
+
+events.detect = function ()
+	return libs.fs.exists("/Applications/Spotify.app");
+end
+
 function focus()
 	
 end

@@ -1,3 +1,6 @@
+events.detect = function ()
+	return libs.fs.exists("/Applications/iPhoto.app");
+end
 
 --@help Launch VLC application
 actions.launch = function()

@@ -7,6 +7,10 @@ local dev = libs.device;
 local tid = -1;
 local title = "";
 
+events.detect = function ()
+	return libs.fs.exists("/Applications/MPlayerX.app");
+end
+
 events.focus = function ()
 tid = timer.interval(actions.update, 500);
 end
