@@ -1,6 +1,12 @@
 local win = libs.win;
 local keyboard = libs.keyboard;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\Boxee") or
+		libs.fs.exists("C:\\Program Files\\Boxee");
+end
+
 --@help Focus Boxee application
 actions.switch = function()
 	if OS_WINDOWS then

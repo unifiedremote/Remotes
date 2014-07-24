@@ -5,6 +5,12 @@ local server = libs.server;
 
 local tid = -1;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\foobar2000") or
+		libs.fs.exists("C:\\Program Files\\foobar2000");
+end
+
 events.focus = function()
 	tid = timer.interval(actions.update, 500);
 end

@@ -5,6 +5,10 @@ local timer = libs.timer;
 local data = libs.data;
 local win = libs.win;
 
+events.detect = function ()
+	return libs.fs.exists("%APPDATA%\\Spotify");
+end
+
 include("common.lua")
 include("playlists.lua")
 include("search.lua")

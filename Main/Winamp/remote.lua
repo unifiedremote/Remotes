@@ -4,6 +4,12 @@ local timer = libs.timer
 local utf8 = libs.utf8;
 local server = libs.server;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\Winamp") or
+		libs.fs.exists("C:\\Program Files\\Winamp");
+end
+
 -- Commands
 local WM_COMMAND 			= 0x111;
 local WA_NOTHING            = 0; 

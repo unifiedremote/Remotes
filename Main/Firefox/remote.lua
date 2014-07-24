@@ -2,6 +2,12 @@ local keyboard = libs.keyboard;
 local win = libs.win;
 local device = libs.device;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\Mozilla Firefox") or
+		libs.fs.exists("C:\\Program Files\\Mozilla Firefox");
+end
+
 --@help Focus Firefox application
 actions.switch = function()
 	if OS_WINDOWS then

@@ -1,8 +1,11 @@
-
 local win = libs.win;
 local keyboard = libs.keyboard;
 local timer = libs.timer;
 local server = libs.server;
+
+events.detect = function ()
+	return libs.fs.exists("%APPDATA%\\Spotify");
+end
 
 -- Commands
 local WM_APPCOMMAND = 0x0319;

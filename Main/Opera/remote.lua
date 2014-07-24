@@ -2,6 +2,12 @@ local win = libs.win;
 local keyboard = libs.keyboard;
 local device = libs.device;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\Opera") or
+		libs.fs.exists("C:\\Program Files\\Opera");
+end
+
 --@help Focus Opera application
 actions.switch = function()
 	if OS_WINDOWS then

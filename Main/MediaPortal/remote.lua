@@ -1,5 +1,11 @@
 local keyboard = libs.keyboard;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\Team MediaPortal\\MediaPortal") or
+		libs.fs.exists("C:\\Program Files\\Team MediaPortal\\MediaPortal");
+end
+
 --@help Launch MediaPortal application
 actions.launch = function()
 	if OS_WINDOWS then

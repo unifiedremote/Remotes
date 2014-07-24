@@ -130,6 +130,12 @@ local BSP_DVDLang = 120;
 local BSP_Res8 = 121;
 local BSP_Res9 = 122;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\Webteh\\BSPlayer") or
+		libs.fs.exists("C:\\Program Files\\Webteh\\BSPlayer");
+end
+
 --@help Launch BSPlayer application
 actions.launch = function()
 	if OS_WINDOWS then

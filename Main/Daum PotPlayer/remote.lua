@@ -42,6 +42,12 @@ local CMD_FULLSCREEN		= 10013;
 local tid = -1;
 local title = "";
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\Daum\\PotPlayer") or
+		libs.fs.exists("C:\\Program Files\\Daum\\PotPlayer");
+end
+
 events.focus = function ()
 	tid = timer.interval(actions.update, 500);
 end

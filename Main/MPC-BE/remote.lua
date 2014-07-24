@@ -1,6 +1,13 @@
 ﻿local win = libs.win;
 local tid = -1;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\MPC-BE") or
+		libs.fs.exists("C:\\Program Files\\MPC-BE") or
+		libs.fs.exists("C:\\Program Files\\MPC-BE x64");
+end
+
 events.focus = function ()
 	tid = libs.timer.interval(update, 1000);
 end

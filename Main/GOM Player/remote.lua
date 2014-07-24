@@ -17,6 +17,12 @@ local CMD_VOLUMEMUTE = 0x8016;
 local tid = -1;
 local title = "";
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\GRETECH\\GomPlayer") or
+		libs.fs.exists("C:\\Program Files\\GRETECH\\GomPlayer");
+end
+
 events.focus = function ()
 	tid = timer.interval(actions.update, 500);
 end

@@ -17,6 +17,12 @@ local MCC_NEXT = 10003;
 local MCC_PREVIOUS = 10004;
 local MCC_SET_PAUSE = 10022;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\J River") or
+		libs.fs.exists("C:\\Program Files\\J River");
+end
+
 --@help Send raw command to J River
 --@param cmd:number
 --@param param:number

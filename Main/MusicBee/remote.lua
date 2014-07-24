@@ -3,6 +3,12 @@ local win = libs.win;
 local utf8 = libs.utf8;
 local timer = libs.timer;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\MusicBee") or
+		libs.fs.exists("C:\\Program Files\\MusicBee");
+end
+
 local hwnd = 0;
 local tid = -1;
 local title = "";

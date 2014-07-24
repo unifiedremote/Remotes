@@ -7,9 +7,16 @@ local prevVol = 0;
 local tempplaylist = {};
 local state = 0;
 local playlists = {};
+
 --@help Launch iTunes application
 actions.launch = function()
 	os.start("m");
+end
+
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\MediaMonkey") or
+		libs.fs.exists("C:\\Program Files\\MediaMonkey");
 end
 
 events.focus = function ()

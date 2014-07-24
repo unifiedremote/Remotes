@@ -17,6 +17,10 @@ local WA_VOLUMEDOWN         = 40059; -- turns volume down
 local tid = -1;
 local title = "";
 
+events.detect = function ()
+	return libs.fs.exists("C:\\The KMPlayer");
+end
+
 events.focus = function ()
 	tid = timer.interval(actions.update, 500);
 end

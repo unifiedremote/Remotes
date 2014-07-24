@@ -4,6 +4,12 @@ local server = libs.server;
 local tid_update = -1;
 local obj = nil;
 
+events.detect = function ()
+	return 
+		libs.fs.exists("C:\\Program Files (x86)\\iTunes") or
+		libs.fs.exists("C:\\Program Files\\iTunes");
+end
+
 --@help Launch iTunes application
 actions.launch = function()
 	os.start("itunes");
