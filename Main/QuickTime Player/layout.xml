@@ -5,7 +5,7 @@
       <label id="info" textAlign="center" />
     </row>
     <row weight="wrap">
-      <slider id="pos" onstop="seek" />
+      <slider id="pos" onChanged="seek" />
     </row>
     <row>
       <button icon="vdown" onTap="volume_down" />

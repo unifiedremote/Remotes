@@ -30,6 +30,8 @@ actions.update = function ()
 		"end tell",
 	"end tell",
 "end tell");
+	print("asd");
+	print(_title);
 	if (_title == "") then
 		_title = "[Not Playing]";
 	end

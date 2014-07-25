@@ -2,7 +2,7 @@ local script = libs.script;
 
 events.detect = function ()
 	out = script.shell("drutil list | wc -l");
-	return tonumber(out) > 2
+	return tonumber(out) > 2;
 end
 
 actions.eject = function ()

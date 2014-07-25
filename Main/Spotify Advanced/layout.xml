@@ -37,7 +37,7 @@
 				<text hint="Search..." onChange="changeq" weight="6"/>
 				<button text="Go" weight="1" onTap="go"/>
 			</row>
-			<row weight="wrap">
+			<row>
 				<tabs id="lists" onchange="changetab">
 					<tab text="Artist">
 						<list id="lart" ontap="artselect">

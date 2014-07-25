@@ -34,13 +34,19 @@ function update ()
 			"set out to time",
 		"end if",
 	"end tell");
-	time = math.floor(time);
+	if(time == "") then
+		time = 0;
+	end
+	time = math.floor(tonumber(time));
 
 	duration = os.script("tell application \"QuickTime Player\"",
 		"tell document 1 to if exists then",
 			"set out to duration",
 		"end if",
 	"end tell");
+	if(duration == "") then
+		duration = 0;
+	end
 	duration = math.floor(duration);
 
 	local pos = math.floor(time / duration * 100);
