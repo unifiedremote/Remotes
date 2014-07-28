@@ -171,6 +171,7 @@ actions.repeating = function ()
 	ffi.C.GetWindowRect(hwnd, rect);
 	click(hwnd, rect.right - rect.left - 24, rect.bottom - rect.top - 21);
 end
+
 --@help Change Volume
 --@param vol:number Set Volume
 actions.volchange = function (vol)
@@ -182,6 +183,7 @@ actions.volchange = function (vol)
 	local x = 126 + math.floor(vol / 100 * 76);
 	click(hwnd, x, y);
 end
+
 --@help Change Position
 --@param pos:number Set Position
 actions.poschange = function (pos)
