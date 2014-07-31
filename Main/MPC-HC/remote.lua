@@ -4,8 +4,7 @@ local tid = -1;
 events.detect = function ()
 	return 
 		libs.fs.exists("C:\\Program Files (x86)\\MPC-HC") or
-		libs.fs.exists("C:\\Program Files\\MPC-HC") or
-		libs.fs.exists("C:\\Program Files\\MPC-HC x64");
+		libs.fs.exists("C:\\Program Files\\MPC-HC");
 end
 
 events.focus = function ()
@@ -29,8 +28,15 @@ end
 
 --@help Launch MPCHC application
 actions.launch = function()
-	os.start("mpc-hc.exe");
-	os.start("mpc-hc64.exe");
+	pcall(function ()
+		os.start("C:\\Program Files (x86)\\MPC-HC\\mpc-hc.exe");
+	end);
+	pcall(function ()
+		os.start("C:\\Program Files\\MPC-HC\\mpc-hc.exe");
+	end);
+	pcall(function ()
+		os.start("C:\\Program Files\\MPC-HC\\mpc-hc64.exe");
+	end);
 end
 
 --@help Run command
@@ -146,12 +152,12 @@ actions.volume_mute = function ()
 end
 
 --@help Jump Back 5s
-actions.minus_five = function ()
+actions.jump_back = function ()
 	actions.command(901);
 end
 
 --@help Jump Forward 5s
-actions.plus_five = function ()
+actions.jump_forward = function ()
 	actions.command(902);
 end
 

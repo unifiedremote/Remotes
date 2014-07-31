@@ -22,11 +22,9 @@
 				<button icon="playpause" ontap="play_pause" />
 			</row>
 			<row>
-				<button text="-5s" ontap="minus_five" />
-				<button text="+5s" ontap="plus_five" />
-			</row>
-			<row>
+				<button text="-5s" ontap="jump_back" />
 				<button icon="fullscreen" ontap="fullscreen" />
+				<button text="+5s" ontap="jump_forward" />
 			</row>
 		</tab>
 		<tab text="DVD">
