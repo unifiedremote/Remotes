@@ -145,6 +145,16 @@ actions.volume_mute = function ()
 	actions.command(909);
 end
 
+--@help Jump Back 5s
+actions.minus_five = function ()
+	actions.command(901);
+end
+
+--@help Jump Forward 5s
+actions.plus_five = function ()
+	actions.command(902);
+end
+
 -- Command Codes:
 -- 800 Open File
 -- 801 Open DVD

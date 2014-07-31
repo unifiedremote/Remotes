@@ -22,6 +22,10 @@
 				<button icon="playpause" ontap="play_pause" />
 			</row>
 			<row>
+				<button text="-5s" ontap="minus_five" />
+				<button text="+5s" ontap="plus_five" />
+			</row>
+			<row>
 				<button icon="fullscreen" ontap="fullscreen" />
 			</row>
 		</tab>
