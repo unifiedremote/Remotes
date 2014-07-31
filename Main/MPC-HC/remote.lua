@@ -32,16 +32,19 @@ actions.launch = function()
 	os.start("mpc-hc.exe");
 	os.start("mpc-hc64.exe");
 end
+
 --@help Run command
 --@param code:number MPCHC command to run
 actions.command = function (code)
 	local hwnd = win.find("MediaPlayerClassicW", nil);
 	win.send(hwnd, 0x0111, code, 0);
 end
+
 --@help Fullscreen
 actions.fullscreen = function ()
 	actions.command(830);
 end
+
 --@help Move up
 actions.up = function ()
 	actions.command(930);
