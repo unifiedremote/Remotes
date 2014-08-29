@@ -17,12 +17,22 @@ end
 
 --@help Dislike current track
 actions.thumbs_up = function()
-	keyboard.stroke("shift", "oem_plus");
+if(OS_WINDOWS)
+		then
+		keyboard.stroke("shift", "oem_plus");
+	else
+		keyboard.stroke("shift","plus");
+	end
 end
 
 --@help Like current track
 actions.thumbs_down = function()
-	keyboard.stroke("oem_minus");
+if(OS_WINDOWS)
+		then
+		keyboard.stroke("oem_minus");
+	else
+		keyboard.stroke("minus");
+	end
 end
 
 --@help Next track
