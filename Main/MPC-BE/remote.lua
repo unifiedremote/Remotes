@@ -29,8 +29,15 @@ end
 
 --@help Launch MPCBE application
 actions.launch = function()
-	os.start("mpc-be.exe");
-	os.start("mpc-be64.exe");
+	pcall(function ()
+		os.start("C:\\Program Files (x86)\\MPC-BE\\mpc-be.exe");
+	end);
+	pcall(function ()
+		os.start("C:\\Program Files\\MPC-BE x64\\mpc-be64.exe");
+	end);
+	pcall(function ()
+		os.start("C:\\Program Files\\MPC-BE\\mpc-be.exe");
+	end);
 end
 
 --@help Run command
@@ -141,6 +148,16 @@ end
 --@help Mute Volume
 actions.volume_mute = function ()
 	actions.command(909);
+end
+
+--@help Jump Back 5s
+actions.jump_back = function ()
+	actions.command(901);
+end
+
+--@help Jump Forward 5s
+actions.jump_forward = function ()
+	actions.command(902);
 end
 
 -- Command Codes:
