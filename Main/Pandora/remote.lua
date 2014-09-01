@@ -17,8 +17,7 @@ end
 
 --@help Dislike current track
 actions.thumbs_up = function()
-if(OS_WINDOWS)
-		then
+	if (OS_WINDOWS) then
 		keyboard.stroke("shift", "oem_plus");
 	else
 		keyboard.stroke("shift","plus");
@@ -27,8 +26,7 @@ end
 
 --@help Like current track
 actions.thumbs_down = function()
-if(OS_WINDOWS)
-		then
+	if (OS_WINDOWS) then
 		keyboard.stroke("oem_minus");
 	else
 		keyboard.stroke("minus");
