@@ -16,7 +16,7 @@ function norm (v,min1,max1,min2,max2)
 end
 
 actions.throttle = function (value)
-	value = norm(100 - value, 0, 100, -127, 127);
+	value = norm(100 - value, 0, 100, 0, 255);
 	j.throttle(value);
 end
 
@@ -38,9 +38,9 @@ actions.orientation = function (x, y, z)
 	
 	layout.info.text = comp.x .. " " .. comp.y .. " " .. comp.z;
 	
-	x = -norm(comp.y, -90, 90, -127, 127);
-	y = -norm(comp.z, -90, 90, -127, 127);
-	z = -norm(comp.x, -90, 90, -127, 127);
+	x = -norm(comp.y, -90, 90, -32768, 32767);
+	y = -norm(comp.z, -90, 90, -32768, 32767);
+	z = -norm(comp.x, -90, 90, -32768, 32767);
 	
 	--x = norm(comp.x, -180, 180, -127, 127);
 	--y = -norm(comp.y, -180, 180, -127, 127);
