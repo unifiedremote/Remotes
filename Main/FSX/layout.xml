@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onorientation="orientation">
+	<row weight="wrap">
+		<label id="info" text="" />
+	</row>
+	<row weight="wrap">
+		<label id="offset" text="" />
+	</row>
+	<row>
+		<button text="Offset" ontap="offset" />
+	</row>
+	<row>
+		<slider onchange="throttle" text="Throttle" progress="50" progressmax="100" />
+	</row>
+</layout>
