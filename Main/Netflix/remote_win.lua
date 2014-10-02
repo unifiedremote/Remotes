@@ -14,7 +14,11 @@ function FindPlayerWindow(browserClass, playerClass, silverlight)
 		local title = win.title(hwnd);
 		if utf8.startswith(title, "Netflix - ") then
 			if (not silverlight) then
-				return hwnd;
+				if (browserClass = "IEFrame") then
+					return 0;
+				else
+					return hwnd;
+				end
 			end
 			local childHwnds = win.findall(hwnd, nil, nil, true);
 			for j,child in ipairs(childHwnds) do
