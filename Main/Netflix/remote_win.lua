@@ -14,7 +14,7 @@ function FindPlayerWindow(browserClass, playerClass, silverlight)
 		local title = win.title(hwnd);
 		if utf8.startswith(title, "Netflix - ") then
 			if (not silverlight) then
-				if (browserClass = "IEFrame") then
+				if (browserClass == "IEFrame") then
 					return 0;
 				else
 					return hwnd;
