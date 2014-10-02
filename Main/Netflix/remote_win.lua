@@ -2,9 +2,7 @@ local keyboard = libs.keyboard;
 local win = libs.win;
 local utf8 = libs.utf8;
 
-local html5 = false;
-
-function FindPlayerWindow(browserClass, playerClass, silverlight)
+function FindPlayerWindow(browserClass, playerClass)
 	-- This is a bit of a beast:
 	--   1. Find all windows for the specified browser window class (i.e. all tabs)
 	--   2. For each "tab" check if the title starts with "Netflix - " (i.e. a netflix tab)
@@ -13,9 +11,6 @@ function FindPlayerWindow(browserClass, playerClass, silverlight)
 	for i,hwnd in ipairs(hwnds) do
 		local title = win.title(hwnd);
 		if utf8.startswith(title, "Netflix - ") then
-			if (not silverlight) then
-				return hwnd;
-			end
 			local childHwnds = win.findall(hwnd, nil, nil, true);
 			for j,child in ipairs(childHwnds) do
 				local cls = win.class(child);
@@ -28,7 +23,7 @@ function FindPlayerWindow(browserClass, playerClass, silverlight)
 	return 0;
 end
 
-function FindWindow(silverlight)
+function FindWindow()
 	-- Check if running in fullscreen
 	-- If so, just return that window
 	local hwnds = win.findall(0, "AGFullScreenWinClass", nil, false);
@@ -37,17 +32,17 @@ function FindWindow(silverlight)
 	end
 	local hwnd = 0;
 	-- Check Chrome
-	hwnd = FindPlayerWindow("Chrome_WidgetWin_1", "NativeWindowClass", silverlight);
+	hwnd = FindPlayerWindow("Chrome_WidgetWin_1", "NativeWindowClass");
 	if (hwnd ~= 0) then 
 		return hwnd; 
 	end
 	-- Check IE
-	hwnd = FindPlayerWindow("IEFrame", "MicrosoftSilverlight", silverlight);
+	hwnd = FindPlayerWindow("IEFrame", "MicrosoftSilverlight");
 	if (hwnd ~= 0) then 
 		return hwnd; 
 	end
 	-- Check FF
-	hwnd = FindPlayerWindow("MozillaWindowClass", "GeckoPluginWindow", silverlight);
+	hwnd = FindPlayerWindow("MozillaWindowClass", "GeckoPluginWindow");
 	if (hwnd ~= 0) then 
 		return hwnd; 
 	end
@@ -55,15 +50,7 @@ function FindWindow(silverlight)
 end
 
 actions.switch = function ()
-	html5 = false;
-	local hwnd = FindWindow(true);
-	if (hwnd == 0) then
-		hwnd = FindWindow(false);
-		print(hwnd);
-		if (hwnd ~= 0) then
-			html5 = true;
-		end
-	end
+	local hwnd = FindWindow();
 	if (hwnd ~= 0) then
 		win.switchto(hwnd);
 		os.sleep(100);
@@ -79,31 +66,19 @@ end
 --@help Lower volume
 actions.volume_down = function()
 	actions.switch();
-	if (html5) then
-		keyboard.stroke("volumedown");
-	else
-		keyboard.stroke("down");
-	end
+	keyboard.stroke("down");
 end
 
 --@help Mute volume
 actions.volume_mute = function()
 	actions.switch();
-	if (html5) then
-		keyboard.stroke("volumemute");
-	else
-		keyboard.stroke("M");
-	end
+	keyboard.stroke("M");
 end
 
 --@help Raise volume
 actions.volume_up = function()
 	actions.switch();
-	if (html5) then
-		keyboard.stroke("volumeup");
-	else
-		keyboard.stroke("up");
-	end
+	keyboard.stroke("up");
 end
 
 --@help Pause playback
@@ -151,20 +126,12 @@ end
 --@help Fullscreen view
 actions.fullscreen = function()
 	actions.switch();
-	if (html5) then
-		keyboard.stroke("F11");
-	else
-		keyboard.stroke("F");
-	end
+	keyboard.stroke("F");
 end
 
 --@help Windowed view
 actions.window = function()
 	actions.switch();
-	if (html5) then
-		keyboard.stroke("F11");
-	else
-		keyboard.stroke("escape");
-	end
+	keyboard.stroke("escape");
 end
 
