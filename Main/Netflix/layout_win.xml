@@ -16,5 +16,9 @@
       <button icon="select" onTap="select" />
       <button icon="right" onTap="right" />
     </row>
+    <row>
+      <button icon="fullscreen" onTap="fullscreen" />
+      <button text="Esc" onTap="window" />
+    </row>
   </grid>
 </layout>
