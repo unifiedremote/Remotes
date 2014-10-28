@@ -59,7 +59,7 @@ function FindWindow(silverlight)
 end
 
 actions.switch = function ()
-	html5 = false;
+	html5 = true;
 	local hwnd = FindWindow(true);
 	if (hwnd == 0) then
 		hwnd = FindWindow(false);
