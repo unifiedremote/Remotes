@@ -2,3 +2,4 @@ meta.id: Unified.Screen
 meta.name: Screen (Preview)
 meta.author: Unified
 meta.description: Remote screen viewer
+meta.platform: windows
