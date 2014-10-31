@@ -219,7 +219,8 @@ actions.find = function(name)
 	local n = lib.tdGetNumberOfDevices();
 	for i=1,n do
 		local id = lib.tdGetDeviceId(i-1);
-		if (name == lib.tdGetName(id)) then
+		local _name = ffi.string((lib.tdGetName(id)));
+		if (name == _name) then
 			return id;
 		end
 	end
