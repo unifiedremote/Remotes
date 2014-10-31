@@ -1,7 +1,7 @@
-local win = libs.win;
+local screen = libs.screen;
 
 actions.update = function (x, y, w, h, update)
-	local res = win.capture(x, y, w, h, update);
+	local res = screen.capture(x, y, w, h, update);
 	libs.server.update({
 		id = "back",
 		x = res.x,
