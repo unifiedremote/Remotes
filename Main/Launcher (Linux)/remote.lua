@@ -4,7 +4,7 @@ local list;
 local items;
 
 events.focus = function ()
-	list = fs.dirs("/usr/share/applications/");
+	list = fs.files("/usr/share/applications/");
 	items = {};
 	for i = 1, #list do
 		table.insert(items, { 
