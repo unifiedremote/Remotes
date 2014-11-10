@@ -113,12 +113,12 @@ end
 
 --@help Next track
 actions.next = function ()
-	actions.command(921);
+	actions.command(920);
 end
 
 --@help Prevous track
 actions.previous = function ()
-	actions.command(920);
+	actions.command(921);
 end
 
 --@help Go to Home
