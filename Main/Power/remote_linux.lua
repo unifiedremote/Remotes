@@ -23,7 +23,7 @@ actions.restart = function ()
 	if (de == "KDE") then
 		os.execute("qdbus org.kde.ksmserver /KSMServer logout 0 1 2");
 	else
-		os.execute("shutdown -r now");
+		os.execute('dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true');
 	end
 end
 
@@ -33,7 +33,7 @@ actions.shutdown = function ()
 	if (de == "KDE") then
 		os.execute("qdbus org.kde.ksmserver /KSMServer logout 0 2 2");
 	else
-		os.execute("shutdown -h now");
+		os.execute('dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.PowerOff boolean:true');
 	end
 end
 
@@ -44,12 +44,12 @@ end
 
 --@help Put system in sleep state
 actions.sleep = function ()
-	os.execute("apmsleep --standby");
+	os.execute('dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend');
 end
 
 --@help Put system in hibernate state
 actions.hibernate = function ()
-	os.execute("apmsleep --suspend");
+	os.execute('dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate');
 end
 
 --@help Abort any pending restart or shutdown
