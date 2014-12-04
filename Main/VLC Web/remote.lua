@@ -12,10 +12,10 @@ events.focus = function ()
 	port = settings.port;
 	password = settings.password;
 	
-	test();
-	
-	tid = libs.timer.interval(update_status, 500);
-	update_library();
+	if (test()) then
+		update_status();
+		update_library();
+	end
 end
 
 events.blur = function ()
@@ -23,7 +23,7 @@ events.blur = function ()
 end
 
 function test()
-	local resp = send();
+	local resp = send();	
 	if (resp == nil or resp.status ~= 200) then
 		libs.server.update({
 			type = "dialog",
@@ -37,6 +37,9 @@ function test()
 				"You may have to restart VLC after enabling the web interface for the changes to take effect.",
 			children = {{ type = "button", text = "OK" }}
 		});
+		return false;
+	else
+		return true;
 	end
 end
 
@@ -85,7 +88,10 @@ local seeking_pos = 0;
 
 function update_status()
 	local resp = send();
-	if (resp == nil) then return end
+	if (resp == nil) then 
+		tid = libs.timer.interval(update_status, 500);
+		return;
+	end
 	
 	local root = libs.data.fromxml(resp.content);
 	
@@ -132,6 +138,8 @@ function update_status()
 		{ id = "pos", progress = pos, progressmax = length, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(length) },
 		{ id = "vol", progress = vol, progressmax = 320}
 	);
+	
+	tid = libs.timer.interval(update_status, 500);
 end
 
 ------------------------------------------------------------------------

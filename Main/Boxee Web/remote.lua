@@ -79,6 +79,8 @@ function update ()
 		{ id = "play", icon = icon },
 		{ id = "pos", progress = pos }
 	);
+	
+	tid = timer.interval(update, 500);
 end
 
 function info ()
@@ -102,7 +104,6 @@ events.focus = function ()
 	if (state == nil) then
 		info();
 	end
-	tid = timer.interval(update, 500);
 end
 
 events.blur = function ()
