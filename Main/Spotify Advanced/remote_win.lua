@@ -226,7 +226,9 @@ function status ()
 	return json;
 end
 
-function recv (req, oauth, cfid)
+local HelperPort = 4381;
+
+function recv (path, oauth, cfid)
 	local params = "&ref=&cors=&_=" .. timer.time();
 	if (oauth ~= nil) then
 		params = params .. "&oauth=" .. oauth;
@@ -237,7 +239,7 @@ function recv (req, oauth, cfid)
 	params = params .. "&returnafter=1";
 	params = params .. "&returnon=login%2Clogout%2Cplay%2Cpause%2Cerror%2Cap";
 	
-	local url = "http://127.0.0.1:4381/" .. req .. params;
+	local url = "http://127.0.0.1:" .. HelperPort .. "/" .. path .. params;
 	
 	local headers = {};
 	headers["Origin"] = "https://embed.spotify.com";
@@ -247,6 +249,14 @@ function recv (req, oauth, cfid)
 	req.method = "GET";
 	req.url = url;
 	req.headers = headers;
+	
+	local ok, resp = pcall(http.request, req);
+	if (not ok) then
+		print("fallback url");
+		HelperPort = 4380;
+		req.url = "http://127.0.0.1:" .. HelperPort .. "/" .. path .. params;
+		ok, resp = pcall(http.request, req);
+	end
 	
 	local resp = http.request(req);
 	local raw = resp.content;
