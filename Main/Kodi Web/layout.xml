@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onlaunch="launch">
+	<tabs>
+		<tab text="Main">
+			<row weight="wrap">
+				<label id="title" text="Connecting..." />
+			</row>
+			<row>
+				<button text="Home" ontap="home" />
+				<button icon="up" ontap="up" />
+				<button text="Info" ontap="info" />
+			</row>
+			<row>
+				<button icon="left" ontap="left" />
+				<button icon="select" ontap="select" />
+				<button icon="right" ontap="right" />
+			</row>
+			<row>
+				<button icon="previous" ontap="previous" />
+				<button icon="down" ontap="down" />
+				<button icon="next" ontap="next" />
+			</row>
+			<row>
+				<button text="Menu" ontap="menu" />
+				<button icon="back" ontap="back" />
+				<button text="OSD" ontap="osd" />
+			</row>
+		</tab>
+		<tab text="Playback">
+			<row>
+				<button icon="vdown" ontap="volume_down" />
+				<button icon="vmute" ontap="volume_mute" />
+				<button icon="vup" ontap="volume_up" />
+			</row>
+			<row>
+				<button icon="rwd" ontap="rewind" />
+				<button text="Info" ontap="info" />
+				<button icon="ff" ontap="forward" />
+			</row>
+			<row>
+				<button icon="previous" ontap="previous" />
+				<button text="Home" ontap="home" />
+				<button icon="next" ontap="next" />
+			</row>
+			<row>
+				<button icon="stop" ontap="stop" />
+				<button icon="fullscreen" ontap="fullscreen" />
+				<button icon="playpause" ontap="play_pause" />
+			</row>
+		</tab>
+		<tab text="Library">
+			<row>
+				<list id="list" ontap="library_select">
+					<item text="Loading..." />
+				</list>
+			</row>
+			<row weight="wrap">
+				<button icon="back" ontap="library_back" />
+				<button icon="refresh" ontap="library_refresh" />
+			</row>
+		</tab>
+	</tabs>
+</layout>
