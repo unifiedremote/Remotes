@@ -273,6 +273,15 @@ end
 -- Actions
 ------------------------------------------------------------------------
 
+--@help Launch Kodi application
+actions.launch = function()
+	if OS_WINDOWS then
+		os.start("%programfiles(x86)%\\Kodi\\Kodi.exe"); 
+	elseif OS_OSX then
+		os.script("tell application \"Kodi\" to activate");
+	end
+end
+
 function player ()
 	local resp = send("Player.GetActivePlayers");
 	if(resp.result[1] == nil)
