@@ -234,10 +234,10 @@ function recv (req, oauth, cfid)
 	if (cfid ~= nil) then
 		params = params .. "&csrf=" .. cfid;
 	end
-	params = params .. "&returnafter=-1";
+	params = params .. "&returnafter=1";
 	params = params .. "&returnon=login%2Clogout%2Cplay%2Cpause%2Cerror%2Cap";
 	
-	local url = "http://127.0.0.1:4380/" .. req .. params;
+	local url = "http://127.0.0.1:4381/" .. req .. params;
 	
 	local headers = {};
 	headers["Origin"] = "https://embed.spotify.com";
