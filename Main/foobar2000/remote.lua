@@ -2,8 +2,21 @@ local win = libs.win;
 local keyboard = libs.keyboard;
 local timer = libs.timer;
 local server = libs.server;
-
+local win = libs.win;
+local utf8 = libs.utf8;
 local tid = -1;
+
+
+-- Commands
+local WM_APPCOMMAND 					= 0x319;
+local PlayPauseTrack 					= 0xE0000;
+local MuteTrack 						= 0x80000;
+local VolumeDown 						= 0x90000;
+local VolumeUp 							= 0xA0000;
+local StopTrack 						= 0xD0000;
+local PreviousTrack 					= 0xC0000;
+local NextTrack 						= 0xB0000;
+
 
 events.detect = function ()
 	return 
@@ -12,7 +25,7 @@ events.detect = function ()
 end
 
 events.focus = function()
-	tid = timer.interval(actions.update, 500);
+	tid = timer.interval(actions.update, 1000);
 end
 
 events.blur = function()
@@ -23,8 +36,13 @@ end
 actions.update = function()
 	local hwnd = win.window("foobar2000.exe");
 	local title = win.title(hwnd);
-	if (title == "") then
+	if (title == "" or utf8.startswith(title, "foobar2000")) then
 		title = "[Not Playing]";
+	else
+		local pos = utf8.indexof(title, "[foobar2000");
+		if (pos > -1) then
+			title = utf8.sub(title, 0, pos);
+		end
 	end
 	server.update({ id = "info", text = title });
 end
@@ -47,43 +65,44 @@ end
 
 --@help Lower volume
 actions.volume_down = function()
-	actions.switch();
-	keyboard.stroke("volume_down");
+	actions.command(VolumeDown);
 end
 
 --@help Mute volume
 actions.volume_mute = function()
-	actions.switch();
-	keyboard.stroke("volume_mute");
+	actions.command(MuteTrack);
 end
 
 --@help Raise volume
 actions.volume_up = function()
-	actions.switch();
-	keyboard.stroke("volume_up");
+	actions.command(VolumeUp);
 end
 
 --@help Previous track
 actions.previous = function()
-	actions.switch();
-	keyboard.stroke("media_prev_track");
+	actions.command(PreviousTrack);
 end
 
 --@help Next track
 actions.next = function()
-	actions.switch();
-	keyboard.stroke("media_next_track");
+	actions.command(NextTrack);
 end
 
 --@help Stop playback
 actions.stop = function()
-	actions.switch();
-	keyboard.stroke("media_stop");
+	actions.command(StopTrack);
 end
 
 --@help Toggle playback state
 actions.play_pause = function()
-	actions.switch();
-	keyboard.stroke("media_play_pause");
+	actions.command(PlayPauseTrack);
+end
+
+--@help Send raw command
+--@param cmd:number Raw command number
+actions.command = function(cmd)
+	local hwnd = win.window("foobar2000.exe");
+	win.send(hwnd, WM_APPCOMMAND, 0, cmd);
+	actions.update();
 end
 
