@@ -157,3 +157,15 @@ end
 actions.helper_transmit_uuirt = function ()
 	actions.transmit("uuirt");
 end
+
+--@help Transmit UUIRT code
+--@param code:string Text representation of IR code
+actions.uuirt = function (code)
+	actions.transmit("uuirt", code);
+end
+
+--@help Transmit Pronto code
+--@param code:string Text representation of IR code
+actions.pronto = function (code)
+	actions.transmit("pronto", code);
+end
