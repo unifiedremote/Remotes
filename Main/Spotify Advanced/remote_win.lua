@@ -4,6 +4,7 @@ local utf8 = libs.utf8;
 local timer = libs.timer;
 local data = libs.data;
 local win = libs.win;
+local stop = false;
 
 events.detect = function ()
 	return libs.fs.exists("%APPDATA%\\Spotify");
@@ -15,7 +16,10 @@ include("search.lua")
 
 local OAuthKey = nil;
 local CFID = nil;
+local HelperPort = 4381;
 
+local WM_LBUTTONDOWN = 0x0201;
+local WM_LBUTTONUP = 0x0202;
 local WM_APPCOMMAND = 0x0319;
 local CMD_PLAY_PAUSE = 917504;
 local CMD_VOLUME_DOWN = 589824;
@@ -40,9 +44,6 @@ typedef struct {
 bool GetWindowRect(LONG hwnd, RECT* rect);
 ]]
 
-local WM_LBUTTONDOWN = 0x0201;
-local WM_LBUTTONUP = 0x0202;
-
 function click(hwnd, x, y)
 	local pos = bit.lshift(y, 16) + x;
 	win.post(hwnd, WM_LBUTTONDOWN, 0x01, pos);
@@ -51,67 +52,90 @@ function click(hwnd, x, y)
 end
 
 function focus()
-	OAuthKey = get_oauth_key();
-	CFID = get_cfid();
+	get_oauth_key(function (key)
+		print("oauthkey: " .. key);
+		OAuthKey = key;
+		get_cfid(function (cfid)
+			print("cfid: " .. cfid);
+			CFID = cfid;
+			stop = false;
+			update();
+		end);
+	end);
+end
+
+function blur()
+	stop = true;
 end
 
 function update()
-	local status = status();
-	playing = status.playing ~= 0;
-	local volume = math.ceil(status.volume * 100);
-	
-	local track = "";
-	local artist = "";
-	local album = "";
-	local pos = 0;
-	local duration = 0;
-	local uri = "";
-	
-	if (status.track ~= nil) then
-		uri = status.track.track_resource.uri;
-		pos = math.ceil(status.playing_position);
-		duration = math.ceil(status.track.length);
-	
-		if (status.track.artist_resource ~= nil) then
-			artist = status.track.artist_resource.name;
-		else
-			artist = "Unknown";
+	status(function (status)
+		if (stop) then
+			return;
 		end
-		if (status.track.track_resource ~= nil) then
-			track = status.track.track_resource.name;
-		else
-			track = "Unknown";
+		
+		playing = status.playing ~= 0;
+		local volume = math.ceil(status.volume * 100);
+		
+		local track = "";
+		local artist = "";
+		local album = "";
+		local pos = 0;
+		local duration = 0;
+		local uri = "";
+		
+		if (status.track ~= nil) then
+			uri = status.track.track_resource.uri;
+			pos = math.ceil(status.playing_position);
+			duration = math.ceil(status.track.length);
+		
+			if (status.track.artist_resource ~= nil) then
+				artist = status.track.artist_resource.name;
+			else
+				artist = "Unknown";
+			end
+			if (status.track.track_resource ~= nil) then
+				track = status.track.track_resource.name;
+			else
+				track = "Unknown";
+			end
+			if (status.track.album_resource ~= nil) then
+				album = status.track.album_resource.name;
+			else
+				album = "";
+			end
 		end
-		if (status.track.album_resource ~= nil) then
-			album = status.track.album_resource.name;
-		else
-			album = "";
+
+		if (uri ~= playing_uri) then
+			playing_uri = uri;
+			server.update({ id = "currimg", image = get_cover_art(uri) });
+			update_playlists();
 		end
-	end
-	
-	if (uri ~= playing_uri) then
-		playing_uri = uri;
-		server.update({ id = "currimg", image = get_cover_art(uri) });
-		update_playlists();
-	end
-	
-	--local repeating = status["repeat"] ~= 0;
-	--local shuffling = status["shuffle"] ~= 0;
-	
-	local name = track .. " - " .. artist;
-	local icon = "play";
-	if (playing) then
-		icon = "pause";
-	end
-	
-	Playing = playing;
-	
-	server.update(
-		{ id = "currtitle", text = name },
-		{ id = "currvol", progress = volume },
-		{ id = "currpos", progress = math.floor(pos / duration * 100), progressMax = 100, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(duration) },
-		{ id = "play", icon = icon }
-	);
+		
+		--local repeating = status["repeat"] ~= 0;
+		--local shuffling = status["shuffle"] ~= 0;
+		
+		local name = track .. " - " .. artist;
+		if (track == "" and artist == "") then
+			name = "[Not Playing]";
+		end
+		
+		local icon = "play";
+		if (playing) then
+			icon = "pause";
+		end
+		
+		Playing = playing;
+		
+		server.update(
+			{ id = "currtitle", text = name },
+			{ id = "currvol", progress = volume },
+			{ id = "currpos", progress = math.floor(pos / duration * 100), progressMax = 100, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(duration) },
+			{ id = "play", icon = icon }
+		);
+		
+		update();
+	end);
 end
 
 --@help Launch Spotify application
@@ -202,33 +226,33 @@ end
 -------------------------------------------------------------------------------------------
 -- Spotify Local API
 -------------------------------------------------------------------------------------------
-function get_cfid ()
-	local resp = recv("simplecsrf/token.json?", nil, nil);
-	local json = data.fromjson(resp);
-	return json.token;
+function get_cfid (done)
+	recv("simplecsrf/token.json?", nil, nil, function (resp)
+		local json = data.fromjson(resp);
+		done(json.token);
+	end);
 end
 
 function play (uri, context)
-	local resp = recv("remote/play.json?uri=" .. uri .. "&context=" .. context, OAuthKey, CFID);
+	recv("remote/play.json?uri=" .. uri .. "&context=" .. context, OAuthKey, CFID);
 end
 
 function resume ()
-	local resp = recv("remote/pause.json?pause=false", OAuthKey, CFID);
+	recv("remote/pause.json?pause=false", OAuthKey, CFID);
 end
 
 function pause ()
-	local resp = recv("remote/pause.json?pause=true", OAuthKey, CFID);
+	recv("remote/pause.json?pause=true", OAuthKey, CFID);
 end
 
-function status ()
-	local resp = recv("remote/status.json?", OAuthKey, CFID);
-	local json = data.fromjson(resp);
-	return json;
+function status (done)
+	recv("remote/status.json?", OAuthKey, CFID, function (resp)
+		done(data.fromjson(resp));
+	end);
 end
 
-local HelperPort = 4381;
 
-function recv (path, oauth, cfid)
+function recv (path, oauth, cfid, done)
 	local params = "&ref=&cors=&_=" .. timer.time();
 	if (oauth ~= nil) then
 		params = params .. "&oauth=" .. oauth;
@@ -250,20 +274,20 @@ function recv (path, oauth, cfid)
 	req.url = url;
 	req.headers = headers;
 	
-	local ok, resp = pcall(http.request, req);
-	if (not ok) then
-		print("fallback url");
-		HelperPort = 4380;
-		req.url = "http://127.0.0.1:" .. HelperPort .. "/" .. path .. params;
-		ok, resp = pcall(http.request, req);
-	end
-	
-	local resp = http.request(req);
-	local raw = resp.content;
-	return raw;
+	http.request(req, function (err, resp)
+		if (err) then
+			if (HelperPort == 4381) then
+				print("testing fallback port");
+				HelperPort = 4380;
+				recv(path, oauth, cfid, done);
+			end
+		elseif (done) then
+			done(resp.content);
+		end
+	end);
 end
 
-function get_oauth_key ()
+function get_oauth_key (done)
 	-- Note: Must pass "real" headers, otherwise the request wont return any data...
 	local headers = {};
 	headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
@@ -275,22 +299,22 @@ function get_oauth_key ()
 	req.url = "https://embed.spotify.com/?uri=spotify:track:5Zp4SWOpbuOdnsxLqwgutt";
 	req.headers = headers;
 	
-	local resp = http.request(req);
-	local raw = resp.content;
-	local str = utf8.new(raw);
-	
-	local pos = str:indexof("tokenData");
-	if (pos > -1) then
-		pos = str:indexof("'", pos);
+	http.request(req, function (err, resp)
+		local raw = resp.content;
+		local str = utf8.new(raw);
+		
+		local pos = str:indexof("tokenData");
 		if (pos > -1) then
-			pos = pos + 1;
-			local pos2 = str:indexof("'", pos);
-			local key = str:sub(pos, pos2 - pos);
-			return key;
+			pos = str:indexof("'", pos);
+			if (pos > -1) then
+				pos = pos + 1;
+				local pos2 = str:indexof("'", pos);
+				local key = str:sub(pos, pos2 - pos);
+				done(key);
+				return;
+			end
 		end
-	end
-	
-	return nil;
+	end);
 end
 
 

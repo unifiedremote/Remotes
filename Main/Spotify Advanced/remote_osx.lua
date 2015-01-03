@@ -1,5 +1,6 @@
 local server = libs.server;
 local utf8 = libs.utf8;
+local tid = -1;
 
 include("common.lua")
 include("playlists.lua")
@@ -11,7 +12,11 @@ events.detect = function ()
 end
 
 function focus()
-	
+	tid = timer.interval(update, 1000);
+end
+
+function blur()
+	timer.cancel(tid);
 end
 
 function update()
@@ -81,26 +86,31 @@ actions.poschange = function (pos)
 	os.script("tell application \"Spotify\" to set player position to " .. pos);
 	actions.update();
 end
+
 --@help Change volume
 --@param vol:number Set volume
 actions.volchange = function (vol)
 	os.script("tell application \"Spotify\" to set sound volume to " .. vol);
 	actions.update();
 end
+
 --@help Next track
 actions.next = function ()
 	os.script("tell application \"Spotify\" to next track");
 	actions.update();
 end
+
 --@help Previous track
 actions.previous = function ()
 	os.script("tell application \"Spotify\" to previous track");
 	actions.update();
 end
+
 --@help Set repeting
 actions.setrepeat = function()
 	os.script("tell application \"Spotify\" to set repeating to true");
 end
+
 --@help Set not repeting
 actions.setnotrepeat = function()
 	os.script("tell application \"Spotify\" to set repeating to false");

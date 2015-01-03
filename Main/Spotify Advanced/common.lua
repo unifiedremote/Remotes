@@ -3,7 +3,6 @@ local timer = libs.timer;
 local http = libs.http;
 local data = libs.data;
 local st = libs.utf8;
-local tid = -1;
 
 playing = false;
 playing_uri = "";
@@ -16,20 +15,16 @@ events.focus = function ()
 	playing_uri = "";
 	
 	focus();
-	tid = timer.interval(actions.update, 1000);
 	timer.timeout(get_playlists, 1000);
 end
 
 events.blur = function ()
-	timer.cancel(tid);
+	blur();
 end
 
 -------------------------------------------------------------------------------------------
 -- Remote Actions
 -------------------------------------------------------------------------------------------
-actions.update = function ()
-	update();
-end
 
 actions.playlists = function (i)
 	if (playlists.set_state(i)) then
@@ -71,7 +66,6 @@ end
 -- Spotify Cover Art Grabber
 -------------------------------------------------------------------------------------------
 function get_cover_art_url (uri)
-	print(uri);
 	local url = "https://embed.spotify.com/oembed/?url=" .. uri;
 	local raw = http.get(url);
 	local json = data.fromjson(raw);
