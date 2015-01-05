@@ -59,6 +59,9 @@ end
 --@help Update status information
 actions.update = function ()
 	local hwnd = win.find("PotPlayer", nil);
+	if (hwnd == 0) then
+		hwnd = win.find("PotPlayer64", nil);
+	end
 	local _title = win.title(hwnd);
 	_title = utf8.replace(_title, " - Daum PotPlayer", "");
 	if (_title == "") then
@@ -75,13 +78,21 @@ end
 --@param cmd:number Raw PotPlayer command number
 actions.command = function(cmd)
 	local hwnd = win.find("PotPlayer", nil);
+	if (hwnd == 0) then
+		hwnd = win.find("PotPlayer64", nil);
+	end
 	win.send(hwnd, WM_COMMAND, cmd, 0);
 	actions.update();
 end
 
---@help Launcher Winamp application
+--@help Launcher PotPlayer application
 actions.launch = function()
-	os.start("%PROGRAMFILES(x86)\\Daum\\PotPlayer\\PotPlayerMini.exe");
+	pcall(function ()
+		os.start("C:\\Program Files (x86)\\Daum\\PotPlayer\\PotPlayerMini.exe");
+	end);
+	pcall(function ()
+		os.start("C:\\Program Files\\Daum\\PotPlayer\\PotPlayerMini64.exe");
+	end);
 end
 
 --@help Lower volume
