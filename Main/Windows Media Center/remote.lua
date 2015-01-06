@@ -79,6 +79,11 @@ actions.windows = function()
 	keyboard.stroke("Lwin", "Lmenu", "return");
 end
 
+--@help Record
+actions.record = function ()
+	keyboard.stroke("control", "R");
+end
+
 --@help Next item
 actions.next = function()
 	keyboard.stroke("control", "F");

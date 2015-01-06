@@ -24,6 +24,7 @@
     <row>
       <button icon="previous" onTap="previous" />
       <button icon="windows" onTap="windows" />
+	  <button icon="record" ontap="record" />
       <button icon="next" onTap="next" />
     </row>
   </grid>
