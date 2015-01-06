@@ -148,7 +148,6 @@ end
 actions.command = function (cmd)
 	local hwnd = win.find("SpotifyMainWindow", nil);
 	win.send(hwnd, WM_APPCOMMAND, 0, cmd);
-	actions.update();
 end
 
 --@help Start playback
