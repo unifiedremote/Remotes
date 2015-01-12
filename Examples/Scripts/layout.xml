@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<button text="Command 1" ontap="command1" />
+	</row>
+	<row>
+		<button text="Command 2" ontap="command2" />
+	</row>
+	<row>
+		<button text="Command 3" ontap="command3" />
+	</row>
+</layout>
