@@ -10,18 +10,18 @@ local kb = libs.keyboard;
 
 --@help Command 1
 actions.command1 = function ()
-	kb.press("ctrl", "alt", "del");
+	kb.stroke("ctrl", "alt", "delete");
 end
 
 
 --@help Command 2
 actions.command2 = function ()
-	kb.press("cmd", "space");
+	kb.stroke("win", "e");
 end
 
 
 --@help Command 3
 actions.command3 = function ()
-	kb.press("...");
+	kb.stroke("...");
 end
 

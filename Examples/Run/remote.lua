@@ -9,7 +9,7 @@
 
 --@help Command 1
 actions.command1 = function ()
-	os.start("spotify");
+	os.start("calc");
 end
 
 
