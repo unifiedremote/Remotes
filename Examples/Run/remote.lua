@@ -3,7 +3,7 @@
 -- Documentation
 -- http://www.unifiedremote.com/api
 
--- Script Library
+-- OS Library
 -- http://www.unifiedremote.com/api/libs/os
 
 
