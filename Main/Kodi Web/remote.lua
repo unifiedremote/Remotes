@@ -9,10 +9,10 @@ events.focus = function ()
 	port = settings.port;
 	password = settings.password;
 	
-	test();
-	
-	tid = libs.timer.interval(update_status, 1000);
-	update_library();
+	if (test()) then
+		update_status();
+		update_library();
+	end
 end
 
 events.blur = function ()
@@ -34,6 +34,9 @@ function test()
 				"You may have to restart Kodi after enabling the web interface for the changes to take effect.",
 			children = {{ type = "button", text = "OK" }}
 		});
+		return false;
+	else
+		return true;
 	end
 end
 
@@ -81,6 +84,8 @@ function update_status()
 		local resp = send("Player.GetItem", { playerid = pid });
 		layout.title.text = resp.result.item.label;
 	end
+	
+	tid = libs.timer.timeout(update_status, 1000);
 end
 
 local stack = {};
