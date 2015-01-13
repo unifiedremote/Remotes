@@ -89,7 +89,7 @@ local seeking_pos = 0;
 function update_status()
 	local resp = send();
 	if (resp == nil) then 
-		tid = libs.timer.interval(update_status, 500);
+		tid = libs.timer.timeout(update_status, 500);
 		return;
 	end
 	
@@ -139,7 +139,7 @@ function update_status()
 		{ id = "vol", progress = vol, progressmax = 320}
 	);
 	
-	tid = libs.timer.interval(update_status, 500);
+	tid = libs.timer.timeout(update_status, 500);
 end
 
 ------------------------------------------------------------------------

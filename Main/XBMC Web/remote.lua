@@ -85,7 +85,7 @@ function update_status()
 		layout.title.text = resp.result.item.label;
 	end
 	
-	tid = libs.timer.interval(update_status, 1000);
+	tid = libs.timer.timeout(update_status, 1000);
 end
 
 local stack = {};

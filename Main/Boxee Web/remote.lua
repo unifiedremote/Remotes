@@ -80,7 +80,7 @@ function update ()
 		{ id = "pos", progress = pos }
 	);
 	
-	tid = timer.interval(update, 500);
+	tid = timer.timeout(update, 500);
 end
 
 function info ()
