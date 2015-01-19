@@ -51,6 +51,7 @@ actions.zero = function ()
 	offset.x = curr.x;
 	offset.y = curr.y;
 	offset.z = curr.z;
+	layout.zero.text = offset.x .. "," .. offset.y .. "," .. offset.z;
 end
 
 actions.orientation = function (x, y, z)
