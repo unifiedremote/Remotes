@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <row>
+    <button ontap="on" text="on" />
+    <button ontap="windows" icon="windows" />
+    <button ontap="off" text="off" />
+  </row>
+  <row>
+    <button ontap="stop" icon="stop" />
+    <button ontap="xbox" text="xbox" />
+    <button ontap="pause" icon="pause" />
+  </row>
+  <row>
+    <button ontap="rewind" icon="rwd" />
+    <button ontap="play" icon="play" />
+    <button ontap="forward" icon="ff" />
+  </row>
+  <row>
+    <button ontap="previous" icon="previous" />
+    <button ontap="up" icon="up" />
+    <button ontap="next" icon="next" />
+  </row>
+  <row>
+    <button ontap="left" icon="left" />
+    <button ontap="select" icon="select" />
+    <button ontap="right" icon="right" />
+  </row>
+  <row>
+    <button ontap="down" icon="down" />
+    <button ontap="back" icon="back" />
+  </row>
+</layout>
