@@ -230,24 +230,30 @@ end
 events.preload = function()
 	local rows = {};
 	table.insert(rows, { type = "row", weight = "wrap",
-		{ type = "button", text = "All On", onTap = "all_on", color = "green" },
-		{ type = "button", text = "All Off", onTap = "all_off", color = "red" },
+	{ type = "space",  weight = 1 },
+		{ type = "button", text = "All On", onTap = "all_on", color = "green", weight = 20 },
+		{ type = "button", text = "All Off", onTap = "all_off", color = "red", weight = 20 },
+		{ type = "space",  weight = 1 }
 	});
 	
 	local devices = actions.devices();
 	for index,device in ipairs(devices) do
 		if device.canDim then
 			local row = { type = "row", weight = "wrap",
-				{ type = "button", text = device.name, weight = 3 },
-				{ type = "slider", text = "Dim", onDone = "dim," .. device.id, color = "green", progressMax = "100" },
+			{ type = "space",  weight = 1 },
+				{ type = "button", text = device.name, weight = 20 },
+				{ type = "slider", text = "Dim", onDone = "dim," .. device.id, color = "green", progressMax = "255", weight = 20 },
+				{ type = "space",  weight = 1 },
 			};
 			table.insert(rows, row);
 			actions["dim_" .. device.name] = function(dim) actions.dim(device.id, dim); end;
 		else
 			local row = { type = "row", weight = "wrap",
-				{ type = "button", text = device.name, weight = 3 },
-				{ type = "button", text = "On", onTap = "turn_on," .. device.id, color = "green" },
-				{ type = "button", text = "Off", onTap = "turn_off," .. device.id, color = "red" },
+			{ type = "space",  weight = 1 },
+				{ type = "button", text = device.name, weight = 20 },
+				{ type = "button", text = "On", onTap = "turn_on," .. device.id, color = "green", weight = 10 },
+				{ type = "button", text = "Off", onTap = "turn_off," .. device.id, color = "red", weight = 10 },
+				{ type = "space",  weight = 1 }
 			};
 			table.insert(rows, row);
 		end
