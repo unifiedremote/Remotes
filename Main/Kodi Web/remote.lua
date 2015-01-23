@@ -1,5 +1,5 @@
 local tid = -1;
-
+local data = libs.data;
 ------------------------------------------------------------------------
 -- Events
 ------------------------------------------------------------------------
@@ -57,11 +57,12 @@ function send(method, params)
 	local url = "http://" .. host .. ":" .. port .. "/jsonrpc";
 	-- local ok = true;
 	local json = libs.data.tojson(req);
-	
+	local headers = {Authorization = "Basic " .. data.tobase64(settings.username .. ":" .. settings.password)}
 	local ok, resp = pcall(libs.http.request,{
 		method = "post",
 		url = url,
 		mime = "application/json",
+		headers = headers,
 		content = json
 	});
 	if (ok and resp ~= nil and resp.status == 200) then
@@ -289,11 +290,15 @@ end
 
 function player ()
 	local resp = send("Player.GetActivePlayers");
-	if(resp.result[1] == nil)
-		then
-		return nil;
+	if(resp == nil) then
+		print("Check your settings for Kodi. Possibly wrong port or password, username");
 	else
-		return resp.result[1].playerid;
+		if(resp.result[1] == nil)
+			then
+			return nil;
+		else
+			return resp.result[1].playerid;
+		end
 	end
 end
 

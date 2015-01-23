@@ -1,2 +1,4 @@
 host: localhost
 port: 8080
+password: 
+username: 
