@@ -1,5 +1,10 @@
 local keyboard = libs.keyboard;
 
+--@help Launch SoundCloud
+actions.launch = function()
+	os.open("http://www.soundcloud.com/");
+end
+
 --@help Lower system volume
 actions.volume_down = function()
 	keyboard.stroke("shift", "down");

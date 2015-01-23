@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onVolumeUp="volume_up" onVolumeDown="volume_down" lightcolor="#ff5419" darkcolor="#8e3c20">
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down" lightcolor="#ff5419" darkcolor="#8e3c20" onlaunch="launch">
 	<row>
 		<button icon="vdown" onTap="volume_down" />
 		<button icon="vmute" onTap="volume_mute" />
