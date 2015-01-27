@@ -19,6 +19,7 @@ events.focus = function ()
 end
 
 events.blur = function ()
+	last_title = "";
 	libs.timer.cancel(tid);
 end
 
@@ -77,6 +78,11 @@ function send(cmd, val, id)
 	return request(url);
 end
 
+function art()
+	local url = "http://" .. host .. ":" .. port .. "/art";
+	return request(url);
+end
+
 ------------------------------------------------------------------------
 -- Status
 ------------------------------------------------------------------------
@@ -85,6 +91,7 @@ local pos = 0;
 local length = 0;
 local seeking = false;
 local seeking_pos = 0;
+local last_title = "";
 
 function update_status()
 	local resp = send();
@@ -94,12 +101,12 @@ function update_status()
 	end
 	
 	local root = libs.data.fromxml(resp.content);
-	
 	local title = "";
 	local file = "";
-	local info = "";
+	local playing = false;
 	
 	for k,v in pairs(root.children) do
+		if (v.name == "state") then playing = v.text == "playing"; end
 		if (v.name == "time") then pos = tonumber(v.text); end
 		if (v.name == "length") then length = tonumber(v.text); end
 		if (v.name == "volume") then vol = tonumber(v.text); end
@@ -110,22 +117,35 @@ function update_status()
 						local name = v3.attributes.name;
 						if (name == "title") then title = v3.text; end
 						if (name == "filename") then file = v3.text; end
-						
-						-- TV Meta Data
-						if (name == "showName") then info = info .. v3.text .. "\n\n"; end
-						if (name == "episodeNumber") then info = info .. "Episode: " .. v3.text .. "\n\n"; end
-						if (name == "seasonNumber") then info = info .. "Season: " .. v3.text .. "\n\n"; end
 					end
 				end
 			end
 		end
+	end	
+	
+	local icon = "play";
+	if (playing) then
+		icon = "pause";
+	end
+	
+	local image;
+	if (last_title ~= title) then
+		print("art!");
+		resp = art();
+		if (resp ~= nil) then
+			image = resp.content;
+		else
+			image = "";
+		end
+		last_title = title;
 	end
 	
 	if (title == "") then
-		title = file;
-	end
-	if (info == "") then
-		info = "No Meta Information";
+		if (file == "") then
+			title = "[Not Playing]";
+		else
+			title = file;
+		end
 	end
 	
 	if (seeking) then
@@ -136,7 +156,9 @@ function update_status()
 		{ id = "title", text = title },
 		{ id = "info", text = info },
 		{ id = "pos", progress = pos, progressmax = length, text = libs.data.sec2span(pos) .. " / " .. libs.data.sec2span(length) },
-		{ id = "vol", progress = vol, progressmax = 320}
+		{ id = "vol", progress = vol, progressmax = 320},
+		{ id = "art", image = image },
+		{ id = "play", icon = icon }
 	);
 	
 	tid = libs.timer.timeout(update_status, 500);

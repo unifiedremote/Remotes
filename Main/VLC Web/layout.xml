@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onlaunch="launch" color="orange">
+<layout onlaunch="launch" lightcolor="#e77300" darkcolor="#c46e19">
 	<tabs>
 		<tab text="Playing">
 			<row weight="wrap">
 				<label id="title" text="Connecting..." />
 			</row>
 			<row>
-				<label id="info" text="" />
+				<image id="art" />
 			</row>
 			<row weight="wrap">
 				<slider id="pos" text="Position" onchange="position_change" onup="position_stop" />
@@ -16,7 +16,7 @@
 			</row>
 			<row weight="wrap">
 				<button icon="previous" ontap="previous" />
-				<button icon="playpause" ontap="play_pause" />
+				<button id="play" icon="playpause" ontap="play_pause" />
 				<button icon="next" ontap="next" />
 			</row>
 		</tab>
