@@ -7,17 +7,17 @@ end
 
 --@help Lower system volume
 actions.volume_down = function()
-	keyboard.stroke("shift", "down");
+	keyboard.stroke("volumedown");
 end
 
 --@help Mute system volume
 actions.volume_mute = function()
-	keyboard.stroke("m");
+	keyboard.stroke("volumemute");
 end
 
 --@help Raise system volume
 actions.volume_up = function()
-	keyboard.stroke("shift", "up");
+	keyboard.stroke("volumeup");
 end
 
 --@help Previous track
