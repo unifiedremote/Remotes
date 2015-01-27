@@ -262,6 +262,7 @@ events.preload = function()
 	end
 	
 	local layout = {};
-	layout.default = { type = "grid", children = rows };
+	layout.default = { type = "grid", scroll="vertical", children = rows };
 	return layout;
 end
+
