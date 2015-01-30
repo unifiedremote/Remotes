@@ -72,10 +72,6 @@ end
 
 
 events.preload = function ()
-	if (server.connect("telldus")) then
-		return { error = "You must login:\n\nhttp://localhost:9510/web" };
-	end
-
 	sensors = get_sensors();
 	devices = get_devices();
 	
