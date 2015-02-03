@@ -13,7 +13,7 @@ events.detect = function ()
 end
 
 function focus()
-	tid = timer.interval(update, 1000);
+	tid = timer.timeout(update, 100);
 end
 
 function blur()
@@ -70,6 +70,8 @@ function update()
 		{ id = "currpos", progressMax = duration },
 		{ id = "play", icon = icon }
 	);
+
+	timer.timeout(update, 1000);
 end
 
 function play(track, context)
