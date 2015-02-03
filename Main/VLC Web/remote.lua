@@ -311,7 +311,12 @@ end
 --@help Launch VLC application
 actions.launch = function()
 	if OS_WINDOWS then
-		os.start("%programfiles(x86)%\\VideoLAN\\VLC\\vlc.exe");
+		pcall(function ()
+			os.start("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe");
+		end);
+		pcall(function ()
+			os.start("C:\\Program Files\\VideoLAN\\VLC\\vlc.exe");
+		end);
 	end
 end
 
