@@ -38,13 +38,11 @@ function get_sensors ()
 					end
 				end
 				
-				--libs.fs.write("info.xml", resp.content);
 				table.insert(sensors, sensor);
 			end;
 		end
 	end
 	
-	--libs.fs.write("sensors.xml", resp.content);
 	return sensors;
 end
 
@@ -66,7 +64,6 @@ function get_devices ()
 		end
 	end
 	
-	--libs.fs.write("devices.xml", data);
 	return devices;
 end
 
