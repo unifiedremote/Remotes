@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onPause="pause">
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onPause="pause" lightcolor="#1fafdb" darkcolor="#155467">
   <tabs id="tabs" onChange="refresh">
     <tab text="Player">
       <row>

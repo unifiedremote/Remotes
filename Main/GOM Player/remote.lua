@@ -35,7 +35,6 @@ end
 actions.update = function ()
 	local hwnd = win.find("GOMPlayer1.x", nil);
 	local _title = win.title(hwnd);
-	print(_title);
 
 	if (_title == "") then
 		_title = "[Not Playing]";

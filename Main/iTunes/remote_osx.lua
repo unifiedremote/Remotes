@@ -18,6 +18,7 @@ local dialog_repeat = {
 	{ type="item", text="All", id = "all" }
 }
 --@help Launch iTunes application
+
 actions.launch = function()
 	os.open("/Applications/iTunes.app");
 end
@@ -25,7 +26,7 @@ events.focus = function ()
 	update();
 	oldtitle = "";
 	update_playlist();
-	tid_update = timer.interval(update, 1000);
+	tid_update = timer.timeout(update, 100);
 end
 
 events.blur = function ()
@@ -64,6 +65,8 @@ function update ()
 		{ id = "vol", progress = volume },
 		{ id = "play", icon = icon }
 	);
+
+	timer.timeout(update, 1000);
 end
 --@help Open Suffle dialog
 actions.shuffle = function ()
@@ -228,7 +231,7 @@ function get_title()
 			"if player state is playing or player state is paused then",
 				"set out to name of current track",
 			"else",
-				"set out to \"[Not avalible]\"",
+				"set out to \"[Not Available]\"",
 			"end if",
 		"end tell");
 end
