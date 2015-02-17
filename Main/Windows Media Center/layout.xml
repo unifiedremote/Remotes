@@ -1,31 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="resume" onPause="pause">
-  <grid>
     <row>
-      <button icon="vdown" onTap="volume_down" />
-      <button icon="vmute" onTap="volume_mute" />
-      <button icon="vup" onTap="volume_up" />
+		<button icon="vdown" onTap="volume_down" />
+		<button icon="vmute" onTap="volume_mute" />
+		<button icon="vup" onTap="volume_up" />
     </row>
     <row>
-      <button icon="pause" onTap="pause" />
-      <button icon="up" onTap="up" />
-      <button icon="play" onTap="play" />
+		<button icon="pause" onTap="pause" />
+		<button icon="up" onTap="up" />
+		<button icon="play" onTap="play" />
     </row>
     <row>
-      <button icon="left" onTap="left" />
-      <button icon="select" onTap="select" />
-      <button icon="right" onTap="right" />
+		<button icon="left" onTap="left" />
+		<button icon="select" onTap="select" />
+		<button icon="right" onTap="right" />
     </row>
     <row>
-      <button icon="stop" onTap="stop" />
-      <button icon="down" onTap="down" />
-      <button icon="back" onTap="back" />
+		<button icon="stop" onTap="stop" />
+		<button icon="down" onTap="down" />
+		<button icon="back" onTap="back" />
     </row>
     <row>
-      <button icon="previous" onTap="previous" />
-      <button icon="windows" onTap="windows" />
-	  <button icon="record" ontap="record" />
-      <button icon="next" onTap="next" />
+		<button icon="previous" onTap="previous" />
+		<button icon="windows" onTap="windows" />
+		<button icon="next" onTap="next" />
     </row>
-  </grid>
+	<row>
+		<button text="Ch-" onTap="previous_channel" />
+		<button icon="record" ontap="record" />
+		<button text="Ch+" ontap="next_channel" />
+	</row>
 </layout>

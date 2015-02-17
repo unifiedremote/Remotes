@@ -89,3 +89,12 @@ actions.next = function()
 	keyboard.stroke("control", "F");
 end
 
+--@help Previous channel
+actions.previous_channel = function ()
+	keyboard.stroke("prior");
+end
+
+--@help Next channel
+actions.next_channel = function ()
+	keyboard.stroke("next");
+end
