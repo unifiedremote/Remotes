@@ -29,7 +29,7 @@ actions.send = function ()
 end
 
 actions.toggle = function (key)
-	if (keyboard.modifier(key)) then
+	if (keyboard.ismodifier(key)) then
 		if (modifiers[key] == nil) then
 			modifiers[key] = key;
 			server.update({ id = "key_" .. key, checked = true });
@@ -47,7 +47,13 @@ actions.toggle = function (key)
 				history[key] = nil;
 			end
 		else
-			keyboard.press(key);
+			if (keyboard.iskey(key)) then
+				keyboard.press(key);
+			elseif key == "AT" then
+				keyboard.text("@");
+			else
+				keyboard.text(key);
+			end
 			server.update({ id = "key_" .. key, checked = false });
 		end
 	end
