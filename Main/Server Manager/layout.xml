@@ -15,7 +15,7 @@
         <label text="Run Action" color="grey" />
       </row>
       <row weight="wrap">
-        <text id="command" text="Unified.Spotify/next" onchange="edit"/>
+        <text id="command" hint="Unified.Spotify/next" onchange="edit"/>
         <button weight="wrap" text="&gt;" color="green" ontap="execute" />
       </row>
     </tab>
