@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <tabs index="1">
+    <tab text="Control">
+      <row>
+        <button text="Open Manager" onTap="open" color="green" />
+      </row>
+      <row>
+        <button text="Restart" onTap="restart" color="green"/>
+      </row>
+      <row>
+        <button text="Reload remotes" onTap="reload" color="green"/>
+      </row>
+      <row weight="wrap">
+        <label text="Run Action" color="grey" />
+      </row>
+      <row weight="wrap">
+        <text id="command" text="Unified.Spotify/next" onchange="edit"/>
+        <button weight="wrap" text="&gt;" color="green" ontap="execute" />
+      </row>
+    </tab>
+    <tab text="Status">
+      <grid>
+        <row>
+          <label id="misc" text="...loading..." color="green"/>
+        </row>
+        <row>
+          <label id="intf" text="...loading..." color="green"/>
+        </row>
+        <row>
+          <label id="network" text="...loading..." color="green"/>
+        </row>
+      </grid>
+    </tab>
+    <tab text="Log">
+      <grid>
+        <row>
+          <label id="log" text="...loading..." color="green" textalign="left" />
+        </row>
+      </grid>
+    </tab>
+  </tabs>
+</layout>
