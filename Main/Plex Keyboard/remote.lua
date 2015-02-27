@@ -23,70 +23,87 @@ actions.launch = function()
 	end
 end
 
+--@help Navigate left
 actions.left = function ()
 	kb.press("left");
 end
 
+--@help Navigate down
 actions.down = function ()
 	kb.press("down");
 end
 
+--@help Navigate right
 actions.right = function ()
 	kb.press("right");
 end
 
+--@help Navigate up
 actions.up = function ()
 	kb.press("up");
 end
 
+--@help Select
 actions.select = function ()
 	kb.press("return");
 end
 
+--@help Navigate back
 actions.back = function ()
 	kb.press("esc");
 end
 
+--@help Play pause
 actions.play_pause = function ()
 	kb.press("space");
 end
 
+--@help Seek forward
 actions.forward = function ()
 	kb.press("f");
 end
 
+--@help Seek rewind
 actions.rewind = function ()
 	kb.press("r");
 end
 
+--@help Navigate home
 actions.home = function ()
 	kb.press("tab");
 end
 
+--@help Stop playback
 actions.stop = function ()
 	kb.press("x");
 end
 
+--@help Show menu
 actions.menu = function ()
 	kb.press("m");
 end
 
+--@help Next item
 actions.next = function ()
 	kb.press("right");
 end
 
+--@help Previous item
 actions.previous = function ()
 	kb.press("left");
 end
 
+--@help Play current item
 actions.play_current = function ()
 	kb.press("space");
 end
 
+--@help Show OSD
 actions.osd = function ()
 	kb.press("o");
 end
 
+--@help Show info
 actions.info = function ()
 	kb.press("i");
 end

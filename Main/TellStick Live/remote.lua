@@ -38,13 +38,11 @@ function get_sensors ()
 					end
 				end
 				
-				--libs.fs.write("info.xml", resp.content);
 				table.insert(sensors, sensor);
 			end;
 		end
 	end
 	
-	--libs.fs.write("sensors.xml", resp.content);
 	return sensors;
 end
 
@@ -66,14 +64,25 @@ function get_devices ()
 		end
 	end
 	
-	--libs.fs.write("devices.xml", data);
 	return devices;
 end
 
 
+events.focus = function ()
+	if (not server.connect("telldus")) then
+		os.open("http://localhost:9510/web/#/status/connect");
+	end
+end
+
+
 events.preload = function ()
-	if (server.connect("telldus")) then
-		return { error = "You must login:\n\nhttp://localhost:9510/web" };
+	if (not server.connect("telldus")) then
+		return { error = "Please connect your Telldus account:\n\n" ..
+			"Open server manager on your computer\n\n" ..
+			"http://localhost:9510/web\n\n" ..
+			"Select the 'Accounts' tab\n\n" ..
+			"Click 'Connect Telldus' & Login\n\n" ..
+			"Restart Server" };
 	end
 
 	sensors = get_sensors();
