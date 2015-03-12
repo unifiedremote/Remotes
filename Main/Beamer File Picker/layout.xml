@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch">
+  <grid>
+    <row weight="wrap">
+      <button icon="back" onTap="back" />
+      <button icon="more" onTap="goto" />
+      <button icon="arrowup" onTap="up" />
+      <button icon="home" onTap="home" />
+      <button icon="refresh" onTap="refresh" />
+    </row>
+    <row>
+      <list id="list" onTap="item" />
+    </row>
+  </grid>
+</layout>
