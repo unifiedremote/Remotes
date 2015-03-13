@@ -51,6 +51,14 @@ function click(hwnd, x, y)
 	win.post(hwnd, WM_LBUTTONUP, 0x00, pos);
 end
 
+function get_hwnd()
+	local hwnd = win.find("SpotifyMainWindow", nil);
+	hwnd = win.find(hwnd, 0, "CefBrowserWindow", nil);
+	hwnd = win.find(hwnd, 0, "Chrome_WidgetWin_0", nil);
+	hwnd = win.find(hwnd, 0, "Chrome_RenderWidgetHostHWND", nil);
+	return hwnd;
+end
+
 function focus()
 	get_oauth_key(function (key)
 		print("oauthkey: " .. key);
@@ -181,44 +189,46 @@ end
 
 --@help Toggle Shuffle 
 actions.shuffle = function ()
-	local hwnd = win.find("SpotifyMainWindow", nil);
+	local hwnd = get_hwnd();
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
 	ffi.C.GetWindowRect(hwnd, rect);
-	click(hwnd, rect.right - rect.left - 59, rect.bottom - rect.top - 21);
+	click(hwnd, rect.right - rect.left - 202, rect.bottom - rect.top - 30);
+	click(hwnd, 0, 0);
 end
 
 --@help Toggle Repeat 
 actions.repeating = function ()
-	local hwnd = win.find("SpotifyMainWindow", nil);
+	local hwnd = get_hwnd();
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
 	ffi.C.GetWindowRect(hwnd, rect);
-	click(hwnd, rect.right - rect.left - 24, rect.bottom - rect.top - 21);
+	click(hwnd, rect.right - rect.left - 170, rect.bottom - rect.top - 30);
+	click(hwnd, 0, 0);
 end
 
 --@help Change Volume
 --@param vol:number Set Volume
 actions.volchange = function (vol)
-	local hwnd = win.find("SpotifyMainWindow", nil);
+	local hwnd = get_hwnd();
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
 	ffi.C.GetWindowRect(hwnd, rect);
 	
-	local y = rect.bottom - rect.top - 21;
-	local x = 126 + math.floor(vol / 100 * 76);
+	local y = rect.bottom - rect.top - 30;
+	local x = (rect.right - rect.left - 107) + math.floor(vol / 100 * 79) + 1;
 	click(hwnd, x, y);
 end
 
 --@help Change Position
 --@param pos:number Set Position
 actions.poschange = function (pos)
-	local hwnd = win.find("SpotifyMainWindow", nil);
+	local hwnd = get_hwnd();
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
 	ffi.C.GetWindowRect(hwnd, rect);
 	
-	local y = rect.bottom - rect.top - 21;
-	local x1 = 285;
-	local x2 = rect.right - rect.left - 145;
+	local y = rect.bottom - rect.top - 30;
+	local x1 = 214;
+	local x2 = rect.right - rect.left - 366;
 	local w = x2 - x1;
-	local x = x1 + 6 + math.floor(pos / 100 * w);
+	local x = x1 + math.floor(pos / 100 * w) + 1;
 	click(hwnd, x, y);
 end
 
