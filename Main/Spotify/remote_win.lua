@@ -23,12 +23,17 @@ local CMD_MUTE = 524288;
 
 -- Key Simulation Helper
 function KeyHelper(vk, param)
-	keyboard.down("control");
 	local hwnd = win.find("SpotifyMainWindow", nil);
-	win.post(hwnd, WM_KEYDOWN, vk, param);
-	os.sleep(100);
-	win.post(hwnd, WM_KEYUP, vk, param);
-	keyboard.up("control");
+	hwnd = win.find(hwnd, 0, "CefBrowserWindow", nil);
+	hwnd = win.find(hwnd, 0, "Chrome_WidgetWin_0", nil);
+	hwnd = win.find(hwnd, 0, "Chrome_RenderWidgetHostHWND", nil);
+	if (hwnd) then
+		keyboard.down("control");
+		win.post(hwnd, WM_KEYDOWN, vk, param);
+		os.sleep(100);
+		win.post(hwnd, WM_KEYUP, vk, param);
+		keyboard.up("control");
+	end
 end
 
 local tid = -1;
@@ -39,8 +44,7 @@ events.focus = function ()
 	playing = false;
 	title = "";
 	tid = timer.interval(actions.update, 500);
-	p.icon = "playpause";
-	info.text = "[Title Not Available]";
+	layout.p.icon = "playpause";
 end
 
 events.blur = function ()
@@ -53,24 +57,26 @@ actions.update = function ()
 	local _title = win.title(hwnd):sub(10);
 	local _playing = true;
 	
-	-- if (_title == "") then
-		-- _title = "[Not Playing]";
-		-- _playing = false;
-	-- end
+	if (_title == "") then
+		_title = "[Not Playing]";
+		_playing = false;
+	elseif (_title == "remium") then
+		_title = "[Info not available right now]";
+	end
 	
-	-- if (_title ~= title) then
-		-- title = _title;
-		-- server.update({ id = "info", text = title });
-	-- end
+	if (_title ~= title) then
+		title = _title;
+		server.update({ id = "info", text = title });
+	end
 	
-	-- if (_playing ~= playing) then
-		-- playing = _playing;
-		-- if (playing) then
-			-- server.update({ id = "p", icon = "pause" });
-		-- else
-			-- server.update({ id = "p", icon = "play" });
-		-- end
-	-- end
+	if (_playing ~= playing) then
+		playing = _playing;
+		if (playing) then
+			server.update({ id = "p", icon = "pause" });
+		else
+			server.update({ id = "p", icon = "play" });
+		end
+	end
 end
 
 --@help Send raw command to Spotify
