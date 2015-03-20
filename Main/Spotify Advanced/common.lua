@@ -12,7 +12,7 @@ playing_uri = "";
 -- Remote Events
 -------------------------------------------------------------------------------------------
 events.focus = function ()
-	dev.toast("Unstable until Spotify fixes their issues. We're working on it :)");
+	dev.toast("Unstable until Spotify fixes their issues");
 
 	playing = false;
 	playing_uri = "";
