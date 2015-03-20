@@ -3,6 +3,7 @@ local timer = libs.timer;
 local http = libs.http;
 local data = libs.data;
 local st = libs.utf8;
+local dev = libs.device;
 
 playing = false;
 playing_uri = "";
@@ -11,6 +12,8 @@ playing_uri = "";
 -- Remote Events
 -------------------------------------------------------------------------------------------
 events.focus = function ()
+	dev.toast("Unstable until Spotify fixes their issues. We're working on it :)");
+
 	playing = false;
 	playing_uri = "";
 	
