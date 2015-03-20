@@ -24,6 +24,14 @@ local CMD_MUTE = 524288;
 -- Key Simulation Helper
 function KeyHelper(vk, param)
 	local hwnd = win.find("SpotifyMainWindow", nil);
+	if (hwnd) then
+		keyboard.down("control");
+		win.post(hwnd, WM_KEYDOWN, vk, param);
+		os.sleep(100);
+		win.post(hwnd, WM_KEYUP, vk, param);
+		keyboard.up("control");
+	end
+	
 	hwnd = win.find(hwnd, 0, "CefBrowserWindow", nil);
 	hwnd = win.find(hwnd, 0, "Chrome_WidgetWin_0", nil);
 	hwnd = win.find(hwnd, 0, "Chrome_RenderWidgetHostHWND", nil);
