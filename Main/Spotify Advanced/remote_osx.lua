@@ -75,7 +75,11 @@ function update()
 end
 
 function play(track, context)
-	os.script("tell application \"Spotify\" to play track \"" .. track .. "\" in context \"" .. context .. "\"");
+	--os.script("tell application \"Spotify\" to play track \"" .. track .. "\" in context \"" .. context .. "\"");
+	os.open(track);
+	timer.timeout(function() 
+		kb.press("enter");
+	end, 800);
 end
 
 --@help Launch Spotify application
