@@ -39,6 +39,8 @@ events.focus = function ()
 	playing = false;
 	title = "";
 	tid = timer.interval(actions.update, 500);
+	p.icon = "playpause";
+	info.text = "[Title Not Available]";
 end
 
 events.blur = function ()
@@ -51,24 +53,24 @@ actions.update = function ()
 	local _title = win.title(hwnd):sub(10);
 	local _playing = true;
 	
-	if (_title == "") then
-		_title = "[Not Playing]";
-		_playing = false;
-	end
+	-- if (_title == "") then
+		-- _title = "[Not Playing]";
+		-- _playing = false;
+	-- end
 	
-	if (_title ~= title) then
-		title = _title;
-		server.update({ id = "info", text = title });
-	end
+	-- if (_title ~= title) then
+		-- title = _title;
+		-- server.update({ id = "info", text = title });
+	-- end
 	
-	if (_playing ~= playing) then
-		playing = _playing;
-		if (playing) then
-			server.update({ id = "p", icon = "pause" });
-		else
-			server.update({ id = "p", icon = "play" });
-		end
-	end
+	-- if (_playing ~= playing) then
+		-- playing = _playing;
+		-- if (playing) then
+			-- server.update({ id = "p", icon = "pause" });
+		-- else
+			-- server.update({ id = "p", icon = "play" });
+		-- end
+	-- end
 end
 
 --@help Send raw command to Spotify
