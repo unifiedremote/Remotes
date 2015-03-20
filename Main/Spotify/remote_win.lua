@@ -69,7 +69,7 @@ actions.update = function ()
 	if (_title == "") then
 		_title = "[Not Playing]";
 		_playing = false;
-	elseif (_title == "remium") then
+	elseif (_title == "remium" or _title == "ree") then
 		_title = "[Info not available right now]";
 		_legacy = true;
 	end
