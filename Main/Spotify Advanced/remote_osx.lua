@@ -1,12 +1,12 @@
-local server = libs.server;
-local utf8 = libs.utf8;
-local timer = libs.timer;
+local server = require("server");
+local utf8 = require("utf8");
+local timer = require("timer");
+local kb = require("keyboard");
 local tid = -1;
 
 include("common.lua")
 include("playlists.lua")
 include("search.lua")
-
 
 events.detect = function ()
 	return libs.fs.exists("/Applications/Spotify.app");
@@ -79,7 +79,7 @@ function play(track, context)
 	os.open(track);
 	timer.timeout(function() 
 		kb.press("enter");
-	end, 800);
+	end, 1200);
 end
 
 --@help Launch Spotify application
