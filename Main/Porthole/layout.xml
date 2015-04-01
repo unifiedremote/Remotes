@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onlaunch="launch">
+  <grid>
+    <row weight="wrap">
+      <button icon="vdown" onTap="volume_down" />
+      <button icon="vmute" onTap="volume_mute" />
+      <button icon="vup" onTap="volume_up" />
+    </row>
+    <row>
+      <list id="speakers" ontap="speaker" />
+    </row>
+    <row weight="wrap">
+      <button id="connect_to_all" text="All" ontap="connect_to_all" />
+      <button id="disconnect_from_all" text="None" ontap="disconnect_from_all" />
+    </row>
+    <row weight="wrap">
+      <button id="computer_speaker" text="Computer Speaker" ontap="toggle_computer_speaker" />
+    </row>
+  </grid>
+</layout>
