@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout onlaunch="launch">
-  <row>
-    <label id="info" text="[Connecting…]" textalign="center"/>
-  </row>
   <grid>
-    <row>
-      <button id="connect_1" text="1" ontap="connect_1" />
-      <button id="connect_2" text="2" ontap="connect_2" />
-      <button id="connect_3" text="3" ontap="connect_3" />
+    <row weight="wrap">
+      <button icon="vdown" onTap="volume_down" />
+      <button icon="vmute" onTap="volume_mute" />
+      <button icon="vup" onTap="volume_up" />
     </row>
     <row>
-      <button id="connect_4" text="4" ontap="connect_4" />
-      <button id="connect_5" text="5" ontap="connect_5" />
-      <button id="connect_6" text="6" ontap="connect_6" />
+      <list id="speakers" ontap="speaker" />
     </row>
-    <row>
-      <button id="connect_7" text="7" ontap="connect_7" />
-      <button id="connect_8" text="8" ontap="connect_8" />
-      <button id="connect_9" text="9" ontap="connect_9" />
+    <row weight="wrap">
+      <button id="connect_to_all" text="All" ontap="connect_to_all" />
+      <button id="disconnect_from_all" text="None" ontap="disconnect_from_all" />
+    </row>
+    <row weight="wrap">
+      <button id="computer_speaker" text="Computer Speaker" ontap="toggle_computer_speaker" />
     </row>
   </grid>
-  <row>
-    <button id="connect_to_all" text="All" ontap="connect_to_all" />
-    <button id="disconnect_from_all" text="None" ontap="disconnect_from_all" />
-  </row>
 </layout>
