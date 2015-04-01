@@ -1,18 +1,3 @@
-function string:split( inSplitPattern, outResults )
-  if not outResults then
-    outResults = { }
-  end
-  local theStart = 1
-  local theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
-  while theSplitStart do
-    table.insert( outResults, string.sub( self, theStart, theSplitStart-1 ) )
-    theStart = theSplitEnd + 1
-    theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
-  end
-  table.insert( outResults, string.sub( self, theStart ) )
-  return outResults
-end
-
 -----------------------------------------------------
 -- Define your variables here
 -----------------------------------------------------
@@ -24,17 +9,6 @@ local keyboard = libs.keyboard;
 local tid = -1
 local tellTo = "tell application \"Porthole\" to "
 local speakers = {}
-
------------------------------------------------------
--- Invoked when a speaker is pressed:
------------------------------------------------------
-
---@help Invoked when a speaker is pressed
-actions.speaker = function(i)
-  i = i + 1
-  toggle_speaker(speakers[i])
-  update()
-end
 
 -----------------------------------------------------
 -- Methods:
@@ -78,9 +52,28 @@ function update()
 
 end
 
+--@help Toggle AirPlay speaker
+function toggle_speaker(speaker)
+  local script
+  local id = speaker["id"]
+  if speaker["connected"] then
+    script = tellTo .. "disconnect from first speaker whose id is \"" .. id .. "\""
+  else
+    script = tellTo .. "connect to first speaker whose id is \"" .. id .. "\""
+  end
+  os.script(script)
+end
+
 -----------------------------------------------------
 -- Implement your actions here, if needed:
 -----------------------------------------------------
+
+--@help Invoked when a speaker is pressed
+actions.speaker = function(i)
+  i = i + 1
+  toggle_speaker(speakers[i])
+  update()
+end
 
 --@help Launch Porthole application
 actions.launch = function()
@@ -115,19 +108,18 @@ end
 
 --@help Lower system volume
 actions.volume_down = function()
-	keyboard.press("volumedown");
+  keyboard.press("volumedown");
 end
 
 --@help Mute system volume
 actions.volume_mute = function()
-	keyboard.press("volumemute");
+  keyboard.press("volumemute");
 end
 
 --@help Raise system volume
 actions.volume_up = function()
-	keyboard.press("volumeup");
+  keyboard.press("volumeup");
 end
-
 
 -----------------------------------------------------
 -- Implement event handlers here, if needed:
@@ -149,6 +141,7 @@ end
 -- Implement helpers here
 -----------------------------------------------------
 
+--@help Get property from Porthole
 function get_property(name, missing_value_placeholder)
   local value = os.script(tellTo .. "set out to " .. name)
   if (value ~= "missing value") then
@@ -158,6 +151,7 @@ function get_property(name, missing_value_placeholder)
   end
 end
 
+--@help Get speaker property from Porthole
 function get_speaker_property(id, name, missing_value_placeholder)
   local value = os.script(tellTo .. "set out to " .. name .. " of first speaker whose id is \"" .. id .."\"")
   if (value ~= "missing value") then
@@ -167,13 +161,18 @@ function get_speaker_property(id, name, missing_value_placeholder)
   end
 end
 
-function toggle_speaker(speaker)
-  local script
-  local id = speaker["id"]
-  if speaker["connected"] then
-    script = tellTo .. "disconnect from first speaker whose id is \"" .. id .. "\""
-  else
-    script = tellTo .. "connect to first speaker whose id is \"" .. id .. "\""
+--@help Add ability to split into table to strings
+function string:split( inSplitPattern, outResults )
+  if not outResults then
+    outResults = { }
   end
-  os.script(script)
+  local theStart = 1
+  local theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
+  while theSplitStart do
+    table.insert( outResults, string.sub( self, theStart, theSplitStart-1 ) )
+    theStart = theSplitEnd + 1
+    theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
+  end
+  table.insert( outResults, string.sub( self, theStart ) )
+  return outResults
 end
