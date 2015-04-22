@@ -13,6 +13,9 @@ local CMD_PREVTRACK = 0x8099;
 local CMD_VOLUMEUP = 0x8014;
 local CMD_VOLUMEDOWN = 0x8013;
 local CMD_VOLUMEMUTE = 0x8016;
+local CMD_BACK = 32776;
+local CMD_FORWARD = 32777;
+local CMD_FULLSCREEN = 32716;
 
 local tid = -1;
 local title = "";
@@ -103,4 +106,18 @@ end
 --@help Toggle play/pause state
 actions.play_pause = function()
 	actions.command(CMD_PLAYPAUSE);
+end
+
+--@help Go 10 seconds back
+actions.back = function ()
+	actions.command(CMD_BACK);
+end
+
+--@help Go 10 seconds forward
+actions.forward = function ()
+	actions.command(CMD_FORWARD);
+end
+
+actions.fullscreen = function ()
+	actions.command(CMD_FULLSCREEN);
 end

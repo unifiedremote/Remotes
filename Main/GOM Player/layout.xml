@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause">
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause" color="orange">
   <grid>
     <row>
       <label id="info" text="[Not Playing]" textAlign="center" />
@@ -11,7 +11,6 @@
     </row>
 	<row>
 		<button text="-10s" ontap="back" />
-		<button text="Subtitles" ontap="subs" />
 		<button text="+10s" ontap="forward" />
 	</row>
     <row>
@@ -21,7 +20,6 @@
     </row>
     <row>
       <button icon="stop" onTap="stop" />
-	  <button icon="refresh" ontap="restart" />
       <button icon="playpause" onTap="play_pause" />
     </row>
   </grid>
