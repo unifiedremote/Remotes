@@ -31,7 +31,7 @@ end
 
 --@help Update status information
 actions.update = function ()
-	local hwnd = win.find("Winamp v1.x", nil);
+	local hwnd = win.find("KMPlayer v3.x", nil);
 	local _title = win.title(hwnd);
 	
 	if (_title == "") then
@@ -47,7 +47,7 @@ end
 --@help Send raw command to Winamp
 --@param cmd:number Raw winamp command number
 actions.command = function(cmd)
-	local hwnd = win.find("Winamp v1.x", nil);
+	local hwnd = win.find("KMPlayer v3.x", nil);
 	win.send(hwnd, WM_COMMAND, cmd, 0);
 	actions.update();
 end
