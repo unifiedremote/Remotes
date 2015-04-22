@@ -7,8 +7,8 @@ Feel free to create pull requests for:
 - Improving features in existing remotes.
 - Adding new remotes.
 
-Visit the V3 guide for documentation on how to create remotes:
-http://www.unifiedremote.com/3
+Visit the V3 documentation on how to create remotes:<br>
+https://github.com/unifiedremote/Docs
 
-Look at existing remotes and check out the test repo for more examples:
-https://github.com/unifiedremote/test
+Look at existing remotes and check out the test repo for more examples:<br>
+https://github.com/unifiedremote/Test-Remotes
