@@ -11,24 +11,23 @@ end
 
 --@help Start playback
 actions.play = function()
-	keyboard.stroke("P");
+	keyboard.stroke("space");
 end
 
 --@help Pause playback
 actions.pause = function()
-	keyboard.stroke("P");
+	keyboard.stroke("space");
 end
 
 --@help Toggle play/pause
 actions.play_pause = function()
-	keyboard.stroke("P");
+	keyboard.stroke("space");
 end
 
 --@help Raise volume
 actions.volume_up = function()
-	if(OS_WINDOWS)
-		then
-		keyboard.stroke("oem_plus");
+	if (OS_WINDOWS) then
+		keyboard.stroke("F10");
 	else
 		keyboard.stroke("plus");
 	end
@@ -36,9 +35,8 @@ end
 
 --@help Lower volume
 actions.volume_down = function()
-	if(OS_WINDOWS)
-	then
-		keyboard.stroke("oem_minus");
+	if (OS_WINDOWS) then
+		keyboard.stroke("F9");
 	else
 		keyboard.stroke("minus");
 	end
@@ -46,7 +44,11 @@ end
 
 --@help Toggle mute volume
 actions.volume_mute = function()
-	keyboard.stroke("volume_mute");
+	if (OS_WINDOWS) then
+		keyboard.stroke("F8");
+	else
+		keyboard.stroke("volume_mute");
+	end
 end
 
 --@help Navigate up
@@ -101,6 +103,6 @@ end
 
 --@help Navigate back
 actions.back = function()
-	keyboard.stroke("back");
+	keyboard.stroke("esc");
 end
 
