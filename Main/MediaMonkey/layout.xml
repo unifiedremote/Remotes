@@ -6,7 +6,7 @@
 				<label id="title" text="Loading..." />
 			</row>
 			<row weight="wrap">
-				<slider id="vol" text="Volume" progress="0" progressmax="100" onchange="volume"/>
+				<slider id="vol" text="Volume" progress="0" progressmax="100" onup="volume"/>
 			</row>
 			<row weight="wrap">
 				<slider id="pos" text="Position" progress="0" progressmax="0" onup="position" />
