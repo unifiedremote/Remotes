@@ -44,7 +44,7 @@ actions.dialog = function (index)
 	elseif index == 1 then
 		win.quit(item.handle);
 	elseif index == 2 then
-		win.kill(item.handle);
+		win.kill(item.pid);
 	end
 	actions.update();
 end
