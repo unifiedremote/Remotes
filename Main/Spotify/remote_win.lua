@@ -52,7 +52,6 @@ events.focus = function ()
 	playing = false;
 	title = "";
 	tid = timer.interval(actions.update, 500);
-	layout.p.icon = "playpause";
 end
 
 events.blur = function ()
@@ -64,14 +63,10 @@ actions.update = function ()
 	local hwnd = win.find("SpotifyMainWindow", nil);
 	local _title = win.title(hwnd):sub(10);
 	local _playing = true;
-	local _legacy = false;
 	
 	if (_title == "") then
 		_title = "[Not Playing]";
 		_playing = false;
-	elseif (_title == "remium" or _title == "ree") then
-		_title = "[Info not available right now]";
-		_legacy = true;
 	end
 	
 	if (_title ~= title) then
@@ -79,16 +74,12 @@ actions.update = function ()
 		server.update({ id = "info", text = title });
 	end
 	
-	if (_legacy) then
-		layout.p.icon = "playpause";
-	else
-		if (_playing ~= playing) then
-			playing = _playing;
-			if (playing) then
-				server.update({ id = "p", icon = "pause" });
-			else
-				server.update({ id = "p", icon = "play" });
-			end
+	if (_playing ~= playing) then
+		playing = _playing;
+		if (playing) then
+			server.update({ id = "p", icon = "pause" });
+		else
+			server.update({ id = "p", icon = "play" });
 		end
 	end
 end
