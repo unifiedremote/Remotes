@@ -240,10 +240,7 @@ end
 
 --@help Mute Volume
 actions.volume_mute = function ()
-	if (valid()) then
-		obj.Mute = true;
-		update_state();
-	end
+	libs.keyboard.stroke("volumemute");
 end
 
 --@help Set Volume
