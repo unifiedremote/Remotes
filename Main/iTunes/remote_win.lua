@@ -209,7 +209,7 @@ end
 --@help Next track
 actions.next = function ()
 	if (valid()) then
-		obj:Next();
+		obj:NextTrack();
 		update_state();
 	end
 end
@@ -217,7 +217,7 @@ end
 --@help Previous track
 actions.previous = function ()
 	if (valid()) then
-		obj:Previous();
+		obj:PreviousTrack();
 		update_state();
 	end
 end
