@@ -18,7 +18,7 @@ local tid = -1;
 local title = "";
 
 events.detect = function ()
-	return libs.fs.exists("C:\\The KMPlayer");
+	return libs.fs.exists("C:\\KMPlayer");
 end
 
 events.focus = function ()
