@@ -113,13 +113,13 @@ end
 --@help Play previous item
 actions.previous = function()
 	actions.switch();
-	keyboard.stroke("media_prev_track");
+	keyboard.stroke("shift", "p");
 end
 
 --@help Play next item
 actions.next = function()
 	actions.switch();
-	keyboard.stroke("media_next_track");
+	keyboard.stroke("shift", "n");
 end
 
 --@help Enter fullscreen
