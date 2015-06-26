@@ -26,7 +26,7 @@
 			</row>
 			<row>
 				<button text="Menu" ontap="menu" />
-				<label color="hard"/>
+				<label color="grey"/>
 				<button text="OSD" ontap="osd" />
 			</row>
 		</tab>
