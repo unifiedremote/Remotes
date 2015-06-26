@@ -10,8 +10,8 @@ function FindPlayerWindow(browserClass)
 	local hwnds = win.findall(0, browserClass, nil, false);
 	for i,hwnd in ipairs(hwnds) do
 		local title = win.title(hwnd);
-		print(title);
 		if utf8.contains(title, " - YouTube") then
+			print("detected browser: " .. title);
 			return hwnd;
 		end
 	end
@@ -59,8 +59,11 @@ actions.switch = function ()
 		win.switchto(hwnd);
 		x,y = win.findimage("volume.bmp", hwnd);
 		if (x ~= -1 and y ~= -1) then 
+			print("detected player (x: " .. x .. " y: " .. y .. ")")
 			ClickAndReturn(x+200, y);
 			return true;
+		else
+			print("couldn't detect player");
 		end
 	end
 	return false;
@@ -74,8 +77,11 @@ actions.click = function (icon)
 		win.switchto(hwnd);
 		x,y = win.findimage(icon, hwnd);
 		if (x ~= -1 and y ~= -1) then
+			print("detected " .. icon);
 			ClickAndReturn(x, y);
 			return true;
+		else
+			print("couldn't detect " .. icon);
 		end
 	end
 	return false;
