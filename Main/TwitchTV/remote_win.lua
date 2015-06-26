@@ -25,6 +25,7 @@ function FindPlayerWindow(browserClass)
 	for i,hwnd in ipairs(hwnds) do
 		local title = win.title(hwnd);
 		if utf8.contains(title, " - Twitch") then
+			print("detected browser: " .. title);
 			return hwnd;
 		end
 	end
@@ -67,7 +68,7 @@ actions.switch = function (clicks)
 		local width = rect.right - rect.left;
 		
 		local x, y = libs.mouse.position();
-		libs.mouse.moveto(rect.left + math.round(width/3), rect.top + 300);
+		libs.mouse.moveto(rect.left + math.round(width/3), rect.top + 400);
 		if (clicks == nil) then
 			clicks = 1;
 		end
