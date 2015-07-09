@@ -49,8 +49,12 @@ ffi.cdef[[
 	//bool	UUIRTSetReceiveCallback(HUUHANDLE hHandle, PUUCALLBACKPROC receiveProc, void *userData);
 ]]
 local lib = ffi.load("uuirtdrv");
-local server = libs.server;
 
+-- Normal imports
+local server = require("server");
+local utf8 = require("utf8");
+
+local code = "";
 state = {}
 
 events.focus = function ()
@@ -76,6 +80,7 @@ events.blur = function ()
 end
 
 function status(s)
+	code = s;
 	server.update({ id = "status", text = s });
 end
 
@@ -100,8 +105,9 @@ actions.learn = function (fmt)
 	);
 	
 	if (learn) then
-		status(ffi.string(state.code));
-		server.set("code", ffi.string(state.code));
+		local code = ffi.string(state.code);
+		status(code);
+		server.set("code", code);
 	else
 		status("Error");
 	end
@@ -156,6 +162,11 @@ end
 --@help Transmit saved code (UUIRT format)
 actions.helper_transmit_uuirt = function ()
 	actions.transmit("uuirt");
+end
+
+--@help Transmit code to computer clipboard
+actions.helper_clip = function ()
+	os.script("echo \"" .. utf8.trim(code) .. "\" | clip");
 end
 
 --@help Transmit UUIRT code
