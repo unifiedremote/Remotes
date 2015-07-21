@@ -47,6 +47,6 @@ end
 
 --@help Toggle play/pause
 actions.play_pause = function()
-	keyboard.stroke("space");
+	keyboard.stroke("K");
 end
 
