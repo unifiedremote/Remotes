@@ -1,5 +1,5 @@
-# Chrome
-Google Chrome browser remote.
+# Safari
+Safari browser remote.
 
 ## Features
 *  Focus Chrome application
@@ -20,9 +20,9 @@ Google Chrome browser remote.
 *  Scroll page up
 *  Refresh current page
 
+## Platforms
+* Mac OSX
+
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
-
-## Screenshots
-<img src="screen1.png" width="200" />

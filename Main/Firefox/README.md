@@ -1,9 +1,9 @@
-# Chrome
-Google Chrome browser remote.
+# Firefox
+Mozilla Firefox browser remote.
 
 ## Features
-*  Focus Chrome application
-*  Launch Chrome application
+*  Focus Firefox application
+*  Launch Firefox application
 *  Naviagte back
 *  Close current tab
 *  Navigate forward
@@ -23,6 +23,3 @@ Google Chrome browser remote.
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
-
-## Screenshots
-<img src="screen1.png" width="200" />

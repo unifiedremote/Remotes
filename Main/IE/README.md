@@ -1,9 +1,9 @@
-# Chrome
-Google Chrome browser remote.
+# Internet Explorer
+Internet Explorer browser remote.
 
 ## Features
-*  Focus Chrome application
-*  Launch Chrome application
+*  Focus Internet Explorer application
+*  Launch Internet Explorer application
 *  Naviagte back
 *  Close current tab
 *  Navigate forward
@@ -20,9 +20,9 @@ Google Chrome browser remote.
 *  Scroll page up
 *  Refresh current page
 
+## Platforms
+* Windows
+
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
-
-## Screenshots
-<img src="screen1.png" width="200" />

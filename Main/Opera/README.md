@@ -1,9 +1,9 @@
-# Chrome
-Google Chrome browser remote.
+# Opera
+Opera browser remote.
 
 ## Features
-*  Focus Chrome application
-*  Launch Chrome application
+*  Focus Opera application
+*  Launch Opera application
 *  Naviagte back
 *  Close current tab
 *  Navigate forward
@@ -20,9 +20,10 @@ Google Chrome browser remote.
 *  Scroll page up
 *  Refresh current page
 
+## Platforms
+* Windows
+* Linux
+
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
-
-## Screenshots
-<img src="screen1.png" width="200" />
