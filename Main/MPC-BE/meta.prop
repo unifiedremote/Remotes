@@ -2,3 +2,4 @@ meta.name: MPC-BE
 meta.author: Nico8583
 meta.description: Media Player Classic Black Edition Remote.
 meta.platform: windows
+meta.tags: audio/video

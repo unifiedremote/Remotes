@@ -2,3 +2,4 @@ meta.name: iTunes
 meta.author: Unified
 meta.description: iTunes Remote.
 meta.platform: windows osx
+meta.tags: audio/video

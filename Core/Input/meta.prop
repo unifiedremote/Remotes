@@ -3,3 +3,4 @@ meta.name: Input (Legacy)
 meta.author: Core
 meta.description: Core.Input
 meta.hidden: true
+meta.tags: mouse/keyboard

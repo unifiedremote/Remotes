@@ -2,3 +2,4 @@ meta.name: HTTP
 meta.author: Core
 meta.description: Core.HTTP
 meta.hidden: true
+meta.tags: util

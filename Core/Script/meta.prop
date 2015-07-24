@@ -2,3 +2,4 @@ meta.name: Script
 meta.author: Core
 meta.description: Core.Script
 meta.hidden: true
+meta.tags: util

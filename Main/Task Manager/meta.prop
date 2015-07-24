@@ -2,3 +2,4 @@ meta.name: Task Manager
 meta.author: Unified
 meta.description: Task Manager Remote.
 meta.platform: windows macosx
+meta.tags: util

@@ -2,3 +2,4 @@ meta.name: Keynote
 meta.author: Unified
 meta.description: Remote control for the Keynote app.
 meta.platform: osx
+meta.tags: presentation

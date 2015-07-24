@@ -2,3 +2,4 @@ meta.name: Boxee Legacy (Keyboard)
 meta.author: Unified
 meta.description: Boxee remote using key shortcuts.
 meta.platform: windows
+meta.tags: audio/video, mouse/keyboard

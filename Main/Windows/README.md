@@ -12,7 +12,6 @@ Windows Remote.
 
 ## Platforms
 * Windows
-* 
 
 ## Getting help
 Check out our tutorials: <br>

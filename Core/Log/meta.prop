@@ -2,3 +2,4 @@ meta.name: Log
 meta.author: Core
 meta.description: Core.Log
 meta.hidden: true
+meta.tags: util
