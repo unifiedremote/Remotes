@@ -2,14 +2,11 @@
 Beamer remote control.
 
 ## Features
-*  Update status information
-*  Launch Beamer application
-*  Previous movie
 *  Next movie
+*  Previous movie
 *  Stop playback
 *  Toggle play/pause state
 *  Set position
-*  Open file manager
 
 ## Platforms
 * Mac OSX
@@ -17,3 +14,6 @@ Beamer remote control.
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+
+## Screenshots
+<img src="screen.png" width="200" />
