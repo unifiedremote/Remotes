@@ -2,17 +2,14 @@
 foobar2000 media remote
 
 ## Features
-*  Update state
-*  Focus foobar2000 application
 *  Launch program
 *  Lower volume
 *  Mute volume
-*  Raise volume
-*  Previous track
 *  Next track
+*  Previous track
+*  Raise volume
 *  Stop playback
 *  Toggle playback state
-*  Send raw command
 
 ## Platforms
 * Windows
@@ -20,3 +17,6 @@ foobar2000 media remote
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+
+## Screenshots
+<img src="screen.png" width="200" />
