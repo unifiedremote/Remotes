@@ -2,27 +2,25 @@
 Google Chrome browser remote.
 
 ## Features
-*  Focus Chrome application
-*  Launch Chrome application
-*  Naviagte back
 *  Close current tab
-*  Navigate forward
+*  Find on current page
+*  Go to home page
 *  Go to next tab
 *  Go to previous tab
+*  Naviagte back
+*  Navigate forward
 *  Open new tab
-*  Type address
-*  Go to home page
-*  Find on current page
-*  Zoom page in
-*  Zoom page out
-*  Use normal zoom
+*  Refresh current page
 *  Scroll page down
 *  Scroll page up
-*  Refresh current page
+*  Type address
+*  Use normal zoom
+*  Zoom page in
+*  Zoom page out
 
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
 
 ## Screenshots
-<img src="screen1.png" width="200" />
+<img src="screen.png" width="200" />
