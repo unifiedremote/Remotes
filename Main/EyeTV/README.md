@@ -2,29 +2,27 @@
 EyeTV for Mac OS X
 
 ## Features
-*  Zoom
+*  Channel down
+*  Channel up
 *  Close Window
+*  Fast basck
+*  Fast forward
+*  Jump backward
+*  Jump forward
 *  Lower volume
 *  Mute volume
-*  Raise volume
-*  Pause playback
-*  Navigate left
-*  Navigate up
-*  Select current item
-*  Navigate right
-*  Navigate down
 *  Navigate back
+*  Navigate down
+*  Navigate left
+*  Navigate right
+*  Navigate up
 *  Next item
-*  Channel up
-*  Channel down
-*  Jump forward
-*  Fast forward
-*  Fast basck
-*  Info
-*  Jump backward
-*  Show Program Window
-*  Toggle fullscreen
 *  Open menu
+*  Pause playback
+*  Raise volume
+*  Select current item
+*  Toggle fullscreen
+*  Zoom
 
 ## Platforms
 * Mac OSX
@@ -32,3 +30,6 @@ EyeTV for Mac OS X
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+
+## Screenshots
+<img src="screen.png" width="200" />
