@@ -2,24 +2,21 @@
 Daum PotPlayer remote control.
 
 ## Features
-*  Update status information
-*  Send raw command to PotPlayer
-*  Launcher PotPlayer application
-*  Lower volume
-*  Mute volume
-*  Raise volume
-*  Previous track
-*  Next track
-*  Stop playback
-*  Start playback
-*  Pause or unpause playback
-*  Toggle play/pause state
-*  Toggle fullscreen
-*  Toggle playlist
 *  Jump back 30 seconds
 *  Jump back 5 seconds
-*  Jump forward 5 seconds
 *  Jump forward 30 seconds
+*  Jump forward 5 seconds
+*  Lower volume
+*  Mute volume
+*  Next track
+*  Pause or unpause playback
+*  Previous track
+*  Raise volume
+*  Start playback
+*  Stop playback
+*  Toggle fullscreen
+*  Toggle play/pause state
+*  Toggle playlist
 
 ## Platforms
 * Windows
@@ -27,3 +24,6 @@ Daum PotPlayer remote control.
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+
+## Screenshots
+<img src="screen.png" width="200" />
