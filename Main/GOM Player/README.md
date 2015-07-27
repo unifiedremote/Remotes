@@ -2,20 +2,18 @@
 GOM Player remote control.
 
 ## Features
-*  Update status information
-*  Send raw command to Winamp
-*  Launcher Winamp application
-*  Lower volume
-*  Mute volume
-*  Raise volume
-*  Previous track
-*  Next track
-*  Stop playback
-*  Start playback
-*  Pause or unpause playback
-*  Toggle play/pause state
 *  Go 10 seconds back
 *  Go 10 seconds forward
+*  Lower volume
+*  Mute volume
+*  Next track
+*  Pause or unpause playback
+*  Previous track
+*  Raise volume
+*  Start playback
+*  Stop playback
+*  Toggle fullscreen
+*  Toggle play/pause state
 
 ## Platforms
 * Windows
@@ -23,3 +21,6 @@ GOM Player remote control.
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+
+## Screenshots
+<img src="screen.png" width="200" />

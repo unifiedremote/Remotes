@@ -50,7 +50,7 @@ actions.update = function ()
 	end
 end
 
---@help Send raw command to Winamp
+--@help Send raw command to GOM
 --@param cmd:number Raw winamp command number
 actions.command = function(cmd)
 	local hwnd = win.find("GomPlayer1.x", nil);
@@ -58,7 +58,7 @@ actions.command = function(cmd)
 	actions.update();
 end
 
---@help Launcher Winamp application
+--@help Launcher GOM application
 actions.launch = function()
 	os.start("gom.exe");
 end
@@ -118,6 +118,7 @@ actions.forward = function ()
 	actions.command(CMD_FORWARD);
 end
 
+--@help Toggle fullscreen
 actions.fullscreen = function ()
 	actions.command(CMD_FULLSCREEN);
 end
