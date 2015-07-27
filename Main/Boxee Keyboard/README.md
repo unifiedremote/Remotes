@@ -2,23 +2,20 @@
 Boxee remote using key shortcuts.
 
 ## Features
-*  Focus Boxee application
-*  Launch Boxee application
+*  Fast forward
 *  Lower volume
 *  Mute volume
+*  Navigate back
+*  Navigate down
+*  Navigate home
+*  Navigate left
+*  Navigate right
+*  Navigate up
 *  Raise volume
 *  Rewind
-*  Fast forward
 *  Stop playback
-*  Toggle playback state
-*  Navigate up
-*  Navigate down
-*  Navigate left
-*  Navigate back
-*  Navigate right
 *  Toggle fullscreen
-*  Navigate home
-*  Select current item
+*  Toggle playback state
 
 ## Platforms
 * Windows
@@ -26,3 +23,6 @@ Boxee remote using key shortcuts.
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+
+## Screenshots
+<img src="screen.png" width="200" />

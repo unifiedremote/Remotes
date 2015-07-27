@@ -2,28 +2,31 @@
 Boxee Web interface remote.
 
 ## Features
-*  Toggle playback state
-*  Start playback
-*  Pause playback
-*  Stop playback
 *  Fast forward
-*  Rewind
-*  Navigate up
+*  Leave DVD
+*  Lower volume
+*  Mute volume
+*  Navigate back
 *  Navigate down
 *  Navigate left
 *  Navigate right
-*  Select current item
-*  Navigate back
-*  Leave DVD
-*  Set volume
-*  Raise volume
-*  Lower volume
-*  Set position
-*  Mute volume
-*  Toggle fullscreen
-*  Previous media
+*  Navigate up
 *  Next media
+*  Pause playback
+*  Previous media
+*  Raise volume
+*  Rewind
+*  Select current item
+*  Set position
+*  Set volume
+*  Start playback
+*  Stop playback
+*  Toggle fullscreen
+*  Toggle playback state
 
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+
+## Screenshots
+<img src="screen.png" width="200" />
