@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down">
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" color="#ef6c00">
   <grid>
     <row weight="wrap">
       <label id="info" />
@@ -27,8 +27,8 @@
     <row>
       <button icon="thumbsdown" onTap="thumbs_down" />
       <button icon="thumbsup" onTap="thumbs_up" />
-	  <button icon="playpause" weight="2" onTap="play_pause" />
-	  <button icon="shuffle" onTap="play_shuffle" />
+      <button icon="playpause" weight="2" onTap="play_pause" />
+      <button icon="shuffle" onTap="play_shuffle" />
       <button icon="repeat" onTap="play_repeat" />
     </row>
   </grid>
