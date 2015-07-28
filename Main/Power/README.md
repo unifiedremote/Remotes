@@ -1,5 +1,5 @@
 # Power
-Remote control for system and login.
+Control system power, login, and Wake on LAN.
 
 ## Features
 * Restart system
