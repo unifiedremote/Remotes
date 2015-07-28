@@ -13,13 +13,13 @@ Control mouse and keyboard.
 ## Configuration
 The Basic Input remote has several options that can be configured directly from the app. 
 
-To access the Mouse Preferences:
+**To access the Mouse Preferences:**
 
 1. Open the app menu
 2. Preferences / Settings
 3. Mouse Settings
 
-Supported options:
+**Supported options:**
 
 * Single-touch or multi-touch mode
 * Invert scrolling direction
