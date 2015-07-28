@@ -1,9 +1,14 @@
 # Pixel Color
-Inspect mouse pixel color.
+A useful utility remote for inspecting the color of the pixel under the mouse cursor.
+
+## Features
+* Shows mouse position (x, y)
+* Shows current color in hex
+* Shows color preview in realtime
 
 ## Platforms
 * Windows
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
