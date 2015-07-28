@@ -2,8 +2,6 @@
 Hulu desktop player remote.
 
 ## Features
-*  Focus Hulu application
-*  Launch Hulu application
 *  Navigate up
 *  Navigate left
 *  Select current
@@ -19,3 +17,6 @@ Hulu desktop player remote.
 ## Getting help
 Check out our tutorials: <br>
 [https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+
+## Screenshots
+<img src="screen.png" width="200" />
