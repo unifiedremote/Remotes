@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeDown="next" onVolumeUp="previous">
+<layout onLaunch="launch" onVolumeDown="next" onVolumeUp="previous" color="#D04727">
 	<tabs>
 		<tab text="Show">
 			<row weight="wrap">
