@@ -17,7 +17,7 @@ The Wake On LAN and Wake on WAN packets are sent directly from your device when 
 * [https://www.unifiedremote.com/tutorials/how-to-configure-wake-on-lan-on-windows](How To Configure Wake On LAN on Windows)
 * [https://www.unifiedremote.com/tutorials/how-to-configure-wake-on-wan-on-windows](How To Configure Wake On WAN on Windows)
 
-## Linux Support
+## Linux Compatibility
 Typically controlling system power is privilaged on Linux/UNIX systems. Most desktop environments therefore offer other means for applications to trigger these actions. However, there is unfortunately no standard. The remote has been implemented to work with:
 
 * Unity
@@ -32,6 +32,6 @@ For other DE and other actions the remote uses ``dbus-send`` to ``org.freedeskto
 Support for other systems will have to be added as needed.
 
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
