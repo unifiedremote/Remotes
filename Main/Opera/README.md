@@ -2,23 +2,13 @@
 Opera browser remote.
 
 ## Features
-*  Focus Opera application
-*  Launch Opera application
-*  Naviagte back
-*  Close current tab
-*  Navigate forward
-*  Go to next tab
-*  Go to previous tab
-*  Open new tab
-*  Type address
-*  Go to home page
+*  Navigation (back, fowrard, home)
+*  Tabs (open, close, next, previous)
 *  Find on current page
-*  Zoom page in
-*  Zoom page out
-*  Use normal zoom
-*  Scroll page down
-*  Scroll page up
 *  Refresh current page
+*  Scroll up/down
+*  Zoom in/out
+*  Focus URL field
 
 ## Platforms
 * Windows

@@ -2,21 +2,13 @@
 Google Chrome browser remote.
 
 ## Features
-*  Close current tab
+*  Navigation (back, fowrard, home)
+*  Tabs (open, close, next, previous)
 *  Find on current page
-*  Go to home page
-*  Go to next tab
-*  Go to previous tab
-*  Naviagte back
-*  Navigate forward
-*  Open new tab
 *  Refresh current page
-*  Scroll page down
-*  Scroll page up
-*  Type address
-*  Use normal zoom
-*  Zoom page in
-*  Zoom page out
+*  Scroll up/down
+*  Zoom in/out
+*  Focus URL field
 
 ## Getting help
 Check out our tutorials: <br>
