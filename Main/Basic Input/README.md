@@ -34,5 +34,5 @@ The Basic Input remote has several options that can be configured directly from 
 <img src="screen.png" width="200" />
 
 ## Support
-Remote is developed and maintained by Unified Remote  
+Remote is developed and maintained by **Unified Remote**  
 https://www.unifiedremote.com/help
