@@ -31,7 +31,9 @@ The Basic Input remote has several options that can be configured directly from 
 * Enable menu swipe when using mouse
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="screen-mt.png" width="200" />
+<img src="screen-st.png" width="200" />
+<img src="screen-settings.png" width="200" />
 
 ## Support
 Remote is developed and maintained by **Unified Remote**  
