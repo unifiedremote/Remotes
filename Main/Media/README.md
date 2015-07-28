@@ -1,15 +1,12 @@
 # Media
-General media remote.
+A generic system media remote control. The remote simulates media keys, so this remote will work with any application that listens to the standard media keys. In most cases it is easier to use a remote specific for the application you wish to control, but if you can't find a remote for that application then you could try this remote instead.
 
 ## Features
-*  Lower system volume
-*  Mute system volume
-*  Raise system volume
-*  Previous track
-*  Next track
+*  Volume (up, down, mute)
+*  Next & previous track
 *  Stop playback
-*  Toggle playback state
+*  Toggle playback (play, pause)
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
