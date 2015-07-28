@@ -30,9 +30,9 @@ The Basic Input remote has several options that can be configured directly from 
 * Adjust scroll sensitivity
 * Enable menu swipe when using mouse
 
+## Screenshots
+<img src="screen.png" width="200" />
+
 ## Support
 Remote is developed and maintained by Unified Remote  
 https://www.unifiedremote.com/help
-
-## Screenshots
-<img src="screen.png" width="200" />
