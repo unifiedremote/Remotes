@@ -1,25 +1,17 @@
 # Porthole
-AirPlay to multiple speakers
+Porthole is an app for Mac that lets you play all audio from your Mac through multiple AirPlay speakers at the same time. This remote makes it possible to control Porthole from Unified Remote.
 
 ## Features
-*  Update interface
-*  Toggle AirPlay speaker
-*  Invoked when a speaker is pressed
-*  Launch Porthole application
-*  Update status information
-*  Connect to every available speaker
-*  Disconnect from every available speaker
+*  Toggle AirPlay speaker(s)
+*  Show status information
+*  Connect to all available speaker
+*  Disconnect from all available speaker
 *  Toggle use of the computer's speaker
-*  Lower system volume
-*  Mute system volume
-*  Raise system volume
-*  Get property from Porthole
-*  Get speaker property from Porthole
-*  Add ability to split into table to strings
+*  Change system volume
 
 ## Platforms
 * Mac OSX
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Porthole**  
+http://www.getporthole.com/
