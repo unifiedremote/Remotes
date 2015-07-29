@@ -1,41 +1,25 @@
 # BSPlayer
-BSPlayer remote control.
+BSPlayer is a popular media player for Windows. The remote supports the essential navigation and playback controls as well as a tab dedicated for DVD playback, including controls for navigation, chapters, subtitles and languages.
 
 ## Features
-*  Launch BSPlayer application
-*  Send raw command to BSPlayer
-*  Zoom in
-*  Zoom out
-*  Normal zoom
+*  Zoom video playback
 *  Toggle playback state
 *  Toggle fullscreen
-*  Raise volume
-*  Lower volume
-*  Navigate left
-*  Navigate right
-*  Navigate up
-*  Navigate down
-*  Previous track
-*  Next track
+*  Volume
+*  Previous, next track
+*  DVD navigation
 *  Stop playback
-*  Fast rewind
-*  Rewind
-*  Forward
-*  Fast forward
+*  Rewind and fast forward
 *  Show DVD subtitles
 *  Show DVD title
 *  Show DVD languages
-*  Previous DVD chapter
 *  Show DVD chapters
-*  Next DVD chapter
-
-## Platforms
-* Windows
-
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+*  Previous, next DVD chapter
 
 ## Screenshots
 <img src="screen-tab0.png" width="200" />
 <img src="screen-tab1.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote** 
+https://www.unifiedremote.com/help
