@@ -9,12 +9,9 @@ J River media center remote.
 *  Toggle fullscreen
 *  Raise/Lower volume
 
-## Platforms
-* Windows
+## Screenshots
+<img src="screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  
 https://www.unifiedremote.com/help
-
-## Screenshots
-<img src="screen.png" width="200" />

@@ -5,12 +5,9 @@ Hulu desktop player remote.
 *  Navigate left/right/down/up
 *  Raise/lower volume
 
-## Platforms
-* Windows
+## Screenshots
+<img src="screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  
 https://www.unifiedremote.com/help
-
-## Screenshots
-<img src="screen.png" width="200" />

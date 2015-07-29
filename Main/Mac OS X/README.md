@@ -9,9 +9,6 @@ General remote for OSX.
 *  Maximize Window
 *  Close Window
 
-## Platforms
-* Mac OSX
-
 ## Support
 Developed and maintained by **Unified Remote**  
 https://www.unifiedremote.com/help

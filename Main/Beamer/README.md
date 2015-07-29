@@ -11,9 +11,6 @@ http://beamer-app.com/
 *  Set position
 *  Open files using built-in file picker
 
-## Platforms
-* Mac OSX
-
 ## Screenshots
 <img src="screen.png" width="200" />
 
