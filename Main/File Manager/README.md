@@ -1,9 +1,12 @@
 # File Manager
-File Manager Remote.
+The remote file manager makes it possible to easily browse and open files on your computer. This is especially useful for opening media files (music, videos, etc) or even starting programs. However, for starting programs the [Start (Windows)](../Start), [Launcher (Linux)](../Launcher (Linux)) and [Launcher (Mac)](../Launcher (Mac)) are recommended instead.
 
 ## Features
-*  Open file or folder on computer.
-*  Open all files in specified path.
+* Browse files and folders
+* Open file or folder on computer
+* Open all files in specified path
+* Show file or folder information
+* Copy/cut/delete files and folders
 
 ## Screenshots
 <img src="screen.png" width="200" />
