@@ -48,6 +48,9 @@ function createSlides( )
 	return "";
 end
 function shrinkSlide( path )
+	if (path == nil) then 
+		return nil;
+	end
 	if fs.exists(path .. ".r") then
 		return path .. ".r";
 	end
@@ -63,28 +66,28 @@ function shrinkSlide( path )
 	fs.rename(path, path..".r");
 end
 function getTitleForAllSlide()
-		if(valid()) then
-			local titlesString = os.script("tell application \"Microsoft PowerPoint\"",
-				"set n to count slides of active presentation",
-				"set i to 1",
-				"set o to \"\"",
-				"repeat n times",
-					"set o to o & content of text range of text frame of shape 1 of slide i in active presentation & \",\" ", 
-					"set i to i + 1",
-				"end repeat",
-				"return o",
-			"end tell");
-			titlesString = str.sub(titlesString, 0, str.len(titlesString) -1);
-			local titles = str.split(titlesString,",");
-			for i = 1, #titles-1 do
-				if (titles[i] == "") then
-					titles[i] = "Untitled";
-				end
-				titles[i] = i .. ": " .. titles[i];
+	if(valid()) then
+		local titlesString = os.script("tell application \"Microsoft PowerPoint\"",
+			"set n to count slides of active presentation",
+			"set i to 1",
+			"set o to \"\"",
+			"repeat n times",
+				"set o to o & content of text range of text frame of shape 1 of slide i in active presentation & \",\" ", 
+				"set i to i + 1",
+			"end repeat",
+			"return o",
+		"end tell");
+		titlesString = str.sub(titlesString, 0, str.len(titlesString) -1);
+		local titles = str.split(titlesString,",");
+		for i = 1, #titles-1 do
+			if (titles[i] == nil or titles[i] == "" or titles[i] == "missing value") then
+				titles[i] = "(no name)";
 			end
-			return titles;
+			titles[i] = i .. ": " .. titles[i];
 		end
-		return {};
+		return titles;
+	end
+	return {};
 end
 
 function valid( )
@@ -99,6 +102,7 @@ function valid( )
 	end
 	return isValid;
 end
+
 function getTitle()
 	if(valid()) then
 		local title = os.script("tell application \"Microsoft PowerPoint\"",
@@ -109,8 +113,8 @@ function getTitle()
 									"end try",
 								"end tell");
 		
-		if (title == "") then
-			title = "Untitled";
+		if (title == nil or title == "" or title == "missing value") then
+			title = "(no name)";
 		end
 		return title;
 	end
@@ -208,35 +212,37 @@ function update ()
 				server.update(
 					{ id = "slides", children = items }
 				);
+				
 				slidePaths = createSlides();
 				noPresentation=false;
 			end
 			title = getTitle();
 			notes = getNotes();
 			if #slidePaths > 0 then
-				local index = get_slideshow_position()-1;
+				local index = get_slideshow_position() - 1;
 				local count = #slidePaths;
-				print(1) ;
+				
 				preview_curr = shrinkSlide(slidePaths[index+1]);
 				preview_next = shrinkSlide(slidePaths[math.min(count, index+2)]);
 				preview_prev = shrinkSlide(slidePaths[math.max(1, index)]);
 
 			end
 			server.update(
-			{ id = "title", text = title },
-			{ id = "comments", text = notes },
-			{ id = "preview_curr", image = preview_curr },
-			{ id = "preview_prev", image = preview_prev },
-			{ id = "preview_next", image = preview_next },
-			{ id = "time_total", text = time_total },
-				{ id = "time_slide", text = time_slide }	);
+				{ id = "title", text = title },
+				{ id = "comments", text = notes },
+				{ id = "preview_curr", image = preview_curr },
+				{ id = "preview_prev", image = preview_prev },
+				{ id = "preview_next", image = preview_next },
+				{ id = "time_total", text = time_total },
+				{ id = "time_slide", text = time_slide }	
+			);
 		else
-			title = "[No Presentation]"; 
+			title = "[No Presentation Running]"; 
 			server.update({ id = "title", text = title });
 			noPresentation = true;
 		end
 	else
-		title = "[No Application]";
+		title = "[PowerPoint Not Running]";
 		server.update({ id = "title", text = title });
 		noPresentation = true;
 	end
