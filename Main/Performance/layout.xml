@@ -2,7 +2,7 @@
 <layout>
   <grid>
 	<row weight="wrap">
-		<label color="red" text="--- Memory Usage ---" />
+		<label color="#C96260" text="--- Memory Usage ---" />
 	</row>
 	<row>
 		<grid>
@@ -16,7 +16,7 @@
 		<label id="mem_load" text="0%\nload" />
 	</row>
 	<row weight="wrap">
-		<label color="red" text="--- CPU Usage ---" />
+		<label color="#C96260" text="--- CPU Usage ---" />
 	</row>
 	<row>
 		<grid>
