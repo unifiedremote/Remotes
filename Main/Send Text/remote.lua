@@ -3,7 +3,7 @@ local keyboard = libs.keyboard;
 
 local _text = "";
 
---@help Set current ext
+--@help Set current text
 --@param text
 actions.change = function(text)
 	_text = text;

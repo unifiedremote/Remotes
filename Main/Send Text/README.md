@@ -1,12 +1,11 @@
 # Send Text
-Type text to your computer.
+Easily type text in your device and then send it to your computer.
 
 ## Features
-*  Set current ext
-*  Send current text
-*  Enter
-*  Backspace
+*  Send text
+*  Press ``Enter``
+*  Press ``Backspace``
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**
+https://www.unifiedremote.com/help
