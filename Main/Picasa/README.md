@@ -2,16 +2,13 @@
 Picasa image viewer remote.
 
 ## Features
-*  End slide show
-*  Start slide show
-*  Zoom in
-*  Zoom out
-*  Previous photo
-*  Next photo
+*  Next/Previous photo
+*  Start/End slide show
+*  Zoom in/out
 
-## Platforms
-* Windows
+## Screenshots
+<img src="screen.png" width="200" />
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
