@@ -2,36 +2,22 @@
 iTunes Remote.
 
 ## Features
-*  Launch iTunes application
-*  Open Suffle dialog
-*  Open Repeat dialog
-*  Set Shuffle state
-*  Set Repeate state
-*  Previous track
-*  Next track
-*  Rewind track
-*  Fast Forward track
-*  Volume Up
-*  Volume Down
-*  Volume Mute
 *  Fullscreen
-*  Stop track
-*  Play track
-*  Pause track
+*  Next/Previous track
+*  Play/Pause track
+*  Set Repeate/Shuffle
 *  Toggle Play/Pause
-*  Set Volume
-*  Go back to viweing playlists
-*  Set Position
-*  Play Pause track
-*  Resume track
-*  Forward track
-*  Mute Volume
-*  Volume up
+*  Volume Up/Down/Mute
 
 ## Platforms
 * Windows
 * Mac OSX
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
+
+## Screenshots
+<img src="screen.png" width="200" />
+<img src="screen-btn.png" width="200" />
+<img src="screen-pl.png" width="200" />
