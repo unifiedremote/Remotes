@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="previous" onVolumeDown="next" color="#D04727">
+<layout onLaunch="launch" onVolumeUp="previous" onVolumeDown="next" color="#EA642D">
   <grid>
     <row weight="wrap">
       <button text="Go To" onTap="prompt_goto" />
