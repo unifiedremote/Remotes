@@ -2,20 +2,16 @@
 Netflix remote control.
 
 ## Features
-*  Launch Netflix site
-*  Lower volume
-*  Mute volume
-*  Raise volume
-*  Pause playback
+*  Raise/Lower/Mute volume
 *  Toggle playback state
-*  Navigate left
+*  Navigate left/right
 *  Select current item
-*  Navigate right
-*  Seek forward
-*  Seek backward
-*  Fullscreen view
-*  Windowed view
+*  Seek forward/backward
+*  Fullscreen/Windowed view
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
