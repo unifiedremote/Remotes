@@ -14,6 +14,11 @@ Control your monitor power.
 *  Display projector only
 *  Display computer only
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen-win.png" width="200" />
+<img src="screen-osx.png" width="200" />
+<img src="screen-lx.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
