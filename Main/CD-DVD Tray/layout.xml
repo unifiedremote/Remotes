@@ -2,10 +2,10 @@
 <layout>
   <grid>
     <row>
-      <button text="Eject" ontap="eject" />
+      <button text="Eject" ontap="eject" color="green" />
     </row>
     <row>
-      <button text="Close" ontap="close" />
+      <button text="Close" ontap="close" color="red" />
     </row>
   </grid>
 </layout>
