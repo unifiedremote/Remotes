@@ -1,5 +1,5 @@
 # Spotify
-A basic remote control for Spotify. Advanced features such as playlista and search are only available in the Spotify Advanced remote (included in the full version).
+A basic remote control for Spotify. Advanced features such as playlists and search are only available in the Spotify Advanced remote (included in the full version).
 
 ## Features
 * Current playing informatiopn
