@@ -2,27 +2,17 @@
 Power Point Advanced Remote.
 
 ## Features
-*  Launch Power Point Advanced application
-*  Go to next slide
-*  Go to previous slide
-*  Go to first slide
-*  Go to last slide
-*  Go to slide
-*  Start timer
-*  Stop timer
-*  Reset timer
-*  Set screen to black
-*  Set screen to white
-*  Start slide show presentation
-*  End slide show presentation
-*  Launch PowerPoint application
-*  Set black screen
-*  Set white screen
+*  Go to next/previous/first/last/slide
+*  Start/stop/reset timer
+*  Set screen to black/white
+*  Start/end slide show presentation
 
-## Platforms
-* Windows
-* Mac OSX
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />  
+<img src="screen-tab3.png" width="200" />
+<img src="screen-tab4.png" width="200" />
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help

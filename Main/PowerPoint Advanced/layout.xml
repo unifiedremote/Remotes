@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeDown="next" onVolumeUp="previous" color="#D04727">
+<layout onLaunch="launch" onVolumeDown="next" onVolumeUp="previous" color="#EA642D">
 	<tabs>
 		<tab text="Show">
 			<row weight="wrap">
-				<label id="title" text="Loading..." />
+				<label id="title" text="Loading..." color="#D04727"/>
 			</row>
 			<row>
 				<button icon="previous" ontap="first" />
@@ -12,14 +12,14 @@
 				<button icon="next" ontap="last" />
 			</row>
 			<row weight="wrap">
-				<label text="Screen" />
+				<label text="Screen" color="#D04727" />
 			</row>
 			<row>
 				<button text="Black" ontap="black" />
 				<button text="White" ontap="white" />
 			</row>
 			<row weight="wrap">
-				<label text="Timer" />
+				<label text="Timer" color="#D04727" />
 			</row>
 			<row>
 				<label id="time_total" text="Total: 00:00" />
@@ -42,7 +42,7 @@
 		</tab>
 		<tab text="Comments">
 			<row weight="wrap">
-				<label id="title" text="Loading..." />
+				<label id="title" text="Loading..." color="#D04727" />
 			</row>
 			<row>
 				<text id="comments" multiline="true" text="Loading..." />
@@ -56,7 +56,7 @@
 		</tab>
 		<tab text="Slides">
 			<row weight="wrap">
-				<label id="title" text="Loading..." />
+				<label id="title" text="Loading..." color="#D04727"/>
 			</row>
 			<row>
 				<list id="slides" ontap="slides_tap">
