@@ -2,32 +2,18 @@
 Control Plex Media Server
 
 ## Features
-*  Launch XBMC application
-*  Navigate up
-*  Navigate down
-*  Navigate left
-*  Navigate right
-*  Navigate page up
-*  Navigate page down
-*  Navigate 
-*  Select
-*  Navigate back
-*  Open menu
-*  Open On screen display
-*  Play track
-*  Pause track
-*  Play Pause track
-*  Stop track
-*  Rewind track
-*  Forwad track
-*  Step forward in track
-*  Big Step forward in track
-*  Step back in track
-*  Big step back in track
-*  Next track
-*  Previous track
-*  Play pause from navigation
+*  Navigate up/down/left/right
+*  Navigate page up/down
+*  Play/Pause/Stop track
+*  Forwad/Rewind track
+*  Step forward/back in track
+*  Big step forward /back in track
+*  Next/Previous track
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help

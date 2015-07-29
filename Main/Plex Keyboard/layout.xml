@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout onlaunch="launch" color="orange">
+<layout onlaunch="launch" color="#FF9500">
 	<tabs>
 		<tab text="Main">
 			<row>
 				<button icon="back" ontap="back" />
-				<button color="grey" icon="up" ontap="up" />
+				<button color="#525252" icon="up" ontap="up" />
 				<button icon="playpause" ontap="play_current" />
 			</row>
 			<row>
-				<button color="grey" icon="left" ontap="left" />
-				<button color="grey" icon="select" ontap="select" />
-				<button color="grey" icon="right" ontap="right" />
+				<button color="#525252" icon="left" ontap="left" />
+				<button color="#525252" icon="select" ontap="select" />
+				<button color="#525252" icon="right" ontap="right" />
 			</row>
 			<row>
 				<button icon="previous" ontap="previous" />
-				<button color="grey" icon="down" ontap="down" />
+				<button color="#525252" icon="down" ontap="down" />
 				<button icon="next" ontap="next" />
 			</row>
 			<row>

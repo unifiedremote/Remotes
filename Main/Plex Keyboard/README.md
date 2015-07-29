@@ -2,26 +2,16 @@
 Control Plex Home Theater
 
 ## Features
-*  Focus Plex application
-*  Launch Plex application
-*  Navigate left
-*  Navigate down
-*  Navigate right
-*  Navigate up
-*  Select
-*  Navigate back
-*  Play pause
-*  Seek forward
-*  Seek rewind
-*  Navigate home
-*  Stop playback
-*  Show menu
-*  Next item
-*  Previous item
-*  Play current item
-*  Show OSD
-*  Show info
+*  Navigate left/down/right/up/home
+*  Play/Pause/Stop playback
+*  Seek forward/rewind
+*  Next/Current/Previous item
+*  Show OSD/info/menu
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
