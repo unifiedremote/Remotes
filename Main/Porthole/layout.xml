@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout onlaunch="launch">
+<layout onlaunch="launch" color="#E6AD5C">
   <grid>
     <row weight="wrap">
       <button icon="vdown" onTap="volume_down" />

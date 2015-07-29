@@ -9,8 +9,8 @@ Porthole is an app for Mac that lets you play all audio from your Mac through mu
 *  Toggle use of the computer's speaker
 *  Change system volume
 
-## Platforms
-* Mac OSX
+## Screenshots
+<img src="screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Porthole**  
