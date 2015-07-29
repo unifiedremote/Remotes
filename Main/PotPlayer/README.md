@@ -6,16 +6,11 @@ Daum PotPlayer remote control.
 *  Jump back 5 seconds
 *  Jump forward 30 seconds
 *  Jump forward 5 seconds
-*  Lower volume
-*  Mute volume
-*  Next track
+*  Raise/Lower/Mute volume
+*  Next/Previous track
 *  Pause or unpause playback
-*  Previous track
-*  Raise volume
-*  Start playback
-*  Stop playback
+*  Start/Stop playback
 *  Toggle fullscreen
-*  Toggle play/pause state
 *  Toggle playlist
 
 ## Screenshots
