@@ -7,5 +7,5 @@ Easily type text in your device and then send it to your computer.
 *  Press ``Backspace``
 
 ## Support
-Developed and maintained by **Unified Remote**
+Developed and maintained by **Unified Remote**  
 https://www.unifiedremote.com/help
