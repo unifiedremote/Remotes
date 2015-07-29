@@ -2,19 +2,13 @@
 MusicBee media player remote.
 
 ## Features
-*  Focus Chrome application
-*  Launch Chrome application
-*  Toggle playback state
-*  Stop playback
-*  Next track
-*  Previous track
-*  Lower volume
-*  Raise volume
-*  Toggle mute volume
+*  Play/Pause/Stop state
+*  Next/Previous track
+*  Lower/Raise/Mute volume
 
-## Platforms
-* Windows
+## Screenshots
+<img src="screen.png" width="200" />
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
