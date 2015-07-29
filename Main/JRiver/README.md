@@ -2,23 +2,19 @@
 J River media center remote.
 
 ## Features
-*  Send raw command to J River
-*  Start playback
-*  Pause playback
-*  Toggle playback state
-*  Previous track
-*  Next track
-*  Seek backward
-*  Seek forward
+*  Start/Pause/Stop playback
+*  Previous/Next track
+*  Seek forward/backward
 *  Navigate home
 *  Toggle fullscreen
-*  Stop playback
-*  Raise volume
-*  Lower volume
+*  Raise/Lower volume
 
 ## Platforms
 * Windows
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
+
+## Screenshots
+<img src="screen.png" width="200" />
