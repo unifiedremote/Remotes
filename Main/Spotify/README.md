@@ -1,20 +1,17 @@
 # Spotify
-Spotify basic media remote control.
+A basic remote control for Spotify. Advanced features such as playlista and search are only available in the Spotify Advanced remote (included in the full version).
 
 ## Features
-*  Update status information
-*  Start playback
-*  Pause playback
-*  Toggle playback state
-*  Lower volume
-*  Raise volume
-*  Mute volume
-*  Next track
-*  Previous track
-*  Stop playback
-*  Launch Spotify application
-*  Send raw command to Spotify
+* Current playing informatiopn
+* Playback control (play, pause, stop)
+* Next and previous track
+* Volume (raise, lower, mute)
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Platforms
+* Windows
+* Linux
+* Mac OS X
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
