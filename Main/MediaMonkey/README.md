@@ -2,24 +2,16 @@
 Media Monkey Remote.
 
 ## Features
-*  Launch iTunes application
-*  Play Pause track
-*  Play track
-*  Pause track
-*  Stop track
-*  Next track
-*  Previous Track
-*  Mute Volume
-*  Set Volume
-*  Volume up
-*  Volume down
-*  Set Position
-*  Rate Up
-*  Rate Down
+*  Play/Pause/Stop track
+*  NextPrevious track
+*  Raise/Lower/Mute volume
+*  Set track position
+*  Rate Up/Down
 
-## Platforms
-* Windows
+## Screenshots
+<img src="screen-tab0.png" width="200" />
+<img src="screen-tab1.png" width="200" />
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
