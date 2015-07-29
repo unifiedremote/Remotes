@@ -6,8 +6,8 @@ A useful utility remote for inspecting the color of the pixel under the mouse cu
 * Shows current color in hex
 * Shows color preview in realtime
 
-## Platforms
-* Windows
+## Screenshots
+<img src="screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

@@ -36,7 +36,7 @@ events.focus = function ()
 		
 		ffi.C.ReleaseDC(ffi.C.GetDesktopWindow(), dc);
 		
-		server.update({id = "info", text = hex .. " " .. x1 .. " " .. y1 });
+		server.update({id = "info", text = "(" .. x1 .. ", " .. y1 .. ") => #" .. hex });
 		server.update({id = "color", color = hex });
 		
 	end, 50);
