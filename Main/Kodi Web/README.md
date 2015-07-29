@@ -2,29 +2,18 @@
 Kodi web interface remote.
 
 ## Features
-*  Launch Kodi application
-*  Toggle play/pause
-*  Stop playback
-*  Play next item
-*  Play previous item
-*  Rewind
-*  Fast forward
-*  Set volume level
-*  Raise volume
-*  Lower volume
-*  Toggle mute volume
-*  Navigate left
-*  Navigate right
-*  Navigate up
-*  Navigate down
-*  Select current item
-*  Navigate back
-*  Toggle context menu
-*  Toggle OSD
-*  Navigate home
-*  Toggle information
-*  Toggle fullscreen
+*  Toggle play/pause/stop
+*  Play nextprevious item
+*  Rewind/Fast forward
+*  Raise/Lower/Mute volume
+*  Navigate up/left/right/down
+*  Toggle Context menu/OSD/Fullscreen
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
+
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />
+<img src="screen-tab3.png" width="200" />
