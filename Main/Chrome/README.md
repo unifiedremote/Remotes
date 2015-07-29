@@ -1,5 +1,5 @@
 # Chrome
-Google Chrome browser remote.
+Easily control your Chrome browser window from a distance. If you're trying to browse the web from your sofa at a distance then this remotes makes it easier to do the right thing (rather than trying to move the mouse).
 
 ## Features
 *  Navigation (back, fowrard, home)
