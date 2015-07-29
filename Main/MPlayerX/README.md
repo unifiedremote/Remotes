@@ -2,31 +2,19 @@
 MPlayerX remote control.
 
 ## Features
-*  Update status information
-*  Launch MPlayerX application
-*  Lower volume
-*  Mute volume
-*  Raise volume
-*  Previous track
-*  Next track
-*  Skip forward 10 secs
-*  Skip backward 10 secs
-*  Stop playback
-*  Start playback
-*  Pause or unpause playback
-*  Toggle play/pause state
+*  Lower/Raise/Mute volume
+*  Next/Previous track
+*  Skip forward/backward 10 secs
+*  Stop/Start/Pause playback
 *  Switch subtitle
 *  Toggle fullscreen
-*  Increase subtitle delay
-*  Decrease subtitle delay
-*  Increase audio delay
-*  Decrease audio delay
-*  Show inspector
-*  Open file manager
+*  Increase/Decrease subtitle delay
+*  Increase/Decrease audio delay
 
-## Platforms
-* Mac OSX
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
