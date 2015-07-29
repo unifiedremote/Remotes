@@ -3,6 +3,7 @@ The remote file manager makes it possible to easily browse and open files on you
 
 ## Features
 * Browse files and folders
+* Go to specific path
 * Open file or folder on computer
 * Open all files in specified path
 * Show file or folder information
