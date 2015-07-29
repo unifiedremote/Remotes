@@ -2,22 +2,19 @@
 Control the Windows magnifier utility.
 
 ## Features
-*  Zoom in
-*  Zoom out
-*  Pan Up
-*  Pan left
-*  Pan right
-*  Pan down
+*  Zoom in/out
+*  Pan Up/Left/Right/Down
 *  Windows key
 *  Exit
 *  Invert
-*  Full screen mode
-*  Lense mode
-*  Docked mode
+*  Full screen/Lense/Docked mode
 
 ## Platforms
 * Windows
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
+
+## Screenshots
+<img src="screen.png" width="200" />
