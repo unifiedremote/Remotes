@@ -28,6 +28,6 @@ EyeTV for Mac OS X
 <img src="screen.png" width="200" />
 
 ## Support
-Developed by **Steve H.**
+Developed by **Steve H.**  
 https://www.unifiedremote.com/help
 
