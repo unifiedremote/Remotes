@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch">
+<layout onLaunch="launch" color="#3A3A3A">
 	<tabs>
 		<tab text="Player">
 			<row weight="wrap">
