@@ -1,9 +1,9 @@
 # Netflix (App)
 Netflix app for Windows 8
 
-## Platforms
-* Windows
+## Screenshots
+<img src="screen.png" width="200" />
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
