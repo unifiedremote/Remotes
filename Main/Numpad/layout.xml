@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout color="#737374">
   <grid>
 	<row>
       <button text="+" onTap="num_add" />
