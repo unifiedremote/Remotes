@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onVolumeUp="previous" onVolumeDown="next" onLaunch="launch">
+<layout onVolumeUp="previous" onVolumeDown="next" onLaunch="launch" color="#2AAEFC">
     <tabs id="tabs" onChange="tab_changed">
       <tab text="Slideshow">
         <row>
