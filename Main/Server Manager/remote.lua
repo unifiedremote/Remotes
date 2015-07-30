@@ -13,14 +13,17 @@ local ur = function (path)
 	return http.get('http://localhost:9510/' .. path);
 end
 
+--@help Restart manager
 actions.restart = function ()
 	ur('system/restart');
 end
 
+--@help Reload remote
 actions.reload = function ()
 	ur('system/reload');
 end
 
+--@help Open server manager
 actions.open = function ()
 	os.open('http://localhost:9510/web');
 end
@@ -117,6 +120,7 @@ actions.edit = function (c)
 	command = c;
 end
 
+--@help Send action
 actions.execute = function ()
 	local c = utf8.trim(command);
 	if c then

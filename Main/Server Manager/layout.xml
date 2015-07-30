@@ -2,19 +2,19 @@
 <layout>
   <tabs index="1">
     <tab text="Control">
-      <row>
+      <row weight="2">
         <button text="Open Manager" onTap="open" color="green" />
       </row>
-      <row>
+      <row weight="2">
         <button text="Restart" onTap="restart" color="green"/>
       </row>
-      <row>
+      <row weight="2">
         <button text="Reload remotes" onTap="reload" color="green"/>
       </row>
-      <row weight="wrap">
-        <label text="Run Action" color="grey" />
+      <row weight="1">
+        <label text="Run Action" color="#3C3C3C" />
       </row>
-      <row weight="wrap">
+      <row weight="3">
         <text id="command" hint="Unified.Spotify/next" onchange="edit"/>
         <button weight="wrap" text="&gt;" color="green" ontap="execute" />
       </row>
@@ -22,20 +22,20 @@
     <tab text="Status">
       <grid>
         <row>
-          <label id="misc" text="...loading..." color="green"/>
+          <label id="misc" text="...loading..." color="#3C3C3C"/>
         </row>
         <row>
-          <label id="intf" text="...loading..." color="green"/>
+          <label id="intf" text="...loading..." color="#3C3C3C"/>
         </row>
         <row>
-          <label id="network" text="...loading..." color="green"/>
+          <label id="network" text="...loading..." color="#3C3C3C"/>
         </row>
       </grid>
     </tab>
     <tab text="Log">
       <grid>
         <row>
-          <label id="log" text="...loading..." color="green" textalign="left" />
+          <label id="log" text="...loading..." color="#3C3C3C" textalign="left" />
         </row>
       </grid>
     </tab>

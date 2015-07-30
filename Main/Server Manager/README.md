@@ -1,6 +1,17 @@
 # Server Manager
 Control the Unified Remote server manager
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Features
+* Restart server
+* Reload remotes
+* Open manager
+* Send server action
+
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />
+<img src="screen-tab3.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
