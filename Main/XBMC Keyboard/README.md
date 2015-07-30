@@ -2,25 +2,16 @@
 XBMC remote using key shortcuts.
 
 ## Features
-*  Launch XBMC application
-*  Start playback
-*  Pause playback
-*  Toggle play/pause
-*  Raise volume
-*  Lower volume
-*  Toggle mute volume
-*  Navigate up
-*  Navigate left
-*  Navigate down
-*  Navigate right
+*  Toggle play/pause/stop
+*  Raise/lower/mute volume
+*  Navigate up/left/right/down
 *  Select current item
-*  Stop playback
-*  Play previous item
-*  Play next item
-*  Rewind
-*  Fast forward
-*  Navigate back
+*  Play next/previous item
+*  Fast forward/rewind
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
