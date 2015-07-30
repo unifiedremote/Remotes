@@ -1,5 +1,5 @@
 # USB-UIRT
-Helper remote for USB-UIRT.
+If you have an USB-UIRT device, then you can create a custom remote for controlling TVs, sound systems, or other devices that can be controlled using IR. Helper remote for USB-UIRT.
 
 ## Features
 *  Learn code
@@ -12,11 +12,16 @@ Helper remote for USB-UIRT.
 *  Transmit UUIRT code
 *  Transmit Pronto code
 
+## Tutorials
+Checkout the [How To Create a Custom Remote for USB-UIRT](https://www.unifiedremote.com/tutorials/how-to-create-a-custom-remote-for-usbuirt) tutorial, on how create a custom IR remote for your TV. 
+
 ## Platforms
 * Windows
 
 ## Screenshots
 <img src="screen.png" width="200" />
+<img src="screen-code.png" width="200" />
+<img src="screen-custom.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

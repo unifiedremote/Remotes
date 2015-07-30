@@ -52,6 +52,7 @@ local lib = ffi.load("uuirtdrv");
 
 -- Normal imports
 local server = require("server");
+local device = require("device");
 local utf8 = require("utf8");
 
 local code = "";
@@ -166,7 +167,9 @@ end
 
 --@help Transmit code to computer clipboard
 actions.helper_clip = function ()
-	os.script("echo \"" .. utf8.trim(code) .. "\" | clip");
+	local c = utf8.trim(code);
+	os.script("echo \"" .. c .. "\" | clip");
+	device.toast("Copied to computer clipboard!");
 end
 
 --@help Transmit UUIRT code
