@@ -141,7 +141,7 @@ actions.play_pause = function ()
     update();
 end
 
---@help Set Suffle
+--@help Set Shuffle
 actions.setshuffle = function()
     os.script("tell application \"Spotify\" to set shuffling to true");
 end

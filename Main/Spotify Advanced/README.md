@@ -2,31 +2,19 @@
 Spotify remote with playlists.
 
 ## Features
-*  Launch Spotify application
-*  Change position
-*  Change volume
-*  Next track
-*  Previous track
-*  Set repeting
-*  Set not repeting
-*  Play track
-*  Pause track
-*  Play Pause track
-*  Set Suffle
-*  Set not Shuffle
-*  Send raw command to Spotify
-*  Start playback
-*  Pause playback
-*  Toggle playback state
-*  Toggle Shuffle 
-*  Toggle Repeat 
-*  Change Volume
 *  Change Position
+*  Change Volume
+*  Next/Previous track
+*  Shuffle/Repeting
+*  Play/Pause track
+*  Show playlists (currently unstable)
+*  Search artist/album/track (currently unstable)
 
 ## Platforms
 * Windows
 * Mac OSX
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />
+<img src="screen-tab3.png" width="200" />
