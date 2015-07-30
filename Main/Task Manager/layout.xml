@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layout>
-	<tabs onchange="update">
+	<tabs onchange="update" color="#797061">
 		<tab text="Main">
 			<list id="ts" ontap="tap" onhold="hold">
 				<item>Loading...</item>

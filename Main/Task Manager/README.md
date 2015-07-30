@@ -1,10 +1,14 @@
 # Task Manager
-Task Manager Remote.
+Control your desktop applications. 
 
 ## Platforms
 * Windows
 * Mac OSX
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
