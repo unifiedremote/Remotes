@@ -2,25 +2,23 @@
 Windows 8 navigation.
 
 ## Features
-*  Navigate left
-*  Navigate right
-*  Navigate up
-*  Navigate down
+*  Navigate right/left/up/down
 *  Select current item
 *  Show start screen
 *  Show apps
 *  Show charms
-*  Snap app to left
-*  Snap app to right
+*  Snap app to left/right
+*  Open run
 *  Open explorer
 *  Navigate back
-*  Open run
-*  Zoom in
-*  Zoom out
+*  Zoom in/out
 
 ## Platforms
 * Windows
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
