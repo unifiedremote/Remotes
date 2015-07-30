@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onVolumeUp="previous" onVolumeDown="next">
+<layout onVolumeUp="previous" onVolumeDown="next" color="#CF9B2A">
   <grid>
     <row>
-      <button text="Go To" onTap="go_to" />
+      <button text="Go To" onTap="open_goto" />
     </row>
     <row>
-      <button text="Start" onTap="show_start" />
+      <button text="↢ Start" onTap="show_start" />
       <button text="Fullscreen" onTap="fullscreen" />
-      <button text="End" onTap="show_end" />
+      <button text="End ↣" onTap="show_end" />
     </row>
     <row>
-      <button text="Prev" onTap="previous" />
+      <button text="← Prev" onTap="previous" />
     </row>
     <row>
-      <button text="Next" onTap="next" />
+      <button text="Next →" onTap="next" />
     </row>
   </grid>
 </layout>

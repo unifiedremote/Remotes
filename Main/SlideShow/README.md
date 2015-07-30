@@ -2,12 +2,14 @@
 A generic Slide Show remote control.
 
 ## Features
-*  Start slide show
+*  Next/previous slide
+*  Start/end slide show
+*  Goto specific slide
 *  Toggle fullscreen
-*  End slide show
-*  Previous slide
-*  Next slide
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
