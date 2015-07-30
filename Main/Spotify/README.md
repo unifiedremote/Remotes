@@ -7,6 +7,9 @@ A basic remote control for Spotify. Advanced features such as playlists and sear
 * Next and previous track
 * Volume (raise, lower, mute)
 
+## Screenshots
+<img src="screen.png" width="200" />
+
 ## Platforms
 * Windows
 * Mac OS X

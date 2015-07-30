@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause" color="green">
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause" color="#1DD761">
   <grid>
     <row>
-      <label id="info" textAlign="center" />
+      <label id="info" textAlign="center" text="Artist - Title"/>
     </row>
     <row>
       <button icon="vdown" onTap="volume_down" />
