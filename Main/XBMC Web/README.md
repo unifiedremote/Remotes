@@ -2,28 +2,20 @@
 XBMC web interface remote.
 
 ## Features
-*  Toggle play/pause
-*  Stop playback
-*  Play next item
-*  Play previous item
-*  Rewind
-*  Fast forward
-*  Set volume level
-*  Raise volume
-*  Lower volume
-*  Toggle mute volume
-*  Navigate left
-*  Navigate right
-*  Navigate up
-*  Navigate down
+*  Toggle play/pause/stop
+*  Raise/lower/mute volume
+*  Navigate up/left/right/down
 *  Select current item
-*  Navigate back
-*  Toggle context menu
-*  Toggle OSD
+*  Play next/previous item
+*  Fast forward/rewind
+*  Toggle context menu/OSD/fullscreen/information
 *  Navigate home
-*  Toggle information
-*  Toggle fullscreen
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen-tab1.png" width="200" />
+<img src="screen-tab2.png" width="200" />
+<img src="screen-tab3.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help

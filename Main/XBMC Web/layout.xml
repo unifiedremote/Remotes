@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onlaunch="launch">
+<layout onlaunch="launch" color="#3A4B71">
 	<tabs>
 		<tab text="Main">
 			<row weight="wrap">
