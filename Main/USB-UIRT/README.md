@@ -13,6 +13,7 @@ If you have an USB-UIRT device, then you can create a custom remote for controll
 *  Transmit Pronto code
 
 ## Tutorials
+Setup your USB-UIRT device using [How To Install USB-UIRT](https://www.unifiedremote.com/tutorials/how-to-install-usbuirt).
 Checkout the [How To Create a Custom Remote for USB-UIRT](https://www.unifiedremote.com/tutorials/how-to-create-a-custom-remote-for-usbuirt) tutorial, on how create a custom IR remote for your TV. 
 
 ## Platforms
