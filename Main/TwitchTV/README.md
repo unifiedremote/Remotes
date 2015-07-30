@@ -3,13 +3,15 @@ Twitch TV remote control.
 
 ## Features
 *  Launch Netflix site
-*  Lower volume
-*  Raise volume
+*  Lower/Raise volume
 *  Toggle playback state
 *  Fullscreen view
 *  Windowed view
 *  Launch Twitch site
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
