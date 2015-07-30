@@ -3,16 +3,15 @@ YouTube remote control.
 
 ## Features
 *  Launch YouTube
-*  Lower volume
-*  Raise volume
-*  Rewind
-*  Fast forward
-*  Play previous item
-*  Play next item
-*  Enter fullscreen
-*  Exit fullscreen
+*  Toggle fullscreen
 *  Toggle play/pause
+*  Lower/raise volume
+*  Fast forward/rewind
+*  Play next/previous item
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help

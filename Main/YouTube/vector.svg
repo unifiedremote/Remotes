@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" inkscape:version="0.47 r22583" sodipodi:version="0.32" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:docname="youtube.svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://creativecommons.org/ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px"
+	 viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
+<sodipodi:namedview  pagecolor="#ffffff" inkscape:current-layer="layer1" inkscape:window-height="682" inkscape:document-units="px" showgrid="false" inkscape:zoom="0.12374369" inkscape:pageshadow="2" inkscape:pageopacity="0.0" bordercolor="#666666" inkscape:window-width="685" inkscape:window-y="298" id="base" inkscape:cx="112.30587" inkscape:cy="64.459739" inkscape:window-maximized="0" inkscape:window-x="1" borderopacity="1.0">
+	</sodipodi:namedview>
+<g id="layer1" transform="translate(-373.642,-318.344)" inkscape:groupmode="layer" inkscape:label="Layer 1">
+	
+		<path id="rect1942" inkscape:export-filename="C:\Documents and Settings\Molumen\Desktop\path3511111.png" inkscape:export-xdpi="7.7063322" inkscape:export-ydpi="7.7063322" fill="#E5E5E5" d="
+		M583.66,328.849H419.625c-19.599,0-35.487,15.888-35.487,35.487v164.015c0,19.599,15.888,35.486,35.487,35.486h164.033
+		c19.6,0,35.487-15.888,37.487-34.819V365.004C619.146,344.738,603.257,328.849,583.66,328.849z"/>
+	
+		<linearGradient id="path1950_1_" gradientUnits="userSpaceOnUse" x1="-1313.1793" y1="916.6858" x2="-1364.8761" y2="1067.3752" gradientTransform="matrix(-0.5915 0 0 0.5915 -332.8726 -247.899)">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	</linearGradient>
+	
+		<path id="path1950" inkscape:export-filename="C:\Documents and Settings\Molumen\Desktop\path3511111.png" inkscape:export-xdpi="7.7063322" inkscape:export-ydpi="7.7063322" sodipodi:nodetypes="ccccsssc" opacity="0.8326" fill="url(#path1950_1_)" enable-background="new    " d="
+		M557.056,338.895H446.227c-29.337,0-52.955,23.81-52.955,53.385v108.126c0.95,23.088,4.603,8.492,11.555-17.074
+		c8.081-29.713,34.396-55.682,66.445-75.146c24.461-14.855,51.841-24.341,101.679-25.244
+		C601.216,382.432,598.721,346.26,557.056,338.895z"/>
+	<g enable-background="new    ">
+		<path d="M433.279,353.763h15.304l1.97,7.879l1.667,5.818l1.364,5.697l1.364,5.939l1.061,4.97h0.606l1.061-4.97l1.212-5.939
+			l1.515-5.697l1.515-5.818l2.121-7.879h14.849l-15.758,47.274v33.577h-14.091v-33.577L433.279,353.763z"/>
+		<path d="M497.826,373.642c11.97,0,18.031,5.697,18.031,16.97v27.88c0,11.273-6.061,16.97-18.031,16.97s-18.031-5.697-18.031-16.97
+			v-27.88C479.795,379.34,485.855,373.642,497.826,373.642z M497.826,383.34c-3.182,0-4.849,1.939-4.849,5.576v31.272
+			c0,3.515,1.818,5.576,4.849,5.576c3.031,0,4.849-2.061,4.849-5.576v-31.272C502.674,385.279,500.856,383.34,497.826,383.34z"/>
+		<path d="M553.433,434.614l-1.061-5.212c-5.455,4.485-8.638,6.061-12.426,6.061c-3.182,0-6.515-1.455-8.029-3.394
+			c-1.668-2.061-2.121-4.243-2.121-10.425V374.37h13.182v46.911c0,3.03,1.061,4.485,3.484,4.485c1.668,0,3.183-0.606,5.91-2.424
+			V374.37h13.183v60.244H553.433z"/>
+	</g>
+	<linearGradient id="rect3708_1_" gradientUnits="userSpaceOnUse" x1="500.9218" y1="547.509" x2="500.9218" y2="445.5847">
+		<stop  offset="0" style="stop-color:#932420"/>
+		<stop  offset="1" style="stop-color:#CB322C"/>
+	</linearGradient>
+	<path id="rect3708" fill="url(#rect3708_1_)" d="M434.383,445.584h133.075c19.6,0,35.488,15.896,35.488,35.496v30.941
+		c0,19.6-15.89,35.487-35.488,35.487H434.383c-19.599,0-35.487-15.89-35.487-35.487V481.08
+		C398.896,461.48,414.784,445.584,434.383,445.584z"/>
+</g>
+<g enable-background="new    ">
+	<path fill="#FFFFFF" d="M56.337,150.482H44.354v-9.588h37.328v9.588H69.147v63.914h-12.81V150.482z"/>
+	<path fill="#FFFFFF" d="M105.372,214.396l-0.964-4.737c-4.958,4.077-7.851,5.51-11.294,5.51c-2.893,0-5.923-1.321-7.3-3.086
+		c-1.515-1.873-1.929-3.856-1.929-9.478v-42.978h11.984v42.646c0,2.756,0.964,4.078,3.168,4.078c1.515,0,2.893-0.552,5.372-2.203
+		v-44.521h11.984v54.77H105.372L105.372,214.396z"/>
+	<path fill="#FFFFFF" d="M129.34,140.895h11.983v23.914c4.683-4.188,7.851-5.841,11.433-5.841c2.756,0,5.785,1.322,7.162,3.085
+		c1.516,1.983,1.93,3.969,1.93,9.809v30.414c0,5.73-0.414,7.715-1.93,9.697c-1.377,1.875-4.406,3.196-7.3,3.196
+		c-3.582,0-6.612-1.653-11.295-5.951v5.181H129.34V140.895z M146.695,206.354c2.203,0,3.168-1.322,3.168-4.078v-30.416
+		c0-2.864-0.965-4.076-3.168-4.076c-1.516,0-2.894,0.551-5.372,2.203v34.162C143.803,205.802,145.18,206.354,146.695,206.354z"/>
+	<path fill="#FFFFFF" d="M207.163,195.223v1.983c0.138,1.433,0.138,2.425,0.138,2.976c0,9.697-5.923,14.987-16.805,14.987
+		c-10.33,0-16.115-5.51-16.115-15.428v-25.456c0-10.358,5.51-15.317,16.666-15.317c9.918,0,16.116,5.179,16.116,13.664v16.089
+		h-20.799v12.012c0,3.969,1.239,5.621,4.407,5.621c1.516,0,2.893-0.662,3.58-1.652c0.689-0.992,0.828-2.204,0.828-6.171
+		c0-0.992,0-1.765,0-3.308H207.163z M195.18,181.007v-9.257c0-2.534-1.652-3.967-4.408-3.967c-2.754,0-4.406,1.433-4.406,3.967
+		v9.257H195.18z"/>
+</g>
+</svg>
