@@ -1,7 +1,6 @@
-
-local mouse = libs.mouse;
-local server = libs.server;
-local timer = libs.timer;
+local mouse = require("mouse");
+local server = require("server");
+local timer = require("timer");
 
 -- Native Windows Stuff
 local ffi = require("ffi");
