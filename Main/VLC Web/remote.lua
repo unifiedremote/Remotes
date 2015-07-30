@@ -130,7 +130,6 @@ function update_status()
 	
 	local image;
 	if (last_title ~= title) then
-		print("art!");
 		resp = art();
 		if (resp ~= nil) then
 			image = resp.content;
