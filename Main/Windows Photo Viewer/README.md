@@ -2,18 +2,17 @@
 Windows Photo Viewer remote.
 
 ## Features
-*  Start slide show
-*  Rotate photo counter-clockwise
-*  Rotate photo clockwise
-*  Zoom out
-*  Zoom in
-*  End slide show
-*  Previous photo
-*  Next photo
+*  Start/End slide show
+*  Rotate clockwise/counter-clockwise
+*  Zoom in/out
+*  Next/Previous photo
 
 ## Platforms
 * Windows
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help

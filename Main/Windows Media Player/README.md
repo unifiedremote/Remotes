@@ -2,20 +2,17 @@
 Windows Media Player remote control.
 
 ## Features
-*  Launch Windows Media Player
-*  Send command to program
 *  Toggle fullscreen
-*  Mute volume
-*  Lower volume
-*  Raise volume
-*  Previous track
-*  Next track
-*  Stop playback
-*  Toggle play/pause
+*  Raise/lower/mute volume
+*  Next/previous track
+*  Toggle play/pause/stop
 
 ## Platforms
 * Windows
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
