@@ -2,18 +2,16 @@
 Remote for SoundCloud.com
 
 ## Features
-*  Launch SoundCloud
-*  Lower system volume
-*  Mute system volume
-*  Raise system volume
-*  Previous track
-*  Next track
+*  Raise/Lower/system volume
+*  Next/Previous track
 *  Toggle play & pause
 *  Repeat playing song
-*  Seek Forward
-*  Seek Backward
+*  Seek Forward/Backward
 *  Like playing song
 
-## Getting help
-Check out our tutorials: <br>
-[https://www.unifiedremote.com/help](https://www.unifiedremote.com/help)
+## Screenshots
+<img src="screen.png" width="200" />
+
+## Support
+Developed and maintained by **Unified Remote**  
+https://www.unifiedremote.com/help
