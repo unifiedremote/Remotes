@@ -1,5 +1,5 @@
 meta.name: GOM Player
 meta.author: Unified
 meta.description: GOM Player remote control.
-meta.platform: windows
+meta.platform: osx
 meta.tags: audio/video
