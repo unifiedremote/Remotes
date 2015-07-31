@@ -2,24 +2,14 @@
 Google Music remote.
 
 ## Features
-*  Close
-*  Decrease rating
-*  Increase rating
-*  Instant
-*  Lower volume
-*  Navigate down
-*  Navigate home
-*  Navigate up
-*  Next track
-*  Previous track
-*  Raise volume
-*  Search
-*  Seek backward
-*  Seek forward
+*  Change track (next, previous)
+*  Navigate (up, down, left, right)
+*  Open Search
+*  Rating (decrease, increase)
+*  Seek (forward, backward)
 *  Select current item
-*  Toggle playback state
-*  Toggle repeat
-*  Toggle shuffle
+*  Toggle (play, repeat, shuffle)
+*  Volume (raise, lower)
 
 ## Screenshots
 <img src="screen.png" width="200" />
