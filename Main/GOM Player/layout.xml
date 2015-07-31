@@ -2,7 +2,7 @@
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="play" onPause="pause" color="orange">
   <grid>
     <row>
-      <label id="info" text="Awesome Movie" textAlign="center" />
+      <label id="info" text="[Not Playing]" textAlign="center" />
     </row>
     <row>
       <button icon="vdown" onTap="volume_down" />
