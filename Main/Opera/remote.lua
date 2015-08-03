@@ -20,7 +20,11 @@ end
 --@help Launch Opera application
 actions.launch = function()
 	if OS_WINDOWS then
-		os.start("%programfiles(x86)%/Opera/opera.exe");
+		if libs.fs.exists("C:\\Program Files (x86)\\Opera\\launcher.exe") then
+			os.start("%programfiles(x86)%/Opera/launcher.exe");
+		else
+			os.start("%programfiles(x86)%/Opera/opera.exe");	
+		end
 	end
 end
 
