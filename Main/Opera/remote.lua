@@ -45,13 +45,13 @@ end
 --@help Go to next tab
 actions.next_tab = function()
 	actions.switch();
-	keyboard.stroke("control", "shift", "F6");
+	keyboard.stroke("control", "tab");
 end
 
 --@help Go to previous tab
 actions.previous_tab = function()
 	actions.switch();
-	keyboard.stroke("control", "F6");
+	keyboard.stroke("control", "shift", "tab");
 end
 
 --@help Open new tab
