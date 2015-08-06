@@ -1,7 +1,0 @@
-meta.name: Beamer File Picker
-meta.author: Beamer
-meta.description: File picker to open files with Beamer.
-meta.platform: osx
-meta.url: http://beamer-app.com/
-meta.hidden: true
-meta.tags: audio/video

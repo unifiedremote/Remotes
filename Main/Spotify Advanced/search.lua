@@ -1,98 +1,255 @@
-local d = libs.data;
-local http = libs.http;
-local utf8 = libs.utf8;
-local server = libs.server;
-search = {};
-search.search = function ( searchType, q )
-    local res = http.get("http://ws.spotify.com/search/1/" .. searchType .. "?q=" .. q);
-    local xml = d.fromxml(res);
-	local items = {};
-	local links = {};
-	for i = 1, #xml.children do
-		local c = xml.children[i];
-		if(utf8.iequals(c.name,searchType)) then
-			for j = 1, #c.children do
-				if utf8.iequals(c.children[j].name,"name") then
-					table.insert(items, { type = "item", text = c.children[j].text});
-				end
-			end
-			table.insert(links, c.attributes["href"]);
-		end
-	end
-	return {items = items, links = links};
+local d = require("data");
+local http = require("http");
+local utf8 = require("utf8");
+local server = require("server");
+local timer = require("timer");
+
+local query = "";
+local mainitems = {};
+local trackitems = {};
+
+actions.changed_search = function (text)
+   	query = http.urlencode(utf8.trim(text));
 end
 
-
-search.lookup = function ( t, uri )
-	local res =  http.get("http://ws.spotify.com/lookup/1/?uri=" .. uri .. "&extras=" .. t);
-	print("http://ws.spotify.com/lookup/1/?uri=" .. uri .. "&extras=" .. t);
-	local xml = d.fromxml(res);
-	local items = {};
-	local links = {};
-	for i = 1, #xml.children do
-		local c = xml.children[i];
-		if(utf8.iequals(c.name, t .. "s")) then
-			for j = 1, #c.children do
-				local a = c.children[j];
-				table.insert(links, a.attributes["href"]);
-				if(utf8.iequals(a.name,t)) then
-					for j = 1, #a.children do
-						if utf8.iequals(a.children[j].name,"name") then
-							table.insert(items, { type = "item", text = a.children[j].text});
-						end
-					end
-					
-				end
-				
-			end
-		end
-	end
-	return {items = items, links = links};
-end
-
-local query = nil;
-local tabnumber = 0;
-local tracks = {};
-local albums = {};
-local artists = {};
-actions.changeq = function (text)
-   	query = text;
-end
 actions.go = function ( )
-	if(query ~= nil) then
-		if(tabnumber == 0) then
-			artists = search.search("artist", query);
-			server.update({ id = "lart", children = artists.items });
-		elseif(tabnumber == 1) then
-			albums = search.search("album", query);
-			server.update({ id = "lalb", children = albums.items });
-		elseif(tabnumber == 2) then
-			tracks = search.search("track", query);
-			server.update({ id = "ltrc", children = tracks.items });
+	local types = { "track", "album", "artist", "playlist" };
+
+	local limit = 5;
+	local url = spotify_api_v1_url("/search?q=" .. query .. "&type=" .. utf8.join(",", types) .. "&limit=" .. limit );
+	print(url);
+	
+	layout.mainlist.visibility="visible";
+	layout.playlistlist.visibility="gone";
+	layout.tracklist.visibility="gone";
+	layout.artistinfolist.visibility="gone";
+	
+	mainitems = {};
+	server.update({
+		id = "mainlist",
+		children = {{ type = "item", text = "Searching..."}}
+	});
+
+	http.request({ method = "get", url = url, connect = "spotify" }, function (err, resp)
+		if (err) then
+			print(err);
+			server.update({
+				id = "mainlist",
+				children = {{ type = "item", text = "Not logged in..."}}
+			});
+		else
+			local res = libs.data.fromjson(resp.content);
+
+			if(res.tracks ~= nil) then
+				table.insert(mainitems, {type = "item", text = "Tracks\nTop " .. limit .. " tracks",  checked = true, stype = 5});
+				local titems = res.tracks.items;
+				for i = 1, #titems do
+					local fmt = format_track_2line(titems[i]);
+					local checked = titems[i].uri == playing_uri;
+					table.insert(mainitems, {type = "item", text = fmt, stype = 1, track = titems[i], checked = checked});
+				end
+			end
+			if(res.artists ~= nil) then
+				table.insert(mainitems, {type = "item", text = "Artists\nTop " .. limit .. " artists",  checked = true, stype = 6});
+				local titems = res.artists.items;
+				for i = 1, #titems do
+					local artist = titems[i];
+					local fmt = format_artist(artist);
+					table.insert(mainitems, {type = "item", text = fmt, stype = 2, artist = artist});
+				end
+			end
+			if(res.albums ~= nil) then
+				table.insert(mainitems, {type = "item", text = "Albums\nTop " .. limit .. " albums",  checked = true, stype = 4});
+				local aitems = res.albums.items;
+				for i = 1, #aitems do
+					local album = aitems[i];
+					local fmt = format_album(album);
+					table.insert(mainitems, {type = "item", text = fmt, stype = 0, album = album});
+				end
+			end
+			if(res.playlists ~= nil) then
+				table.insert(mainitems, {type = "item", text = "Playlists\nTop " .. limit .. " playlists",  checked = true, stype = 7});
+				local titems = res.playlists.items;
+				for i = 1, #titems do
+					local playlist = titems[i];
+					local fmt = format_playlist(playlist);
+					table.insert(mainitems, {type = "item", text = fmt, stype = 3, playlist = playlist});
+				end
+			end
+			server.update({id = "mainlist", children = mainitems});
 		end
+	end);
+end
+
+local mainlist_selected = 0;
+actions.mainlist = function ( id )
+	if (not is_connected()) then
+		open_connect_dialog();
+		return;
 	end
+
+	mainlist_selected = id;
+	id = id + 1;
+	local it = mainitems[id];
+	
+	if (it == nil) then
+		print("Mainlist was reset...");
+		return;
+	end
+
+	-- If press on track in search
+	if(it.stype == 1) then
+		webhelper_play(it.track.uri, "");
+		playing_uri = it.track.uri;
+		actions.go();
+		timer.timeout(function()
+			playing_uri = it.track.uri;
+			actions.go();
+		end, 1000);
+	end
+
+	-- If press on artist, show popular tracks
+	if (it.stype == 2) then
+		layout.mainlist.visibility = "gone";
+		layout.artistinfolist.visibility = "visible";
+		layout.artistinfolist.children = {
+			type = "item", text = "Loading..."
+		};
+
+		show_artist(it);
+	end 
+
+	-- If press on album, show all tracks
+	if (it.stype == 0) then
+		layout.mainlist.visibility = "gone";
+		layout.tracklist.visibility = "visible";
+		layout.tracklist.children = {
+			type = "item", text = "Loading..."
+		};
+
+		show_album(it);
+	end 
+
+	-- If press on playlist, show all tracks
+	if (it.stype == 3) then
+		layout.mainlist.visibility = "gone";
+		layout.playlistlist.visibility = "visible";
+		layout.playlistlist.children = {
+			type = "item", text = "Loading..."
+		};
+
+		show_playlist(it);
+	end
+
+end
+
+actions.artistinfolist_tap = function ( id )
+	id = id + 1;
+	local it = trackitems[id];
+	local uri = it.track.uri;
+	print("artistinfolist_tap: " .. it.track.uri);
+	webhelper_play(uri, "");
+	
+	playing_uri = uri;
+	actions.mainlist(mainlist_selected);
 end
 
 
-actions.trcselect = function ( id )
-	id = id+1;
-	play(tracks.links[id], "");
+actions.playlistlist_tap = function ( id )
+	id = id + 1;
+	local it = trackitems[id];
+	local uri = it.track.uri;
+	print("playlistlist_tap: " .. uri .. ", " .. it.playlist);
+	
+	webhelper_play(uri, it.playlist);
+	playing_uri = uri;
+	actions.mainlist(mainlist_selected);
 end
 
-actions.artselect = function ( id )
-	server.update({id="lists", index = 1});
-	local res = search.lookup("album", artists.links[id+1]);
-	albums = res;
-	server.update({id = "lalb", children = res.items });
+actions.tracklist_tap = function ( id )
+	id = id + 1;
+	local it = trackitems[id];
+	local uri = it.track.uri;
+	print("tracklist_tap: " .. uri);
+	
+	webhelper_play(uri, "");
+	playing_uri = uri;
+	actions.mainlist(mainlist_selected);
 end
 
-actions.albselect = function ( id )
-	server.update({id="lists", index = 2});
-	local res = search.lookup("track", albums.links[id+1]);
-	tracks = res;
-	server.update({id = "ltrc", children = res.items });
+function show_artist(it)
+	local url = spotify_api_v1_url("/artists/" .. it.artist.id .. "/top-tracks?country=" .. meinfo.country);
+	http.request({ method = "get", url = url, connect = "spotify" }, 
+		function (err, resp)
+			if (err) then
+				print("Error artist: " .. it.artist.id);
+			else 
+				print("Success artist: " .. it.artist.id);
+				local res = libs.data.fromjson(resp.content);
+				if(res.tracks ~= nil) then
+					local titems = res.tracks;
+					trackitems = {};
+					for i = 1, #titems do
+						local toptrack = titems[i];
+						local fmt = toptrack.name .. "\n" .. "Popularity: " .. toptrack.popularity .. " /  100";
+						local checked = (toptrack.uri == playing_uri);
+						table.insert(trackitems, {type = "item", text = fmt, track = toptrack, checked = checked});
+					end
+					server.update({id = "artistinfolist", children = trackitems});
+				end
+			end
+		end
+	);
 end
 
-actions.changetab = function ( id )
-	tabnumber = id;
-end
+function show_album(it)
+	local url = spotify_api_v1_url("/albums/" .. it.album.id .. "/tracks?market=" .. meinfo.country);
+	http.request({ method = "get", url = url, connect = "spotify" }, 
+		function (err, resp)
+			if (err) then
+				print("Error album: " .. it.album.id);
+			else 
+				print("Success album: " .. it.album.id);
+				local res = libs.data.fromjson(resp.content);
+				if(res.items ~= nil) then
+					local titems = res.items;
+					trackitems = {};
+					for i = 1, #titems do
+						local track = titems[i];
+						local fmt = format_track(track);
+						local checked = (track.uri == playing_uri);
+						table.insert(trackitems, {type = "item", text = fmt, track = track, checked = checked});
+					end
+					server.update({id = "tracklist", children = trackitems});
+				end
+			end
+		end
+	);
+end 
+-- spotify:album:02h9kO2oLKnLtycgbElKsw
+
+function show_playlist(it)
+	local pid = it.playlist.id;
+	local url = spotify_api_v1_url("/users/" .. it.playlist.owner.id .. "/playlists/" .. pid .. "/tracks?market=" .. meinfo.country);
+	http.request({ method = "get", url = url, connect = "spotify" }, 
+		function (err, resp)
+			if (err) then
+				print("Error playlist: " .. pid);
+			else 
+				print("Success playlist: " .. pid);
+				local res = libs.data.fromjson(resp.content);
+				if(res.items ~= nil) then
+					local titems = res.items;
+					trackitems = {};
+					for i = 1, #titems do
+						local trackitem = titems[i];
+						local fmt = format_track(trackitem.track);
+						local checked = (trackitem.track.uri == playing_uri);
+						table.insert(trackitems, {type = "item", text = fmt, track = trackitem.track, playlist = pid, checked = checked});
+					end
+					server.update({id = "playlistlist", children = trackitems});
+				end
+			end
+		end
+	);
+end 

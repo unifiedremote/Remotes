@@ -1,61 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout color="#1DD761" onLaunch="launch">
+<layout color="#1ED760" onLaunch="launch">
 	<tabs>
 		<tab text="Player"> 
 			<row weight="wrap">
-				<label id="currtitle" text="[Not Playing]" />
+				<label id="currtitle" text="[Loading]" />
 			</row>
 			<row>
-				<image id="currimg" />
+				<image color="#222326" id="currimg" image="icon_hires.png" />
 			</row>
 			<row weight="wrap">
-				<slider id="currvol" text="Volume" progressmax="100" onup="volchange" />
+				<button icon="previous" ontap="previous" />
+				<button id="play" icon="play" ontap="play_pause" />
+				<button icon="next" ontap="next" />
 			</row>
 			<row weight="wrap">
 				<slider id="currpos" text="Position" onup="poschange" />
 			</row>
 			<row weight="wrap">
-				<button id="suffle" icon="shuffle" ontap="shuffle" />
-				<button id="play" icon="play" ontap="play_pause" />
-				<button id="repeat" icon="repeat" ontap="repeating" />
+				<slider id="currvol" text="Volume" progressmax="100" progress="100" onup="volchange" />
 			</row>
 		</tab>
 		<tab text="Playlists">
 			<row>
-				<list id="playlists" ontap="playlists">
+				<list id="playlists" ontap="selected">
 					<item>Loading...</item>
 				</list>
 			</row>
 			<row weight="wrap">
-				<button icon="previous" ontap="previous" />
-				<button icon="back" ontap="back" />
-				<button icon="next" ontap="next" />
+				<toggle weight="1" id="shuffle" icon="shuffle" onchange="shuffle" />
+				<button weight="2" id="back" icon="back" ontap="back" />
+				<button weight="1" id="repeat" icon="repeat" ontap="repeating" />
 			</row>
 		</tab>
 		<tab text="Search">
 			<row weight="wrap">
-				<text hint="Search..." onChange="changeq" weight="6"/>
-				<button text="Go" weight="1" onTap="go"/>
+				<text hint="Search..." onchange="changed_search" weight="6" />
+				<button text="Go" weight="1" ontap="go" />
 			</row>
 			<row>
-				<tabs id="lists" onchange="changetab">
-					<tab text="Artist">
-						<list id="lart" ontap="artselect">
-							<item>Loading...</item>
-						</list>
-					</tab>
-					<tab text="Album">
-						<list id="lalb" ontap="albselect">
-							<item>Loading...</item>
-						</list>
-					</tab>
-					<tab text="Track">
-						<list id="ltrc" ontap="trcselect">
-							<item>Loading...</item>
-						</list>
-					</tab>
-				</tabs>
-
+				<list id="mainlist" ontap="mainlist"/>
+				<list id="artistinfolist" ontap="artistinfolist_tap" visibility="gone">
+					<item>Searching...</item>
+				</list>
+				<list id="tracklist" ontap="tracklist_tap" visibility="gone">
+					<item>Searching...</item>
+				</list>
+				<list id="playlistlist" ontap="playlistlist_tap" visibility="gone">
+					<item>Searching...</item>
+				</list>
 			</row>
 		</tab>
 	</tabs>	

@@ -1,6 +1,5 @@
 # Required for free version
-meta.id: Unified.Start
-
+meta.id: Unified.LauncherLinux
 meta.name: Launcher
 meta.author: Unified
 meta.description: Launch applications

@@ -1,24 +1,20 @@
-# Spotify Advanced
-Spotify remote with playlists.
+# Spotify Advanced 2
+Updated version of the Spotify Advanced remote.
 
 ## Features
-*  Change Position
-*  Change Volume
-*  Next/Previous track
-*  Shuffle/Repeting
-*  Play/Pause track
-*  Show playlists (currently unstable)
-*  Search artist/album/track (currently unstable)
+ * Better search
+ * Playlists working again
+ * Improved responsiveness
 
-## Platforms
-* Windows
-* Mac OSX
+## Requirements
+ * A Spotify account
+ * Latest Server 3.2.8 (627)
 
-## Screenshots
-<img src="screen-tab1.png" width="200" />
-<img src="screen-tab2.png" width="200" />
-<img src="screen-tab3.png" width="200" />
+## Setup
+ * Install the remote with drag 'n' drop to the server manager.
+ * Go to Status > Accounts > Connect Spotify
 
-## Support
-Developed and maintained by **Unified Remote**  
-https://www.unifiedremote.com/help
+<img src="screen1.png" alt="Screenshot 1" width="200">
+<img src="screen2.png" alt="Screenshot 2" width="200">
+<img src="screen3.png" alt="Screenshot 3" width="200">
+<img src="screen4.png" alt="Screenshot 4" width="200">
