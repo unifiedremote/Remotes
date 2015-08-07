@@ -2,4 +2,4 @@ meta.name: Custom USB-UIRT
 meta.author: Examples
 meta.description: Custom USB-UIRT IR remote.
 meta.platform: windows
-meta.tags: IR
+meta.tags: IR, example
