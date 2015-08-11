@@ -16,18 +16,18 @@
 		<line class="st1" x1="113.8" y1="42.5" x2="113.8" y2="71.3"/>
 		<polyline class="st1" points="113.8,71.3 179.1,71.3 179.1,148.5 48.5,148.5 48.5,71.3 92.1,71.3 		"/>
 		<line class="st1" x1="92.1" y1="129" x2="135.4" y2="129"/>
-		<rect x="155.5" y="129" class="st1" width="0" height="0"/>
-		<rect x="155.5" y="109.9" class="st1" width="0" height="0"/>
-		<rect x="155.5" y="90.8" class="st1" width="0" height="0"/>
-		<rect x="134.7" y="109.9" class="st1" width="0" height="0"/>
-		<rect x="113.8" y="109.9" class="st1" width="0" height="0"/>
-		<rect x="92.9" y="109.9" class="st1" width="0" height="0"/>
-		<rect x="72" y="109.9" class="st1" width="0" height="0"/>
-		<rect x="134.7" y="90.8" class="st1" width="0" height="0"/>
-		<rect x="113.8" y="90.8" class="st1" width="0" height="0"/>
-		<rect x="92.9" y="90.8" class="st1" width="0" height="0"/>
-		<rect x="72" y="90.8" class="st1" width="0" height="0"/>
-		<rect x="72" y="129" class="st1" width="0" height="0"/>
+		<rect x="155.5" y="129" class="st1" width="1" height="1"/>
+		<rect x="155.5" y="109.9" class="st1" width="1" height="1"/>
+		<rect x="155.5" y="90.8" class="st1" width="1" height="1"/>
+		<rect x="134.7" y="109.9" class="st1" width="1" height="1"/>
+		<rect x="113.8" y="109.9" class="st1" width="1" height="1"/>
+		<rect x="92.9" y="109.9" class="st1" width="1" height="1"/>
+		<rect x="72" y="109.9" class="st1" width="1" height="1"/>
+		<rect x="134.7" y="90.8" class="st1" width="1" height="1"/>
+		<rect x="113.8" y="90.8" class="st1" width="1" height="1"/>
+		<rect x="92.9" y="90.8" class="st1" width="1" height="1"/>
+		<rect x="72" y="90.8" class="st1" width="1" height="1"/>
+		<rect x="72" y="129" class="st1" width="1" height="1"/>
 	</g>
 </g>
 <path class="st2" d="M35.8,192c19.5,17.6,45.3,28.2,73.5,28.2c32.5,0,61.7-14.1,81.8-36.5H27.6C30.2,186.6,32.9,189.4,35.8,192z"/>
