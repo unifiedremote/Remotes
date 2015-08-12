@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout color="#1ED760" onLaunch="launch">
+	<tabs>
+		<tab text="Player"> 
+			<row weight="wrap">
+				<label id="currtitle" text="[Loading]" />
+			</row>
+			<row>
+				<image color="#222326" id="currimg" image="icon_hires.png" />
+			</row>
+			<row weight="wrap">
+				<label text="00:00" id="currpos" />
+			</row>
+			<row weight="wrap">
+				<button icon="previous" ontap="previous" />
+				<button id="play" icon="play" ontap="play_pause" />
+				<button icon="next" ontap="next" />
+			</row>
+			<row weight="wrap">
+				<button icon="vdown" ontap="volume_down" />
+				<button icon="vmute" ontap="volume_mute" />
+				<button icon="vup" ontap="volume_up" />
+			</row>
+		</tab>
+		<tab text="Playlists">
+			<row>
+				<list id="playlists" ontap="selected">
+					<item>Loading...</item>
+				</list>
+			</row>
+			<row weight="wrap">
+				<button id="back" icon="back" ontap="back" />
+			</row>
+		</tab>
+		<tab text="Search">
+			<row weight="wrap">
+				<text hint="Search..." onchange="changed_search" weight="6" />
+				<button text="Go" weight="1" ontap="go" />
+			</row>
+			<row>
+				<list id="mainlist" ontap="mainlist"/>
+				<list id="artistinfolist" ontap="artistinfolist_tap" visibility="gone">
+					<item>Searching...</item>
+				</list>
+				<list id="tracklist" ontap="tracklist_tap" visibility="gone">
+					<item>Searching...</item>
+				</list>
+				<list id="playlistlist" ontap="playlistlist_tap" visibility="gone">
+					<item>Searching...</item>
+				</list>
+			</row>
+		</tab>
+	</tabs>	
+</layout>

@@ -8,6 +8,7 @@ local fs  = require("fs");
 playing = false;
 playing_uri = "";
 playing_duration = 0;
+playing_volume = 0;
 playing_shuffle = false;
 playing_repeat = false;
 
@@ -126,10 +127,16 @@ function update ()
 		end
 		
 		Playing = playing;
-		
-		playing_shuffle = status["shuffle"] > 0;
-		playing_repeat = status["repeat"] > 0;
 		playing_duration = duration;
+		playing_volume = volume;
+
+		if (status["shuffle"] ~= nil) then
+			playing_shuffle = status["shuffle"] > 0;
+		end
+		if (status["repeat"] ~= nil) then
+			playing_repeat = status["repeat"] > 0;
+		end
+
 		local duraction_text = data.sec2span(pos) .. " / " .. data.sec2span(duration);
 		server.update(
 			{ id = "currtitle", text = name },
@@ -140,6 +147,11 @@ function update ()
 		server_update_play_state();
 
 		timer.timeout(update, 1000);
+
+		-- Call any platform specific update functions 
+		if(actions.after_update ~= nil) then
+			actions.after_update();
+		end
 	end);
 end
 
@@ -205,9 +217,15 @@ events.focus = function()
 			layout.currtitle.text = "[Not Running]";
 			return;
 		end
+
 		stop = false;
 		playing_uri = "";
 		playlist_init();
+
+		if (actions.after_focus ~= nil) then
+			actions.after_focus();
+		end
+
 		update();
 	end)
 end
