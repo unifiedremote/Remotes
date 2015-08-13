@@ -8,7 +8,7 @@ Easily type text in your device and then send it to your computer.
 *  Press ``Backspace``
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

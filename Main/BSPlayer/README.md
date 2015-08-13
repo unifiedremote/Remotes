@@ -17,8 +17,8 @@ BSPlayer is a popular media player for Windows. The remote supports the essentia
 *  Previous, next DVD chapter
 
 ## Screenshots
-<img src="screen-tab0.png" width="200" />
-<img src="screen-tab1.png" width="200" />
+<img src="ignore/screen-tab0.png" width="200" />
+<img src="ignore/screen-tab1.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

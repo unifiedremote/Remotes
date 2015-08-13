@@ -18,7 +18,7 @@ We recommend version 0.9.23 for PC or a Boxee Box.
 [How To Configure Boxee Advanced](https://www.unifiedremote.com/tutorials/how-to-configure-boxee-advanced)
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

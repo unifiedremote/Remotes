@@ -8,7 +8,7 @@ A generic system media remote control. The remote simulates media keys, so this 
 *  Toggle playback (play, pause)
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

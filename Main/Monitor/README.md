@@ -15,9 +15,9 @@ Control your monitor power.
 *  Display computer only
 
 ## Screenshots
-<img src="screen-win.png" width="200" />
-<img src="screen-osx.png" width="200" />
-<img src="screen-lx.png" width="200" />
+<img src="ignore/screen-win.png" width="200" />
+<img src="ignore/screen-osx.png" width="200" />
+<img src="ignore/screen-lx.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

@@ -9,8 +9,8 @@ Media Monkey Remote.
 *  Rate Up/Down
 
 ## Screenshots
-<img src="screen-tab0.png" width="200" />
-<img src="screen-tab1.png" width="200" />
+<img src="ignore/screen-tab0.png" width="200" />
+<img src="ignore/screen-tab1.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

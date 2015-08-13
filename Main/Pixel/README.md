@@ -7,7 +7,7 @@ A useful utility remote for inspecting the color of the pixel under the mouse cu
 * Shows color preview in realtime
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

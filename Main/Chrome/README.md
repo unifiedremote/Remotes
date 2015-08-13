@@ -11,7 +11,7 @@ Easily control your Chrome browser window from a distance. If you're trying to b
 *  Focus URL field
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

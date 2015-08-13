@@ -11,7 +11,7 @@ Boxee was a cross-platform media center, but is no longer being developed. The P
 *  Navigation (up, down, left, right, back, home)
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

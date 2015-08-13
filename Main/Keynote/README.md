@@ -7,8 +7,8 @@ Remote control for the Keynote app.
 *  Start/end slide show
 
 ## Screenshots
-<img src="screen-tab1.png" width="200" />
-<img src="screen-tab2.png" width="200" />
+<img src="ignore/screen-tab1.png" width="200" />
+<img src="ignore/screen-tab2.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

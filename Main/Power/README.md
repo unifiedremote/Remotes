@@ -12,9 +12,9 @@ Control system power, login, and Wake on LAN.
 * Send Wake On LAN/WAN
 
 ## Screenshots
-<img src="screen-win.png" width="200" />
-<img src="screen-osx.png" width="200" />
-<img src="screen-lx.png" width="200" />
+<img src="ignore/screen-win.png" width="200" />
+<img src="ignore/screen-osx.png" width="200" />
+<img src="ignore/screen-lx.png" width="200" />
 
 ## Using WOL and WOW
 The Wake On LAN and Wake on WAN packets are sent directly from your device when the server is sleeping. Most systems require WOL and WOW support to be explicitly enabled. Check out these tutorials for help.

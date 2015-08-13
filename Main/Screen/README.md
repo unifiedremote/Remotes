@@ -9,8 +9,8 @@ This is still an early version, so some advanced features are lacking, such as:
 * Multiple monitors
 
 ## Screenshots
-<img src="screen1.png" width="200" />
-<img src="screen2.png" width="200" />
+<img src="ignore/screen1.png" width="200" />
+<img src="ignore/screen2.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

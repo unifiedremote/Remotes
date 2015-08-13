@@ -14,7 +14,7 @@ Daum PotPlayer remote control.
 *  Toggle playlist
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

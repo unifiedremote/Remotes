@@ -9,7 +9,7 @@ Numpad Keyboard
 *  Press Speperator
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

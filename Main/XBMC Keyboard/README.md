@@ -10,7 +10,7 @@ XBMC remote using key shortcuts.
 *  Fast forward/rewind
 
 ## Screenshots
-<img src="screen.png" width="200" />
+<img src="ignore/screen.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

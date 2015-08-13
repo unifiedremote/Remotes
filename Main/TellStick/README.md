@@ -11,7 +11,7 @@ TellStick remote tro control devices
 * Windows
 
 ## Screenshots
-<img src="screen-setup.png" width="200" />
+<img src="ignore/screen-setup.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  
