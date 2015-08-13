@@ -13,9 +13,9 @@ The iTunes Remote provides advanced control of iTunes on Windows and Mac. It inc
 * Playlist picker
 
 ## Screenshots
-<img src="screenshots/screen.png" width="200" />
-<img src="screenshots/screen-btn.png" width="200" />
-<img src="screenshots/screen-pl.png" width="200" />
+<img src="ignore/screen.png" width="200" />
+<img src="ignore/screen-btn.png" width="200" />
+<img src="ignore/screen-pl.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  

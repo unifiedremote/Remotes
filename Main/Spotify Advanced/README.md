@@ -21,10 +21,10 @@ To access playlists and search in an efficient manner you must now connect your 
 4. Follow the on-screen instructions
 5. Once logged in you can start using the remote in the app
 
-<img src="screenshots/screen1.png" alt="Spotify Advanced" width="200">
-<img src="screenshots/screen2.png" alt="Spotify Advanced Search Top Level" width="200">
-<img src="screenshots/screen3.png" alt="Spotify Advanced Playlists" width="200">
-<img src="screenshots/screen4.png" alt="Spotify Advanced Search Tracks" width="200">
+<img src="ignore/screen1.png" alt="Spotify Advanced" width="200">
+<img src="ignore/screen2.png" alt="Spotify Advanced Search Top Level" width="200">
+<img src="ignore/screen3.png" alt="Spotify Advanced Playlists" width="200">
+<img src="ignore/screen4.png" alt="Spotify Advanced Search Tracks" width="200">
 
 ## Implementation
 The Spotify Advanced remote is one of the most advanced remotes created using Unified Remote. It uses many different techniques to accomplish all of the different remote control aspects. Such as:

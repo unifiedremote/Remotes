@@ -10,10 +10,10 @@ The remote file manager makes it possible to easily browse and open files on you
 * Copy/cut/delete files and folders
 
 ## Screenshots
-<img src="screenshots/screen.png" width="200" />
-<img src="screenshots/screen_menu.png" width="200" />
-<img src="screenshots/screen_details.png" width="200" />
-<img src="screenshots/screen_goto.png" width="200" />
+<img src="ignore/screen.png" width="200" />
+<img src="ignore/screen_menu.png" width="200" />
+<img src="ignore/screen_details.png" width="200" />
+<img src="ignore/screen_goto.png" width="200" />
 
 ## Support
 Developed and maintained by **Unified Remote**  
