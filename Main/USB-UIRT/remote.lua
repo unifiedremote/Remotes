@@ -145,6 +145,17 @@ actions.transmit = function (fmt,code)
 	end
 end
 
+actions.irsend = function (code)
+	actions.transmit("pronto", code);
+end
+
+actions.irlearn = function ()
+	actions.learn("pronto");
+	if (code ~= "Error") then
+		device.irlearned(code);
+	end
+end
+
 --@help Learn code (Pronto format)
 actions.helper_learn_pronto = function ()
 	actions.learn("pronto");
