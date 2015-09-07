@@ -7,7 +7,12 @@ local user;
 
 function update ()
 	items = {};
+	
 	local obj = luacom.CreateObject("Skype4COM.Skype");
+	if (not obj.Client.IsRunning) then
+		obj.Client:Start();
+	end
+	
 	obj:Attach(7, false);
 	local count = obj.Friends.Count;
 	for i = 1, count do
