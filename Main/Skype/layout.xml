@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onlaunch="launch" color="#12A5F4">
+	<row>
+		<list id="list" ontap="select">
+			<item>Loading...</item>
+		</list>
+	</row>
+	<row weight="wrap">
+		<button text="Open" ontap="launch" />
+	</row>
+</layout>
