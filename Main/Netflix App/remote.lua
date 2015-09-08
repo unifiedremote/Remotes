@@ -11,15 +11,18 @@ local et = nil;
 local movielength = -1;
 local currpos = -1;
 local onChangePos = false;
+
 events.focus = function()
 	title = nil;
 	sne = nil;
 	et = nil;
+	movielength = -1;
 	tid = tmr.interval(update, 1000);
 end
 
 events.blur = function()
 	tmr.cancel(tid);
+	end_popup();
 end
 
 function begin_popup()
@@ -27,7 +30,7 @@ function begin_popup()
 	local root = uia.find(desktop, "Netflix", "children");
 	local appbar = uia.find(root, "TopAppBar", "subtree");
 	if(appbar == nil) then
-		player = uia.find(root, "Video player page", "children");
+		player = uia.find(root, "Video player page", "subtree");
 		uia.dodefaultaction(player);
 		appbar = uia.find(root, "TopAppBar", "subtree");
 	end
@@ -45,8 +48,7 @@ end
 function get_time()
 	local desktop = uia.desktop();
 	local root = uia.find(desktop, "Netflix", "children");
-	
-	local vp = uia.find(root, "Video player page", "children");
+	local vp = uia.find(root, "Video player page", "subtree");
 	local v = uia.find(vp, "Video", "subtree");
 	return uia.property(v, "rangevaluemaximum");
 end
@@ -54,8 +56,7 @@ end
 function get_pos()
 	local desktop = uia.desktop();
 	local root = uia.find(desktop, "Netflix", "children");
-	
-	local vp = uia.find(root, "Video player page", "children");
+	local vp = uia.find(root, "Video player page", "subtree");
 	local v = uia.find(vp, "Video", "subtree");
 	return uia.property(v, "rangevaluevalue");
 end
