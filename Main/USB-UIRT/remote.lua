@@ -36,6 +36,7 @@ actions.learn = function (fmt)
 	
 	local h = io.popen(fs.remotedir() .. "\\usbuirtc.exe --learn " ..  fmt);
 	local s = h:read("*a");
+	s = utf8.replace(s, "\n", "");
 	h:close();
 	
 	if (s == "") then
