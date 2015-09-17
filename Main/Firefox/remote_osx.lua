@@ -35,13 +35,13 @@ end
 --@help Go to next tab
 actions.next_tab = function()
 	actions.switch();
-	keyboard.stroke("ctrl", "tab");
+	keyboard.stroke("lctrl", "pagedown");
 end
 
 --@help Go to previous tab
 actions.previous_tab = function()
 	actions.switch();
-	keyboard.stroke("ctrl", "shift", "tab");
+	keyboard.stroke("lctrl", "pageup");	
 end
 
 --@help Open new tab
