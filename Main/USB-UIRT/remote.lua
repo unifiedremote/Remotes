@@ -97,3 +97,10 @@ end
 actions.pronto = function (code)
 	actions.transmit("pronto", code);
 end
+
+--@help Transmit Uuirt code
+--@param code:string Text representation of IR code
+actions.uuirt = function (code)
+	actions.transmit("uuirt", code);
+end
+
