@@ -70,9 +70,7 @@ end
 
 actions.irlearn = function ()
 	actions.learn("pronto");
-	if (code ~= "Error") then
-		device.irlearned(code);
-	end
+	device.irlearned(code);
 end
 
 --@help Learn code (Pronto format)
