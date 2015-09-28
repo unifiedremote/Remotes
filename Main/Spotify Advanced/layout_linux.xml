@@ -34,7 +34,7 @@
 		</tab>
 		<tab text="Search">
 			<row weight="wrap">
-				<text hint="Search..." onchange="changed_search" weight="6" />
+				<text id="search_query" hint="Search..." onchange="search_changed" ondone="search_done" weight="6" />
 				<button text="Go" weight="1" ontap="go" />
 			</row>
 			<row>
