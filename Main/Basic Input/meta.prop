@@ -2,4 +2,4 @@ meta.id: Relmtech.Basic Input
 meta.name: Basic Input
 meta.author: Unified
 meta.description: Control mouse and keyboard.
-meta.tags: mouse/keyboard
+meta.tags.category: input

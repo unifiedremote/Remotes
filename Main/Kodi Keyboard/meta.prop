@@ -1,4 +1,4 @@
 meta.name: Kodi (Keyboard)
 meta.author: Unified
 meta.description: Kodi remote using key shortcuts.
-meta.tags: audio/video, mouse/keyboard
+meta.tags.category: media

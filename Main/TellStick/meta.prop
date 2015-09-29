@@ -2,3 +2,4 @@ meta.name: TellStick
 meta.author: Unified Intents
 meta.description: TellStick remote
 meta.platform: windows
+meta.tags.category: utility

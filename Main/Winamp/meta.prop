@@ -2,4 +2,4 @@ meta.name: Winamp
 meta.author: Unified
 meta.description: Winamp media remote control.
 meta.platform: windows
-meta.tags: audio/video
+meta.tags.category: media
