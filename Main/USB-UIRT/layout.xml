@@ -5,9 +5,13 @@
       <text id="status" multiline="true" textAlign="center" />
     </row>
     <row weight="wrap">
-      <button text="Learn" ontap="helper_learn_pronto" />
-	  <button text="Transmit" ontap="helper_transmit_pronto" />
+      <button text="Learn Pronto" ontap="helper_learn_pronto" />
+	  <button text="Learn UUIRT" ontap="helper_learn_uuirt" />
 	</row>
+	<row weight="wrap">
+	  <button text="Transmit Pronto" ontap="helper_transmit_pronto" />
+	  <button text="Transmit UUIRT" ontap="helper_transmit_uuirt" />
+    </row>
 	<row weight="wrap">
 	  <button text="Copy to computer clipboard" ontap="helper_clip" />
 	</row>
