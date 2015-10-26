@@ -1,5 +1,4 @@
 meta.name: VLC
 meta.author: Unified
 meta.description: Basic VLC remote.
-meta.platform: osx windows
 meta.tags.category: media
