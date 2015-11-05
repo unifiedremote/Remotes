@@ -23,6 +23,7 @@ end
 
 --@help Close current tab
 actions.close_tab = function()
+	actions.switch();
 	keyboard.stroke("control", "W");
 end
 
