@@ -4,4 +4,4 @@ meta.id: Relmtech.Keyboard
 meta.name: Keyboard
 meta.author: Unified
 meta.description: English Keyboard
-meta.tags: mouse/keyboard
+meta.tags.category: input

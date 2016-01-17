@@ -8,16 +8,29 @@ local query = "";
 local mainitems = {};
 local trackitems = {};
 
-actions.changed_search = function (text)
-   	query = http.urlencode(utf8.trim(text));
+actions.search_changed = function (text)
+	if (utf8.empty(text) and #settings.search_query > 2) then
+		text = settings.search_query;
+		layout.search_query.text = text;
+		query = text;
+		actions.go();
+	end
+
+	query = http.urlencode(utf8.trim(text));
+	settings.search_query = text;
 end
 
-actions.go = function ( )
+actions.search_done = function (text)
+	actions.search_changed(text);
+	actions.go();
+end
+
+actions.go = function ()
 	local types = { "track", "album", "artist", "playlist" };
 
 	local limit = 5;
 	local url = spotify_api_v1_url("/search?q=" .. query .. "&type=" .. utf8.join(",", types) .. "&limit=" .. limit );
-	print(url);
+	print("GET " .. url);
 	
 	layout.mainlist.visibility="visible";
 	layout.playlistlist.visibility="gone";
@@ -48,14 +61,20 @@ actions.go = function ( )
 					local checked = titems[i].uri == playing_uri;
 					table.insert(mainitems, {type = "item", text = fmt, stype = 1, track = titems[i], checked = checked});
 				end
+				if (#titems == 0) then
+					table.insert(mainitems, {type = "item", text = "(no results)", stype = 5});
+				end
 			end
 			if(res.artists ~= nil) then
 				table.insert(mainitems, {type = "item", text = "Artists\nTop " .. limit .. " artists",  checked = true, stype = 6});
-				local titems = res.artists.items;
-				for i = 1, #titems do
-					local artist = titems[i];
+				local aitems = res.artists.items;
+				for i = 1, #aitems do
+					local artist = aitems[i];
 					local fmt = format_artist(artist);
 					table.insert(mainitems, {type = "item", text = fmt, stype = 2, artist = artist});
+				end
+				if (#aitems == 0) then
+					table.insert(mainitems, {type = "item", text = "(no results)", stype = 6});
 				end
 			end
 			if(res.albums ~= nil) then
@@ -66,14 +85,20 @@ actions.go = function ( )
 					local fmt = format_album(album);
 					table.insert(mainitems, {type = "item", text = fmt, stype = 0, album = album});
 				end
+				if (#aitems == 0) then
+					table.insert(mainitems, {type = "item", text = "(no results)", stype = 4});
+				end
 			end
 			if(res.playlists ~= nil) then
 				table.insert(mainitems, {type = "item", text = "Playlists\nTop " .. limit .. " playlists",  checked = true, stype = 7});
-				local titems = res.playlists.items;
-				for i = 1, #titems do
-					local playlist = titems[i];
+				local pitems = res.playlists.items;
+				for i = 1, #pitems do
+					local playlist = pitems[i];
 					local fmt = format_playlist(playlist);
 					table.insert(mainitems, {type = "item", text = fmt, stype = 3, playlist = playlist});
+				end
+				if (#pitems == 0) then
+					table.insert(mainitems, {type = "item", text = "(no results)", stype = 7});
 				end
 			end
 			server.update({id = "mainlist", children = mainitems});

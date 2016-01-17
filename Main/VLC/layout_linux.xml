@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="resume" onPause="pause" lightcolor="#e77300" darkcolor="#c46e19">
+  <grid>
+    <row>
+      <button icon="vdown" onTap="volume_down" />
+      <button icon="vmute" onTap="volume_mute" />
+      <button icon="vup" onTap="volume_up" />
+    </row>
+    <row>
+      <button icon="rwd" onTap="rewind" />
+      <button icon="fullscreen" onTap="fullscreen" />
+      <button icon="ff" onTap="fast_forward" />
+    </row>
+    <row>
+      <button icon="previous" onTap="previous" />
+      <button icon="next" onTap="next" />
+    </row>
+	<row>
+	  <button text="-10s" ontap="jump_back" />
+	  <button text="+10s" ontap="jump_forward" />
+	</row>
+    <row>
+      <button icon="stop" onTap="stop" />
+      <button icon="playpause" onTap="play_pause" />
+    </row>
+  </grid>
+</layout>

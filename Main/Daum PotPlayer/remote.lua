@@ -81,7 +81,7 @@ actions.command = function(cmd)
 	if (hwnd == 0) then
 		hwnd = win.find("PotPlayer64", nil);
 	end
-	win.send(hwnd, WM_COMMAND, cmd, 0);
+	win.post(hwnd, WM_COMMAND, cmd, 0);
 	actions.update();
 end
 

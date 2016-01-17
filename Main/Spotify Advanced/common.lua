@@ -278,3 +278,20 @@ actions.play_pause = function()
 		actions.play();
 	end
 end
+
+actions.volume_down = function ()
+    playing_volume = math.max(playing_volume - 10, 0);
+    server.update(
+		{ id = "currvol", progress = volume }
+	);
+    actions.volchange(playing_volume);
+end
+
+actions.volume_up = function ()
+    playing_volume = math.min(playing_volume + 10, 100);
+    server.update(
+		{ id = "currvol", progress = volume }
+	);
+    actions.volchange(playing_volume);
+end
+

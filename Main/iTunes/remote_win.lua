@@ -66,9 +66,7 @@ function update_lists ()
 		local count = obj.LibrarySource.Playlists.Count;
 		for i = 1, count do
 			local playlist = obj.LibrarySource.Playlists(i);
-			if (playlist.Tracks.Count > 0) then
-				table.insert(playlists, { type = "item", text = playlist.Name .. "\nTracks: " .. playlist.Tracks.Count });
-			end
+			table.insert(playlists, { type = "item", text = playlist.Name .. "\nTracks: " .. playlist.Tracks.Count });
 		end
 		
 		-- Get tracks

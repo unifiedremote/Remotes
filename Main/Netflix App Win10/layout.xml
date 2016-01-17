@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="resume" onPause="pause" color="#A40000">
+	<row>
+		<button icon="playpause" onTap="play_pause" />
+	</row>
+	<row>
+		<label text="Netflix has removed all remote control support (even keyboard shortcuts). Please complain to Netflix. There is nothing we can do right now." />
+	</row>
+</layout>

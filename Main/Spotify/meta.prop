@@ -1,4 +1,4 @@
 meta.name: Spotify
 meta.author: Unified
 meta.description: Spotify basic media remote control.
-meta.tags: audio/video
+meta.tags.category: media

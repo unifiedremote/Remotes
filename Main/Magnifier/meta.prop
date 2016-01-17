@@ -2,3 +2,4 @@ meta.name: Magnifier
 meta.author: Unified
 meta.description: Control the Windows magnifier utility.
 meta.platform: windows
+meta.tags.category: utility
