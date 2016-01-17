@@ -22,7 +22,7 @@ actions.update = function ()
 	local _title = "[Not Playing]";
 	
 	for i,win in ipairs(tasks) do
-		local pos = utf8.lastindexof(win.title, " - Google Play");
+		local pos = utf8.lastindexof(win.title, " - Google Play Music");
 		if (pos ~= -1) then
 			_title = utf8.sub(win.title, 0, pos);
 		end
