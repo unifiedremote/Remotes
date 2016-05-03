@@ -36,11 +36,11 @@ function update ()
 		local root = fs.roots();
 		local homePath = "~/";
 		if OS_WINDOWS then 
-			homePath = "%HOMEPATH%"
+			homePath = "%SYSTEMDRIVE%%HOMEPATH%"
 		end
 		local desktopPath = "~/Desktop";
 		if OS_WINDOWS then 
-			desktopPath = "%HOMEPATH%/Desktop"
+			desktopPath = "%SYSTEMDRIVE%%HOMEPATH%/Desktop"
 		end
 		table.insert(items, {
 			type = "item",
@@ -63,7 +63,7 @@ function update ()
 				isdir = true
 			});
 		end
-	else
+	elseif fs.exists(path) then
 		local dirs = fs.dirs(path);
 		local files = fs.files(path);	
 		for t = 1, #dirs do
