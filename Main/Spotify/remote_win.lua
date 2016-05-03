@@ -61,7 +61,7 @@ end
 --@help Update status information
 actions.update = function ()
 	local hwnd = win.find("SpotifyMainWindow", nil);
-	local _title = win.title(hwnd):sub(10);
+	local _title = win.title(hwnd);
 	local _playing = true;
 	
 	if (_title == "") then
