@@ -1,4 +1,5 @@
-meta.name: Plex
+meta.id: Unified.Plex
+meta.name: Plex (Home Theater)
 meta.author: Unified
-meta.description: Control Plex Media Server
+meta.description: Control Plex Home Theater
 meta.tags.category: media
