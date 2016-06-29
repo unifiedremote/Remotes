@@ -2,7 +2,7 @@
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" color="#ef6c00">
   <grid>
     <row weight="wrap">
-      <label id="info" text="[Not Playing]"/>
+      <label id="info" text="[Not Playing / Tab Not Active]"/>
     </row>
     <row>
       <button icon="vdown" onTap="volume_down" />
