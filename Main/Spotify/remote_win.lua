@@ -64,7 +64,7 @@ actions.update = function ()
 	local _title = win.title(hwnd);
 	local _playing = true;
 	
-	if (_title == "") then
+	if (_title == "" or _title == "Spotify") then
 		_title = "[Not Playing]";
 		_playing = false;
 	end
