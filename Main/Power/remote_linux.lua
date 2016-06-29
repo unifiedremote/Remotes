@@ -44,11 +44,13 @@ end
 
 --@help Put system in sleep state
 actions.sleep = function ()
+	os.execute("systemctl suspend -i")
 	os.execute('dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend');
 end
 
 --@help Put system in hibernate state
 actions.hibernate = function ()
+	os.execute("systemctl hibernate -i")
 	os.execute('dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate');
 end
 
