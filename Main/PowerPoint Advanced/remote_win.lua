@@ -87,9 +87,13 @@ function valid()
 		obj.SlideShowWindows.Count > 0);
 end
 
+local title = "";
+local notes = "";
+
 function update ()
-	local title = "";
-	local notes = "";
+	local _title = "";
+	local _notes = "";
+	
 	local preview_curr = "";
 	local preview_prev = "";
 	local preview_next = "";
@@ -101,10 +105,10 @@ function update ()
 	time_slide = getTime("Slide", timer_slide);
 	
 	if (obj == nil) then
-		title = "[No Application]";
+		_title = "[No Application]";
 		ready = false;
 	elseif (obj.Presentations.Count == 0 or obj.SlideShowWindows.Count == 0) then
-		title = "[No Presentation]";
+		_title = "[No Presentation]";
 		ready = false;
 	else
 		ready = true;
@@ -113,10 +117,10 @@ function update ()
 		local slide = obj.ActivePresentation.Slides(index);
 		
 		-- Get title
-		title = getTitle(slide);
+		_title = getTitle(slide);
 		
 		-- Get comments
-		notes = getNotes(slide);
+		_notes = getNotes(slide);
 		
 		-- Get slides list
 		local count = obj.ActivePresentation.Slides.Count;
@@ -137,9 +141,16 @@ function update ()
 		preview_next = file_next;
 	end
 
+	if (_title ~= title) then
+		title = _title;
+		server.update({ id = "title", text = title });
+	end
+	if (_notes ~= notes) then
+		notes = _notes;
+		server.update({ id = "comments", text = notes });
+	end
+	
 	server.update(
-		{ id = "title", text = title },
-		{ id = "comments", text = notes },
 		{ id = "slides", children = items },
 		{ id = "preview_curr", image = preview_curr },
 		{ id = "preview_prev", image = preview_prev },
