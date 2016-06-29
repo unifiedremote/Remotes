@@ -186,9 +186,11 @@ function get_number_of_slides( )
 	return 0;
 end
 
+local notes = "";
+
 function update ()
+	local _notes = "";
 	local title = "";
-	local notes = "";
 	local items = {};
 	local preview_curr = "";
 	local preview_prev = "";
@@ -217,7 +219,7 @@ function update ()
 				noPresentation=false;
 			end
 			title = getTitle();
-			notes = getNotes();
+			_notes = getNotes();
 			if #slidePaths > 0 then
 				local index = get_slideshow_position() - 1;
 				local count = #slidePaths;
@@ -225,11 +227,15 @@ function update ()
 				preview_curr = shrinkSlide(slidePaths[index+1]);
 				preview_next = shrinkSlide(slidePaths[math.min(count, index+2)]);
 				preview_prev = shrinkSlide(slidePaths[math.max(1, index)]);
-
 			end
+			
+			if (_notes ~= notes) then
+				notes = _notes;
+				server.update({ id = "comments", text = notes });
+			end
+			
 			server.update(
 				{ id = "title", text = title },
-				{ id = "comments", text = notes },
 				{ id = "preview_curr", image = preview_curr },
 				{ id = "preview_prev", image = preview_prev },
 				{ id = "preview_next", image = preview_next },
