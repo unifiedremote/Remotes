@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout color="#FF9500">
+	<row>
+		<button icon="back" ontap="back" />
+		<button color="#525252" icon="up" ontap="up" />
+		<button icon="playpause" ontap="play_pause" />
+	</row>
+	<row>
+		<button color="#525252" icon="left" ontap="left" />
+		<button color="#525252" icon="select" ontap="select" />
+		<button color="#525252" icon="right" ontap="right" />
+	</row>
+	<row>
+		<button icon="rwd" ontap="rewind" />
+		<button color="#525252" icon="down" ontap="down" />
+		<button icon="ff" ontap="forward" />
+	</row>
+	<row>
+		<button icon="stop" ontap="stop" />
+		<button text="Home" ontap="home" />
+	</row>
+</layout>
