@@ -46,24 +46,15 @@ function webhelper_get_oauth (done)
 	
 	local req = {};
 	req.method = "GET";
-	req.url = "https://embed.spotify.com/?uri=spotify:track:5Zp4SWOpbuOdnsxLqwgutt";
+	req.url = "https://open.spotify.com/token";
 	req.headers = headers;
 	http.request(req, function (err, resp)
 		local raw = resp.content;
-		local str = utf8.new(raw);
-		local pos = str:indexof("tokenData");
-		if (pos > -1) then
-			pos = str:indexof("'", pos);
-			if (pos > -1) then
-				pos = pos + 1;
-				local pos2 = str:indexof("'", pos);
-				local key = str:sub(pos, pos2 - pos);
-				webhelper_log("OAuth key: " .. key);
-				done(nil, key);
-				return;
-			end
-		end
-		done("Could not find OAuth token");
+		local obj = data.fromjson(raw);
+		local key = obj.t;
+		webhelper_log("OAuth key: " .. key);
+		done(nil, key);
+		--done("Could not find OAuth token");
 	end);
 end
 
