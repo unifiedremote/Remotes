@@ -1,5 +1,40 @@
-local keyboard = libs.keyboard;
 
+local timer = libs.timer;
+local win = libs.win;
+local keyboard = libs.keyboard;
+local utf8 = libs.utf8;
+local server = libs.server;
+
+local tid = -1;
+local title = "";
+
+events.focus = function ()
+	actions.update();
+end
+
+events.blur = function ()
+	timer.cancel(tid);
+end
+
+--@help Update status information
+actions.update = function ()
+	local tasks = win.list();
+	local _title = "[Not Playing / Tab Not Active]";
+	
+	for i,win in ipairs(tasks) do
+		local pos = utf8.lastindexof(win.title, " - Google Play Music");
+		if (pos ~= -1) then
+			_title = utf8.sub(win.title, 0, pos);
+		end
+	end
+	
+	if (_title ~= title) then
+		title = _title;
+		server.update({ id = "info", text = title });
+	end
+	
+	tid = timer.timeout(actions.update, 500);
+end
 
 --@help Launch Google Music site
 actions.launch = function()

@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" color="#ef6c00">
   <grid>
+    <row weight="wrap">
+      <label id="info" text="[Not Playing]"/>
+    </row>
     <row>
       <button icon="vdown" onTap="volume_down" />
       <button icon="search" onTap="search" />
