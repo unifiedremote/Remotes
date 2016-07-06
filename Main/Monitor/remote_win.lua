@@ -1,4 +1,4 @@
-
+local mouse = libs.mouse;
 local win = libs.win;
 
 local WM_SYSCOMMAND = 0x0112;
@@ -7,7 +7,9 @@ local HWND_BROADCAST = 0xffff;
 
 --@help Turn monitor on
 actions.turn_on = function()
-	win.post(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, -1);
+	mouse.moveby(0,0);
+	--this doesn't seem to work in windows 8+
+	--win.post(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, -1);
 end
 
 --@help Turn monitor off
