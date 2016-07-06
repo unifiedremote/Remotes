@@ -51,6 +51,8 @@ actions.toggle = function (key)
 				keyboard.press(key);
 			elseif key == "AT" then
 				keyboard.text("@");
+			elseif key == "COMMA" then
+				keyboard.text(",");
 			else
 				keyboard.text(key);
 			end

@@ -8,7 +8,7 @@ keys = {
 	{ "ESCAPE", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" },
 	{ "TAB", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Å" }, 
 	{ "CAPITAL", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä" },
-	{ "SHIFT", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "-", "BACK" },
+	{ "SHIFT", "Z", "X", "C", "V", "B", "N", "M", "COMMA", ".", "-", "BACK" },
 	{ "FN", "CONTROL", "LWIN", "MENU", "SPACE", "RMENU", "RETURN" } 
 };
 
@@ -31,7 +31,8 @@ texts = {
 	DELETE = "Del",
 	ESCAPE = "Esc",
 	TAB = "Tab",
-	FN = "Fn"
+	FN = "Fn",
+	COMMA = ","
 };
 
 -- Key Weights
