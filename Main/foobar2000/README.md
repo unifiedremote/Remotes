@@ -10,6 +10,7 @@ foobar2000 media remote
 *  Raise volume
 *  Stop playback
 *  Toggle playback state
+*  Set playback order
 
 ## Screenshots
 <img src="ignore/screen.png" width="200" />

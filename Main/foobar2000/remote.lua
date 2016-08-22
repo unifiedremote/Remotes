@@ -106,3 +106,51 @@ actions.command = function(cmd)
 	actions.update();
 end
 
+--@help Set play order to Default
+actions.orderDefault = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Default"');
+	end
+end
+
+--@help Set play order to Random
+actions.orderRandom = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Random"');
+	end
+end
+
+--@help Set play order to Repeat (playlist)
+actions.orderRepeatPlaylist = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Repeat (playlist)"');
+	end
+end
+
+--@help Set play order to Repeat (track)
+actions.orderRepeatTrack = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Repeat (track)"');
+	end
+end
+
+--@help Set play order to Shuffle (albums)
+actions.orderShuffleAlbums = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Shuffle (albums)"');
+	end
+end
+
+--@help Set play order to Shuffle (folders)
+actions.orderShuffleFolders = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Shuffle (folders)"');
+	end
+end
+
+--@help Set play order to Shuffle (tracks)
+actions.orderShuffleTracks = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Shuffle (tracks)"');
+	end
+end
