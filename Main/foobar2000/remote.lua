@@ -98,6 +98,20 @@ actions.play_pause = function()
 	actions.command(PlayPauseTrack);
 end
 
+--@help Forward track five seconds
+actions.forward = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Ahead by 5 seconds"');
+	end
+end
+
+--@help Rewind track five seconds
+actions.rewind = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/command:"Back by 5 seconds"');
+	end
+end
+
 --@help Send raw command
 --@param cmd:number Raw command number
 actions.command = function(cmd)
