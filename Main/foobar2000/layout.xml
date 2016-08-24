@@ -13,11 +13,13 @@
         </row>
         <row>
           <button icon="previous" onTap="previous" />
+          <button icon="playpause" onTap="play_pause" />
           <button icon="next" onTap="next" />
         </row>
         <row>
+          <button icon="rwd" ontap="rewind" />
           <button icon="stop" onTap="stop" />
-          <button icon="playpause" onTap="play_pause" />
+          <button icon="ff" ontap="forward" />
         </row>
       </grid>
     </tab>
