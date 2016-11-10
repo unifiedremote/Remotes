@@ -7,17 +7,17 @@ end
 
 --@help Lower volume
 actions.volume_down = function()
-	keyboard.stroke("down");
+	keyboard.stroke("volumedown");
 end
 
 --@help Mute volume
 actions.volume_mute = function()
-	keyboard.stroke("M");
+	keyboard.stroke("volumemute");
 end
 
 --@help Raise volume
 actions.volume_up = function()
-	keyboard.stroke("up");
+	keyboard.stroke("volumeup");
 end
 
 --@help Pause playback
@@ -27,7 +27,7 @@ end
 
 --@help Toggle playback state
 actions.play_pause = function()
-	keyboard.stroke("return");
+	keyboard.stroke("space");
 end
 
 --@help Navigate left
@@ -47,20 +47,12 @@ end
 
 --@help Seek forward
 actions.forward = function()
-	if (OS_OSX) then
-		keyboard.stroke("cmd", "right");
-	else
-		keyboard.stroke("control", "right");
-	end
+	keyboard.stroke("right");
 end
 
 --@help Seek backward
 actions.rewind = function()
-	if (OS_OSX) then
-		keyboard.stroke("cmd", "left");
-	else
-		keyboard.stroke("control", "left");
-	end
+	keyboard.stroke("left");
 end
 
 --@help Fullscreen view
@@ -72,4 +64,3 @@ end
 actions.window = function()
 	keyboard.stroke("escape");
 end
-
