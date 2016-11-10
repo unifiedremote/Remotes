@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="resume" onPause="pause" color="#A40000">
 	<row>
+		<button icon="vdown" onTap="volumedown" />
+		<button icon="vmute" onTap="volumemute" />
+		<button icon="vup" onTap="volumeup" />
+	</row>
+	<row>
 		<button icon="playpause" onTap="play_pause" />
 	</row>
 	<row>
-		<label text="Netflix has removed all remote control support (even keyboard shortcuts). Please complain to Netflix. There is nothing we can do right now." />
+		<label text="The Windows 10 Netflix app has very limited support for remote control. If you want more functionality, then please use the web player instead." />
 	</row>
 </layout>

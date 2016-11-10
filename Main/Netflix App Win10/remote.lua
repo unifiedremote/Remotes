@@ -14,22 +14,17 @@ actions.play_pause = function ()
 	kb.press("space");
 end
 
-actions.rewind = function ()
-	
-end
-
-actions.forward = function ()
-	
-end
-
+--@help Raise volume
 actions.volumeup = function()
 	kb.press("volumeup");
 end
 
+--@help Lower volume
 actions.volumedown = function()
 	kb.press("volumedown");
 end
 
+--@help Mute volume
 actions.volumemute = function()
 	kb.press("volumemute");
 end
