@@ -56,20 +56,25 @@ end
 
 --@help Toggle Shuffle 
 actions.shuffle = function ()
+	-- x = -100 from center
+	-- y = 726 - 682 = 44
 	local hwnd = get_hwnd();
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
 	ffi.C.GetWindowRect(hwnd, rect);
-	click(hwnd, rect.right - rect.left - 202, rect.bottom - rect.top - 37);
+	local c = (rect.right - rect.left) / 2;
+	click(hwnd, c - 100, rect.bottom - rect.top - 44);
 	click(hwnd, 0, 0);
 end
 
 --@help Toggle Repeat 
 actions.repeating = function ()
-	print("repeat");
+	-- x = +100 from center
+	-- y = 726 - 682 = 44
 	local hwnd = get_hwnd();
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
 	ffi.C.GetWindowRect(hwnd, rect);
-	click(hwnd, rect.right - rect.left - 170, rect.bottom - rect.top - 37);
+	local c = (rect.right - rect.left) / 2;
+	click(hwnd, c + 100, rect.bottom - rect.top - 44);
 	click(hwnd, 0, 0);
 end
 
@@ -80,10 +85,14 @@ actions.volchange = function (vol)
 	local rect = ffi.new("RECT", 0, 0, 0, 0);
 	ffi.C.GetWindowRect(hwnd, rect);
 	
-	local y = rect.bottom - rect.top - 37;
-	local x = (rect.right - rect.left - 107) + math.floor(vol / 100 * 79) + 1;
-	click(hwnd, x, y);
+	-- y = 942-899 = 43
+	-- x1 = 1568-1472 = 96
+	-- x2 = 1568-1543 = 25
+	-- w = 96-25 = 71
+	local y = rect.bottom - rect.top - 43;
+	local x = (rect.right - rect.left - 96) + math.floor(vol / 100 * 71);
 	
+	click(hwnd, x, y);
 	update_quiet();
 end
 
@@ -96,11 +105,27 @@ actions.poschange = function (pos)
 	
 	pos = pos / playing_duration * 100;
 	
-	local y = rect.bottom - rect.top - 37;
-	local x1 = 214;
-	local x2 = rect.right - rect.left - 366;
+	local width = rect.right - rect.left;
+	local m;
+	local b;
+	if (width <= 861) then
+		m = (326-299)/(861-800);
+		b = 299 - (m * 800);
+	elseif (width <= 1254) then
+		m = (369-336)/(1254-950);
+		b = 336 - (m * 950);
+	else
+		m = (493-376)/(1776-1307);
+		b = 376 - (m * 1307);
+	end
+	local offset = (m * width) + b;
+	
+	-- y = 942-922 = 20
+	local y = rect.bottom - rect.top - 20;
+	local x1 = offset;
+	local x2 = rect.right - rect.left - offset - 1;
 	local w = x2 - x1;
-	local x = x1 + math.floor(pos / 100 * w) + 1;
+	local x = x1 + math.floor(pos / 100 * w);
 	click(hwnd, x, y);
 	
 	update_quiet();
