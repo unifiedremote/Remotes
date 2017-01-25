@@ -1,4 +1,5 @@
 meta.name: Minecraft
 meta.author: Unified
 meta.description: Simple Minecraft helpers.
+meta.platform: windows
 meta.tags.category: gaming
