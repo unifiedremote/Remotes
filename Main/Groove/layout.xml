@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down" color="#444444" >
+	<row>
+		<button icon="vdown" onTap="volume_down" />
+		<button icon="vmute" onTap="volume_mute" />
+		<button icon="vup" onTap="volume_up" />
+	</row>
+	<row>
+		<button icon="previous" onTap="previous" />
+		<button icon="next" onTap="next" />
+	</row>
+	<row>
+		<button icon="shuffle" onTap="toggle_shuffle" />
+		<button icon="repeat" onTap="toggle_repeat" />
+	</row>
+	<row>
+		<button icon="stop" onTap="stop" />
+		<button icon="playpause" onTap="play_pause" />
+	</row>
+</layout>
