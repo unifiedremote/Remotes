@@ -5,5 +5,5 @@ actions.eject = function ()
 end
 
 actions.close = function ()
-	win.mci("set CDAudio door close");
+	win.mci("set CDAudio door closed");
 end
