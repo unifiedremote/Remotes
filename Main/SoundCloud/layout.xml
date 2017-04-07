@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.01" encoding="utf-8"?>
 <layout onVolumeUp="volume_up" onVolumeDown="volume_down" lightcolor="#ff5419" darkcolor="#8e3c20" onlaunch="launch">
 	<row>
 		<button icon="vdown" onTap="volume_down" />
@@ -7,12 +7,26 @@
 	</row>
 	<row>
 		<button icon="rwd" ontap="seek_backward" />
-		<button icon="thumbsup" ontap="like_song" />
+		<grid>
+			<row>
+				<button icon="thumbsup" ontap="like_song" />
+			</row>
+			<row>
+				<button icon="repeat" ontap="repost_song" />
+			</row>
+		</grid>
 		<button icon="ff" ontap="seek_forward" />
 	</row>
 	<row>
 		<button icon="previous" onTap="previous" />
-		<button icon="playpause" onTap="play_pause" />
+		<grid>
+			<row>
+				<button icon="playpause" onTap="play_pause" />
+			</row>
+			<row>
+				<button icon="refresh" ontap="repeat_song" />
+			</row>
+		</grid>
 		<button icon="next" onTap="next" />
 	</row>
 </layout>

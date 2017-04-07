@@ -7,17 +7,17 @@ end
 
 --@help Lower system volume
 actions.volume_down = function()
-	keyboard.stroke("volumedown");
+	keyboard.stroke("shift", "down");
 end
 
 --@help Mute system volume
 actions.volume_mute = function()
-	keyboard.stroke("volumemute");
+	keyboard.stroke("M");
 end
 
 --@help Raise system volume
 actions.volume_up = function()
-	keyboard.stroke("volumeup");
+	keyboard.stroke("shift", "up");
 end
 
 --@help Previous track
@@ -53,4 +53,9 @@ end
 --@help Like playing song
 actions.like_song = function ()
 	keyboard.stroke("L");
+end
+
+--@help Repost playing song
+actions.repost_song = function ()
+	keyboard.stroke("R");
 end
