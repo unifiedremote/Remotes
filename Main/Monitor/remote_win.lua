@@ -7,6 +7,13 @@ local HWND_BROADCAST = 0xffff;
 
 local display_switch_path = "%windir%/System32/DisplaySwitch.exe";
 
+-- Unified Remote Server is a 32-bit process, which means we need to find the correct DisplaySwitch process (there is no 32-bit process on Windows 10)
+print(os.getenv("PROCESSOR_ARCHITEW6432"))
+if os.getenv("PROCESSOR_ARCHITEW6432") == "AMD64" then
+    display_switch_path = "%windir%/Sysnative/DisplaySwitch.exe";
+end
+print(display_switch_path);
+
 --@help Turn monitor on
 actions.turn_on = function()
 	mouse.moveby(0,0);
