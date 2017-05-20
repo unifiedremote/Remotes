@@ -6,11 +6,6 @@ local SC_MONITORPOWER = 0xF170;
 local HWND_BROADCAST = 0xffff;
 
 local display_switch_path = "%windir%/System32/DisplaySwitch.exe";
- 
--- Invoke the native version of DisplaySwitch is we're on x64 Windows...
-if os.getenv("PROCESSOR_ARCHITEW6432") == "AMD64" then
-    display_switch_path = "%windir%/Sysnative/DisplaySwitch.exe";
-end
 
 --@help Turn monitor on
 actions.turn_on = function()
