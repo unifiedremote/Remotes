@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onvolumedown="jump" onvolumeup="attack">
+	<touch ontouchabs="walk" ontouchsize="walk_size" onup="walk_up" ontap="walk_tap" />
+	<grid>
+		<row>
+			<button text="U" />
+			<button text="J" ontap="jump" />
+		</row>
+		<row>
+			<button text="L" ontap="attack" />
+			<button text="R" />
+		</row>
+		<row>
+			<button text="C" />
+			<button text="S" />
+		</row>
+	</grid>
+	<touch ontouchdelta="look" ondown="look_down" onup="look_up" ontap="look_tap" />
+	<touch ontouchdelta="foo" />
+	<touch ontouchdelta="asdf" />
+</layout>

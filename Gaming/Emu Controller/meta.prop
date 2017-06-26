@@ -1,0 +1,5 @@
+meta.name: Emu Controller
+meta.author: Unified
+meta.description: A generic emu game controller.
+meta.platform: windows
+meta.tags.category: gaming

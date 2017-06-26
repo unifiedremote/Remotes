@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onorientation="orientation">
+	<row>
+		<button text="Trim Dn" ontap="trim_down" color="green" />
+		<button text="GPS" ontap="show_gps" />
+		<button text="ATS" ontap="show_ats" />
+		<button text="Trim Up" ontap="trim_up" color="green" />
+	</row>
+	<row>
+		<button text="Gear Up/Dn" ontap="gear" />
+		<button icon="left" ontap="look_left" color="yellow" />
+		<button icon="right" ontap="look_right" color="yellow" />
+		<button text="Brake" ondown="brakes_apply" onup="brakes_release" />
+	</row>
+	<row>
+		<button text="Pause" ontap="pause" />
+		<button icon="up" ontap="look_up" color="yellow" />
+		<button icon="down" ontap="look_down" color="yellow" />
+		<button text=" " id="zero" ontap="zero" />
+	</row>
+	<row>
+		<button text="Flaps Dn" ontap="flaps_down" color="blue" />
+		<slider id="throttle" onchange="throttle" text="Throttle" progress="0" progressmax="10" weight="2" />
+		<button text="Flaps Up" ontap="flaps_up" color="blue" />
+	</row>
+</layout>

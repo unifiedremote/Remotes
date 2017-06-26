@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onorientation="orientation">
+	<row>
+		<label id="x" text="0" color="red" />
+	</row>
+	<row>
+		<label id="y" text="0" color="green" />
+	</row>
+	<row>
+		<label id="z" text="0" color="blue" />
+	</row>
+</layout>

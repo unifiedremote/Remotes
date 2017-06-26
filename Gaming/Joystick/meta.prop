@@ -1,0 +1,5 @@
+meta.name: Joystick
+meta.author: Unified
+meta.description: Test joystick control.
+meta.platform: windows
+meta.tags.category: gaming

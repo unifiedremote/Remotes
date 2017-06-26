@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onorientation="orientation">
+	<row weight="wrap">
+		<button text="Restart" ontap="restart" />
+		<button text="" />
+	</row>
+	<row>
+		<touch ondown="brake" color="red" onup="brake_up" />
+		<touch ondown="accel" color="green" onup="accel_up" />
+	</row>
+</layout>

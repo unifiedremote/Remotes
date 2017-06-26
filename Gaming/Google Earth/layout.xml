@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onorientation="orientation">
+	<row>
+		<button text="Throttle Dn" ondown="throttle_down_apply" onup="throttle_down_release" color="blue" />
+		<button text="Flaps Dn" ontap="flaps_down" />
+		<button text="Flaps Up" ontap="flaps_up" />
+		<button text="Throttle Up" ondown="throttle_up_apply" onup="throttle_up_release" color="blue" />
+	</row>
+	<row>
+		<button text="Gear" ontap="gear" />
+		<button text="Brake" ondown="brakes_apply" onup="brakes_release" />
+		<button text="Pause" ontap="pause" />
+		<button text="HUD" ontap="hud" />
+	</row>
+	<row>
+		<button text="Start / Stop" ontap="start_stop" color="blue" />
+	</row>
+</layout>

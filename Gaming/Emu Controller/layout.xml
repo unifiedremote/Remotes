@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<touch ontouchabs="touch" ontouchsize="size" onup="touchup" />
+	<grid>
+		<row>
+			<button text="A" ondown="down,z" onup="up,z" />
+		</row>
+		<row>
+			<button text="B" ondown="down,x" onup="up,x" />
+		</row>
+	</grid>
+</layout>
