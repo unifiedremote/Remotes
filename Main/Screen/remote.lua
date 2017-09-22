@@ -1,6 +1,13 @@
 local screen = libs.screen;
 local mouse = libs.mouse;
 
+events.focus = function()
+    libs.server.update({
+        id = "monitors",
+        index = screen.monitors()
+    })
+end
+
 actions.update = function (x, y, w, h, update)
 	local res = screen.capture(x, y, w, h, update);
 	local x,y = mouse.position();
