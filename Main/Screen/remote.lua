@@ -8,10 +8,10 @@ events.focus = function()
     })
 end
 
-actions.update = function (x, y, w, h, update)
-	local res = screen.capture(x, y, w, h, update);
+actions.update = function (x, y, w, h, update, monitor)
+	local res = screen.capture(x, y, w, h, update, monitor);
 	local x,y = mouse.position();
-	
+
 	libs.server.update({
 		id = "back",
 		x = res.x,
