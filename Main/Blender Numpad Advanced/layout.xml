@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <row>
+        <button text="View Selected" ontap="viewSelected" />
+    </row>
+    <row>
+        <button text="Global/Local" ontap="globalLocal" />
+    </row>
+    <row>
+        <button text="Align Left" ontap="alignViewToActiveLeft" />
+        <button text="Align Front" ontap="alignViewToActiveFront" />
+        <button text="Align Top" ontap="alignViewToActiveTop" />
+    </row>
+    <row>
+        <button text="Align Right" ontap="alignViewToActiveRight" />
+        <button text="Align Back" ontap="alignViewToActiveBack" />
+        <button text="Align Bottom" ontap="alignViewToActiveBottom" />
+    </row>
+    <row>
+        <button text="Align Active Camera to View" ontap="alignActiveCameraToView" />
+    </row>
+    <row>
+        <button text="View Lock to Active" ontap="viewLockToActive" />
+        <button text="View Lock Clear" ontap="viewLockClear" />
+    </row>
+    <row>
+        <button text="Orbit Left" ontap="orbitLeft" />
+        <button text="Orbit Up" ontap="orbitUp" />
+    </row>
+    <row>
+        <button text="Orbit Right" ontap="orbitRight" />
+        <button text="Orbit Down" ontap="orbitDown" />
+    </row>
+    <row>
+        <button text="Orbit Opposite" ontap="orbitOpposite" />
+    </row>
+    <row>
+        <button text="Roll Left" ontap="rollLeft" />
+        <button text="Roll Right" ontap="rollRight" />
+    </row>
+    <row>
+        <button text="Pan Left" ontap="panLeft" />
+        <button text="Pan Up" ontap="panUp" />
+    </row>
+    <row>
+        <button text="Pan Right" ontap="panRight" />
+        <button text="Pan Down" ontap="panDown" />
+    </row>
+    <row>
+        <button text="Zoom In" ontap="zoomIn" />
+        <button text="Slow Zoom In" ontap="slowZoomIn" />
+    </row>
+    <row>
+        <button text="Zoom Out" ontap="zoomOut" />
+        <button text="Slow Zoom Out" ontap="slowZoomOut" />
+    </row>
+    <row>
+        <button text="Zoom Camera 1:1" ontap="zoomCameraOneToOne" />
+    </row>
+    <row>
+        <button text="View Persp/Orthodox" ontap="viewPerspectiveOrthodox" />
+    </row>
+    <row>
+        <button text="Set Active Object As Camera" ontap="setActiveObjectAsCamera" />
+        <button text="Camera" ontap="camera" />
+    </row>
+    <row>
+        <button text="Left" ontap="left" />
+        <button text="Front" ontap="front" />
+        <button text="Top" ontap="top" />
+    </row>
+    <row>
+        <button text="Right" ontap="right" />
+        <button text="Back" ontap="back" />
+        <button text="Bottom" ontap="bottom" />
+    </row>
+    <row>
+        <button text="Select More" ontap="selectMore" />
+    </row>
+    <row>
+        <button text="Select Less" ontap="selectLess" />
+    </row>
+</layout>
