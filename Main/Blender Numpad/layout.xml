@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <row>
+        <button text="Pan Up" ontap="panUp" />
+    </row>
+    <row>
+        <button text="Pan Left" ontap="panLeft" />
+        <button text="Pan Right" ontap="panRight" />
+    </row>
+    <row>
+        <button text="Pan Down" ontap="panDown" />
+    </row>
+    <row>
+        <button text="Perspective/Orthodox" ontap="perspectiveOrthodox" />
+    </row>
+    <row>
+        <button text="Left View" ontap="leftView" />
+        <button text="Front View" ontap="frontView" />
+        <button text="Top View" ontap="topView" />
+    </row>
+    <row>
+        <button text="Right View" ontap="rightView" />
+        <button text="Back View" ontap="backView" />
+        <button text="Bottom View" ontap="bottomView" />
+    </row>
+    <row>
+        <button text="Opposite View" ontap="oppositeView" />
+    </row>
+    <row>
+        <button text="Rotate Up" ontap="rotateUp" />
+    </row>
+    <row>
+        <button text="Rotate Left" ontap="rotateLeft" />
+        <button text="Rotate Right" ontap="rotateRight" />
+    </row>
+    <row>
+        <button text="Rotate Down" ontap="rotateDown" />
+    </row>
+    <row>
+        <button icon="zoomout" ontap="zoomOut" />
+        <button icon="zoomnormal" ontap="zoomSelected" />
+        <button icon="zoomin" ontap="zoomIn" />
+    </row>
+</layout>
