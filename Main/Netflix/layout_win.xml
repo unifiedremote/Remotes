@@ -19,6 +19,7 @@
     <row>
       <button icon="fullscreen" onTap="fullscreen" />
       <button text="Esc" onTap="window" />
+      <button text="Skip Intro" onTap="skip_intro" />
     </row>
   </grid>
 </layout>
