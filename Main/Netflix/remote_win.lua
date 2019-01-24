@@ -113,7 +113,6 @@ end
 --@help Fullscreen view
 actions.fullscreen = function()
 	actions.switch();
-	keyboard.stroke("F11");
 	keyboard.stroke("F");
 end
 
@@ -121,6 +120,5 @@ end
 actions.window = function()
 	actions.switch();
 	keyboard.stroke("escape");
-	keyboard.stroke("F11");
 end
 
