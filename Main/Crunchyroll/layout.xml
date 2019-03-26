@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" color="FF6600">
+  <grid>
+    <row>
+      <button icon="vdown" onTap="volume_down" />
+      <button icon="vup" onTap="volume_up" />
+    </row>
+    <row>
+      <button icon="rwd" onTap="left" />
+      <button icon="ff" onTap="right" />
+    </row>
+    <row>
+      <button icon="fullscreen" onTap="fullscreen" />
+      <button icon="playpause" onTap="play_pause" />
+    </row>
+  </grid>
+</layout>
