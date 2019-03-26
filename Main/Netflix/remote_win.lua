@@ -124,3 +124,6 @@ actions.window = function()
 	keyboard.stroke("F11");
 end
 
+actions.skip_intro = function()
+	keyboard.stroke("s");
+end
