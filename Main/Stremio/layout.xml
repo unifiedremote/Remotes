@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onvolumeup="volume_up" onvolumedown="volume_down">
+	<row>
+		<button text="Board" ontap="board" />
+		<button text="Discover" ontap="discover" />
+		<button text="My Library" ontap="library" />
+		<button text="Calendar" ontap="calendar" />
+	</row>
+	<row>
+		<button icon="back" ontap="back" />
+		<button icon="up" ontap="up" />
+		<button icon="search" ontap="search" />
+	</row>
+	<row>
+		<button icon="left" ontap="left" />
+		<button icon="select" ontap="select" />
+		<button icon="right" ontap="right" />
+	</row>
+	<row>
+		<button icon="fullscreen" ontap="toggleFullscreen" />
+		<button icon="down" ontap="down" />
+		<button icon="playpause" ontap="togglePause" />
+	</row>
+</layout>
