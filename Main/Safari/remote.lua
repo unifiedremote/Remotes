@@ -52,6 +52,8 @@ end
 actions.address = function()
 	actions.switch();
 	keyboard.stroke("cmd", "L");
+	-- Without keyboard up typing is not working. 
+	keyboard.up("cmd", "L");
 	device.keyboard();
 end
 
@@ -65,6 +67,8 @@ end
 actions.find = function()
 	actions.switch();
 	keyboard.stroke("cmd", "F");
+	-- Without keyboard up typing is not working. 
+	keyboard.up("cmd", "F");
 	device.keyboard();
 end
 
