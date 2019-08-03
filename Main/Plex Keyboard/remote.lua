@@ -3,9 +3,9 @@ local win = libs.win;
 
 events.detect = function ()
 	if OS_WINDOWS then
-		return libs.fs.exists("C:\\Program Files (x86)\\Plex Home Theater") or libs.fs.exists("C:\\Program Files (x86)\\Plex\\Plex Media Center")  or libs.fs.exists("C:\\Program Files\\Plex\\Plex Media Center") or libs.fs.exists("C:\\Program Files\\Plex Home Theater");
+		return libs.fs.exists("C:\\Program Files (x86)\\Plex Home Theater") or libs.fs.exists("C:\\Program Files (x86)\\Plex")  or libs.fs.exists("C:\\Program Files\\Plex") or libs.fs.exists("C:\\Program Files\\Plex Home Theater");
 	elseif OS_OSX then
-		return libs.fs.exists("/Applications/Plex Home Theater.app") or libs.fs.exists("/Applications/Plex.app");
+		return libs.fs.exists("/Applications/Plex Home Theater.app") or libs.fs.exists("/Applications/Plex.app") or libs.fs.exists("/Applications/Pley Media Player.app");
 	end
 end
 
@@ -27,40 +27,18 @@ actions.launch = function()
 		pcall(function ()
 			os.start("%programfiles(x86)%\\Plex\\Plex Media Center\\Plex.exe"); 
 		end);
+		pcall(function ()
+			os.start("%programfiles(x86)%\\Plex\\Plex Media Player\\PlexMediaPlayer.exe"); 
+		end);
+		pcall(function ()
+			os.start("%programfiles(x86)%\\Plex\\Plex Media Player\\PlexMediaPlayer.exe"); 
+		end);
+		
 	elseif OS_OSX then
 		os.script("tell application \"Plex Home Theater\" to activate");
 		os.script("tell application \"Plex\" to activate");
+		os.script("tell application \"Plex Media Player\" to activate");
 	end
-end
-
---@help Navigate left
-actions.left = function ()
-	actions.switch();
-	kb.press("left");
-end
-
---@help Navigate down
-actions.down = function ()
-	actions.switch();
-	kb.press("down");
-end
-
---@help Navigate right
-actions.right = function ()
-	actions.switch();
-	kb.press("right");
-end
-
---@help Navigate up
-actions.up = function ()
-	actions.switch();
-	kb.press("up");
-end
-
---@help Select
-actions.select = function ()
-	actions.switch();
-	kb.press("return");
 end
 
 --@help Navigate back
@@ -78,19 +56,22 @@ end
 --@help Seek forward
 actions.forward = function ()
 	actions.switch();
-	kb.press("f");
+	kb.press("right");
 end
 
 --@help Seek rewind
 actions.rewind = function ()
 	actions.switch();
-	kb.press("r");
+	kb.press("left");
 end
 
 --@help Navigate home
 actions.home = function ()
 	actions.switch();
-	kb.press("tab");
+	kb.press("x");
+	kb.press("enter");
+	kb.press("g");
+	kb.press("d");
 end
 
 --@help Stop playback
@@ -108,13 +89,13 @@ end
 --@help Next item
 actions.next = function ()
 	actions.switch();
-	kb.press("right");
+	kb.stroke("shift","right");
 end
 
 --@help Previous item
 actions.previous = function ()
 	actions.switch();
-	kb.press("left");
+	kb.stroke("shift","left");
 end
 
 --@help Play current item
@@ -123,14 +104,20 @@ actions.play_current = function ()
 	kb.press("space");
 end
 
---@help Show OSD
-actions.osd = function ()
+--@help Play select item
+actions.select = function ()
 	actions.switch();
-	kb.press("o");
+	kb.press("enter");
 end
 
---@help Show info
-actions.info = function ()
+--@help Play volumeup item
+actions.volumeup = function ()
 	actions.switch();
-	kb.press("i");
+	kb.press("up");
+end
+
+--@help Play volumeup item
+actions.volumedown = function ()
+	actions.switch();
+	kb.press("down");
 end
