@@ -1,4 +1,5 @@
-meta.name: Plex (App W10)
+meta.name: Plex (Win 10)
 meta.author: Unified
-meta.description: Control Plex Windows 10 App
+meta.description: Control Plex Windows 10 app
+meta.platform: win
 meta.tags.category: media
