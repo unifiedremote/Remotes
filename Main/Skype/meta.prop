@@ -1,5 +1,5 @@
-meta.name: Skype
+meta.name: Skype (Legacy)
 meta.author: Unified
 meta.description: Open or Call with Skype
-meta.platform: windows
+meta.platform: legacy
 meta.tags.category: utility

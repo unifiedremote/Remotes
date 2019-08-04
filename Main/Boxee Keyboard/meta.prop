@@ -1,5 +1,5 @@
-meta.name: Boxee (Keyboard)
+meta.name: Boxee (Keyboard) (Legacy)
 meta.author: Unified
 meta.description: Boxee remote using key shortcuts.
 meta.platform: windows
-meta.tags.category: media
+meta.tags.category: legacy

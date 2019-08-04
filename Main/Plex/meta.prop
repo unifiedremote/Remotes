@@ -1,5 +1,5 @@
 meta.id: Unified.Plex
-meta.name: Plex (Home Theater)
+meta.name: Plex (Home Theater) (Legacy)
 meta.author: Unified
 meta.description: Control Plex Home Theater
-meta.tags.category: media
+meta.tags.category: legacy

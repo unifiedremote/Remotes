@@ -1,4 +1,4 @@
-meta.name: XBMC (Keyboard)
+meta.name: XBMC (Keyboard) (Legacy)
 meta.author: Unified
 meta.description: XBMC remote using key shortcuts.
-meta.tags.category: media
+meta.tags.category: legacy
