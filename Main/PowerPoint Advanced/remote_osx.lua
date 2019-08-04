@@ -32,39 +32,7 @@ end
 events.blur = function ()
 	timer.cancel(tid_update);
 end
-function createSlides( )
-	if(valid()) then
-		local p = os.script("set target_folder to ((path to temporary items from user domain as text) & \"Powerpoint\")");
-		if fs.exists(p) then
-			fs.delete(p, true);
-		end
-		local path = os.script("set target_folder to ((path to temporary items from user domain as text) & \"Powerpoint\")",
-								"tell application \"Microsoft PowerPoint\"",
-									"save of active presentation in target_folder as save as JPG",
-								"end tell",
-								"set out to POSIX path of ((path to temporary items from user domain as text) & \"Powerpoint\")");
-		return fs.list(path);
-	end
-	return "";
-end
-function shrinkSlide( path )
-	if (path == nil) then 
-		return nil;
-	end
-	if fs.exists(path .. ".r") then
-		return path .. ".r";
-	end
-	os.script("set this_file to \""..path.."\"",
-				"set the target_length to 320",
-				"tell application \"Image Events\"",
-					"launch",
-					"set this_image to open this_file",
-					"scale this_image to size target_length",
-					"save this_image with icon",
-					"close this_image",
-				"end tell");
-	fs.rename(path, path..".r");
-end
+
 function getTitleForAllSlide()
 	if(valid()) then
 		local titlesString = os.script("tell application \"Microsoft PowerPoint\"",
@@ -215,19 +183,11 @@ function update ()
 					{ id = "slides", children = items }
 				);
 				
-				slidePaths = createSlides();
 				noPresentation=false;
 			end
 			title = getTitle();
 			_notes = getNotes();
-			if #slidePaths > 0 then
-				local index = get_slideshow_position() - 1;
-				local count = #slidePaths;
-				
-				preview_curr = shrinkSlide(slidePaths[index+1]);
-				preview_next = shrinkSlide(slidePaths[math.min(count, index+2)]);
-				preview_prev = shrinkSlide(slidePaths[math.max(1, index)]);
-			end
+
 			
 			if (_notes ~= notes) then
 				notes = _notes;
@@ -261,6 +221,29 @@ actions.launch = function ()
 	os.script("tell application \"Microsoft PowerPoint\"",
 				"activate",
 			"end tell");
+end
+
+--@help Start slideshow 
+actions.show_start = function ()
+	os.script("tell application \"Microsoft PowerPoint\"",
+		"activate",
+		"set o to count slides of active presentation",
+		"set temp to active presentation's slide show settings",
+		"set temp's starting slide to 1",
+		"set temp's ending slide to o",
+		"set temp's range type to slide show range",
+		"set temp's advance mode to slide show advance manual advance",
+		"run slide show temp",
+	"end tell");
+end
+
+
+--@help End slideshow 
+actions.show_end = function ()
+	os.script("tell application \"Microsoft PowerPoint\"",
+		"set v to (slide show view of slide show window of active presentation)",
+		"exit slide show v",
+	"end tell");
 end
 
 --@help Go to next slide

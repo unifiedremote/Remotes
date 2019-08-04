@@ -36,6 +36,15 @@
 				<button text="Reset" ontap="timer_reset" />
 			</row>
 		</tab>
+		<tab text="Preview">
+			<row weight="2">
+				<image id="preview_curr" color="hard" ontap="next" />
+			</row>
+			<row weight="1">
+				<image id="preview_prev" color="hard" ontap="previous" />
+				<image id="preview_next" color="hard" ontap="next" />
+			</row>
+		</tab>
 		<tab text="Comments">
 			<row weight="wrap">
 				<label id="title" text="Loading..." color="#D04727" />
