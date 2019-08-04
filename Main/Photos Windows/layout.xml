@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="previous" onVolumeDown="next">
+  <grid>
+    <row>
+      <button icon="play" onTap="show_start" />
+      <button icon="rotateright" onTap="rotate_right" />
+    </row>
+    <row>
+      <button icon="zoomout" onTap="zoom_out" />
+      <button icon="stop" onTap="show_end" />
+      <button icon="zoomin" onTap="zoom_in" />
+    </row>
+    <row>
+      <button icon="left" onTap="previous" />
+      <button icon="right" onTap="next" />
+    </row>
+  </grid>
+</layout>
