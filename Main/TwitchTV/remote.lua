@@ -12,21 +12,17 @@ end
 
 --@help Raise volume
 actions.volume_up = function()
+	keyboard.stroke("pageup");
 	keyboard.stroke("up");
+end
+
+--@help mute volume
+actions.volume_mute = function()
+	keyboard.stroke("pagedown");
 end
 
 --@help Toggle playback state
 actions.play_pause = function()
 	keyboard.stroke("space");
-end
-
---@help Fullscreen view
-actions.fullscreen = function()
-	keyboard.stroke("F");
-end
-
---@help Windowed view
-actions.window = function()
-	keyboard.stroke("escape");
 end
 

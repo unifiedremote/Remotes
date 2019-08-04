@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" onResume="resume" onPause="pause" color="#8763ca">
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" color="#8763ca">
   <grid>
     <row>
       <button icon="vdown" onTap="volume_down" />
@@ -8,10 +8,6 @@
     </row>
     <row>
       <button icon="playpause" onTap="play_pause" />
-    </row>
-    <row>
-      <button icon="fullscreen" onTap="fullscreen" />
-      <button text="Esc" onTap="window" />
     </row>
   </grid>
 </layout>
