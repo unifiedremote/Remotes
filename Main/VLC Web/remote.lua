@@ -32,7 +32,7 @@ function test()
 			text = "A connection to VLC could not be established." ..
 				"We recommend using the latest version of VLC.\n\n" ..
 				"1. Make sure VLC is running on your computer.\n\n" ..
-				"2. Enable web interface in VLC settings > Show all settings > Interface > Main interfaces.\n\n" ..
+				"2. Enable [Web] interface in VLC settings > Show all settings > Interface > Main interfaces.\n\n" ..
 				"3. VLC 2.1+ you MUST specify a password in Main interfaces > Lua > Lua HTTP > Password. Unified Remote is configured to use the password 'vlcremote'.\n\n" ..
 				"4. You can also specify a different IP address, port, or password in the remote settings.\n\n" ..
 				"You may have to restart VLC after enabling the web interface for the changes to take effect.",
