@@ -17,10 +17,10 @@ local dialog_repeat = {
 	{ type="item", text="One", id = "one" },
 	{ type="item", text="All", id = "all" }
 }
---@help Launch iTunes application
+--@help Launch Music application
 
 actions.launch = function()
-	os.open("/Applications/iTunes.app");
+	os.open("/Applications/Music.app");
 end
 events.focus = function ()
 	update();
@@ -80,14 +80,14 @@ end
 --@param item:number
 actions.suffle_dialog = function (item)
 	if item ~= 0 then
-		os.script("tell application \"System Events\" to tell process \"iTunes\"'s menu bar 1's menu bar item \"Controls\"'s menu 1's menu item \"Shuffle\"'s menu 1",
+		os.script("tell application \"System Events\" to tell process \"Music\"'s menu bar 1's menu bar item \"Controls\"'s menu 1's menu item \"Shuffle\"'s menu 1",
 						"if (name of menu item 1) is not \"Turn Off Shuffle\" then",
 							"perform action \"AXPress\" of menu item 1",
 						"end if",
 						"perform action \"AXPress\" of menu item \"".. dialog_shuffle[item+1].text .."\"",
 					"end tell");
 	else
-		os.script("tell application \"System Events\" to tell process \"iTunes\"'s menu bar 1's menu bar item \"Controls\"'s menu 1's menu item \"Shuffle\"'s menu 1",
+		os.script("tell application \"System Events\" to tell process \"Music\"'s menu bar 1's menu bar item \"Controls\"'s menu 1's menu item \"Shuffle\"'s menu 1",
 						"if (name of menu item 1) is \"Turn Off Shuffle\" then",
 							"perform action \"AXPress\" of menu item 1",
 						"end if",
@@ -97,42 +97,42 @@ end
 --@help Set Repeate state
 --@param item:number
 actions.repeat_dialog = function (item)
-	os.script("tell application \"System Events\" to tell process \"iTunes\"'s menu bar 1's menu bar item \"Controls\"'s menu 1's menu item \"Repeat\"'s menu 1",
+	os.script("tell application \"System Events\" to tell process \"Music\"'s menu bar 1's menu bar item \"Controls\"'s menu 1's menu item \"Repeat\"'s menu 1",
 					"perform action \"AXPress\" of menu item \"" .. dialog_repeat[item+1].text .. "\"",
 				"end tell");
 end
 
 --@help Previous track
 actions.previous = function () 
-	os.script("tell application \"iTunes\" to previous track");
+	os.script("tell application \"Music\" to previous track");
 end
 --@help Next track
 actions.next = function ()
-	os.script("tell application \"iTunes\" to next track");
+	os.script("tell application \"Music\" to next track");
 end
 --@help Rewind track
 actions.rewind = function ()
-	os.script("tell application \"iTunes\" to rewind");
+	os.script("tell application \"Music\" to rewind");
 end
 --@help Fast Forward track
 actions.forward = function ()
-	os.script("tell application \"iTunes\" to fast forward");
+	os.script("tell application \"Music\" to fast forward");
 end
 --@help Volume Up
 actions.volume_up = function ()
-	os.script("tell application \"iTunes\" to set sound volume to (sound volume + 10)");
+	os.script("tell application \"Music\" to set sound volume to (sound volume + 10)");
 end
 --@help Volume Down
 actions.volume_down = function ()
-	os.script("tell application \"iTunes\" to set sound volume to (sound volume - 10)");
+	os.script("tell application \"Music\" to set sound volume to (sound volume - 10)");
 end
 --@help Volume Mute
 actions.volume_mute = function ()
-	os.script("tell application \"iTunes\" to set mute to (not mute)");
+	os.script("tell application \"Music\" to set mute to (not mute)");
 end
 --@help Fullscreen
 actions.fullscreen = function ()
-	os.script("tell application \"System Events\" to tell process \"iTunes\"'s menu bar 1's menu bar item \"View\"'s menu 1",
+	os.script("tell application \"System Events\" to tell process \"Music\"'s menu bar 1's menu bar item \"View\"'s menu 1",
 				"if name of last menu item is \"Enter Full Screen\" then",
 					"perform action \"AXPress\" of menu item \"Enter Full Screen\"",
 				"else",
@@ -142,24 +142,24 @@ actions.fullscreen = function ()
 end
 --@help Stop track
 actions.stop = function ()
-	os.script("tell application \"iTunes\" to stop");
+	os.script("tell application \"Music\" to stop");
 end
 --@help Play track
 actions.play = function ()
-	os.script("tell application \"iTunes\" to play");
+	os.script("tell application \"Music\" to play");
 end
 --@help Pause track
 actions.pause = function ()
-	os.script("tell application \"iTunes\" to pause");
+	os.script("tell application \"Music\" to pause");
 end
 --@help Toggle Play/Pause
 actions.play_pause = function ()
-	os.script("tell application \"iTunes\" to playpause");
+	os.script("tell application \"Music\" to playpause");
 end
 --@help Set Volume
 --@param vol:number set volume
 actions.volume = function (vol)
-	os.script("tell application \"iTunes\"",
+	os.script("tell application \"Music\"",
 					"set sound volume to " .. vol , 
 				"end tell");
 end
@@ -173,12 +173,12 @@ end
 --@help Set Position
 --@param pos:number Set position
 actions.position = function (pos)
-	local lenght = os.script("tell application \"iTunes\"",
+	local lenght = os.script("tell application \"Music\"",
 								"set curr to current track",
 								"set out to duration of curr",
 							"end tell");
 	local newpos = pos/100 * lenght;
-	os.script("tell application \"iTunes\"",
+	os.script("tell application \"Music\"",
 					"set player position to " .. newpos , 
 				"end tell"); 
 end
@@ -220,14 +220,14 @@ function updateCurrentPlaylist( item )
 	server.update({ id = "playlists", children = playtracks });
 end
 function playTrack( item )
-		 os.script("tell application \"iTunes\"",
+		 os.script("tell application \"Music\"",
 						"play track " .. item.index .. " of playlist \"" .. item.playlist .. "\"",
 					"end tell");	
 		 updateCurrentPlaylist(item);
 end
 
 function get_title()
-	return os.script("tell application \"iTunes\"",
+	return os.script("tell application \"Music\"",
 			"if player state is playing or player state is paused then",
 				"set out to name of current track",
 			"else",
@@ -237,16 +237,16 @@ function get_title()
 end
 
 function get_volume() 
-	return os.script("tell application \"iTunes\"",
+	return os.script("tell application \"Music\"",
 						"set out to sound volume",
 					"end tell");
 end
 
 function get_position()
-	local currpos = os.script("tell application \"iTunes\"",
+	local currpos = os.script("tell application \"Music\"",
 						"set out to player position",
 					"end tell");
-	local lenght = os.script("tell application \"iTunes\"",
+	local lenght = os.script("tell application \"Music\"",
 								"set curr to current track",
 								"set out to duration of curr",
 							"end tell");
@@ -257,14 +257,14 @@ function get_position()
 end
 
 function get_playing()
-	return os.script("tell application \"iTunes\"",
+	return os.script("tell application \"Music\"",
 						"set out to player state is playing",
 					"end tell");	
 end
 
 function get_cover()
 	return os.script(
-		"tell application \"iTunes\" to tell artwork 1 of current track",
+		"tell application \"Music\" to tell artwork 1 of current track",
 			"set d to raw data",
 			"if format is «class PNG » then",
 				"set x to \"png\"",
@@ -291,7 +291,7 @@ end
 
 function get_playlist_names( ) 
 	local playlists = os.script("set myPlaylists to \"\" as text",
-								"tell application \"iTunes\"",
+								"tell application \"Music\"",
 									"try",
 										"set v to (get view of front browser window)",
 										"set mySource to (get container of v)",
@@ -303,7 +303,7 @@ function get_playlist_names( )
 									"end repeat",
 								"end tell");
 
-	local curplayid = os.script("tell application \"iTunes\"",
+	local curplayid = os.script("tell application \"Music\"",
 									"set a to id of current playlist",
 								"end tell");
 	local n = str.split(playlists,"\n");
@@ -317,19 +317,19 @@ function get_playlist_names( )
 	return result;
 end
 function get_current_playing_id(  )
-	return os.script("tell application \"iTunes\"",
+	return os.script("tell application \"Music\"",
 									"set a to id of current track",
 								"end tell");
 end
 function get_playlist_tracks( name )
 	local tracks = os.script("set myTracks to \"\" as text",
-							"tell application  \"iTunes\"",
+							"tell application  \"Music\"",
 								"set s to playlist \"" .. name .. "\" ",
 								"repeat with p in every track in s",
 									"set myTracks to myTracks & name of p & tab & artist of p & tab & index of p & tab & time of p & tab & id of p & linefeed ",
 								"end repeat ",
 							"end tell");
-	local curplayid = os.script("tell application \"iTunes\"",
+	local curplayid = os.script("tell application \"Music\"",
 								"set a to id of current track",
 							"end tell");
 	local result = {};
