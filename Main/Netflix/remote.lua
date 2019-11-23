@@ -60,6 +60,11 @@ actions.fullscreen = function()
 	keyboard.stroke("F");
 end
 
+--@help Skip Intro
+actions.skip_intro = function()
+	keyboard.stroke("s");
+end
+
 --@help Windowed view
 actions.window = function()
 	keyboard.stroke("escape");
