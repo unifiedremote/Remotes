@@ -147,8 +147,15 @@ end
 
 --@help Toggle playlist
 actions.toggle_playlist = function ()
+	actions.command(CMD_TOGGLE_PLAYLIST);
+end
+
+
+--@help Open file
+actions.open_file = function ()
 	actions.command(CMD_OPEN_FILE);
 end
+
 
 --@help Jump back 30 seconds
 actions.big_back = function ()
