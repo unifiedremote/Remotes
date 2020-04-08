@@ -11,7 +11,7 @@
     </row>
     <row>
 		<button icon="previous" onTap="previous" />
-		<button text="Open" ontap="toggle_playlist" />
+		<button text="Open" ontap="open_file" />
 		<button icon="next" onTap="next" />
     </row>
     <row>
