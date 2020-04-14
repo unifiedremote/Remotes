@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<grid>
+    	<row weight="9">
+			<touch weight="9"
+				ondown="down_draw"
+				onup="up_draw"
+				onhold="hold_draw"
+				ondoubletap="double_draw"
+				ontouchdelta="delta_draw"
+				text="Touch and move to draw \n(simulates: left button down)\n\n
+					  Long press and move to secondary \n(simulates: right button down)" />
+			<touch weight="1" 
+				ondown="down_toolsize"
+				onup="up_toolsize"
+				ontouchdelta="delta_toolsize"
+				text="+\n\nTool\nSize\n\n-" />
+			<touch weight="9" 
+				onup="up_fixed"
+				ontap="tap_fixed" 
+				onhold="hold_fixed"
+				ondoubletap="double_fixed" 
+				ontouchdelta="delta_fixed"
+				text="Touch and move to move cursor\n\n
+					  Long press and move to pan\n(simulates: space + left button down)\n\n
+					  Double tap to simulate right click" />
+			<touch weight="1"
+				ontouchdelta="delta_zoom"
+				text="+\n\nZoom\n\n-" />
+		</row>
+		<row weight="1"> 
+			<button image="undo.png" scale="native" ontap="undo" /> 
+			<button image="redo.png" scale="native" ontap="redo" /> 
+			<button image="pen.png" scale="native" ontap="pen" /> 
+			<button image="eraser.png" scale="native" ontap="eraser" /> 
+			<toggle id="tg_color_picker" image="color_picker.png" scale="native" onchange="color_picker" /> 
+			<button image="color_picker_window.png" scale="native" ontap="color_picker_window" /> 
+			<button image="swap_colors.png" scale="native" ontap="swap_colors" /> 
+			<button image="selection.png" scale="native" ontap="selection" /> 
+			<button image="deselect.png" scale="native" ontap="deselect" /> 
+			<button image="bucket.png" scale="native" ontap="bucket" /> 
+			<button image="color_replacer.png" scale="native" ontap="color_replacer" /> 
+			<button image="magic_wand.png" scale="native" ontap="magic_wand" /> 
+			<button image="tile_placer.png" scale="native" ontap="tile_placer" /> 
+			<button image="offset.png" scale="native" ontap="offset" /> 
+		</row>
+	</grid>
+</layout>
