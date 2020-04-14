@@ -5,7 +5,7 @@
 		<row> <button image="redo.png" scale="native" ontap="redo" /> </row>
 		<row> <button image="pen.png" scale="native" ontap="pen" /> </row>
 		<row> <button image="eraser.png" scale="native" ontap="eraser" /> </row>
-		<row> <button image="color_picker.png" scale="native" ontap="color_picker" /> </row>
+		<row> <toggle id="tg_color_picker" image="color_picker.png" scale="native" onchange="color_picker" /> </row>
 		<row> <button image="color_picker_window.png" scale="native" ontap="color_picker_window" /> </row>
 		<row> <button image="swap_colors.png" scale="native" ontap="swap_colors" /> </row>
 		<row> <button image="selection.png" scale="native" ontap="selection" /> </row>
