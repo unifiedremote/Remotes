@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<grid weight="1">
+		<row> <button image="undo.png" scale="native" ontap="undo" /> </row>
+		<row> <button image="redo.png" scale="native" ontap="redo" /> </row>
+		<row> <button image="pen.png" scale="native" ontap="pen" /> </row>
+		<row> <button image="eraser.png" scale="native" ontap="eraser" /> </row>
+		<row> <button image="color_picker.png" scale="native" ontap="color_picker" /> </row>
+		<row> <button image="color_picker_window.png" scale="native" ontap="color_picker_window" /> </row>
+		<row> <button image="swap_colors.png" scale="native" ontap="swap_colors" /> </row>
+		<row> <button image="selection.png" scale="native" ontap="selection" /> </row>
+		<row> <button image="deselect.png" scale="native" ontap="deselect" /> </row>
+		<row> <button image="bucket.png" scale="native" ontap="bucket" /> </row>
+		<row> <button image="color_replacer.png" scale="native" ontap="color_replacer" /> </row>
+		<row> <button image="magic_wand.png" scale="native" ontap="magic_wand" /> </row>
+		<row> <button image="tile_placer.png" scale="native" ontap="tile_placer" /> </row>
+		<row> <button image="offset.png" scale="native" ontap="offset" /> </row>
+  	</grid>
+	<grid weight="9">
+    	<row>
+			<touch weight="9"
+				ondown="down_draw"
+				onup="up_draw"
+				onhold="hold_draw"
+				ondoubletap="double_draw"
+				ontouchdelta="delta_draw"
+				text="Touch and move to draw \n(simulates: left button down)\n\n
+					  Long press and move to secondary \n(simulates: right button down)" />
+			<touch weight="1" 
+				ondown="down_toolsize"
+				onup="up_toolsize"
+				ontouchdelta="delta_toolsize"
+				text="+\n\nTool\nSize\n\n-" />
+		</row>
+		<row>
+			<touch weight="9" 
+				onup="up_fixed"
+				ontap="tap_fixed" 
+				onhold="hold_fixed"
+				ondoubletap="double_fixed" 
+				ontouchdelta="delta_fixed"
+				text="Touch and move to move cursor\n\n
+					  Long press and move to pan\n(simulates: space + left button down)\n\n
+					  Double tap to simulate right click" />
+			<touch weight="1"
+				ontouchdelta="delta_zoom"
+				text="+\n\nZoom\n\n-" />
+		</row>
+	</grid>
+</layout>
