@@ -134,3 +134,15 @@ actions.info = function ()
 	actions.switch();
 	kb.press("i");
 end
+
+--@help Volume Down
+actions.volume_down = function ()
+	actions.switch();
+	kb.press("volumedown")
+end
+
+--@help Volume Up
+actions.volume_up = function ()
+	actions.switch();
+	kb.press("volumeup")
+end
