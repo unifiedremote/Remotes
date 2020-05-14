@@ -1,5 +1,5 @@
 meta.name: Music
-meta.author: Unified
-meta.description: Music Remote.
-meta.platform: windows osx
+meta.author: paksman
+meta.description: Apple Music remote.
+meta.platform: osx
 meta.tags.category: media
