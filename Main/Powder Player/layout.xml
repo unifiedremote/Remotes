@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onvolumeup="volumeUp" onvolumedown="volumeDown">
+	<row>
+		<button text="Aspect" ontap="aspectRatio" />
+		<button text="Crop" ontap="cropScreen" />
+		<button text="Zoom" ontap="zoomMode" />
+		<button text="Mute" ontap="toggleMute" />
+	</row>
+	<row>
+		<button icon="more" ontap="showTime" />
+		<button icon="vup" ontap="volumeUp" />
+		<button icon="next" ontap="playlistNext" />
+	</row>
+	<row>
+		<button icon="left" ontap="jumpLeft" />
+		<button text="" ontap="nothing" />
+		<button icon="right" ontap="jumpRight" />
+	</row>
+	<row>
+		<button icon="fullscreen" ontap="toggleFullscreen" />
+		<button icon="vdown" ontap="volumeDown" />
+		<button icon="playpause" ontap="togglePause" />
+	</row>
+</layout>
