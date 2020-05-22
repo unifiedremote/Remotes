@@ -55,10 +55,6 @@ actions.toggleFullscreen = function ()
 end
 
 
-actions.nothing = function ()
-end
-
-
 actions.playlistNext = function ()
 	kb.stroke("n");
 end

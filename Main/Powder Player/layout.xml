@@ -13,7 +13,7 @@
 	</row>
 	<row>
 		<button icon="left" ontap="jumpLeft" />
-		<button text="" ontap="nothing" />
+		<space />
 		<button icon="right" ontap="jumpRight" />
 	</row>
 	<row>
