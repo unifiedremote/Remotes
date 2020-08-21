@@ -3,7 +3,7 @@ local win = libs.win;
 
 events.detect = function ()
 	if OS_WINDOWS then
-		return libs.fs.exists("C:\\Program Files (x86)\\Plex Home Theater") or libs.fs.exists("C:\\Program Files (x86)\\Plex")  or libs.fs.exists("C:\\Program Files\\Plex") or libs.fs.exists("C:\\Program Files\\Plex Home Theater");
+		return libs.fs.exists("C:\\Program Files\\Plex\\Plex Media Player");
 	elseif OS_OSX then
 		return libs.fs.exists("/Applications/Plex Home Theater.app") or libs.fs.exists("/Applications/Plex.app") or libs.fs.exists("/Applications/Pley Media Player.app");
 	end
@@ -12,9 +12,9 @@ end
 --@help Focus Plex application
 actions.switch = function()
 	if OS_WINDOWS then
-		local hwnd = win.window("Plex Home Theater.exe");
+		local hwnd = win.window("PlexMediaPlayer.exe");
 		if (hwnd == 0) then actions.launch(); end
-		win.switchtowait("Plex Home Theater.exe");
+		win.switchtowait("PlexMediaPlayer.exe");
 	end
 end
 
@@ -68,34 +68,13 @@ end
 --@help Navigate home
 actions.home = function ()
 	actions.switch();
-	kb.press("x");
-	kb.press("enter");
-	kb.press("g");
-	kb.press("d");
+	kb.press("h");
 end
 
 --@help Stop playback
 actions.stop = function ()
 	actions.switch();
 	kb.press("x");
-end
-
---@help Show menu
-actions.menu = function ()
-	actions.switch();
-	kb.press("m");
-end
-
---@help Next item
-actions.next = function ()
-	actions.switch();
-	kb.stroke("shift","right");
-end
-
---@help Previous item
-actions.previous = function ()
-	actions.switch();
-	kb.stroke("shift","left");
 end
 
 --@help Play current item
@@ -113,11 +92,41 @@ end
 --@help Play volumeup item
 actions.volumeup = function ()
 	actions.switch();
-	kb.press("up");
+	kb.press("oem_plus");
 end
 
 --@help Play volumeup item
 actions.volumedown = function ()
 	actions.switch();
+	kb.press("oem_minus");
+end
+
+--@help Navigate left
+actions.left = function ()
+	actions.switch();
+	kb.press("left");
+end
+
+--@help Navigate down
+actions.down = function ()
+	actions.switch();
 	kb.press("down");
+end
+
+--@help Navigate right
+actions.right = function ()
+	actions.switch();
+	kb.press("right");
+end
+
+--@help Navigate up
+actions.up = function ()
+	actions.switch();
+	kb.press("up");
+end
+
+--@help Select
+actions.select = function ()
+	actions.switch();
+	kb.press("return");
 end

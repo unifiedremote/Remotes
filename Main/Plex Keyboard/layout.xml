@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout onlaunch="launch" color="#FF9500">
-			<row>
-				<button icon="back" ontap="back" />
-				<button icon="home" ontap="home" />
-			</row>
-			<row>
-				<button icon="rwd" ontap="rewind" />
-				<button icon="ff" ontap="forward" />
-			</row>
-			<row>
-				<button icon="previous" ontap="previous" />
-				<button icon="next" ontap="next" />
-			</row>
-			<row>
-				<button icon="stop" ontap="stop" />
-				<button icon="playpause" ontap="play_pause" />
-			</row>
-			<row>
-				<button icon="vup" ontap="volumeup" />
-				<button icon="select" ontap="select" />
-				<button icon="vdown" ontap="volumedown" />
-			</row>
+<layout color="#FF9500">
+	<row>
+		<button icon="back" ontap="back" />
+		<button color="#525252" icon="up" ontap="up" />
+		<button icon="playpause" ontap="play_pause" />
+	</row>
+	<row>
+		<button color="#525252" icon="left" ontap="left" />
+		<button color="#525252" icon="select" ontap="select" />
+		<button color="#525252" icon="right" ontap="right" />
+	</row>
+	<row>
+		<button icon="rwd" ontap="rewind" />
+		<button color="#525252" icon="down" ontap="down" />
+		<button icon="ff" ontap="forward" />
+	</row>
+	<row>
+		<button icon="stop" ontap="stop" />
+		<button text="Home" ontap="home" />
+	</row>
+	<row>
+		<button icon="vup" ontap="volumeup" />
+		<button icon="vdown" ontap="volumedown" />
+	</row>
 </layout>
