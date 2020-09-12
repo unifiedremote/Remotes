@@ -68,6 +68,13 @@ actions.volume_down = function()
 	actions.command(VolumeDown);
 end
 
+--@help Lower foo volume
+actions.foo_volume_down = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/runcmd="Playback/Volume/Down"');
+	end
+end
+
 --@help Mute volume
 actions.volume_mute = function()
 	actions.command(MuteTrack);
@@ -77,6 +84,14 @@ end
 actions.volume_up = function()
 	actions.command(VolumeUp);
 end
+
+--@help Raise foo volume
+actions.foo_volume_up = function()
+	if OS_WINDOWS then
+		os.start("foobar2000.exe", '/runcmd="Playback/Volume/Up"');
+	end
+end
+
 
 --@help Previous track
 actions.previous = function()
