@@ -4,21 +4,11 @@ local timer = libs.timer
 local utf8 = libs.utf8;
 local server = libs.server;
 
--- Commands
-local WM_COMMAND 			= 0x111;
-local WA_PREVTRACK          = 40044; -- plays previous track
-local WA_PLAY               = 40045; -- plays selected track
-local WA_PAUSE              = 40046; -- pauses/unpauses currently playing track
-local WA_STOP               = 40047; -- stops currently playing track
-local WA_NEXTTRACK          = 40048; -- plays next track
-local WA_VOLUMEUP           = 40058; -- turns volume up
-local WA_VOLUMEDOWN         = 40059; -- turns volume down
-
 local tid = -1;
 local title = "";
 
 events.detect = function ()
-	return libs.fs.exists("C:\\KMPlayer");
+	return libs.fs.exists("C:\\Program Files\\KMPlayer 64X");
 end
 
 events.focus = function ()
@@ -31,7 +21,7 @@ end
 
 --@help Update status information
 actions.update = function ()
-	local hwnd = win.find("KMPlayer v3.x", nil);
+	local hwnd = win.find("KMPlayer 64X", nil);
 	local _title = win.title(hwnd);
 	
 	if (_title == "") then
@@ -44,60 +34,58 @@ actions.update = function ()
 	end
 end
 
---@help Send raw command to Winamp
---@param cmd:number Raw winamp command number
-actions.command = function(cmd)
-	local hwnd = win.find("KMPlayer v3.x", nil);
-	win.send(hwnd, WM_COMMAND, cmd, 0);
-	actions.update();
+--@help Switch to KMPlayer
+actions.switch = function()
+	if OS_WINDOWS then
+		local hwnd = win.window("KMPlayer64.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait("KMPlayer64.exe");
+	end
 end
 
---@help Launcher Winamp application
-actions.launch = function()
-	os.start("kmplayer.exe");
+--@help Launcher KMPlayer application
+actions.launch = function()    
+	os.start("KMPlayer64.exe");
 end
 
 --@help Lower volume
 actions.volume_down = function()
-	actions.command(WA_VOLUMEDOWN);
+	actions.switch();
+	keyboard.stroke("volume_down");
 end
 
 --@help Mute volume
 actions.volume_mute = function()
+	actions.switch();
 	keyboard.stroke("volume_mute");
 end
 
 --@help Raise volume
 actions.volume_up = function()
-	actions.command(WA_VOLUMEUP);
+	actions.switch();
+	keyboard.stroke("volume_up");
 end
 
 --@help Previous track
 actions.previous = function()
-	actions.command(WA_PREVTRACK);
+	actions.switch();
+	keyboard.stroke("PageUp");
 end
 
 --@help Next track
 actions.next = function()
-	actions.command(WA_NEXTTRACK);
+	actions.switch();
+	keyboard.stroke("PageDown");
 end
 
 --@help Stop playback
 actions.stop = function()
-	actions.command(WA_STOP);
-end
-
---@help Start playback
-actions.play = function()
-	actions.command(WA_PLAY);
-end
-
---@help Pause or unpause playback
-actions.pause = function()
-	actions.command(WA_PAUSE);
+	actions.switch();
+	keyboard.stroke("ctrl", "z");
 end
 
 --@help Toggle play/pause state
 actions.play_pause = function()
-	actions.pause();
+	actions.switch();
+	keyboard.stroke("space");
 end

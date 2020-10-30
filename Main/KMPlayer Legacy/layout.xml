@@ -18,4 +18,4 @@
       <button icon="playpause" onTap="play_pause" />
     </row>
   </grid>
-</layout>   
+</layout>
