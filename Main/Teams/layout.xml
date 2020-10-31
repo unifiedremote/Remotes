@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" color="#464EB8">
+  <grid>
+    <row>
+      <button text="Mute" onTap="mute" />
+    </row>
+    <row>
+      <button text="Video" onTap="video" />
+    </row>
+    <row>
+      <button text="End Meeting" onTap="stop" />
+    </row>
+    <row>
+      <button text="Answer Call" onTap="answer" />
+    </row>
+  </grid>
+</layout>
