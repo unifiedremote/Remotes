@@ -9,16 +9,16 @@ end
 --@help Focus Zoom application
 actions.switch = function()
 	if OS_WINDOWS then
-		local hwnd = win.window("Zoom.exe");
+		local hwnd = win.find("ZPContentViewWndClass", nil);
 		if (hwnd == 0) then actions.launch(); end
-		win.switchtowait("Zoom.exe");
+		win.switchtowait(hwnd);
 	end
 end
 
 --@help Launch Zoom application
 actions.launch = function()
 	if OS_WINDOWS then
-		os.start("Zoom.exe");
+		os.start("%appdata%/Zoom/bin/Zoom.exe");
 	end
 end
 
