@@ -41,8 +41,8 @@ actions.MoveBy = function(x, y)
 	mouse.moveraw(x,y);
 end
 
-actions.MoveTo = function (x, y)
-	mouse.moveto(x, y);
+actions.MoveTo = function (x, y, display)
+	mouse.moveto(x, y, display);
 end
 
 actions.MoveToPx = function (x, y)
