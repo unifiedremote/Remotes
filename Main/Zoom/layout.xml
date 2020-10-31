@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onLaunch="launch" onVolumeUp="volume_up" onVolumeDown="volume_down" color="#0c63ce">
+  <grid>
+    <row>
+      <button text="Mute" onTap="mute" />
+    </row>
+    <row>
+      <button text="Video" onTap="video" />
+    </row>
+    <row>
+      <button text="Share Screen" onTap="screen" />
+    </row>
+    <row>
+      <button text="Record" onTap="record" />
+    </row>
+    <row>
+      <button text="Chat" onTap="chat" />
+    </row>
+    <row>
+      <button text="Fullscreen" onTap="fullscreen" />
+    </row>
+    <row>
+      <button text="End Meeting" onTap="stop" />
+    </row>
+  </grid>
+</layout>
