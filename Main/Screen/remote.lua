@@ -10,7 +10,7 @@ end
 
 actions.update = function (x, y, w, h, update, monitor)
 	local res = screen.capture(x, y, w, h, update, monitor);
-	local x,y = mouse.position();
+	local x,y = mouse.position(monitor);
 
 	libs.server.update({
 		id = "back",
