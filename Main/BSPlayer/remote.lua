@@ -218,16 +218,6 @@ actions.stop = function()
 	actions.command(BSP_Stop);
 end
 
---@help Fast rewind
-actions.fast_rewind = function()
-	actions.command(BSP_FastRew);
-end
-
---@help Rewind
-actions.rewind = function()
-	actions.command(BSP_Rew);
-end
-
 --@help Forward
 actions.forward = function()
 	actions.command(BSP_Forw);
