@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="Kodi_Vup" onVolumeDown="Kodi_Vdown">
+  <grid>
+    <row>
+      <button Text="Page Up" onTap="Kodi_Page_Up" onhold="Kodi_Tops" color="#8b8c8c" />
+      <button Text="Page Down" onTap="Kodi_Page_Down" onhold="Kodi_Bottom" color="#8b8c8c" />
+      <button image="images/up.png" onTap="Kodi_Up" color="#2EB0EB" />
+	  <button image="images/back.png" onTap="Kodi_Back" />
+	  <button image="images/home.png" onTap="Kodi_Home" />
+    </row>
+    <row>
+      <button image="images/rwd.png" onTap="Kodi_Rewind" />
+      <button image="images/left.png" onTap="Kodi_Left" color="#2EB0EB" />
+      <button image="images/select.png" onTap="Kodi_Enter" color="#2EB0EB" />
+	  <button image="images/right.png" onTap="Kodi_Right" color="#2EB0EB" />
+	  <button image="images/ff.png" onTap="Kodi_Forward" />
+    </row>
+    <row>
+      <button image="images/pause.png" onTap="Kodi_Pause" />
+      <button image="images/stop.png" onTap="Kodi_Stop" onhold="Kodi_Watched" color="#8b8c8c" />
+      <button image="images/down.png" onTap="Kodi_Down" color="#2EB0EB" />
+	  <button image="images/previous.png" onTap="Kodi_Previous" />
+	  <button image="images/next.png" onTap="Kodi_Next" />
+    </row>
+    <row>
+      <button image="images/play.png" onTap="Kodi_Play" />
+      <button Text="Options" onTap="Kodi_Options" />
+      <button Text="Info" onTap="Kodi_Info" />
+	  <button Text="Sub On/Off/Pos" onTap="Kodi_Subon" onhold="Kodi_Subpos" color="#8b8c8c" />
+	  <button Text="Codec" onTap="Kodi_Codec" onhold="Kodi_Codec2" color="#8b8c8c" />
+    </row>
+    <row>
+      <button image="images/vdown.png" onTap="Kodi_Vdown" />
+      <button image="images/vmute.png" onTap="Kodi_Vmute" />
+      <button image="images/vup.png" onTap="Kodi_Vup" />
+    </row>
+	 <row>
+      <button image="images/fullscreen.png" onTap="Kodi_Fullscreen" />
+      <button Text="Player" onTap="Kodi_OSD" />
+      <button image="images/windows.png" onTap="Kodi_Windows" onhold="switch" color="#8b8c8c" />
+	  <button Text="Exit" onTap="Kodi_Exit" />
+	  <button Text="Restart KODI" onTap="Kodi_Restart" />
+    </row>
+  </grid>
+</layout>
