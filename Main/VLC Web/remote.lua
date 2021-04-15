@@ -178,6 +178,9 @@ function update_items(items)
 		if (v.name == "item") then
 			local id = v.attributes.id;
 			local name = v.attributes.name;	
+			if (name == nil or name == "") then
+				name = "Library";
+			end
 			local duration = v.attributes.duration;
 			table.insert(list, { type = "item", text = name });
 			table.insert(library, { id = id, name = name, duration = duration });
