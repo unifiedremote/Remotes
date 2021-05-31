@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down" color="#CCC" >
+	<row>
+		<button icon="vdown" ontap="volume_down" />
+		<button icon="vup" ontap="volume_up" />
+	</row>
+	<row>
+		<button icon="rwd" ontap="rewind" />
+		<button icon="ff" ontap="forward" />
+	</row>
+	<row>
+		<button icon="playpause" ontap="play_pause" />
+	</row>
+</layout>
