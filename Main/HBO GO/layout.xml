@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onVolumeUp="volume_up" onVolumeDown="volume_down" color="#CCC" >
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down" color="#666" >
 	<row>
 		<button icon="vdown" ontap="volume_down" />
 		<button icon="vup" ontap="volume_up" />
