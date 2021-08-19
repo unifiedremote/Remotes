@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<row>
+		<label id="isMuted" text="Mute state unknown (click to refresh)" onTap="getIsMuted" color="normal" />
+	</row>
+	<row>
+		<button text="Toggle mute" ontap="toggleMute" />
+	</row>
+	<row>
+		<button text="Accept Audio Call" ontap="acceptAudioCall" />
+	</row>
+	<row>
+		<button text="Decline Call" ontap="declineCall" />
+	</row>
+	<row>
+		<button text="Leave Call" ontap="leaveCall" color="red" />
+	</row>
+</layout>
