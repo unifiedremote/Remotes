@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <row>
+        <button text="Undo" ontap="undo" />
+        <button text="Redo" ontap="redo" />
+        <button text="Maximize" ontap="maximize" />
+    </row>
+    <row>
+        <button text="Copy" ontap="copy" />
+        <button text="Cut" ontap="cut" />
+        <button text="Duplicate" ontap="duplicate" />
+    </row>
+    <row>
+        <button text="Paste" ontap="paste" />
+        <button text="Paste as Child" ontap="pasteChild" />
+    </row>
+    <row>
+        <button text="Frame Selection" ontap="frame" />
+        <button text="Lock View to Selection" ontap="frameLock" />
+    </row>
+    <row>
+        <button text="Align to View" ontap="alignView" />
+        <button text="Move to View" ontap="moveView" />
+    </row>
+    <row>
+        <button text="Play" ontap="play" />
+        <button text="Pause" ontap="pause" />
+    </row>
+    <row>
+        <button text="Create Empty Parent" ontap="createParent" />
+    </row>
+</layout>
