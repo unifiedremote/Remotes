@@ -8,6 +8,9 @@
       <button text="Video" onTap="video" />
     </row>
     <row>
+      <button text="Raise/Lower Hand" onTap="hand" />
+    </row>
+    <row>
       <button text="Share Screen" onTap="screen" />
     </row>
     <row>

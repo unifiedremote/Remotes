@@ -4,6 +4,7 @@ Zoom meeting remote.
 ## Features
 *  Toggle Mute
 *  Toggle Video
+*  Raise/Lower Hand
 *  Share screen
 *  Record
 *  End meeting
