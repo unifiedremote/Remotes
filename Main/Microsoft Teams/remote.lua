@@ -82,7 +82,7 @@ actions.leaveCall = function ()
 		"tell application \"Microsoft Teams\" to activate",
 		"tell application \"System Events\" to tell process \"Microsoft Teams\"",
 			"beep",
-			"keystroke \"b\" using {command down, shift down}",
+			"keystroke \"h\" using {command down, shift down}",
 		"end tell",
 		"tell application lastActiveApp to activate")
 end
