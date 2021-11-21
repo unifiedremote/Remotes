@@ -34,6 +34,12 @@ actions.video = function()
 	keyboard.stroke("alt", "v");
 end
 
+--@help Raise/Lower Hand
+actions.hand = function()
+	actions.switch();
+	keyboard.stroke("alt", "y");
+end
+
 --@help Share screen
 actions.screen = function()
 	actions.switch();
