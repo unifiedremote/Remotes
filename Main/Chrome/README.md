@@ -2,7 +2,7 @@
 Easily control your Chrome browser window from a distance. If you're trying to browse the web from your sofa at a distance then this remotes makes it easier to do the right thing (rather than trying to move the mouse).
 
 ## Features
-*  Navigation (back, fowrard, home)
+*  Navigation (back, forward, home)
 *  Tabs (open, close, next, previous)
 *  Find on current page
 *  Refresh current page

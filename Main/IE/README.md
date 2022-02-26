@@ -2,7 +2,7 @@
 Internet Explorer browser remote.
 
 ## Features
-*  Navigation (back, fowrard, home)
+*  Navigation (back, forward, home)
 *  Tabs (open, close, next, previous)
 *  Find on current page
 *  Refresh current page
