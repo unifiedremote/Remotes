@@ -2,14 +2,14 @@
 local keyboard = libs.keyboard;
 local device = libs.device;
 
---@help Focus Chrome application
+--@help Focus Safari application
 actions.switch = function()
 	os.script("tell application \"Safari\" to reopen activate");
 end
 
---@help Launch Chrome application
+--@help Launch Safari application
 actions.launch = function()
-	os.start("safari");
+	os.open("/Applications/Safari.app");
 end
 
 --@help Naviagte back
@@ -93,13 +93,13 @@ end
 --@help Scroll page down
 actions.scroll_down = function()
 	actions.switch();
-	keyboard.stroke("space");
+	keyboard.stroke("pgdown");
 end
 
 --@help Scroll page up
 actions.scroll_up = function()
 	actions.switch();
-	keyboard.stroke("shift", "space");
+	keyboard.stroke("pgup");
 end
 
 --@help Refresh current page
