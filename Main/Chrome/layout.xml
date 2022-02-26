@@ -1,21 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--
-  blue: #3369E8
-  red: #D50F25
-  yellow: #EEB211
-  green: #009925
--->
 <layout onLaunch="launch" onVolumeUp="scroll_up" onVolumeDown="scroll_down" color="#3369E8">
   <grid>
     <row>
-      <button icon="left" onTap="back" color="#EEB211" />
-      <button icon="docclose" onTap="close_tab" color="#EEB211"/>
-      <button icon="right" onTap="forward" color="#EEB211" />
+      <button icon="left" onTap="back" />
+      <button icon="docclose" onTap="close_tab" />
+      <button icon="right" onTap="forward" />
     </row>
     <row>
-      <button icon="docleft" onTap="previous_tab" color="#D50F25" />
-      <button icon="docnew" onTap="new_tab" color="#D50F25" />
-      <button icon="docright" onTap="next_tab" color="#D50F25" />
+      <button icon="docleft" onTap="previous_tab" />
+      <button icon="docnew" onTap="new_tab" />
+      <button icon="docright" onTap="next_tab" />
     </row>
     <row>
       <button icon="web" onTap="address" />
@@ -23,14 +17,14 @@
       <button icon="search" onTap="find" />
     </row>
     <row>
-      <button icon="zoomout" onTap="zoom_out" color="#009925" />
-      <button icon="zoomnormal" onTap="zoom_normal" color="#009925" />
-      <button icon="zoomin" onTap="zoom_in" color="#009925" />
+      <button icon="zoomout" onTap="zoom_out" />
+      <button icon="zoomnormal" onTap="zoom_normal" />
+      <button icon="zoomin" onTap="zoom_in" />
     </row>
     <row>
-      <button icon="down" onTap="scroll_down" color="#EEB211" />
-      <button icon="refresh" onTap="refresh" color="#EEB211" />
-      <button icon="up" onTap="scroll_up" color="#EEB211" />
+      <button icon="down" onTap="scroll_down" />
+      <button icon="refresh" onTap="refresh" />
+      <button icon="up" onTap="scroll_up" />
     </row>
   </grid>
 </layout>
