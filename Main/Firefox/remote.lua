@@ -101,13 +101,13 @@ end
 --@help Scroll page down
 actions.scroll_down = function()
 	actions.switch();
-	keyboard.stroke("space");
+	keyboard.stroke("pgdown");
 end
 
 --@help Scroll page up
 actions.scroll_up = function()
 	actions.switch();
-	keyboard.stroke("shift", "space");
+	keyboard.stroke("pgup");
 end
 
 --@help Refresh current page
