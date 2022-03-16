@@ -2,5 +2,5 @@ meta.id: Unified.Screen
 meta.name: Screen
 meta.author: Unified
 meta.description: Remote screen viewer
-meta.platform: windows macosx
+meta.platform: windows macosx linux 
 meta.tags.category: utility
