@@ -1,0 +1,1 @@
+Some of the shortcuts require Unity 2020 and above.
