@@ -53,12 +53,12 @@ end
 
 --@help Press Plus
 actions.num_add = function ()
-	keyboard.press("plus");
+	keyboard.press("keypadadd");
 end
 
 --@help Press Subtract
 actions.num_subtract = function ()
-	keyboard.press("kpminus");
+	keyboard.press("keypadsubtract");
 end
 
 --@help Press Multiply
@@ -89,4 +89,9 @@ end
 --@help Press Speperator
 actions.num_sep = function ()
 	keyboard.press("separator");
+end
+
+--@help Press NumLock
+actions.num_lock = function ()
+	keyboard.press("numlock");
 end
