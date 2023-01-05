@@ -1,5 +1,5 @@
-# Internet Explorer
-Internet Explorer browser remote.
+# Edge
+Easily control your Edge browser window from a distance. If you're trying to browse the web from your sofa at a distance then this remotes makes it easier to do the right thing (rather than trying to move the mouse).
 
 ## Features
 *  Navigation (back, forward, home)
@@ -10,10 +10,6 @@ Internet Explorer browser remote.
 *  Zoom in/out
 *  Focus URL field
 
-## Screenshots
-<img src="ignore/screen.png" width="200" />
-
 ## Support
 Developed and maintained by **Unified Remote**  
 https://www.unifiedremote.com/help
-

@@ -17,7 +17,7 @@ events.create = function ()
 	end
 end
 	
---@help Force system restart
+--@help System restart
 actions.restart = function ()
 	-- Alternatives for other DEs should be added here...
 	if (de == "KDE") then
@@ -27,7 +27,7 @@ actions.restart = function ()
 	end
 end
 
---@help Force system shutdown
+--@help System shutdown
 actions.shutdown = function ()
 	-- Alternatives for other DEs should be added here...
 	if (de == "KDE") then

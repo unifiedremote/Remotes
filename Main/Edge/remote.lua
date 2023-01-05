@@ -1,95 +1,99 @@
 local keyboard = libs.keyboard;
+local win = libs.win;
 local device = libs.device;
+
 events.detect = function ()
-	return libs.fs.exists("/Applications/Firefox.app");
+	return libs.fs.exists("C:\\Program Files (x86)\\Microsoft\\Edge\\Application");
 end
 
---@help Focus Firefox application
+--@help Focus Edge application
 actions.switch = function()
-	os.script("tell application \"Firefox\" to reopen activate");
+	if OS_WINDOWS then
+		local hwnd = win.window("msedge.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait("msedge.exe");
+	end
 end
 
---@help Launch Firefox application
+--@help Launch Edge application
 actions.launch = function()
-	os.open("/Applications/Firefox.app");
+	if OS_WINDOWS then
+		os.start("msedge");
+	end
 end
 
 --@help Naviagte back
 actions.back = function()
 	actions.switch();
-	keyboard.stroke("cmd", "left");
+	keyboard.stroke("menu", "left");
 end
 
 --@help Close current tab
 actions.close_tab = function()
 	actions.switch();
-	keyboard.stroke("cmd", "W");
+	keyboard.stroke("control", "W");
 end
 
 --@help Navigate forward
 actions.forward = function()
 	actions.switch();
-	keyboard.stroke("cmd", "right");
+	keyboard.stroke("menu", "right");
 end
 
 --@help Go to next tab
 actions.next_tab = function()
 	actions.switch();
-	keyboard.stroke("lctrl", "pagedown");
+	keyboard.stroke("control", "tab");
 end
 
 --@help Go to previous tab
 actions.previous_tab = function()
 	actions.switch();
-	keyboard.stroke("lctrl", "pageup");	
+	keyboard.stroke("control", "shift", "tab");
 end
 
 --@help Open new tab
 actions.new_tab = function()
 	actions.switch();
-	keyboard.stroke("cmd", "T");
+	keyboard.stroke("control", "T");
 end
 
 --@help Type address
 actions.address = function()
 	actions.switch();
-	keyboard.stroke("cmd", "L");
-	-- Without keyboard up typing is not working. 
-	keyboard.up("cmd", "L");
+	keyboard.stroke("control", "L");
 	device.keyboard();
 end
 
 --@help Go to home page
 actions.home = function()
 	actions.switch();
-	keyboard.stroke("option", "home");
+	keyboard.stroke("menu", "home");
 end
 
 --@help Find on current page
 actions.find = function()
 	actions.switch();
-	keyboard.stroke("cmd", "F");
-	-- Without keyboard up typing is not working. 
-	keyboard.up("cmd", "F");
+	keyboard.stroke("control", "F");
 	device.keyboard();
 end
 
 --@help Zoom page in
 actions.zoom_in = function()
 	actions.switch();
-	keyboard.stroke("cmd", "plus");
+	keyboard.stroke("control", "oem_plus");
 end
 
 --@help Zoom page out
 actions.zoom_out = function()
 	actions.switch();
-	keyboard.stroke("cmd", "kpminus");
+	keyboard.stroke("control", "oem_minus");
 end
 
 --@help Use normal zoom
 actions.zoom_normal = function()
 	actions.switch();
-	keyboard.stroke("cmd", "0");
+	keyboard.stroke("control", "0");
 end
 
 --@help Scroll page down
@@ -107,5 +111,5 @@ end
 --@help Refresh current page
 actions.refresh = function()
 	actions.switch();
-	keyboard.stroke("cmd", "R");
+	keyboard.stroke("F5");
 end

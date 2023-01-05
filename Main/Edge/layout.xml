@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<layout onLaunch="launch" onVolumeUp="scroll_up" onVolumeDown="scroll_down" color="#3369E8">
+<layout onLaunch="launch" onVolumeUp="scroll_up" onVolumeDown="scroll_down" color="#5fc0d4">
   <grid>
     <row>
       <button icon="left" onTap="back" />

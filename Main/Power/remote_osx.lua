@@ -1,10 +1,10 @@
 
---@help Force system restart
+--@help System restart
 actions.restart = function ()
 	os.script("tell application \"System Events\" to restart");
 end
 
---@help Force system shutdown
+--@help System shutdown
 actions.shutdown = function ()
 	os.script("tell application \"System Events\" to shut down");
 end

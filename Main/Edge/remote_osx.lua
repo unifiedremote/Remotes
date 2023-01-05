@@ -1,17 +1,18 @@
 local keyboard = libs.keyboard;
 local device = libs.device;
+
 events.detect = function ()
-	return libs.fs.exists("/Applications/Firefox.app");
+	return libs.fs.exists("/Applications/Microsoft Edge.app");
 end
 
---@help Focus Firefox application
+--@help Focus Edge application
 actions.switch = function()
-	os.script("tell application \"Firefox\" to reopen activate");
+	os.script("tell application \"Microsoft Edge\" to reopen activate");
 end
 
---@help Launch Firefox application
+--@help Launch Edge application
 actions.launch = function()
-	os.open("/Applications/Firefox.app");
+	os.open("/Applications/Microsoft Edge.app");
 end
 
 --@help Naviagte back
@@ -35,13 +36,13 @@ end
 --@help Go to next tab
 actions.next_tab = function()
 	actions.switch();
-	keyboard.stroke("lctrl", "pagedown");
+	keyboard.stroke("cmd", "option", "right");
 end
 
 --@help Go to previous tab
 actions.previous_tab = function()
 	actions.switch();
-	keyboard.stroke("lctrl", "pageup");	
+	keyboard.stroke("cmd", "option", "left");
 end
 
 --@help Open new tab
@@ -54,7 +55,7 @@ end
 actions.address = function()
 	actions.switch();
 	keyboard.stroke("cmd", "L");
-	-- Without keyboard up typing is not working. 
+	-- Without keyboard up chrome chrash. 
 	keyboard.up("cmd", "L");
 	device.keyboard();
 end
@@ -62,14 +63,14 @@ end
 --@help Go to home page
 actions.home = function()
 	actions.switch();
-	keyboard.stroke("option", "home");
+	keyboard.stroke("cmd", "shift", "H");
 end
 
 --@help Find on current page
 actions.find = function()
 	actions.switch();
 	keyboard.stroke("cmd", "F");
-	-- Without keyboard up typing is not working. 
+		-- Without keyboard up chrome chrash. 
 	keyboard.up("cmd", "F");
 	device.keyboard();
 end

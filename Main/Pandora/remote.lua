@@ -15,7 +15,7 @@ actions.volume_up = function()
 	keyboard.stroke("volume_up");
 end
 
---@help Dislike current track
+--@help Like current track
 actions.thumbs_up = function()
 	if (OS_WINDOWS) then
 		keyboard.stroke("shift", "oem_plus");
@@ -24,7 +24,7 @@ actions.thumbs_up = function()
 	end
 end
 
---@help Like current track
+--@help Dislike current track
 actions.thumbs_down = function()
 	if (OS_WINDOWS) then
 		keyboard.stroke("oem_minus");

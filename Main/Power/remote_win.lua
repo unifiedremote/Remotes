@@ -8,18 +8,19 @@ bool SetSuspendState(bool hibernate, bool forceCritical, bool disableWakeEvent);
 ]]
 local PowrProf = ffi.load("PowrProf");
 
---@help Force system restart
+--@help System restart
 --@param sec:number Timeout in seconds (default 5)
 actions.restart = function (sec)
 	if not sec then sec = 5; end
-	os.execute("shutdown /r /f /t " .. sec);
+	os.execute("shutdown /r /t " .. sec);
 end
 
---@help Force system shutdown
+--@help System shutdown
 --@param sec:number Timeout in seconds (default 5)
 actions.shutdown = function (sec)
 	if not sec then sec = 5; end
-	os.execute("shutdown /s /f /t " .. sec);
+	-- Default Windows shutdown behavior is /hybdrid - This should hopefully make WOL work!
+	os.execute("shutdown /s /hybrid /t " .. sec);
 end
 
 --@help Logoff current user
