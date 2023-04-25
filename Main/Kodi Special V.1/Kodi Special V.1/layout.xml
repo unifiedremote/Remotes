@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="Kodi_Vup" onVolumeDown="Kodi_Vdown">
+  <grid>
+    <row>
+      <button Text="Page Up" onTap="Kodi_Page_Up" onhold="Kodi_Tops" color="#8b8c8c" />
+      <button Text="Page Down" onTap="Kodi_Page_Down" onhold="Kodi_Bottom" color="#8b8c8c" />
+      <button icon="up" onTap="Kodi_Up" color="#2EB0EB" />
+	  <button icon="back" onTap="Kodi_Back" />
+	  <button icon="home" onTap="Kodi_Home" />
+    </row>
+    <row>
+      <button icon="rwd" onTap="Kodi_Rewind" />
+      <button icon="left" onTap="Kodi_Left" color="#2EB0EB" />
+      <button icon="select" onTap="Kodi_Enter" color="#2EB0EB" />
+	  <button icon="right" onTap="Kodi_Right" color="#2EB0EB" />
+	  <button icon="ff" onTap="Kodi_Forward" />
+    </row>
+    <row>
+      <button icon="pause" onTap="Kodi_Pause" />
+      <button icon="stop" onTap="Kodi_Stop" onhold="Kodi_Watched" color="#8b8c8c" />
+      <button icon="down" onTap="Kodi_Down" color="#2EB0EB" />
+	  <button icon="previous" onTap="Kodi_Previous" />
+	  <button icon="next" onTap="Kodi_Next" />
+    </row>
+    <row>
+      <button icon="play" onTap="Kodi_Play" />
+      <button Text="Options" onTap="Kodi_Options" />
+      <button Text="Info" onTap="Kodi_Info" />
+	  <button Text="Sub On/Off/Pos" onTap="Kodi_Subon" onhold="Kodi_Subpos" color="#8b8c8c" />
+	  <button Text="Codec" onTap="Kodi_Codec" onhold="Kodi_Codec2" color="#8b8c8c" />
+    </row>
+    <row>
+      <button icon="vdown" onTap="Kodi_Vdown" />
+      <button icon="vmute" onTap="Kodi_Vmute" />
+      <button icon="vup" onTap="Kodi_Vup" />
+    </row>
+	 <row>
+      <button icon="fullscreen" onTap="Kodi_Fullscreen" />
+      <button Text="Player" onTap="Kodi_OSD" />
+      <button icon="windows" onTap="Kodi_Windows" onhold="switch" color="#8b8c8c" />
+	  <button Text="Exit" onTap="Kodi_Exit" />
+	  <button Text="Restart KODI" onTap="Kodi_Restart" />
+    </row>
+  </grid>
+</layout>
