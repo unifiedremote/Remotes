@@ -13,5 +13,8 @@
       <button icon="fullscreen" onTap="fullscreen" />
       <button icon="playpause" onTap="play_pause" />
     </row>
+    <row>
+      <button icon="next" onTap="next" />
+    </row>
   </grid>
 </layout>
