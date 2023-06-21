@@ -39,4 +39,8 @@ end
 actions.fullscreen = function()
 	keyboard.stroke("F");
 end
+--@help Next Episode
+actions.next = function()
+	keyboard.stroke("Lshift", "n");
+end
 
