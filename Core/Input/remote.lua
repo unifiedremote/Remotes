@@ -30,7 +30,8 @@ actions.MouseUp = function(...)
 end
 
 actions.Click = function(...)
-	mouse.click(unpack({...}));
+	mouse.down(unpack({...}));
+	mouse.up(unpack({...}));
 end
 
 actions.DblClick = function(...)
